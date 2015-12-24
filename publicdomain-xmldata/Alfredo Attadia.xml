@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <discography orchestra="Alfredo Attadía" source="tango.info">
-    <track name="A José Razzano" vocal="Instrumental" year="1952" genre=""/>
+    <track name="A José Razzano" vocal="Instrumental" year="1952" genre="tango"/>
     <track name="Araca, corazón" vocal="Armando Moreno" year="1951-07-13" genre="tango" composer="Enrique Delfino" author="Alberto Vacarezza"/>
     <track name="Bettinoti" vocal="Enzo Valentino" year="1952-10-28" genre="milonga" composer="Enrique Delfino" author="Alberto Vacarezza" duration="2:48"/>
     <track name="Caído del cielo" vocal="Instrumental" year="1951-07-13" genre="tango" composer="Antonio Polito"/>
@@ -24,5 +24,4 @@
     <track name="Tus besos fueron míos" vocal="Enzo Valentino" year="1952-08-14" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="3:16"/>
     <track name="Bettinoti" vocal="Instrumental" year="" genre="milonga" composer="Anselmo Aieta" author="Francisco García" duration="2:46"/>
     <track name="Cualquier cosa" vocal="Instrumental" year="" genre="tango" author="Juan Miguel Velich" duration="2:56"/>
-    <track name="El Yacaré" vocal="Instrumental" year="" genre="tango" composer="Alfredo Attadía" author="Mario Soto" duration="3:08"/>
 </discography>
