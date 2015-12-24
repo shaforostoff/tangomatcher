@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BeatCounter</class>
+ <widget class="QWidget" name="BeatCounter">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>702</width>
+    <height>451</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>BeatCounter</string>
+  </property>
+   <layout class="QHBoxLayout" name="hLayout">
+    <property name="margin">
+     <number>2</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="bpmLayout">
+      <property name="margin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Measure the tempo or speed of a piece of tango music.&lt;br&gt;
+This is expressed in BPM: beats per minute.
+&lt;/p&gt;&lt;p&gt;
+To start the BPM counter, just start tapping the 'SPACE' bar.&lt;br&gt;
+To 'reset', press Esc.
+&lt;/p&gt;&lt;p&gt;
+Drop audio files on the right panel to write BPM field into their tags.
+&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="bpmTyper">
+        <property name="placeholderText">
+         <string>Tap space here</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="results">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="lyrFileLayout">
+      <property name="margin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QTreeView" name="filesToWrite">
+        <property name="rootIsDecorated">
+         <bool>false</bool>
+        </property>
+        <property name="itemsExpandable">
+         <bool>false</bool>
+        </property>
+        <attribute name="headerVisible">
+         <bool>false</bool>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="bpmToWrite">
+        <property name="placeholderText">
+         <string>BPM to write</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="write">
+        <property name="text">
+         <string>Write tags</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

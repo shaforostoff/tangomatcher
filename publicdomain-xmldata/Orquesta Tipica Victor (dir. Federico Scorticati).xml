@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<discography orchestra="Orquesta Típica Víctor (dir. Federico Scorticati)">
+    <track name="Adiós, Buenos Aires" vocal="Ángel Vargas" year="1938-02-03" genre="tango" composer="Rodolfo Sciammarella" author="Leopoldo Torres Ríos" duration="2:36" popularity="5"/>
+    <track name="Cariño" vocal="Amanda Ledesma" year="1940-05-06" genre="tango" author="Luis Rubistein" duration="2:19"/>
+    <track name="Clavel del aire" vocal="Instrumental" year="1937-08-14" genre="tango" composer="Juan de Dios Filiberto" author="Fernando Silva Valdés" duration="2:31" popularity="3"/>
+    <track name="Como tigre cebao!" vocal="Instrumental" year="1938-04-18" genre="tango" popularity="1"/>
+    <track name="Déjame vivir" vocal="Mariano Balcarce" year="1937-09-07" genre="tango" composer="Antonio Polito" author="Nolo López"/>
+    <track name="Desesperanza" vocal="Mario Pomar" year="1939-09-07" genre="tango" composer="Francisco Canaro" author="Ivo Pelay" duration="2:43" popularity="2"/>
+    <track name="Dime mi amor" vocal="Sabina Olmos" year="1940-12-20" genre="tango" composer="Rodolfo Sciammarella" author="Manuel Romero" duration="2:05" popularity="1"/>
+    <track name="El amanecer" vocal="Instrumental" year="1937-08-14" genre="tango" composer="Roberto Firpo" duration="2:23"/>
+    <track name="Incertidumbre" vocal="Ángel Vargas" year="1939-01-05" genre="tango" composer="Juan Carlos Cáceres" duration="2:20" popularity="2"/>
+    <track name="Intima" vocal="Carlos Lafuente" year="1940-04-11" genre="vals" duration="2:28" popularity="1"/>
+    <track name="Libertad" vocal="Instrumental" year="1937-09-28" genre="tango" composer="Agustín Magaldi" duration="2:47"/>
+    <track name="Milonga de los fortines" vocal="Mariano Balcarce" year="1937-09-28" genre="milonga" composer="Sebastián Piana" author="Homero Manzi" duration="2:51" popularity="1"/>
+    <track name="Nieve" vocal="Instrumental" year="1937-09-07" genre="canción en el tiempo de Pasodoble" composer="Agustín Magaldi" author="Manuel Enrique Ferradás Campos"/>
+    <track name="Noches de invierno" vocal="Lita Morales" year="1937-04-30" genre="vals" composer="José Luis Padula" author="Enrique Cadícamo" duration="2:47" popularity="1"/>
+    <track name="Pirata" vocal="Déo Costa" year="1937-02-24" genre="marcha"/>
+    <track name="Por el camino" vocal="José Bohr" year="1941-09-06" genre="tango" composer="Carlos Vicente Geroni Flores" author="Benjamin Tagle Lara" duration="2:30" popularity="2"/>
+    <track name="Quinta edición" vocal="Instrumental" year="1937-02-24" genre="tango" composer="Sebastián Piana" duration="2:45" popularity="1"/>
+    <track name="Sin rumbo fijo" vocal="Ángel Vargas" year="1938-04-18" genre="vals" duration="2:18" popularity="3"/>
+    <track name="Sonata" vocal="Agustín Magaldi" year="1937-06-03" genre="vals" composer="Agustín Magaldi" author="Enrique Lary" duration="3:18" popularity="7"/>
+    <track name="Tango milonguero" vocal="Instrumental" year="1940-05-10" genre="tango" duration="2:41" popularity="2"/>
+    <track name="Temo" vocal="Mario Pomar" year="1940-05-10" genre="vals" composer="Aguariguay" author="Atilio Galvez" duration="2:55" popularity="1"/>
+    <track name="Tu vida es mi vida" vocal="Instrumental" year="1937-09-28" genre="tango" duration="2:42" popularity="1"/>
+    <track name="Vuelve otra vez" vocal="Mario Pomar" year="1939-05-08" genre="vals canción"/>
+</discography>

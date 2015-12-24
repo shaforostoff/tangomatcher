@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<discography orchestra="Osvaldo Fresedo" source="tango.info">
+    <track name="A la deriva" vocal="Teofilo Ibañez" year="1932" genre="tango" composer="Carlos Bahr" author="Carlos Bahr" popularity="2"/>
+    <track name="A la luz del candil" vocal="Instrumental" year="1927-05-28" genre="tango" composer="Carlos Vicente Geroni Flores" author="Julio Plácido Navarrine" duration="3:04" popularity="5"/>
+    <track name="A la parrilla" vocal="Instrumental" year="1950-11-29" genre="tango" composer="Carlos Figari" duration="2:41" popularity="8"/>
+    <track name="A todo trapo" vocal="Instrumental" year="1952-11-21" genre="candombe" duration="2:14" popularity="9"/>
+    <track name="Acomodate" vocal="Instrumental" year="1928-05-22" genre="tango" popularity="3"/>
+    <track name="Acosta en punta" vocal="Ernesto Famá" year="1928-02-02" genre="tango" popularity="3"/>
+    <track name="Adelante la mozada" vocal="Roberto Ray" year="1933" genre="ranchera" popularity="1"/>
+    <track name="Adiós para siempre" vocal="Roberto Ray" year="1936-12-07" genre="tango" composer="José María Rizzuti" author="Nolo López" duration="3:02" popularity="4"/>
+    <track name="Adiós, muchachos" vocal="Instrumental" year="1952-12-18" genre="tango" composer="Julio César Alberto Sanders" author="Cesar Felipe Vedani" duration="3:27" popularity="6"/>
+    <track name="Adiós, muchachos" vocal="Instrumental" year="1956" genre="tango" composer="Julio César Alberto Sanders" author="Cesar Felipe Vedani" duration="3:57" popularity="1"/>
+    <track name="Adiós, pampa mía" vocal="Oscar Serpa" year="1946-06-26" genre="tango" composer="Francisco Canaro, Mariano Mores, Ivo Pelay" author="Francisco Canaro, Mariano Mores, Ivo Pelay" duration="3:03" popularity="2"/>
+    <track name="Agua mansa" vocal="Instrumental" year="1927-08-16" genre="tango" duration="2:54" popularity="3"/>
+    <track name="Al cerrar los ojos" vocal="Oscar Serpa" year="1943-08-25" genre="tango" composer="Manuel Buzón" author="Cesar Felipe Vedani" popularity="3"/>
+    <track name="Alas" vocal="Ricardo Ruiz" year="1940-09-13" genre="tango" composer="Vicente Demarco" author="Alfredo Faustino Roldan" duration="2:31" popularity="7"/>
+    <track name="Algún día volverás" vocal="Héctor Pacheco" year="1955-07-06" genre="tango" composer="Luciano Leocata" author="Raúl Hormaza" duration="3:21" popularity="2"/>
+    <track name="Alma de bohemio" vocal="Instrumental" year="1927-04-26" genre="tango" composer="Roberto Firpo" author="Juan Andrés Caruso" duration="3:01" popularity="4"/>
+    <track name="Alma de milonga" vocal="Instrumental" year="1928-06-13" genre="tango" duration="2:49" popularity="5"/>
+    <track name="Alma en pena" vocal="Ernesto Famá" year="1928-10-09" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="2:47" popularity="3"/>
+    <track name="Almagro" vocal="Instrumental" year="1923-06-19" genre="tango" author="Antonio Polito" label="Victor" popularity="4"/>
+    <track name="Almita herida" vocal="Instrumental" year="1922-08-25" genre="tango" composer="Juan Carlos Cobián" author="Enrique Cadícamo" label="Victor" popularity="2"/>
+    <track name="Amar hasta morir" vocal="Roberto Yanes" year="1966-04-15" genre="tango" duration="2:52" popularity="1"/>
+    <track name="Amigablemente" vocal="Ernesto Famá" year="1928-02-28" genre="tango" composer="Rafael Iriarte" duration="3:16" popularity="1"/>
+    <track name="Amor" vocal="Roberto Ray" year="1938-09-08" genre="vals" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:03" popularity="2"/>
+    <track name="Andan diciendo, Pancha" vocal="Roberto Ray" year="1933-12-27" genre="son cubano" popularity="1"/>
+    <track name="Andate con la otra" vocal="Ernesto Famá" year="1928-04-03" genre="tango" composer="Carlos Vicente Geroni Flores" author="Enrique Dizeo" popularity="2"/>
+    <track name="Angustia" vocal="Roberto Ray" year="1938-09-08" genre="tango" composer="Horacio Pettorossi" author="Horacio Pettorossi" duration="2:39" popularity="3"/>
+    <track name="Añoranzas" vocal="Ricardo Ruiz" year="1939-08-18" genre="tango" composer="Luis Petrucelli" author="Daniel López Barreto" popularity="2"/>
+    <track name="Apasionado" vocal="Instrumental" year="1953" genre="tango" duration="2:54" popularity="4"/>
+    <track name="Araca la cana" vocal="Roberto Ray" year="1933-06-06" genre="tango" composer="Enrique Delfino" author="Mario Fernando Rada" duration="2:26" popularity="7"/>
+    <track name="Aromas" vocal="Carlos Barrios" year="1956-05-16" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:25" popularity="6"/>
+    <track name="Aromas" vocal="Oscar Serpa" year="1943-06-28" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" popularity="1"/>
+    <track name="Aromas" vocal="Roberto Ray" year="1938-11-23" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:04" popularity="14"/>
+    <track name="Arrabal amargo" vocal="Roberto Ray" year="1935-06-23" genre="tango canción" composer="Carlos Gardel" author="Alfredo Le Pera" popularity="1"/>
+    <track name="Arrabalero" vocal="Blanca Mooney" year="1959-01-26" genre="tango" composer="Osvaldo Fresedo" author="Eduardo Calvo" duration="3:07" popularity="2"/>
+    <track name="Arrabalero" vocal="Instrumental" year="1927-02-26" genre="tango" composer="Osvaldo Fresedo" author="Eduardo Calvo" duration="3:18" popularity="2"/>
+    <track name="Arrabalero" vocal="Instrumental" year="1939-04-24" genre="tango" composer="Osvaldo Fresedo" author="Eduardo Calvo" duration="2:33" popularity="9"/>
+    <track name="Atorrante" vocal="Instrumental" year="1927-03-15" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Alberto Vacarezza" popularity="4"/>
+    <track name="Atrevido" vocal="Instrumental" year="1927-10-25" genre="tango" popularity="1"/>
+    <track name="Atropellando" vocal="Instrumental" year="1923-06-11" genre="tango" label="Victor" duration="2:57" popularity="1"/>
+    <track name="Ave sin nido" vocal="Instrumental" year="1927-10-25" genre="tango" duration="3:10" popularity="1"/>
+    <track name="Ay, ay, ay" vocal="Luis Díaz" year="1932" genre="tango" popularity="1"/>
+    <track name="Bahía Blanca" vocal="Instrumental" year="1961" genre="tango" composer="Carlos Di Sarli" popularity="3"/>
+    <track name="Bandoneón amigo" vocal="Oscar Serpa" year="1942" genre="tango" composer="Osvaldo Fresedo" author="Homero Manzi" popularity="1"/>
+    <track name="Barranca abajo" vocal="Teofilo Ibañez" year="1932" genre="tango" composer="Francisco Brancatti" popularity="2"/>
+    <track name="Barrio Piñeyro" vocal="Ernesto Famá" year="1928-06-26" genre="tango" duration="2:57" popularity="1"/>
+    <track name="Barrio porteño | Parque patricios" vocal="Oscar Serpa" year="1942-08-11" genre="tango" duration="2:12" popularity="3"/>
+    <track name="Barrio reo" vocal="Instrumental" year="1927-03-15" genre="tango" composer="Roberto Fugazot" author="Alfredo Navarrine" duration="2:55" popularity="4"/>
+    <track name="Bélgica" vocal="Instrumental" year="1920" genre="tango" composer="Enrique Delfino" duration="3:03" popularity="1"/>
+    <track name="Bésame en la boca" vocal="Instrumental" year="1927-05-26" genre="tango" composer="José María Rizzuti" author="Eduardo Calvo" duration="3:06" popularity="2"/>
+    <track name="Besos brujos" vocal="Roberto Ray" year="1937-07-15" genre="tango" composer="Alfredo Malerba" author="Rodolfo Sciammarella" duration="2:35" popularity="2"/>
+    <track name="Biscuit" vocal="Instrumental" year="1905-04-05" genre="" composer="Juan Carlos Cobián" duration="2:50" popularity="1"/>
+    <track name="Bochita" vocal="Instrumental" year="1927-11-15" genre="tango" duration="3:19" popularity="2"/>
+    <track name="Bonsoir monsieur" vocal="Instrumental" year="1928" genre="tango" popularity="1"/>
+    <track name="Buena vida" vocal="Instrumental" year="1922" genre="tango" popularity="1"/>
+    <track name="Buscándote" vocal="Ricardo Ruiz" year="1941-12-30" genre="tango" composer="Lalo Scalise" author="Lalo Scalise" duration="2:49" popularity="5"/>
+    <track name="Cafetín de Buenos Aires" vocal="Osvaldo Cordó" year="1948-07-20" genre="tango" composer="Mariano Mores, Enrique Discépolo" author="Mariano Mores, Enrique Discépolo" duration="3:08" popularity="2"/>
+    <track name="Callecita de mi barrio" vocal="Instrumental" year="1925-09-22" genre="tango" composer="Alberto Laporte, Otelo Gasparini" author="Enrique Maroni" label="Victor" popularity="3"/>
+    <track name="Caminito" vocal="Instrumental" year="1927-05-18" genre="tango" composer="Juan de Dios Filiberto" author="Gabino Coria Peñaloza" duration="3:09" popularity="6"/>
+    <track name="Camino" vocal="Carlos Mayel" year="1941-08-12" genre="tango" duration="2:24" popularity="3"/>
+    <track name="Campanita" vocal="Ernesto Famá" year="1928-02-07" genre="tango" duration="3:19" popularity="1"/>
+    <track name="Campolo, solo" vocal="Instrumental" year="1927" genre="tango" duration="3:17" popularity="1"/>
+    <track name="Canción de amor" vocal="Instrumental" year="1927-10-04" genre="tango" composer="Julio De Caro" duration="3:10" popularity="1"/>
+    <track name="Canción de cuna" vocal="Ernesto Famá" year="1928-02-02" genre="tango" author="Gabino Coria Peñaloza" popularity="4"/>
+    <track name="Canita" vocal="Instrumental" year="1927-08-03" genre="" popularity="4"/>
+    <track name="Canto de amor" vocal="Roberto Ray" year="1934-06-18" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:25" popularity="5"/>
+    <track name="Canto siboney" vocal="Ricardo Ruiz" year="1935-04-05" genre="rumba" popularity="1"/>
+    <track name="Caperucita roja" vocal="Instrumental" year="1928-04-24" genre="tango" popularity="1"/>
+    <track name="Capicúa" vocal="Instrumental" year="1961" genre="milonga" popularity="3"/>
+    <track name="Capricho" vocal="Instrumental" year="1927-09-03" genre="tango" duration="2:53" popularity="3"/>
+    <track name="Capricho de amor" vocal="Héctor Pacheco" year="1952" genre="tango" composer="Roberto Pérez Prechi" author="Horacio Sanguinetti" duration="3:00" popularity="3"/>
+    <track name="Capricho de amor" vocal="Instrumental" year="1956" genre="tango" composer="Roberto Pérez Prechi" author="Horacio Sanguinetti" duration="4:06" popularity="1"/>
+    <track name="Careta, careta" vocal="Carlos Mayel" year="1940-04-15" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="2:30" popularity="3"/>
+    <track name="Caridad" vocal="Ernesto Famá" year="1928-04-10" genre="tango" composer="Ricardo Luis Brignolo" duration="3:26" popularity="5"/>
+    <track name="Cariñito" vocal="Teofilo Ibañez" year="1932" genre="tango" popularity="1"/>
+    <track name="Carmen" vocal="Instrumental" year="1928-05-29" genre="tango" composer="Fulvio Salamanca" author="Fulvio Salamanca" popularity="2"/>
+    <track name="Carrillón de la Merced" vocal="Teofilo Ibañez" year="1932" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo, Alfredo Le Pera" popularity="1"/>
+    <track name="Carta blanca" vocal="Instrumental" year="1927-11-12" genre="tango" duration="2:58" popularity="3"/>
+    <track name="Cervantes" vocal="Instrumental" year="1923-09-05" genre="tango" label="Victor" popularity="1"/>
+    <track name="Che, papusa, oí" vocal="Ernesto Famá" year="1928-02-07" genre="tango" composer="Gerardo Matos Rodríguez" author="Enrique Cadícamo" popularity="3"/>
+    <track name="Chelín" vocal="Instrumental" year="1922-12-18" genre="" label="Victor" duration="2:48" popularity="2"/>
+    <track name="Chingolito" vocal="Ernesto Famá" year="1928-03-20" genre="tango" popularity="1"/>
+    <track name="Chorra" vocal="Antonio Buglione" year="1928-08-11" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:11" popularity="1"/>
+    <track name="Chorra" vocal="Instrumental" year="1927" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="1"/>
+    <track name="Cielito mío" vocal="Ricardo Ruiz" year="1939-06-14" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" popularity="1"/>
+    <track name="Colibriyo" vocal="Roberto Ray" year="1933-03-16" genre="tango" composer="Pascual Humberto Martínez" author="Pascual Humberto Martínez" popularity="3"/>
+    <track name="Como aquella princesa" vocal="Roberto Ray" year="1937-05-12" genre="tango" composer="Joaquín Mora" author="José María Contursi" duration="2:52" popularity="8"/>
+    <track name="Compadrón" vocal="Instrumental" year="1927" genre="tango" composer="Luis Nicolas Visca" author="Enrique Cadícamo" duration="3:14" popularity="4"/>
+    <track name="Conta siempre conmigo" vocal="Teofilo Ibañez" year="1932" genre="tango" popularity="1"/>
+    <track name="Contigo quiero ir" vocal="Roberto Ray" year="1933-03-16" genre="Foxtrot" popularity="2"/>
+    <track name="Contratiempo" vocal="Instrumental" year="1952-05-13" genre="tango" composer="Astor Piazzolla" duration="2:52" popularity="4"/>
+    <track name="Coperita posta" vocal="Ernesto Famá" year="1928-02-28" genre="tango" duration="2:58" popularity="5"/>
+    <track name="Coqueta" vocal="Instrumental" year="1927-07-19" genre="tango" popularity="4"/>
+    <track name="Corazón de indio" vocal="Instrumental" year="1927-05-28" genre="tango" composer="Augusto Gentile" author="Juan Andrés Caruso" popularity="1"/>
+    <track name="Corazón de malevo" vocal="Instrumental" year="1927-08-16" genre="tango" duration="3:18" popularity="1"/>
+    <track name="Corazón mío" vocal="Roberto Ray" year="1936-04-02" genre="tango" composer="Víctor Donato" duration="2:59" popularity="1"/>
+    <track name="Corazón... no le digas a nadie" vocal="Oscar Serpa" year="1944-12-28" genre="tango" composer="Enrique Juan Munne" author="Luis Castiñeira" popularity="1"/>
+    <track name="Corazoncito" vocal="Instrumental" year="1928-05-19" genre="tango" composer="Rafael Rossi" duration="2:56" popularity="2"/>
+    <track name="Cordobesita" vocal="Roberto Ray" year="1933-08-02" genre="tango" composer="Samuel Castriota" author="Celedonio Flores" duration="2:30" popularity="7"/>
+    <track name="Corrientes y Esmeralda" vocal="Héctor Pacheco" year="1920" genre="tango" composer="Francisco Pracánico" author="Celedonio Flores" duration="3:58" popularity="1"/>
+    <track name="Cosas viejas" vocal="Oscar Serpa" year="1943-11-12" genre="tango" composer="Tito Ribero" author="Carlos Waiss" popularity="2"/>
+    <track name="Cota" vocal="Instrumental" year="1928-05-22" genre="tango" duration="3:24" popularity="1"/>
+    <track name="Cristal" vocal="Oscar Serpa" year="1944-06-30" genre="tango" composer="Mariano Mores" author="José María Contursi" duration="3:07" popularity="3"/>
+    <track name="Cuando cuentes la historia de tu vida" vocal="Héctor Pacheco" year="1953" genre="tango" composer="Héctor Stamponi" author="Héctor Stamponi" duration="3:00" popularity="2"/>
+    <track name="Cuando llegue el invierno" vocal="Carlos Barrios" year="1953-12-23" genre="tango" duration="3:12" popularity="2"/>
+    <track name="Cuando llora el bandoneón" vocal="Instrumental" year="1927-10-25" genre="tango" duration="2:57" popularity="1"/>
+    <track name="Cuartito azul" vocal="Ricardo Ruiz" year="1939-10-13" genre="tango" composer="Mariano Mores" author="Mario Battistella" duration="2:45" popularity="7"/>
+    <track name="Cuesta abajo" vocal="Instrumental" year="1963" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" popularity="2"/>
+    <track name="Dame un besito" vocal="Teofilo Ibañez" year="1932" genre="tango" popularity="1"/>
+    <track name="Dandy" vocal="Instrumental" year="1928" genre="tango" composer="Lucio Demare" author="Agustín Irusta, Roberto Fugazot" popularity="1"/>
+    <track name="Daño" vocal="Héctor Pacheco" year="1951" genre="tango" duration="2:50" popularity="4"/>
+    <track name="De academia" vocal="Instrumental" year="1961-05-22" genre="tango" composer="Osvaldo Fresedo" popularity="4"/>
+    <track name="De antaño" vocal="Instrumental" year="1923-08-08" genre="tango" composer="Luis Rubistein" author="Luis Rubistein" label="Victor" popularity="1"/>
+    <track name="De pura cepa" vocal="Instrumental" year="1953-05-20" genre="milonga" composer="Roberto Firpo" author="Benjamin Tagle Lara" duration="2:11" popularity="11"/>
+    <track name="De puro guapo" vocal="Ernesto Famá" year="1928-02-02" genre="tango" composer="Pedro Laurenz" author="Manuel Andrés Meaños" duration="2:59" popularity="3"/>
+    <track name="De segunda mano" vocal="Roberto Ray" year="1935-08-07" genre="tango" popularity="1"/>
+    <track name="Decí que sí" vocal="Luis Díaz, -choir-" year="1932" genre="ranchera" composer="Azucena Maizani" popularity="1"/>
+    <track name="Déjame amarte aunque sea un día" vocal="Roberto Ray" year="1936-11-07" genre="vals" composer="Ernestina Lecuona" author="Venancio Clauso" popularity="1"/>
+    <track name="Dejame con mi tristeza" vocal="Instrumental" year="1927" genre="tango" duration="2:49" popularity="1"/>
+    <track name="Del tiempo de Gardel" vocal="Armando Garrido" year="1950-11-29" genre="tango" duration="3:26" popularity="2"/>
+    <track name="Derecho viejo" vocal="Instrumental" year="1927-04-12" genre="tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="2:31" popularity="2"/>
+    <track name="Derecho viejo" vocal="Instrumental" year="1941-12-30" genre="tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="2:26" popularity="5"/>
+    <track name="Derecho viejo" vocal="Instrumental" year="1959-06-02" genre="tango" composer="Eduardo Arolas" author="Gabriel Clausi" popularity="4"/>
+    <track name="Derroche de amor" vocal="Instrumental" year="1927-08-16" genre="tango" duration="2:57" popularity="1"/>
+    <track name="Después de carnaval" vocal="Hugo Marcel" year="1959-01-12" genre="tango" duration="3:13" popularity="3"/>
+    <track name="Después de carnaval" vocal="Ricardo Ruiz" year="1941-06-19" genre="tango" duration="2:48" popularity="5"/>
+    <track name="Después de carnaval" vocal="Roberto Ray" year="1941" genre="tango" popularity="1"/>
+    <track name="Destino de mujer" vocal="Instrumental" year="1925-04-07" genre="tango" duration="2:55" popularity="1"/>
+    <track name="Día de carrera" vocal="Instrumental" year="1927-08-25" genre="tango" duration="3:01" popularity="1"/>
+    <track name="Didí" vocal="Instrumental" year="1927-10-18" genre="tango" composer="Roberto Firpo" duration="2:46" popularity="2"/>
+    <track name="Dios te salve | Pebeta loca" vocal="Instrumental" year="1927-08-16" genre="tango" popularity="2"/>
+    <track name="Discepolín" vocal="Héctor Pacheco" year="1951-06-12" genre="tango" composer="Aníbal Troilo" author="Homero Manzi" duration="3:17" popularity="4"/>
+    <track name="Divagando" vocal="Instrumental" year="1939-08-18" genre="tango" composer="Juan Carlos Cáceres" author="Juan Carlos Cáceres" popularity="5"/>
+    <track name="Divina" vocal="Carlos Barrios" year="1953-12-23" genre="tango" composer="Joaquín Mora" duration="3:12" popularity="7"/>
+    <track name="Domingo siete" vocal="Instrumental" year="1926-12-07" genre="tango" duration="3:06" popularity="2"/>
+    <track name="Don Esteban" vocal="Instrumental" year="1927-11-15" genre="tango" composer="Augusto Pedro Berto" popularity="5"/>
+    <track name="Don Juan" vocal="Instrumental" year="1928-03-06" genre="tango" composer="Ernesto Ponzio" duration="3:23" popularity="1"/>
+    <track name="Don Juan Malevo" vocal="Instrumental" year="1927-10-18" genre="tango" composer="Francisco Lomuto" duration="3:13" popularity="1"/>
+    <track name="Dónde estás?" vocal="Blanca Mooney" year="1959-06-02" genre="tango" composer="Agustín Magaldi" duration="2:55" popularity="2"/>
+    <track name="Dulce amargura" vocal="Roberto Ray" year="1938-11-23" genre="tango" composer="Virgilio San Clemente" duration="2:29" popularity="5"/>
+    <track name="El barrio murmura" vocal="Ernesto Famá" year="1928-02-28" genre="tango" composer="Carlos Enrique" duration="3:16" popularity="5"/>
+    <track name="El campeón" vocal="Roberto Ray" year="1937-09-17" genre="tango" composer="Juan Carlos Cobián, Enrique Cadícamo" popularity="1"/>
+    <track name="El carrerito" vocal="Ernesto Famá" year="1928-05-03" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Alberto Vacarezza" duration="3:09" popularity="5"/>
+    <track name="El choclo" vocal="Instrumental" year="1947" genre="tango" composer="Ángel Villoldo" author="Enrique Discépolo, Juan Carlos Marambio Catán" duration="3:21" popularity="1"/>
+    <track name="El ciruja" vocal="Instrumental" year="1926" genre="tango" composer="Ernesto de la Cruz" author="Francisco Alfredo Marino" popularity="2"/>
+    <track name="El contagio" vocal="Instrumental" year="1927-10-07" genre="tango" popularity="1"/>
+    <track name="El conventillo" vocal="Instrumental" year="1928-06-15" genre="tango" composer="Ernesto Baffa" duration="3:02" popularity="1"/>
+    <track name="El día de tu ausencia" vocal="Oscar Serpa" year="1943-01-26" genre="tango" composer="Argentino Galván" author="Manuel Arcos" duration="2:23" popularity="2"/>
+    <track name="El encuentro" vocal="Instrumental" year="1923-07-31" genre="" label="Victor" duration="2:44" popularity="1"/>
+    <track name="El entrerriano" vocal="Instrumental" year="1927-03-20" genre="tango" composer="Rosendo Mendizábal" author="Ernesto Temes" duration="2:37" popularity="6"/>
+    <track name="El entrerriano" vocal="Instrumental" year="1944-04-26" genre="tango" composer="Rosendo Mendizábal" author="Ernesto Temes" duration="2:18" popularity="2"/>
+    <track name="El espiante" vocal="Instrumental" year="1927-12-01" genre="tango" composer="Osvaldo Fresedo" duration="2:51" popularity="4"/>
+    <track name="El espiante" vocal="Instrumental" year="1932" genre="tango" composer="Osvaldo Fresedo" duration="2:57" popularity="2"/>
+    <track name="El espiante" vocal="Instrumental" year="1933-03-16" genre="tango" composer="Osvaldo Fresedo" duration="2:42" popularity="3"/>
+    <track name="El espiante" vocal="Instrumental" year="1955-12-29" genre="tango" composer="Osvaldo Fresedo" duration="3:22" popularity="6"/>
+    <track name="El firulete" vocal="Instrumental" year="1939-11-16" genre="tango" composer="Mariano Mores" author="Rodolfo M. Taboada" duration="2:23" popularity="1"/>
+    <track name="El Flaco Abel" vocal="Oscar Luna" year="1961-06-07" genre="tango" author="Eduardo Parula" duration="2:39" popularity="1"/>
+    <track name="El flete" vocal="Instrumental" year="1966" genre="tango" composer="Vicente Greco" author="Gerónimo Gradito" popularity="2"/>
+    <track name="El irresistible" vocal="Instrumental" year="1943-11-12" genre="tango" composer="Lorenzo Logatti" author="Carlos Pesce" duration="2:20" popularity="2"/>
+    <track name="El malevo" vocal="Instrumental" year="1925" genre="tango" composer="Julio De Caro" label="Victor" popularity="1"/>
+    <track name="El mareo" vocal="Roberto Ray" year="1933-06-06" genre="tango" composer="Julio De Caro" author="Mario Gomila" duration="2:49" popularity="6"/>
+    <track name="El Ñato Bernardo" vocal="Instrumental" year="1927-09-13" genre="tango" duration="2:42" popularity="1"/>
+    <track name="El Once (A divertirse)" vocal="Roberto Ray" year="1935-04-05" genre="tango" duration="2:39" popularity="8"/>
+    <track name="El Once (A divertirse)" vocal="Teofilo Ibañez" year="1932" genre="tango" popularity="1"/>
+    <track name="El Once (A divertirse)" vocal="Instrumental" year="1924" genre="tango" popularity="1"/>
+    <track name="El Once (A divertirse)" vocal="Instrumental" year="1927-08-25" genre="tango" duration="2:42" popularity="1"/>
+    <track name="El Once (A divertirse)" vocal="Instrumental" year="1945-11-13" genre="tango" duration="2:39" popularity="3"/>
+    <track name="El Once (A divertirse)" vocal="Instrumental" year="1950" genre="tango" popularity="1"/>
+    <track name="El Once (A divertirse)" vocal="Instrumental" year="1952" genre="tango" duration="2:54" popularity="1"/>
+    <track name="El Once (A divertirse)" vocal="Instrumental" year="1953-05-20" genre="tango" duration="2:58" popularity="5"/>
+    <track name="El pollito" vocal="Instrumental" year="1961-05-26" genre="tango" composer="Francisco Canaro" popularity="5"/>
+    <track name="El quintillo" vocal="Instrumental" year="1937" genre="Pasodoble" popularity="1"/>
+    <track name="El rebelde" vocal="Roberto Ray" year="1932" genre="tango" composer="Juan José Riverol" author="Francisco Antonio Leodiacono" popularity="1"/>
+    <track name="El tarta" vocal="Roberto Ray" year="1933-11-28" genre="tango" composer="José María Rizzuti" author="Emilio Augusto Oscar Fresedo" duration="2:38" popularity="1"/>
+    <track name="El último rodeo" vocal="Roberto Ray" year="1934-04-27" genre="Foxtrot" popularity="2"/>
+    <track name="El zorzal" vocal="Instrumental" year="1923-10-29" genre="tango" label="Victor" popularity="1"/>
+    <track name="Elegante papirusa" vocal="Instrumental" year="1922-07-21" genre="tango" composer="David Roccatagliata" author="Sandalio Gomez" label="Victor" popularity="1"/>
+    <track name="Eliana" vocal="Instrumental" year="1925-04-07" genre="tango" popularity="2"/>
+    <track name="En cada puerto un adiós" vocal="Oscar Serpa" year="1944-11-09" genre="tango" author="Carlos Bahr" duration="2:41" popularity="2"/>
+    <track name="En este rincón amigo" vocal="Ricardo Ruiz" year="1941-01-13" genre="tango" duration="2:31" popularity="3"/>
+    <track name="En la huella del dolor" vocal="Roberto Ray" year="1934-04-27" genre="tango" composer="Guillermo Del Ciancio" author="Guillermo Del Ciancio" duration="2:45" popularity="10"/>
+    <track name="En la noria" vocal="Roberto Ray" year="1933-05-08" genre="canción" composer="Osvaldo Fresedo" author="Venancio Clauso" popularity="2"/>
+    <track name="En mis noches" vocal="Instrumental" year="1956-05-16" genre="tango" duration="2:10" popularity="3"/>
+    <track name="En un rincón" vocal="Oscar Serpa" year="1944-06-15" genre="tango" composer="Héctor María Artola" author="Homero Manzi" duration="2:19" popularity="2"/>
+    <track name="Enamorado estoy" vocal="Hugo Marcel" year="1961-05-26" genre="tango" composer="José Márquez" author="Oscar Nicolás Fresedo" duration="2:32" popularity="2"/>
+    <track name="Ensueños" vocal="Instrumental" year="1928-05-23" genre="tango" composer="Luis Brighenti" author="Enrique Cadícamo" popularity="2"/>
+    <track name="Entrá nomás" vocal="Instrumental" year="1925" genre="tango" author="Francisco Antonio Bastardi" popularity="1"/>
+    <track name="Entra sin miedo hermana" vocal="Instrumental" year="1927" genre="tango" composer="Raúl Joaquín de los Hoyos" popularity="2"/>
+    <track name="Entrada prohibida" vocal="Genaro Veiga" year="1930" genre="tango" composer="Luis Teisseire" author="Juan Andrés Caruso" popularity="1"/>
+    <track name="Entre rejas" vocal="Instrumental" year="1924" genre="tango" composer="Osvaldo Larrea" author="Antonio Bartrina" label="Victor" popularity="2"/>
+    <track name="Era de ley" vocal="Ernesto Famá" year="1928-04-24" genre="tango" duration="3:20" popularity="1"/>
+    <track name="Es costumbre o es cariño?" vocal="Carlos Mayel" year="1940-10-03" genre="tango" composer="Luis Petrucelli" author="Enrique Cadícamo" duration="2:57" popularity="3"/>
+    <track name="Es mejor olvidar" vocal="Hugo Marcel" year="1959-05-07" genre="tango" composer="Héctor Stamponi" duration="3:49" popularity="2"/>
+    <track name="Esperar" vocal="Roberto Ray" year="1937-08-02" genre="vals" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:08" popularity="3"/>
+    <track name="Esta noche" vocal="Carlos Mayel" year="1940-04-20" genre="tango" composer="Carlos Marcucci" author="Lito Bayardo" duration="2:24" popularity="4"/>
+    <track name="Esta noche me emborracho" vocal="Ernesto Famá" year="1928-05-03" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:07" popularity="6"/>
+    <track name="Estás aquí" vocal="Carlos Barrios" year="1956-05-16" genre="tango" popularity="1"/>
+    <track name="Este viejo corazón" vocal="Oscar Serpa" year="1943-04-09" genre="tango" duration="2:18" popularity="1"/>
+    <track name="Estudiantina" vocal="Roberto Ray" year="1937-08-02" genre="vals" popularity="1"/>
+    <track name="Fama" vocal="Instrumental" year="1928-03-06" genre="tango" duration="2:52" popularity="2"/>
+    <track name="Fantasma" vocal="Oscar Serpa" year="1944-12-28" genre="tango" composer="Enrique Delfino" author="Cátulo Castillo" duration="2:49" popularity="2"/>
+    <track name="Fea" vocal="Carlos Gardel" year="1925" genre="tango" composer="Horacio Pettorossi" author="Alfredo Navarrine" duration="2:50" popularity="2"/>
+    <track name="Felicia" vocal="Instrumental" year="1927-10-10" genre="tango" composer="Enrique Saborido" author="Carlos Mauricio Pacheco" popularity="3"/>
+    <track name="Fierrito" vocal="Instrumental" year="1927-06-18" genre="tango" composer="Udelino Toranzo" popularity="1"/>
+    <track name="Flores" vocal="Instrumental" year="1927-07-19" genre="tango" composer="Enrique Maciel" author="Enrique Cadícamo" popularity="1"/>
+    <track name="Frases de amor" vocal="Instrumental" year="1927-07-12" genre="tango" duration="3:18" popularity="1"/>
+    <track name="Fresedo" vocal="Instrumental" year="1923-09-24" genre="tango" composer="Julio De Caro" label="Victor" popularity="2"/>
+    <track name="Frivolité" vocal="Instrumental" year="1927" genre="" composer="Enrique Delfino" popularity="1"/>
+    <track name="Frivolité" vocal="Instrumental" year="1928-05-19" genre="tango" composer="Enrique Delfino" popularity="1"/>
+    <track name="Fugitiva" vocal="Héctor Pacheco" year="1952" genre="tango" composer="Astor Piazzolla" duration="2:55" popularity="8"/>
+    <track name="Fui testigo" vocal="Oscar Serpa" year="1943-04-09" genre="tango" duration="2:37" popularity="2"/>
+    <track name="Fuimos" vocal="Oscar Serpa" year="1946-07-26" genre="tango" composer="José Dames" author="Homero Manzi" duration="3:07" popularity="3"/>
+    <track name="Fumando espero" vocal="Instrumental" year="1927-11-08" genre="tango" duration="3:18" popularity="4"/>
+    <track name="Gitana rusa" vocal="Oscar Serpa" year="1942-11-27" genre="tango" composer="Juan Sánchez Gorio" author="Horacio Sanguinetti" duration="3:21" popularity="2"/>
+    <track name="Golondrinas" vocal="Instrumental" year="1963" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" popularity="2"/>
+    <track name="Griseta" vocal="Instrumental" year="1944-07-31" genre="tango" composer="Enrique Delfino" author="José González Castillo (Juan de León)" duration="2:17" popularity="4"/>
+    <track name="Guitarra gaucha" vocal="Ernesto Famá" year="1928-07-17" genre="tango" composer="Benjamin Tagle Lara" duration="3:10" popularity="1"/>
+    <track name="Ha-cha-cha" vocal="Roberto Ray" year="1935-06-23" genre="Foxtrot" popularity="3"/>
+    <track name="Hablemos claramente" vocal="Ricardo Ruiz" year="1941-10-10" genre="tango" composer="Osvaldo Fresedo" duration="2:48" popularity="4"/>
+    <track name="Háceme caso a mí" vocal="Ernesto Famá" year="1928-08-11" genre="tango" composer="Gerardo Matos Rodríguez" popularity="1"/>
+    <track name="Has vuelto hermano" vocal="Instrumental" year="1928-04-03" genre="tango" popularity="1"/>
+    <track name="Hasta cuándo?" vocal="Instrumental" year="1923-11-12" genre="tango" composer="Pedro Maffia" author="Juan Carlos Thorry" label="Victor" duration="3:02" popularity="1"/>
+    <track name="Hasta Dempsey ... no para" vocal="Instrumental" year="1922-12-20" genre="tango" label="Victor" duration="3:12" popularity="1"/>
+    <track name="Hermana" vocal="Oscar Serpa" year="1946-11-26" genre="tango" composer="Lucio Demare" author="Homero Manzi" duration="3:10" popularity="2"/>
+    <track name="Hijos de nadie" vocal="Ernesto Famá" year="1928-07-03" genre="tango" duration="2:56" popularity="3"/>
+    <track name="Hollín" vocal="Instrumental" year="1927" genre="tango" composer="José María Rizzuti" popularity="2"/>
+    <track name="Hoy te toca reir" vocal="Teofilo Ibañez" year="1932" genre="tango" popularity="1"/>
+    <track name="Ilusión perdida" vocal="Instrumental" year="1923-10-01" genre="tango" label="Victor" duration="3:02" popularity="1"/>
+    <track name="Inquietud" vocal="Ricardo Ruiz" year="1939-07-12" genre="tango" composer="Enrique Francini, Héctor Stamponi" author="Oscar Rubens" duration="2:29" popularity="5"/>
+    <track name="Intimas" vocal="Instrumental" year="1927" genre="tango" composer="Alfonso Lacueva" author="Ricardo Luis Brignolo" duration="2:56" popularity="1"/>
+    <track name="Ironías" vocal="Instrumental" year="1927-10-17" genre="tango" duration="2:53" popularity="5"/>
+    <track name="Isla de Capri" vocal="Roberto Ray" year="1935-02-15" genre="tango" duration="3:12" popularity="9"/>
+    <track name="Jamás retornarás" vocal="Oscar Serpa" year="1943-06-28" genre="tango" composer="Osmar Maderna" author="Miguel Caló" duration="2:45" popularity="3"/>
+    <track name="Jornada campera" vocal="Instrumental" year="1923-11-07" genre="tango" composer="Nicolás Salvador Blois" label="Victor" popularity="2"/>
+    <track name="Jueves" vocal="Instrumental" year="1927-11-15" genre="tango" composer="Rafael Rossi, Udelino Toranzo" duration="2:59" popularity="1"/>
+    <track name="Juguete de amor" vocal="Ernesto Famá" year="1928-03-06" genre="tango" duration="2:46" popularity="1"/>
+    <track name="Julián" vocal="Blanca Mooney" year="1959-01-26" genre="tango" composer="Edgardo Donato" popularity="2"/>
+    <track name="Julián" vocal="Instrumental" year="1923-12-14" genre="tango" composer="Edgardo Donato" label="Victor" popularity="1"/>
+    <track name="Julián" vocal="Instrumental" year="1945-11-19" genre="tango" composer="Edgardo Donato" duration="2:30" popularity="2"/>
+    <track name="La cachila" vocal="Instrumental" year="1927-11-15" genre="tango" composer="Eduardo Arolas" author="Héctor Polito" duration="3:11" popularity="2"/>
+    <track name="La cachila" vocal="Instrumental" year="1932" genre="tango" composer="Eduardo Arolas" author="Héctor Polito" duration="3:18" popularity="1"/>
+    <track name="La casita de mis viejos | La casita de mis padres" vocal="Héctor Pacheco" year="1952-09-18" genre="tango" duration="3:15" popularity="6"/>
+    <track name="La cieguita" vocal="Instrumental" year="1927-05-26" genre="tango" popularity="6"/>
+    <track name="La clavada" vocal="Instrumental" year="1933-12-27" genre="tango" composer="Ernesto F. Zambonini" author="Ernesto F. Zambonini" duration="2:23" popularity="5"/>
+    <track name="La copa del olvido" vocal="Héctor Pacheco" year="1952-07-18" genre="tango" composer="Enrique Delfino" author="Alberto Vacarezza" duration="2:51" popularity="7"/>
+    <track name="La cumparsita" vocal="Instrumental" year="1927-05-03" genre="tango" composer="Gerardo Matos Rodríguez" author="Pascual Contursi, Enrique Maroni, Gerardo Matos Rodríguez" duration="2:43" popularity="5"/>
+    <track name="La cumparsita" vocal="Instrumental" year="1943-06-28" genre="tango" composer="Gerardo Matos Rodríguez" author="Pascual Contursi, Enrique Maroni, Gerardo Matos Rodríguez" duration="2:25" popularity="5"/>
+    <track name="La lluvia y yo" vocal="Oscar Serpa" year="1946-08-06" genre="tango" composer="José Tinelli" author="Pascual Contursi" duration="3:07" popularity="3"/>
+    <track name="La marcha de los marinos" vocal="Instrumental" year="1933" genre="Pasodoble marcha" popularity="1"/>
+    <track name="La mariposa" vocal="Instrumental" year="1945-08-23" genre="tango" composer="Pedro Maffia" author="Celedonio Flores" duration="2:20" popularity="4"/>
+    <track name="La muchacha del circo" vocal="Instrumental" year="1928-07-26" genre="tango" composer="Gerardo Matos Rodríguez" author="Manuel Romero" duration="3:24" popularity="1"/>
+    <track name="La puñalada" vocal="Instrumental" year="1950-12-19" genre="milonga" composer="Pintín Castellanos" author="Celedonio Flores" duration="2:32" popularity="15"/>
+    <track name="La quema" vocal="Instrumental" year="1927-11-04" genre="tango" duration="3:33" popularity="2"/>
+    <track name="La rumbita candombé" vocal="Oscar Serpa" year="1943-06-28" genre="milonga" composer="Osvaldo Novarro, Raúl Fortunato" author="Mario Battistella" duration="2:33" popularity="2"/>
+    <track name="La trampera" vocal="Instrumental" year="1951-09-03" genre="milonga" composer="Aníbal Troilo" duration="2:28" popularity="7"/>
+    <track name="La última carta" vocal="Ernesto Famá" year="1928-06-13" genre="tango" composer="Agustín Magaldi, Pedro Noda" author="Carlos Pesce" duration="3:24" popularity="4"/>
+    <track name="La vieja está la cueva" vocal="Ernesto Famá" year="1928-06-18" genre="tango" duration="3:15" popularity="1"/>
+    <track name="La violetera" vocal="Instrumental" year="1927-01-25" genre="tango" composer="Anselmo Aieta" author="Francisco García" popularity="1"/>
+    <track name="La viruta" vocal="Instrumental" year="1957-09-27" genre="tango" composer="Vicente Greco" author="Ernesto Temes" duration="3:31" popularity="6"/>
+    <track name="Lamento borincano" vocal="Roberto Ray" year="1935-05-18" genre="rumba" author="Rafael Hernandez" popularity="2"/>
+    <track name="Leguisamo solo" vocal="-choir-" year="1927-08-25" genre="tango" composer="Modesto Hugo Papavero" author="Modesto Hugo Papavero" popularity="5"/>
+    <track name="Levanta tu corazón" vocal="Oscar Serpa" year="1946-08-06" genre="tango" composer="Venancio Clauso" author="Venancio Clauso" duration="2:38" popularity="3"/>
+    <track name="Libre" vocal="Oscar Serpa" year="1945-11-13" genre="tango" author="Homero Expósito" duration="2:55" popularity="3"/>
+    <track name="Llamada de amor porteño" vocal="Carlos Mayel" year="1941-01-13" genre="tango" duration="2:24" popularity="3"/>
+    <track name="Llevátelo todo" vocal="Ernesto Famá" year="1928-05-03" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="3:25" popularity="5"/>
+    <track name="Llevátelo todo" vocal="Instrumental" year="1927" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" popularity="1"/>
+    <track name="Lluvia sobre el mar" vocal="Héctor Pacheco" year="1952-12-23" genre="tango" composer="Armando Pontier" author="José María Contursi" duration="3:46" popularity="6"/>
+    <track name="Lo han visto con otra" vocal="Héctor Pacheco" year="1952-11-02" genre="tango" composer="Horacio Pettorossi" author="Horacio Pettorossi" duration="3:01" popularity="4"/>
+    <track name="Loquita" vocal="Instrumental" year="1927-08-16" genre="tango" duration="3:05" popularity="2"/>
+    <track name="Lorenzo" vocal="Instrumental" year="1927-05-26" genre="tango" composer="Agustín Bardi" author="Mario Alberto Pardo" duration="2:52" popularity="4"/>
+    <track name="Los dopados" vocal="Instrumental" year="1922-08-25" genre="tango" composer="Manuel Romero" label="Victor" popularity="1"/>
+    <track name="Los rosales" vocal="Instrumental" year="1923-05-15" genre="tango" label="Victor" popularity="2"/>
+    <track name="Luciérnaga" vocal="Instrumental" year="1925" genre="tango" label="Victor" duration="3:08" popularity="1"/>
+    <track name="Madre mía" vocal="Instrumental" year="1927-09-27" genre="tango" composer="Antonio J. Trelles" author="Antonio J. Trelles" popularity="4"/>
+    <track name="Madrecita buena" vocal="Instrumental" year="1928-06-15" genre="tango" duration="3:24" popularity="2"/>
+    <track name="Madrecita mala" vocal="Genaro Veiga" year="1930" genre="" popularity="1"/>
+    <track name="Madrecita mala" vocal="Teofilo Ibañez" year="1932" genre="tango" popularity="1"/>
+    <track name="Majestuoso" vocal="Instrumental" year="1928-09-02" genre="tango" duration="3:11" popularity="4"/>
+    <track name="Mala entraña" vocal="Instrumental" year="1927-08-25" genre="tango" composer="Enrique Maciel" author="Celedonio Flores" duration="3:08" popularity="1"/>
+    <track name="Maldonado" vocal="Ernesto Famá" year="1928-02-07" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Alberto Vacarezza" duration="3:25" popularity="2"/>
+    <track name="Maleza" vocal="Oscar Serpa" year="1945-11-06" genre="tango" composer="Enrique Juan Munne" author="Cátulo Castillo" duration="2:32" popularity="3"/>
+    <track name="Mamá, cuco" vocal="Instrumental" year="1927-09-13" genre="tango" composer="Enrique Delfino" duration="2:46" popularity="2"/>
+    <track name="Mamá, yo quiero un novio" vocal="Pilar Arcos" year="1930" genre="tango" composer="Ramón Collazo" author="Roberto Fontaina" popularity="1"/>
+    <track name="Mañana iré temprano" vocal="Oscar Serpa" year="1943-12-01" genre="tango" composer="Enrique Francini" author="Carlos Bahr" duration="3:23" popularity="1"/>
+    <track name="Manón" vocal="Oscar Serpa" year="1942-07-17" genre="tango" duration="2:46" popularity="2"/>
+    <track name="Marcas" vocal="Carlos Mayel" year="1941-09-17" genre="tango" composer="Héctor María Artola" author="Carlos Bahr" duration="2:27" popularity="5"/>
+    <track name="Mariposita" vocal="Instrumental" year="1941-06-19" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="2:25" popularity="5"/>
+    <track name="Marquesita" vocal="Instrumental" year="1927-12-22" genre="tango" popularity="1"/>
+    <track name="Más allá" vocal="Ricardo Ruiz" year="1939-07-12" genre="tango" composer="Joaquín Mora" author="José María Contursi" duration="2:40" popularity="5"/>
+    <track name="Más allá" vocal="Oscar Serpa" year="1945-08-23" genre="vals" composer="Joaquín Mora" author="José María Contursi" duration="2:48" popularity="5"/>
+    <track name="Media noche" vocal="Instrumental" year="1927-08-25" genre="tango" composer="Aníbal Troilo" author="Héctor Gagliardi" popularity="2"/>
+    <track name="Media vida" vocal="Roberto Ray" year="1938-09-03" genre="tango" composer="Julio N. Vega" author="Enrique Dizeo" duration="2:07" popularity="3"/>
+    <track name="Melenita negra" vocal="Juan Carlos Thorry" year="1927-08-01" genre="tango" duration="2:52" popularity="3"/>
+    <track name="Meneca" vocal="Instrumental" year="1927-07-19" genre="tango" popularity="4"/>
+    <track name="Mentira" vocal="Luis Díaz" year="1932" genre="tango" composer="Francisco Pracánico" author="Celedonio Flores" popularity="1"/>
+    <track name="Metido | Enamorado" vocal="Roberto Ray" year="1932" genre="tango" duration="2:49" popularity="1"/>
+    <track name="Mi adorable desconocida" vocal="Héctor Pacheco" year="1952-12-18" genre="tango" duration="3:15" popularity="1"/>
+    <track name="Mi Buenos Aires querido" vocal="Instrumental" year="1966" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" popularity="2"/>
+    <track name="Mi gitana" vocal="Ricardo Ruiz" year="1939-03-10" genre="tango" author="Enrique Cadícamo" duration="2:47" popularity="4"/>
+    <track name="Mi maga" vocal="Instrumental" year="1923-09-05" genre="tango" label="Victor" duration="2:49" popularity="1"/>
+    <track name="Mi nataí" vocal="Oscar Serpa" year="1945-08-23" genre="tango" popularity="2"/>
+    <track name="Mi piano" vocal="Oscar Serpa" year="1944-12-28" genre="tango" popularity="1"/>
+    <track name="Mi refugio" vocal="Instrumental" year="1922-05-24" genre="tango" composer="Juan Carlos Cobián" author="Pedro Numa Cordoba" label="Victor" popularity="1"/>
+    <track name="Mi viejo reloj" vocal="Instrumental" year="1950-10-25" genre="tango" composer="Osvaldo Fresedo" duration="2:46" popularity="5"/>
+    <track name="Micifuz" vocal="Instrumental" year="1927" genre="tango" composer="Adolfo Rafael Avilés" author="Enrique Maroni" duration="2:59" popularity="1"/>
+    <track name="Migaja" vocal="Carlos Barrios" year="1963-05-02" genre="tango" composer="Eduardo Armani" author="Eduardo Armani" duration="3:12" popularity="1"/>
+    <track name="Milonga con variación" vocal="Instrumental" year="1927-09-21" genre="tango" composer="Francisco Canaro" popularity="3"/>
+    <track name="Milonguero viejo" vocal="Ernesto Famá" year="1928-02-24" genre="tango" composer="Carlos Di Sarli" author="Enrique Carrera Sotelo" popularity="1"/>
+    <track name="Milonguita | Esthercita" vocal="Instrumental" year="1944-03-03" genre="tango" duration="2:26" popularity="5"/>
+    <track name="Motivo de vals" vocal="Osvaldo Cordó" year="1948-09-29" genre="vals" composer="Horacio Salgán" author="Carlos Bahr" duration="3:40" popularity="2"/>
+    <track name="Mueble viejo" vocal="Ernesto Famá" year="1928-02-24" genre="tango" composer="Raúl Joaquín de los Hoyos" popularity="5"/>
+    <track name="Mujer que yo soñé" vocal="Instrumental" year="1927-05-28" genre="tango" popularity="3"/>
+    <track name="Muñequita de París" vocal="Héctor Pacheco" year="1955" genre="tango" composer="José Ranieri" author="José Rótulo" duration="2:50" popularity="3"/>
+    <track name="Murió la pebeta" vocal="Instrumental" year="1923-09-17" genre="tango" label="Victor" popularity="1"/>
+    <track name="N.P. | No placé" vocal="Instrumental" year="1951" genre="tango" duration="2:29" popularity="1"/>
+    <track name="Na ná" vocal="Oscar Serpa" year="1944-06-30" genre="tango" duration="2:42" popularity="2"/>
+    <track name="Negra María" vocal="Carlos Roldán" year="1941-10-10" genre="candombe" composer="Lucio Demare" author="Homero Manzi" duration="2:51" popularity="8"/>
+    <track name="Nidito azul" vocal="Carlos Mayel" year="1940-10-03" genre="tango" composer="Pascual Biafore" author="Pascual Biafore" duration="2:37" popularity="2"/>
+    <track name="Niebla del Riachuelo" vocal="Roberto Ray" year="1937-09-17" genre="tango" composer="Juan Carlos Cobián" author="Enrique Cadícamo" duration="2:26" popularity="12"/>
+    <track name="Ninguna" vocal="Héctor Pacheco" year="1952-05-13" genre="tango" author="Homero Manzi" duration="2:50" popularity="9"/>
+    <track name="No hay cianuro" vocal="Instrumental" year="1927-03-23" genre="tango" duration="2:43" popularity="4"/>
+    <track name="No llores" vocal="Instrumental" year="1926" genre="tango" popularity="1"/>
+    <track name="No me falles corazón" vocal="Oscar Serpa" year="1945-05-24" genre="tango" popularity="1"/>
+    <track name="No preciso" vocal="Ricardo Ruiz" year="1941-11-17" genre="tango" duration="2:31" popularity="3"/>
+    <track name="No quiero verte llorar" vocal="Roberto Ray" year="1937-05-12" genre="tango" composer="Agustín Magaldi" author="Rodolfo Sciammarella" duration="2:42" popularity="17"/>
+    <track name="No salgas de tu barrio" vocal="Instrumental" year="1927" genre="tango" composer="Enrique Delfino" author="Arturo Rodríguez Bustamante" duration="2:37" popularity="1"/>
+    <track name="No seas tonta" vocal="Instrumental" year="1926" genre="tango" duration="2:47" popularity="1"/>
+    <track name="No supe vivir" vocal="Roberto Ray" year="1937" genre="tango" popularity="1"/>
+    <track name="Noche de reyes" vocal="Instrumental" year="1927-10-17" genre="tango" composer="Pedro Maffia" author="Jorge Curi" duration="3:27" popularity="2"/>
+    <track name="Noches de Colón" vocal="Instrumental" year="1927-09-16" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Roberto Lino Cayol" duration="2:28" popularity="6"/>
+    <track name="Noches largas" vocal="Oscar Serpa" year="1945-11-06" genre="tango" composer="Astor Piazzolla" author="Carlos Bahr" duration="3:14" popularity="4"/>
+    <track name="Noches porteñas" vocal="Instrumental" year="1933-03-16" genre="Pasodoble" popularity="1"/>
+    <track name="Normiña" vocal="Instrumental" year="1926-12-07" genre="tango" composer="Eduardo Armani" duration="2:35" popularity="1"/>
+    <track name="Nostalgias" vocal="Héctor Pacheco" year="1952-11-21" genre="tango" composer="Juan Carlos Cobián" author="Enrique Cadícamo" duration="3:27" popularity="8"/>
+    <track name="Nuestra casita" vocal="Oscar Serpa" year="1943-08-25" genre="tango" duration="2:39" popularity="3"/>
+    <track name="Oiga!" vocal="Instrumental" year="1927" genre="tango" duration="2:56" popularity="1"/>
+    <track name="Ojos negros" vocal="Instrumental" year="1927-10-17" genre="tango" composer="Vicente Greco" author="Ernesto Temes" duration="2:59" popularity="2"/>
+    <track name="Ojos tristes | Ojos muertos" vocal="Roberto Ray" year="1938-11-23" genre="tango" duration="2:37" popularity="2"/>
+    <track name="Oro y seda" vocal="Ada Falcón" year="1925-05-02" genre="tango" composer="Osvaldo Fresedo" duration="2:52" popularity="1"/>
+    <track name="Osvaldo" vocal="Instrumental" year="1927-07-13" genre="tango" duration="3:02" popularity="4"/>
+    <track name="Otoño" vocal="Instrumental" year="1927" genre="tango" popularity="2"/>
+    <track name="Otra vez" vocal="Instrumental" year="1927-09-27" genre="tango" composer="Jorge Fernández" author="José María Contursi" popularity="4"/>
+    <track name="Paisaje" vocal="Armando Garrido" year="1951-08-09" genre="tango" composer="Enrique Delfino" author="Juan Bautista Abad Reyes" duration="3:16" popularity="5"/>
+    <track name="Palabra de honor" vocal="Instrumental" year="1925-06-05" genre="tango" composer="Alfredo Bigeschi" label="Victor" popularity="1"/>
+    <track name="Pampero" vocal="Héctor Pacheco" year="1952-08-21" genre="tango" composer="Osvaldo Fresedo" author="Edmundo Bianchi" duration="3:00" popularity="7"/>
+    <track name="Pampero" vocal="Roberto Ray" year="1935-02-15" genre="tango" composer="Osvaldo Fresedo" author="Edmundo Bianchi" duration="2:45" popularity="5"/>
+    <track name="Pampero" vocal="Roberto Ray" year="1948-09-29" genre="tango" composer="Osvaldo Fresedo" author="Edmundo Bianchi" popularity="2"/>
+    <track name="Pan amargo" vocal="Instrumental" year="1927" genre="tango" popularity="2"/>
+    <track name="Papirusa" vocal="Instrumental" year="1928-07-10" genre="tango" composer="Arturo Vicente De Bassi" author="Arturo Vicente De Bassi" duration="2:54" popularity="1"/>
+    <track name="Para lucirse" vocal="Instrumental" year="1950-10-23" genre="tango" composer="Astor Piazzolla" duration="3:30" popularity="6"/>
+    <track name="París" vocal="Instrumental" year="1926" genre="tango" composer="Francisco Canaro, Mariano Mores" author="Ivo Pelay" duration="3:09" popularity="2"/>
+    <track name="Partir lejos" vocal="Oscar Serpa" year="1943-05-06" genre="tango" duration="2:52" popularity="1"/>
+    <track name="Pasión inolvidable" vocal="Héctor Pacheco" year="1953-09-15" genre="tango" duration="3:20" popularity="1"/>
+    <track name="Paso a paso" vocal="Instrumental" year="1927" genre="tango" popularity="2"/>
+    <track name="Paternal" vocal="Instrumental" year="1927-11-15" genre="tango" composer="Jorge Caldara" duration="2:53" popularity="4"/>
+    <track name="Patotero sentimental" vocal="Héctor Pacheco" year="1952-10-16" genre="tango" composer="Manuel Jovés" author="Manuel Romero" duration="2:57" popularity="9"/>
+    <track name="Pebeta canyengue" vocal="Juan Carlos Thorry" year="1927-11-04" genre="tango" popularity="2"/>
+    <track name="Pegaste la falta" vocal="Instrumental" year="1927" genre="" popularity="1"/>
+    <track name="Penitencia" vocal="Instrumental" year="1927-08-03" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="2:54" popularity="2"/>
+    <track name="Pénsalo bien" vocal="Instrumental" year="1926" genre="tango" composer="Juan Visciglio" author="Nolo López, Julio Alberto" popularity="3"/>
+    <track name="Pensando en tí" vocal="Juan Carlos Thorry" year="1927" genre="tango" composer="Roberto Firpo" author="Vicente Planells del Campo" duration="3:07" popularity="3"/>
+    <track name="Penumbras" vocal="Roberto Ray" year="1939-01-03" genre="tango" composer="Pascual Storti" author="Jorge Ocampo" duration="2:22" popularity="3"/>
+    <track name="Percantina" vocal="Instrumental" year="1928-05-03" genre="tango" duration="3:24" popularity="1"/>
+    <track name="Perdón viejita" vocal="Carlos Gardel" year="1925" genre="tango" composer="Osvaldo Fresedo" duration="2:25" popularity="1"/>
+    <track name="Perdón viejita" vocal="Instrumental" year="1925" genre="tango" composer="Osvaldo Fresedo" popularity="3"/>
+    <track name="Perdón viejita" vocal="Instrumental" year="1927-05-26" genre="tango" composer="Osvaldo Fresedo" duration="2:50" popularity="6"/>
+    <track name="Perdóname" vocal="Héctor Pacheco" year="1954-12-03" genre="tango" composer="Ciriaco Ortiz" author="Enrique Cadícamo" duration="3:30" popularity="5"/>
+    <track name="Perdone amigazo" vocal="Ernesto Famá" year="1928-03-06" genre="tango" popularity="3"/>
+    <track name="Perfume de mujer" vocal="Juan Carlos Thorry" year="1927-11-04" genre="tango" composer="Juan José Martín Guichandut" author="Armando Tagini" popularity="1"/>
+    <track name="Pero yo sé" vocal="Héctor Pacheco" year="1952-05-13" genre="tango" composer="Azucena Maizani" author="Azucena Maizani" duration="2:58" popularity="11"/>
+    <track name="Pero yo sé" vocal="Ernesto Famá" year="1928-08-11" genre="tango" composer="Azucena Maizani" author="Azucena Maizani" duration="2:46" popularity="2"/>
+    <track name="Perro e' sulky" vocal="Carlos Barrios" year="1961-09-14" genre="tango" composer="Héctor Stamponi" author="Oscar Nicolás Fresedo" duration="2:50" popularity="1"/>
+    <track name="Picaflor" vocal="Instrumental" year="1927-12-01" genre="tango" composer="Edgardo Donato" author="Maximo José Orsi" duration="3:11" popularity="3"/>
+    <track name="Piedad" vocal="Ernesto Famá" year="1928-10-09" genre="tango" duration="3:15" popularity="4"/>
+    <track name="Piedad" vocal="Instrumental" year="1924-12-31" genre="tango" label="Victor" duration="2:39" popularity="1"/>
+    <track name="Pimienta" vocal="Instrumental" year="1962" genre="tango" popularity="1"/>
+    <track name="Pimienta" vocal="Instrumental" year="1939-03-10" genre="tango" popularity="3"/>
+    <track name="Plegaria" vocal="Ricardo Ruiz" year="1940-04-20" genre="tango" composer="Antonio Sureda" author="Gerónimo Sureda" duration="2:23" popularity="7"/>
+    <track name="Pobre chica" vocal="Ada Falcón" year="1925-07-15" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" popularity="1"/>
+    <track name="Pobre gringo" vocal="Ernesto Famá" year="1928-03-20" genre="tango" composer="Antonio Scatasso" author="Juan Andrés Caruso, Alberto Vacarezza" duration="3:19" popularity="5"/>
+    <track name="Pobre rancho" vocal="Instrumental" year="1927-08-03" genre="tango" duration="3:05" popularity="1"/>
+    <track name="Poliya" vocal="Instrumental" year="1939-11-16" genre="tango" duration="2:46" popularity="2"/>
+    <track name="Por calles muertas" vocal="Osvaldo Cordó" year="1948-07-16" genre="tango" composer="Sebastián Lombardo" author="José María Contursi" duration="2:56" popularity="1"/>
+    <track name="Por dónde andará" vocal="Instrumental" year="1926-12-28" genre="tango" composer="Salvador Merico" author="Atilio Supparo" duration="3:10" popularity="1"/>
+    <track name="Por fin solos" vocal="Instrumental" year="1923" genre="tango" popularity="1"/>
+    <track name="Por la cuesta arriba" vocal="Oscar Serpa" year="1945-11-19" genre="tango" composer="Argentino Galván" author="Carlos Bahr" duration="2:32" popularity="2"/>
+    <track name="Por la vuelta" vocal="Héctor Pacheco" year="1956" genre="tango" composer="José Tinelli" author="Enrique Cadícamo" duration="3:50" popularity="1"/>
+    <track name="Por qué?" vocal="Oscar Serpa" year="1943-01-25" genre="tango" composer="Alfredo Malerba" author="Homero Manzi" duration="3:07" popularity="4"/>
+    <track name="Por qué?" vocal="Teofilo Ibañez" year="1932" genre="tango" composer="Alfredo Malerba" author="Homero Manzi" popularity="2"/>
+    <track name="Por qué?" vocal="Instrumental" year="1955-07-19" genre="tango" composer="Alfredo Malerba" author="Homero Manzi" duration="3:30" popularity="2"/>
+    <track name="Por su culpa" vocal="Instrumental" year="1928" genre="tango" popularity="2"/>
+    <track name="Por tu culpa" vocal="Instrumental" year="1926" genre="tango" composer="Anselmo Aieta" duration="2:53" popularity="1"/>
+    <track name="Pordiosera" vocal="Instrumental" year="1928-06-13" genre="tango" composer="Antonio Bonavena" popularity="1"/>
+    <track name="Potrero" vocal="Roberto Ray" year="1948" genre="tango" popularity="1"/>
+    <track name="Poyita" vocal="Instrumental" year="1939-11-16" genre="" popularity="1"/>
+    <track name="Preludio No 3" vocal="Instrumental" year="1953-09-15" genre="" duration="3:40" popularity="1"/>
+    <track name="Preludio No 3" vocal="Instrumental" year="1956" genre="tango" duration="3:57" popularity="1"/>
+    <track name="Prepárense" vocal="Instrumental" year="1950-05-03" genre="tango" composer="Astor Piazzolla" duration="3:16" popularity="12"/>
+    <track name="Promesa cumplida" vocal="Instrumental" year="1928-05-03" genre="tango" duration="3:20" popularity="3"/>
+    <track name="Pura pierna" vocal="Instrumental" year="1923-12-04" genre="tango" label="Victor" popularity="2"/>
+    <track name="Purrete de mi amor" vocal="Instrumental" year="1927-07-30" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Luis Bayon Herrera" duration="3:01" popularity="1"/>
+    <track name="Que 'sapa' senor" vocal="Teofilo Ibañez" year="1932" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="1"/>
+    <track name="Que lejos mi Buenos Aires" vocal="Hugo Marcel" year="1959-01-12" genre="tango" composer="Roberto Pansera" duration="2:41" popularity="2"/>
+    <track name="Qué lindo es estar metido | Que lindo es enamorarse" vocal="Ernesto Famá" year="1928-02-07" genre="tango" popularity="4"/>
+    <track name="Que tragedia señor" vocal="Roberto Ray" year="1933-05-08" genre="tango" duration="2:44" popularity="1"/>
+    <track name="Queja campera" vocal="Instrumental" year="1922-11-12" genre="tango" duration="2:48" popularity="2"/>
+    <track name="Queja indiana" vocal="Juan Carlos Thorry" year="1927-11-04" genre="tango" composer="Juan Carlos Rodríguez" author="Juan Miguel Velich" popularity="3"/>
+    <track name="Quemá esas cartas" vocal="Ernesto Famá" year="1928-03-27" genre="tango" composer="Alberto Cosentino" duration="3:10" popularity="3"/>
+    <track name="Queridita mia" vocal="Instrumental" year="1923-05-15" genre="tango" label="Victor" duration="2:54" popularity="1"/>
+    <track name="Quiero estar solo" vocal="Instrumental" year="1928-05-29" genre="tango" popularity="1"/>
+    <track name="Ramas de sauce" vocal="Instrumental" year="1923-04-17" genre="tango" label="Victor" popularity="1"/>
+    <track name="Rawson" vocal="Instrumental" year="1928-02-28" genre="tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="2:50" popularity="1"/>
+    <track name="Re Fa Si" vocal="Instrumental" year="1928-04-03" genre="tango" composer="Enrique Delfino" duration="2:53" popularity="5"/>
+    <track name="Re Fa Si" vocal="Instrumental" year="1959" genre="tango" composer="Enrique Delfino" popularity="1"/>
+    <track name="Recuerdos de bohemia" vocal="Roberto Ray" year="1935-11-22" genre="tango" composer="Enrique Delfino" author="Manuel Romero" duration="2:34" popularity="9"/>
+    <track name="Redoblona" vocal="Instrumental" year="1927-06-08" genre="" popularity="5"/>
+    <track name="Reflejos" vocal="Instrumental" year="1928-02-02" genre="tango" popularity="1"/>
+    <track name="Reina maleva" vocal="Instrumental" year="1927-04-12" genre="tango" popularity="1"/>
+    <track name="Retintín" vocal="Instrumental" year="1928-08-21" genre="tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="2:48" popularity="1"/>
+    <track name="Rico" vocal="Instrumental" year="1923" genre="" composer="Luis Petrucelli" duration="2:50" popularity="1"/>
+    <track name="Risa de cabaret" vocal="Ada Falcón" year="1925" genre="tango" popularity="1"/>
+    <track name="Rivas" vocal="Instrumental" year="1928-08-21" genre="tango" duration="2:54" popularity="3"/>
+    <track name="Rodríguez Peña" vocal="Instrumental" year="1927-04-19" genre="tango" composer="Vicente Greco" author="Ernesto Temes" duration="3:11" popularity="5"/>
+    <track name="Rodríguez Peña" vocal="Instrumental" year="1942-09-04" genre="tango" composer="Vicente Greco" author="Ernesto Temes" duration="3:23" popularity="3"/>
+    <track name="Ronda de ases" vocal="Oscar Serpa" year="1942-11-12" genre="tango" composer="Osvaldo Fresedo" author="Homero Manzi" duration="2:27" popularity="3"/>
+    <track name="Rosa marchita" vocal="Instrumental" year="1923-10-23" genre="tango" label="Victor" popularity="1"/>
+    <track name="Rosarina linda" vocal="Ricardo Ruiz" year="1940-04-15" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="2:31" popularity="7"/>
+    <track name="Rumba en swing" vocal="Roberto Ray" year="1938-09-03" genre="rumba" popularity="2"/>
+    <track name="Sangre azul" vocal="Instrumental" year="1922-08-05" genre="" duration="2:48" popularity="2"/>
+    <track name="Saturnia" vocal="Instrumental" year="1927-09-07" genre="tango" composer="Juan de Dios Filiberto" duration="3:07" popularity="5"/>
+    <track name="Seguirás la caravana" vocal="Ernesto Famá" year="1928-02-24" genre="tango" popularity="2"/>
+    <track name="Señorita Carmencita" vocal="Roberto Ray" year="1935-08-07" genre="rumba" popularity="2"/>
+    <track name="Serás mía" vocal="Instrumental" year="1928-05-03" genre="tango" duration="3:30" popularity="4"/>
+    <track name="Si el corazón supiera" vocal="Carlos Mayel" year="1940-05-10" genre="tango" composer="Cayetano Puglisi" author="Héctor Marcó" duration="2:33" popularity="4"/>
+    <track name="Si no me engaña el corazón" vocal="Ricardo Ruiz" year="1939-04-24" genre="tango" author="Carlos Bahr" duration="2:33" popularity="4"/>
+    <track name="Si supieras" vocal="Instrumental" year="1927-02-22" genre="tango" composer="Carlos Marcucci" author="Manuel Andrés Meaños" popularity="4"/>
+    <track name="Si yo pudiera comprender" vocal="Oscar Serpa" year="1944-07-31" genre="tango" composer="Miguel Caló" popularity="2"/>
+    <track name="Siempre es carnaval" vocal="Roberto Ray" year="1937-02-22" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:27" popularity="8"/>
+    <track name="Siempre siempre" vocal="Oscar Serpa" year="1944-11-09" genre="tango" duration="3:12" popularity="2"/>
+    <track name="Siete pelos" vocal="Instrumental" year="1922-04-26" genre="tango" composer="Osvaldo Fresedo" label="Victor" popularity="2"/>
+    <track name="Siga el corso" vocal="Instrumental" year="1927-09-16" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="3:08" popularity="7"/>
+    <track name="Silbando" vocal="Héctor Pacheco" year="1952-05-13" genre="tango" composer="Cátulo Castillo, Sebastián Piana" author="José González Castillo (Juan de León)" duration="2:45" popularity="6"/>
+    <track name="Simpática muchachita" vocal="Ernesto Famá" year="1928-04-24" genre="tango" duration="3:23" popularity="6"/>
+    <track name="Sin palabras" vocal="Oscar Serpa" year="1946-11-26" genre="tango" composer="Mariano Mores" author="Enrique Discépolo" duration="3:20" popularity="3"/>
+    <track name="Sin rabia y sin pena" vocal="Oscar Serpa" year="1942-08-07" genre="tango" composer="Antonio Rodio" author="Luis Rubistein" popularity="3"/>
+    <track name="Snobismo" vocal="Instrumental" year="1922-05-20" genre="tango" composer="Juan Carlos Cobián" label="Victor" popularity="1"/>
+    <track name="Sobre el pucho | Un callejón en Pompeya" vocal="Francisco Rofrano" year="1969" genre="tango" duration="2:38" popularity="1"/>
+    <track name="Sobre el pucho | Un callejón en Pompeya" vocal="Instrumental" year="1944-06-15" genre="tango" popularity="3"/>
+    <track name="Sol" vocal="Oscar Serpa" year="1945-08-23" genre="tango" composer="Miguel Nijensohn" author="José Maria Suñe" duration="2:57" popularity="2"/>
+    <track name="Sollozos" vocal="Héctor Pacheco" year="1952-09-18" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:08" popularity="5"/>
+    <track name="Sollozos" vocal="Carlos Barrios" year="1957-09-10" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:17" popularity="1"/>
+    <track name="Sollozos" vocal="Roberto Ray" year="1937-02-22" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:27" popularity="14"/>
+    <track name="Sollozos" vocal="Instrumental" year="1922-08-28" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" label="Victor" popularity="1"/>
+    <track name="Solo de bandoneón" vocal="Héctor Pacheco" year="1952" genre="tango" composer="Enrique Cadícamo" author="Enrique Cadícamo" duration="2:50" popularity="2"/>
+    <track name="Solo tú" vocal="Ricardo Ruiz" year="1941-05-13" genre="tango" composer="Pascual Storti" author="José María Contursi" duration="2:37" popularity="4"/>
+    <track name="Sombra de humo" vocal="Armando Garrido" year="1951-11-21" genre="tango" duration="3:22" popularity="4"/>
+    <track name="Sonsa" vocal="Instrumental" year="1925-06-24" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Emilio Augusto Oscar Fresedo" label="Victor" popularity="1"/>
+    <track name="Sosegate" vocal="Instrumental" year="1927" genre="tango" duration="3:16" popularity="1"/>
+    <track name="Sosteniendo recuerdos" vocal="Héctor Pacheco" year="1952" genre="tango" composer="Lucio Demare" author="Homero Manzi" duration="3:18" popularity="1"/>
+    <track name="Sueño azul" vocal="Roberto Ray" year="1937-01-04" genre="tango" composer="Francisco De Caro" author="Mario Gomila" duration="3:24" popularity="4"/>
+    <track name="Sueño azul" vocal="Instrumental" year="1961" genre="tango" composer="Francisco De Caro" author="Mario Gomila" popularity="2"/>
+    <track name="Tango de arrabal (Tango milonguero)" vocal="Instrumental" year="1946-07-26" genre="tango" popularity="1"/>
+    <track name="Tango gris" vocal="Oscar Serpa" year="1942-09-18" genre="tango" composer="Enrique Cadícamo" author="Enrique Cadícamo" popularity="1"/>
+    <track name="Tango mío" vocal="Carlos Barrios" year="1961-05-26" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:42" popularity="1"/>
+    <track name="Tango mío" vocal="Ricardo Ruiz" year="1939-10-13" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="2:38" popularity="6"/>
+    <track name="Tango mío" vocal="Agustín Magaldi" year="1931" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" popularity="8"/>
+    <track name="Tanita de la proa" vocal="Instrumental" year="1927-05-10" genre="tango" composer="Salvador Merico" duration="3:01" popularity="6"/>
+    <track name="Tarasca solo" vocal="Antonio Buglione" year="1928-09-25" genre="tango" duration="2:48" popularity="3"/>
+    <track name="Te fuiste" vocal="Instrumental" year="1923-05-18" genre="tango" label="Victor" popularity="4"/>
+    <track name="Te juro, madre mía" vocal="Roberto Ray" year="1935-05-08" genre="tango" author="José Sassone" duration="3:05" popularity="4"/>
+    <track name="Te llama mi violín" vocal="Oscar Serpa" year="1942-11-27" genre="tango" composer="Elvino Vardaro" author="Cátulo Castillo" duration="3:00" popularity="4"/>
+    <track name="Te pintaste los ojos" vocal="Instrumental" year="1927" genre="tango" popularity="2"/>
+    <track name="Te quiero locamente" vocal="Hugo Marcel" year="1959-02-02" genre="tango" composer="José Márquez" duration="2:38" popularity="1"/>
+    <track name="Telón" vocal="Roberto Ray" year="1938-11-23" genre="tango" composer="Lucio Demare" author="Homero Manzi" duration="2:48" popularity="4"/>
+    <track name="Tema en fa" vocal="Instrumental" year="1957-09-10" genre="tango" duration="3:15" popularity="1"/>
+    <track name="Tengo" vocal="Roberto Yanes" year="1966-04-26" genre="tango" composer="Roberto Pérez Prechi" author="Eugenio Majul" duration="3:06" popularity="1"/>
+    <track name="Tiempos viejos (Te acordás hermano)" vocal="Carlos Barrios" year="1953-05-20" genre="tango" duration="3:09" popularity="7"/>
+    <track name="Tiento e' zorro" vocal="Ernesto Famá" year="1928-02-02" genre="tango" duration="3:18" popularity="3"/>
+    <track name="Tigre viejo" vocal="Instrumental" year="1934-08-16" genre="tango" composer="Salvador Grupillo" duration="3:05" popularity="7"/>
+    <track name="Tinta verde" vocal="Instrumental" year="1927-10-17" genre="tango" composer="Agustín Bardi" duration="3:40" popularity="4"/>
+    <track name="Todo amor" vocal="Instrumental" year="1927-08-01" genre="tango" popularity="1"/>
+    <track name="Todo corazón" vocal="Instrumental" year="1923" genre="tango" composer="Julio De Caro" popularity="3"/>
+    <track name="Todo corazón" vocal="Instrumental" year="1961-07-05" genre="tango" composer="Julio De Caro" duration="2:33" popularity="1"/>
+    <track name="Tortazos" vocal="Oscar Serpa" year="1942" genre="milonga" composer="José Razzano" author="Enrique Maroni" popularity="1"/>
+    <track name="Tradición" vocal="Instrumental" year="1927-11-22" genre="tango" composer="Fausto Frontera" author="Enrique Cadícamo" duration="3:27" popularity="3"/>
+    <track name="Trenza de ocho" vocal="Carlos Barrios" year="1955-12-29" genre="tango" duration="3:05" popularity="3"/>
+    <track name="Tres recuerdos" vocal="Ricardo Ruiz" year="1941" genre="vals" composer="Rodolfo Sciammarella" author="Manuel Romero" duration="2:24" popularity="4"/>
+    <track name="Trigo limpio" vocal="Instrumental" year="1928" genre="tango" popularity="1"/>
+    <track name="Tristezas" vocal="Instrumental" year="1927-04-12" genre="tango" duration="3:20" popularity="3"/>
+    <track name="Triunfal" vocal="Instrumental" year="1953-09-15" genre="tango" composer="Astor Piazzolla" duration="2:09" popularity="2"/>
+    <track name="Tu disfraz" vocal="Ernesto Famá" year="1928-03-12" genre="tango" composer="Ángel Danesi" duration="2:50" popularity="4"/>
+    <track name="Tu mirada" vocal="Luis Díaz" year="1932" genre="tango" author="Eugenio Cárdenas" popularity="1"/>
+    <track name="Tu piel de jazmín" vocal="Roberto Ray" year="1950-12-08" genre="tango" composer="Mariano Mores" author="José María Contursi" duration="3:10" popularity="8"/>
+    <track name="Un amor" vocal="Ricardo Ruiz" year="1940-09-13" genre="tango" author="Luis Rubistein" duration="2:28" popularity="3"/>
+    <track name="Un sueño" vocal="Instrumental" year="1927" genre="tango" duration="2:51" popularity="3"/>
+    <track name="Un tropezón" vocal="Instrumental" year="1927" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Luis Bayon Herrera" popularity="2"/>
+    <track name="Una gota de rocío" vocal="Héctor Pacheco" year="1953-05-20" genre="tango" composer="Osvaldo Fresedo" duration="3:27" popularity="4"/>
+    <track name="Una vez en la vida" vocal="Ricardo Ruiz" year="1940" genre="vals" composer="Ricardo Malerba, Mario Maurano" author="Homero Manzi" popularity="2"/>
+    <track name="Una vida" vocal="Ernesto Famá" year="1928-03-12" genre="tango" composer="Elvino Vardaro" duration="2:53" popularity="2"/>
+    <track name="Unica" vocal="Hugo Marcel" year="1961" genre="tango" composer="Roberto Pérez Prechi" author="Eugenio Majul" popularity="2"/>
+    <track name="Uno" vocal="Oscar Serpa" year="1943-12-01" genre="tango" composer="Mariano Mores" author="Enrique Discépolo" duration="3:16" popularity="3"/>
+    <track name="Vacilación" vocal="Ricardo Ruiz" year="1941-11-17" genre="tango" popularity="2"/>
+    <track name="Vamos, cariñito" vocal="Carlos Barrios" year="1957-09-27" genre="tango" duration="2:48" popularity="3"/>
+    <track name="Vamos, che | No te detengas" vocal="Antonio Buglione" year="1928-09-25" genre="tango" popularity="2"/>
+    <track name="Vamos, corazón" vocal="Ricardo Ruiz" year="1941-07-10" genre="tango" composer="Juan José Martín Guichandut, Fidel Pintos" author="Carlos Bahr" duration="2:26" popularity="5"/>
+    <track name="Vamos, vamos, zaino viejo" vocal="Armando Garrido" year="1950-12-19" genre="tango" composer="Fernando V. Tell" author="Victorino Velazquez" duration="3:15" popularity="5"/>
+    <track name="Victoria" vocal="Instrumental" year="1928-04-24" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:29" popularity="2"/>
+    <track name="Vida mía" vocal="Héctor Pacheco" year="1952-08-21" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:17" popularity="11"/>
+    <track name="Vida mía" vocal="Oscar Serpa" year="1944-12-28" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" popularity="1"/>
+    <track name="Vida mía" vocal="Roberto Ray" year="1933-09-13" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:25" popularity="15"/>
+    <track name="Vida mía" vocal="Instrumental" year="1956" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="4:15" popularity="1"/>
+    <track name="Vida nueva" vocal="Instrumental" year="1927-11-12" genre="tango" popularity="2"/>
+    <track name="Vida querida" vocal="Ricardo Ruiz" year="1940-05-10" genre="tango" composer="Lalo Scalise" author="Juan Carlos Thorry" duration="2:30" popularity="8"/>
+    <track name="Vida rea" vocal="Ernesto Famá" year="1928-02-07" genre="tango" duration="2:58" popularity="1"/>
+    <track name="Viejo Buenos Aires" vocal="Francisco Rofrano" year="1969" genre="tango" composer="Mariano Mores" author="Martin Darré" duration="2:53" popularity="1"/>
+    <track name="Viejo Buenos Aires" vocal="Oscar Luna" year="1966-04-26" genre="tango" composer="Mariano Mores" author="Martin Darré" duration="3:02" popularity="1"/>
+    <track name="Viejo caserón" vocal="Instrumental" year="1928" genre="tango" popularity="2"/>
+    <track name="Viejo farolito" vocal="Ricardo Ruiz" year="1939-03-10" genre="tango" duration="2:28" popularity="4"/>
+    <track name="Viejo malevo" vocal="Héctor Pacheco" year="1952-11-21" genre="tango" composer="Germán R. Teisseire" popularity="1"/>
+    <track name="Viejo rincón" vocal="Instrumental" year="1925-10-06" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Roberto Lino Cayol" label="Victor" popularity="3"/>
+    <track name="Visión" vocal="Instrumental" year="1927-11-12" genre="tango" author="Nolo López" duration="2:56" popularity="2"/>
+    <track name="Viva la patria" vocal="Ernesto Famá" year="1928-06-13" genre="tango" composer="Anselmo Aieta" author="Francisco García" popularity="2"/>
+    <track name="Volvé" vocal="Luis Díaz" year="1932" genre="tango" composer="Edgardo Donato" author="Luis Bayon Herrera" popularity="2"/>
+    <track name="Volvé mi negra" vocal="Juan Carlos Thorry" year="1927" genre="tango" composer="José María Rizzuti" author="J. A. Diaz Gómez" popularity="2"/>
+    <track name="Volver" vocal="Roberto Ray" year="1935-07-01" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" duration="3:00" popularity="9"/>
+    <track name="Volverás" vocal="Osvaldo Cordó" year="1948-07-20" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:17" popularity="2"/>
+    <track name="Volverás" vocal="Ricardo Ruiz" year="1939-03-10" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="3:03" popularity="2"/>
+    <track name="Volverás" vocal="Instrumental" year="1961" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" popularity="1"/>
+    <track name="Vuelves" vocal="Roberto Ray" year="1939-01-03" genre="tango" composer="Maruja Pacheco Huergo" author="Virgilio San Clemente" popularity="3"/>
+    <track name="Y la perdí" vocal="Roberto Ray" year="1948-09-29" genre="tango" composer="Antonio Rodio" author="José María Contursi" duration="3:23" popularity="1"/>
+    <track name="Y no puede ser" vocal="Ricardo Ruiz" year="1939-06-14" genre="tango" composer="Aníbal Troilo" author="José María Contursi" duration="2:26" popularity="8"/>
+    <track name="Y no te voy a llorar" vocal="Héctor Pacheco" year="1953-12-23" genre="tango" composer="Luciano Leocata" author="Abel Aznar" duration="3:04" popularity="3"/>
+    <track name="Y total para qué" vocal="Héctor Pacheco" year="1954-12-13" genre="tango" composer="Diego Perkins" author="Héctor Pacheco" duration="2:34" popularity="2"/>
+    <track name="Y... no te voy a llorar" vocal="Héctor Pacheco" year="1953-12-23" genre="tango" composer="Luciano Leocata" author="Abel Aznar" popularity="1"/>
+    <track name="Ya no cantas, Chingolo | Chingolito" vocal="Ernesto Famá" year="1928-03-20" genre="tango" duration="2:53" popularity="2"/>
+    <track name="Yo no sé llorar" vocal="Roberto Ray" year="1933-11-02" genre="tango" composer="Joaquín Do Reyes" author="Celedonio Flores" duration="2:37" popularity="13"/>
+    <track name="Yo soy un tipo bien" vocal="Ernesto Famá" year="1928-06-18" genre="tango" duration="2:46" popularity="1"/>
+    <track name="A buena hora" vocal="Instrumental" year="1923-11-12" genre="tango" label="Victor" popularity="1"/>
+    <track name="A las dos de la mañana" vocal="Instrumental" year="1925--1928" genre="tango" composer="Edgardo Donato" popularity="1"/>
+    <track name="Acordate" vocal="Instrumental" year="1925--1928" genre="tango" composer="Ciriaco Ortiz" author="Nolo López" popularity="1"/>
+    <track name="Al hipódromo, chofer" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Aladino | la lámpara maravillosa" vocal="Instrumental" year="1922--1925" genre="tango" popularity="1"/>
+    <track name="Algo bueno" vocal="Instrumental" year="1923-07-27" genre="tango" author="Carlos Bahr" label="Victor" duration="3:02" popularity="1"/>
+    <track name="Alma mía!" vocal="Instrumental" year="1923-07-27" genre="tango" label="Victor" popularity="1"/>
+    <track name="Amo a usted tanto | I love you so much" vocal="Teofilo Ibañez" year="1931--1932" genre="fox trot" popularity="1"/>
+    <track name="Amor" vocal="Oscar Serpa" year="1933--1948" genre="vals" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" popularity="1"/>
+    <track name="Anoche a las dos" vocal="Instrumental" year="1925--1928" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Roberto Lino Cayol" popularity="1"/>
+    <track name="Aromas" vocal="Instrumental" year="1923-12-10" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" label="Victor" popularity="1"/>
+    <track name="Asao y mate... pa tuitos" vocal="Teofilo Ibañez, -choir-" year="1931--1932" genre="ranchera" popularity="1"/>
+    <track name="Atorranta" vocal="Instrumental" year="1925--1928" genre="tango" composer="José Bohr" popularity="1"/>
+    <track name="Ave cantora" vocal="Instrumental" year="1925--1928" genre="tango" composer="Rafael Rossi" author="Eugenio Cárdenas" popularity="1"/>
+    <track name="Bailarina" vocal="Instrumental" year="1925--1928" genre="tango" composer="Juan Baüer (Firpito)" popularity="1"/>
+    <track name="Bajo Belgrano" vocal="Instrumental" year="1925--1928" genre="tango" composer="Anselmo Aieta" author="Francisco García" popularity="1"/>
+    <track name="Bandoneón amigo" vocal="Instrumental" year="1959--1968" genre="tango" composer="Osvaldo Fresedo" author="Homero Manzi" popularity="1"/>
+    <track name="Barrio pobre" vocal="Instrumental" year="" genre="" author="Francisco García"/>
+    <track name="Beso de muerte" vocal="Instrumental" year="1922-08-28" genre="tango" label="Victor" popularity="1"/>
+    <track name="Boquita de ángel" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Cata" vocal="Instrumental" year="1927--1928" genre="tango" composer="Julio De Caro" duration="3:20" popularity="1"/>
+    <track name="Cicatrices" vocal="Instrumental" year="1925--1928" genre="tango" composer="Adolfo Rafael Avilés" author="Enrique Maroni" popularity="1"/>
+    <track name="Con alma y vida" vocal="Instrumental" year="1925-02-05" genre="tango" composer="Carlos Di Sarli" author="Héctor Marcó" label="Victor" popularity="1"/>
+    <track name="Corazón" vocal="Instrumental" year="1925--1928" genre="valse" composer="Eduardo Bianco" popularity="1"/>
+    <track name="Criollazo" vocal="Instrumental" year="1925--1928" genre="tango" author="Juan Miguel Velich" popularity="1"/>
+    <track name="Criollito lindo" vocal="Instrumental" year="1925" genre="tango" label="Victor" popularity="1"/>
+    <track name="De buen agüero" vocal="Instrumental" year="1922-11-27" genre="tango" label="Victor" duration="2:55" popularity="1"/>
+    <track name="De mi barrio" vocal="Instrumental" year="1925-06-24" genre="tango" composer="Roberto Emilio Goyeneche" author="Roberto Emilio Goyeneche" label="Victor" popularity="1"/>
+    <track name="Déjame soñar" vocal="Instrumental" year="" genre="tango" author="Lito Bayardo" duration="3:01"/>
+    <track name="Déjame soñar" vocal="Armando Garrido" year="1950--1952" genre="tango" author="Lito Bayardo" duration="3:01" popularity="1"/>
+    <track name="Desde las nubes" vocal="Instrumental" year="1924-03-11" genre="tango" label="Victor" popularity="1"/>
+    <track name="Deseos" vocal="Instrumental" year="" genre="tango"/>
+    <track name="Deshojando" vocal="Instrumental" year="1923-09-10" genre="tango" label="Victor" popularity="1"/>
+    <track name="Dónde estás, corazón?" vocal="Héctor Pacheco" year="" genre="tango" composer="Augusto Pedro Berto, Luis Martinez Serrano" author="Augusto Pedro Berto, Luis Martinez Serrano" duration="3:41"/>
+    <track name="El camote" vocal="Instrumental" year="1923-09-05" genre="tango" label="Victor" popularity="1"/>
+    <track name="El cisne" vocal="Instrumental" year="1922-08-25" genre="tango" composer="José María Rizzuti" label="Victor" popularity="1"/>
+    <track name="El cofrecito" vocal="Instrumental" year="1925-06-05" genre="tango" label="Victor" popularity="1"/>
+    <track name="El continental | the continental" vocal="Instrumental" year="" genre="fox trot"/>
+    <track name="El día de tu ausencia" vocal="Instrumental" year="" genre="tango" composer="Argentino Galván" author="Manuel Arcos"/>
+    <track name="El día que me quieras" vocal="Instrumental" year="1959--1968" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" popularity="1"/>
+    <track name="El mal de ausencia" vocal="Instrumental" year="" genre="ranchera"/>
+    <track name="El mal genio de mi ñatita" vocal="Teofilo Ibañez" year="" genre="ranchera"/>
+    <track name="El mareo" vocal="Instrumental" year="" genre="tango" composer="Julio De Caro" author="Mario Gomila" duration="2:53"/>
+    <track name="El pescante" vocal="Héctor Pacheco" year="" genre="tango" composer="Sebastián Piana" author="Homero Manzi" duration="2:53"/>
+    <track name="El pibe de la Paternal" vocal="Instrumental" year="" genre="tango" author="Enrique Cadícamo" duration="3:19"/>
+    <track name="El rebelde" vocal="Teofilo Ibañez" year="" genre="tango" composer="Juan José Riverol" author="Francisco Antonio Leodiacono"/>
+    <track name="El tamborilero" vocal="Instrumental" year="1959--1968" genre="milonga" composer="Roberto Pérez Prechi" popularity="1"/>
+    <track name="El taura" vocal="Instrumental" year="" genre="tango" composer="Agustín Bardi" duration="3:16"/>
+    <track name="El último cariño" vocal="Instrumental" year="1925-04-28" genre="tango" label="Victor" popularity="1"/>
+    <track name="Elvirita" vocal="Instrumental" year="1922-10-24" genre="tango" label="Victor" popularity="1"/>
+    <track name="En el recreo" vocal="Roberto Ray" year="1933--1948" genre="ranchera" popularity="1"/>
+    <track name="En Galicia hay una niña" vocal="Instrumental" year="1922-08-25" genre="tango" label="Victor" popularity="1"/>
+    <track name="En un pueblito de España" vocal="Instrumental" year="1925--1928" genre="vals" popularity="1"/>
+    <track name="Encanto" vocal="Instrumental" year="1925" genre="tango" label="Victor" popularity="1"/>
+    <track name="Estás aquí" vocal="Héctor Pacheco" year="1952--1957" genre="tango" duration="3:09" popularity="1"/>
+    <track name="Estrá sin miedo hermana" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Fosforerita" vocal="Instrumental" year="1925--1928" genre="tango" composer="Bartolome M. Chapela" author="Amaro Giura" popularity="1"/>
+    <track name="Franco" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Fuimos" vocal="Iván Casadó" year="" genre="tango" composer="José Dames" author="Homero Manzi" duration="3:12"/>
+    <track name="Garufa" vocal="Héctor Pacheco" year="" genre="tango" composer="Juan Antonio Collazo" author="Víctor Soliño, Roberto Fontaina" duration="3:21"/>
+    <track name="Guitarra criolla" vocal="Instrumental" year="" genre="tango" duration="3:06"/>
+    <track name="Haragán" vocal="Instrumental" year="1925--1928" genre="tango" composer="Enrique Delfino" author="Manuel Romero" popularity="1"/>
+    <track name="Hormiguita" vocal="Instrumental" year="1924-12-31" genre="tango" label="Victor" popularity="1"/>
+    <track name="Ingrata" vocal="Instrumental" year="1923-12-10" genre="tango" label="Victor" popularity="1"/>
+    <track name="Jardín florido" vocal="Instrumental" year="1923-10-29" genre="tango" label="Victor" popularity="1"/>
+    <track name="Juancito, el vendedor" vocal="Ricardo Ruiz" year="1940--1942" genre="fox trot" duration="2:29" popularity="1"/>
+    <track name="L'adivina" vocal="Instrumental" year="1922-08-11" genre="tango" label="Victor" duration="2:46" popularity="1"/>
+    <track name="La calle maldita" vocal="Armando Garrido" year="" genre="tango"/>
+    <track name="La canción" vocal="Instrumental" year="" genre="tango" composer="Juan de Dios Filiberto" author="Lito Bayardo"/>
+    <track name="La copa del olvido" vocal="Instrumental" year="1922-08-11" genre="tango" composer="Enrique Delfino" author="Alberto Vacarezza" label="Victor" duration="2:55" popularity="1"/>
+    <track name="La curiosa" vocal="Teofilo Ibañez" year="1931--1932" genre="ranchera" popularity="1"/>
+    <track name="La divisa punzó" vocal="Instrumental" year="1923-11-20" genre="tango" label="Victor" popularity="1"/>
+    <track name="La guitarrita milonguera" vocal="Instrumental" year="1952--1957" genre="milonga" duration="1:54" popularity="1"/>
+    <track name="La lora" vocal="Instrumental" year="1925--1927" genre="tango" popularity="1"/>
+    <track name="La muñeca" vocal="Instrumental" year="1922-11-28" genre="tango" composer="Ricardo Tanturi" author="Manuel Enrique Ferradás Campos" label="Victor" popularity="1"/>
+    <track name="La negra está loca" vocal="Ricardo Ruiz" year="1933--1948" genre="" duration="2:38" popularity="1"/>
+    <track name="La ratona" vocal="Instrumental" year="1923-08-08" genre="tango" composer="Osvaldo Fresedo" label="Victor" popularity="1"/>
+    <track name="La sanata" vocal="Instrumental" year="1959--1968" genre="milonga" popularity="1"/>
+    <track name="La señal" vocal="Instrumental" year="1923-05-04" genre="tango" label="Victor" popularity="1"/>
+    <track name="Lazos de seda" vocal="Instrumental" year="1925-04-28" genre="tango" composer="Ricardo Tanturi" label="Victor" popularity="1"/>
+    <track name="Lina" vocal="Instrumental" year="1922-05-23" genre="tango" composer="Venancio Clauso" author="Venancio Clauso" label="Victor" popularity="1"/>
+    <track name="Luis Maria" vocal="Instrumental" year="1923-10-23" genre="tango" label="Victor" popularity="1"/>
+    <track name="Lupe" vocal="Instrumental" year="" genre="vals" composer="Lucio Demare" author="Roberto Fugazot, Agustín Irusta"/>
+    <track name="Lupe" vocal="Teofilo Ibañez" year="" genre="vals" composer="Lucio Demare" author="Roberto Fugazot, Agustín Irusta"/>
+    <track name="Madre dime porque" vocal="Roberto Ray" year="1933--1948" genre="fox trot" popularity="1"/>
+    <track name="Maldita noche" vocal="Instrumental" year="1925" genre="tango" label="Victor" popularity="1"/>
+    <track name="Mano larga" vocal="Instrumental" year="1923-08-14" genre="tango" label="Victor" popularity="1"/>
+    <track name="Manzanita" vocal="Instrumental" year="1923-11-20" genre="tango" label="Victor" popularity="1"/>
+    <track name="Meco" vocal="Instrumental" year="1923-05-04" genre="tango" label="Victor" duration="2:49" popularity="1"/>
+    <track name="Melenita" vocal="Instrumental" year="1923-04-17" genre="tango" label="Victor" popularity="1"/>
+    <track name="Mi noche triste" vocal="Oscar Serpa" year="" genre="tango" composer="Samuel Castriota" author="Pascual Contursi"/>
+    <track name="Mi querer" vocal="Instrumental" year="1923-09-10" genre="tango" composer="Mario Carmelo Canaro" author="Juan Andrés Caruso" label="Victor" popularity="1"/>
+    <track name="Milonguero viejo | Bailarín porteño" vocal="Instrumental" year="1959--1968" genre="tango" popularity="1"/>
+    <track name="Mis amarguras" vocal="Instrumental" year="1924" genre="tango" label="Victor" duration="3:09" popularity="1"/>
+    <track name="Montiel" vocal="Instrumental" year="1925--1928" genre="tango" composer="Juan Baüer (Firpito)" popularity="1"/>
+    <track name="Muchachita de Montmartre" vocal="Instrumental" year="1925-08-25" genre="tango" composer="Osvaldo Fresedo" label="Victor" popularity="1"/>
+    <track name="Mujercita" vocal="Instrumental" year="1924-03-18" genre="tango" label="Victor" popularity="1"/>
+    <track name="My sun" vocal="Instrumental" year="1923-02-26" genre="fox trot" label="Victor" popularity="1"/>
+    <track name="Naipe marcado" vocal="Instrumental" year="1959--1968" genre="" composer="Ángel Greco" author="Ángel Greco" popularity="1"/>
+    <track name="No aflojes, corazon..." vocal="Roberto Ray" year="1933--1948" genre="tango" popularity="1"/>
+    <track name="No te olvides de mi, corazón" vocal="Oscar Serpa" year="1944--1945" genre="vals" popularity="1"/>
+    <track name="Nocturno" vocal="Instrumental" year="1925--1928" genre="tango" composer="Agustín Bardi" author="Francisco García" popularity="1"/>
+    <track name="Nubes de humo | Fume compadre" vocal="Héctor Pacheco" year="" genre="tango" duration="3:41"/>
+    <track name="Nuestro pasado" vocal="Héctor Pacheco" year="" genre="tango" duration="2:25"/>
+    <track name="Organito de la tarde" vocal="Instrumental" year="" genre="tango" composer="Cátulo Castillo" author="José González Castillo (Juan de León)" duration="2:54"/>
+    <track name="Orquídeas negras" vocal="Instrumental" year="1925--1928" genre="vals" popularity="1"/>
+    <track name="Oscarcito" vocal="Instrumental" year="1924" genre="tango" label="Victor" popularity="1"/>
+    <track name="Palabras De Osvaldo Fresedo" vocal="Osvaldo Fresedo" year="" genre="tango" duration="11:53"/>
+    <track name="Penado" vocal="Instrumental" year="" genre="tango"/>
+    <track name="Pimienta" vocal="Iván Casadó" year="" genre="tango" duration="2:30"/>
+    <track name="Pimienta" vocal="Roberto Ray" year="" genre="tango"/>
+    <track name="Plegaria" vocal="Instrumental" year="" genre="tango" composer="Antonio Sureda" author="Gerónimo Sureda" duration="2:25"/>
+    <track name="Pobre chica" vocal="Instrumental" year="1925-07-08" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" label="Victor" popularity="2"/>
+    <track name="Por favor (please)" vocal="Instrumental" year="" genre="fox trot"/>
+    <track name="Qué noche" vocal="Instrumental" year="1959--1968" genre="tango" composer="Agustín Bardi" popularity="1"/>
+    <track name="Qué rubia, papá" vocal="Instrumental" year="1922-11-27" genre="tango" label="Victor" duration="2:58" popularity="2"/>
+    <track name="Ramona" vocal="Instrumental" year="1925--1928" genre="vals" composer="Mabel Wayne" popularity="1"/>
+    <track name="Razón 5a" vocal="Instrumental" year="1922-08-08" genre="tango" label="Victor" popularity="1"/>
+    <track name="Recuerdos" vocal="Instrumental" year="1925" genre="tango" composer="Carlos Gardel, José Razzano" author="Carlos Gardel, José Razzano" label="Victor" popularity="1"/>
+    <track name="Ríe, ríe..." vocal="Instrumental" year="1925-03-10" genre="shimmy" label="Victor" popularity="1"/>
+    <track name="¡Salve!" vocal="Instrumental" year="1923-08-08" genre="tango" label="Victor" popularity="1"/>
+    <track name="Se lo llevaron" vocal="Roberto Ray" year="" genre="" composer="Agustín Bardi" author="Enrique Cadícamo"/>
+    <track name="Si de mi te has olvidado" vocal="Oscar Serpa" year="1933--1948" genre="tango" composer="Osvaldo Fresedo" author="José María Contursi" popularity="1"/>
+    <track name="Sin cariño" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Soledad" vocal="Instrumental" year="1959--1968" genre="tango" composer="Ciriaco Ortiz" author="Enrique Cadícamo" duration="2:35" popularity="1"/>
+    <track name="Solo fué una ilusión" vocal="Instrumental" year="1925" genre="vals" label="Victor" popularity="1"/>
+    <track name="Sueño de amor" vocal="Instrumental" year="1924" genre="tango" author="Ángel Greco" label="Victor" popularity="1"/>
+    <track name="Taconeando" vocal="Instrumental" year="1959--1968" genre="tango" composer="Pedro Maffia" author="José Horacio Staffolani" popularity="1"/>
+    <track name="Tango mío" vocal="Instrumental" year="" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="2:42"/>
+    <track name="Tengo celos" vocal="Instrumental" year="1923-10-08" genre="tango" label="Victor" popularity="1"/>
+    <track name="titi" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Toda para mi" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Trago amargo" vocal="Instrumental" year="1925--1928" genre="tango" composer="Rafael Iriarte" author="Julio Plácido Navarrine" popularity="1"/>
+    <track name="Triste" vocal="Instrumental" year="1922--1925" genre="tango" composer="Francisco De Caro, Pedro Maffia" popularity="1"/>
+    <track name="Tristeza gaucha" vocal="Instrumental" year="1923-07-27" genre="tango" composer="Juan Faustino Sarcione" author="Juan Faustino Sarcione" label="Victor" popularity="1"/>
+    <track name="Tú | You" vocal="Instrumental" year="1933--1948" genre="fox trot" popularity="1"/>
+    <track name="Tus ojos" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Una y mil veces" vocal="Armando Garrido" year="1950--1952" genre="tango" composer="Roberto Pérez Prechi" author="ALBERTO ANDES LEIVA" popularity="1"/>
+    <track name="Valparaíso" vocal="Roberto Ray" year="" genre="rumba"/>
+    <track name="Viajando" vocal="Instrumental" year="1959--1968" genre="tango" composer="Osvaldo Fresedo" popularity="1"/>
+    <track name="Viejo malevo" vocal="Instrumental" year="" genre="tango" composer="Germán R. Teisseire" duration="3:03"/>
+    <track name="Virgencita" vocal="Instrumental" year="1925" genre="tango" label="Victor" popularity="1"/>
+    <track name="Yo te bendigo" vocal="Instrumental" year="1925--1928" genre="tango" composer="Juan de Dios Filiberto" author="Julio A. Buron" popularity="1"/>
+    <track name="Zarpazo" vocal="Instrumental" year="1925--1928" genre="tango" popularity="1"/>
+    <track name="Firulete" vocal="Instrumental" year="1922-04-20" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Biscuit" vocal="Instrumental" year="1922-05-08" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Firpo" vocal="Instrumental" year="1922-05-23" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Mario" vocal="Instrumental" year="1922-07-15" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Gracia porteña" vocal="Instrumental" year="1922-07-15" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Penando" vocal="Instrumental" year="1922-07-21" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Peligro oculto" vocal="Instrumental" year="1922-09-20" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Sol y sombra" vocal="Instrumental" year="1922-10-04" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Fuego lento" vocal="Instrumental" year="1922-11-09" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Ta-te-ti" vocal="Instrumental" year="1922-11-09" genre="Tango" label="Victor" popularity="1"/>
+    <track name="El chinchorro" vocal="Instrumental" year="1922-11-15" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Reflejos" vocal="Instrumental" year="1922-11-15" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Modulando" vocal="Instrumental" year="1922-11-27" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Por fin solos" vocal="Instrumental" year="1922-11-27" genre="Tango" label="Victor" popularity="1"/>
+    <track name="La caprichosa" vocal="Instrumental" year="1922-12-13" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Rico" vocal="Instrumental" year="1922-12-20" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Yo te condeno" vocal="Instrumental" year="1922-12-18" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Cabecita rubia" vocal="Instrumental" year="1922-12-18" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Que racha" vocal="Instrumental" year="1922-12-20" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Primer amor" vocal="Instrumental" year="1922-12-20" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Cenizas" vocal="Instrumental" year="1923-03-20" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Ídolos" vocal="Instrumental" year="1923-03-30" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Tacuarembó" vocal="Instrumental" year="1923-05-13" genre="Tango" label="Victor" popularity="1"/>
+    <track name="El último beso" vocal="Instrumental" year="1923-06-11" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Penas de amor" vocal="Instrumental" year="1923-06-19" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Manantial" vocal="Instrumental" year="1923-06-29" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Mi criollita" vocal="Instrumental" year="1923-06-29" genre="Tango" label="Victor" popularity="1"/>
+    <track name="La garçonne" vocal="Instrumental" year="1923-07-12" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Vida cruel" vocal="Instrumental" year="1923-07-12" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Mi reliquia" vocal="Instrumental" year="1923-07-31" genre="Tango" label="Victor" popularity="1"/>
+    <track name="El chicuelo" vocal="Instrumental" year="1923-08-07" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Perico" vocal="Instrumental" year="1923-08-14" genre="Tango" label="Victor" popularity="1"/>
+    <track name="La pesadilla" vocal="Instrumental" year="1923-08-24" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Gratos recuerdos" vocal="Instrumental" year="1923-09-24" genre="Tango" label="Victor" popularity="1"/>
+    <track name="El vividor" vocal="Instrumental" year="1923-09-10" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Bien frappee" vocal="Instrumental" year="1923-09-24" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Loca pasión" vocal="Instrumental" year="1923-09-10" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Solitaria" vocal="Instrumental" year="1923-10-01" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Encantito" vocal="Instrumental" year="1923-10-23" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Bésame" vocal="Instrumental" year="1923-11-07" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Gemidos" vocal="Instrumental" year="1923-11-07" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Bustito" vocal="Instrumental" year="1923-12-03" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Lita" vocal="Instrumental" year="1923-11-22" genre="Tango" label="Victor" popularity="1"/>
+    <track name="My love" vocal="Instrumental" year="1924-02-22" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Los domingos en torijos" vocal="Instrumental" year="1924-02-22" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Eliana" vocal="Instrumental" year="1924-03-25" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Todo corazón" vocal="Instrumental" year="1924-03-24" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Tristezas" vocal="Instrumental" year="1924" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Tu nobleza" vocal="Instrumental" year="1924" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Negro el 20" vocal="Instrumental" year="1924" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Hollín" vocal="Instrumental" year="1924" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Reminiscencias" vocal="Instrumental" year="1924-08-15" genre="Tango" label="Victor" popularity="1"/>
+    <track name="El 11" vocal="Instrumental" year="1925" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Un chispazo" vocal="Instrumental" year="1924-10-16" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Oro y seda" vocal="Instrumental" year="1925-02-05" genre="Tango" label="Victor" popularity="2"/>
+    <track name="Rosalía" vocal="Instrumental" year="1925-03-10" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Desilusion" vocal="Instrumental" year="1925-03-10" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Sin alma" vocal="Instrumental" year="1925-04-28" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Muchachita de mi ensueño" vocal="Instrumental" year="1925-05-01" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Inglesita" vocal="Instrumental" year="1925-06-24" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Caprichoso" vocal="Instrumental" year="1925-07-03" genre="Tango" label="Victor" popularity="1"/>
+    <track name="San Antonio" vocal="Instrumental" year="1925-07-17" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Risas de cabaret" vocal="Instrumental" year="1925-09-17" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Un real al 69" vocal="Instrumental" year="1925-09-17" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Buena vida" vocal="Instrumental" year="1925-09-22" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Aladino" vocal="Instrumental" year="1925-10-06" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Son celos" vocal="Instrumental" year="1925-10-08" genre="Tango" label="Victor" popularity="1"/>
+    <track name="Casquivana" vocal="Ada Falcón" year="1925" genre="Tango"/>
+    <track name="Porqué no lo dijiste" vocal="Instrumental" year="1926" genre="Tango"/>
+</discography>
