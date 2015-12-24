@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<discography orchestra="Orquesta Típica Víctor (dir. Mario Maurano)">
+    <track name="Anoche a las cuatro" vocal="Alberto Carol" year="1944-05-04" genre="tango" composer="Oreste Cufaro" author="Enrique Cadícamo" duration="2:28" popularity="1"/>
+    <track name="Bajo el cono azul" vocal="Alberto Carol" year="1944-05-04" genre="tango" composer="Alfredo De Angelis" duration="2:43" popularity="1"/>
+    <track name="Barrilito" vocal="Instrumental" year="?" genre="tango" composer="Emilio Sassenus" author="José Sassone" duration="2:40"/>
+    <track name="Lo ví en tus ojos" vocal="Alberto Carol" year="1944-03-15" genre="tango" duration="3:16" popularity="1"/>
+    <track name="Mi taza de café" vocal="Alberto Carol" year="1944-03-21" genre="tango" composer="Alfredo Malerba" author="Homero Manzi" duration="2:43" popularity="1"/>
+    <track name="Milonga del aguatero" vocal="Ortega del Cerro" year="1943-08-09" genre="milonga" duration="2:34" popularity="1"/>
+    <track name="Nene caprichoso" vocal="Ortega del Cerro" year="1943-09-02" genre="tango" composer="Francisco Canaro" author="Ivo Pelay" duration="3:05"/>
+    <track name="Senda de abrojos" vocal="Instrumental" year="1943-08-09" genre="tango" composer="Juan Félix Maglio" author="Alfredo Bigeschi" duration="2:18" popularity="2"/>
+    <track name="Tranquilo, viejo, tranquilo" vocal="Ortega del Cerro" year="1943-09-02" genre="tango" composer="Francisco Canaro" author="Ivo Pelay" duration="3:11"/>
+    <track name="Una vez" vocal="Ortega del Cerro" year="1943-08-09" genre="tango" composer="Osvaldo Pugliese" author="Cátulo Castillo" duration="3:22" popularity="2"/>
+</discography>

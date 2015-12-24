@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<discography orchestra="Juan D'Arienzo" source="tangoteca">
+    <track name="Después" vocal="Alberto Echagüe" year="1944-07-07" genre="Tango" composer="Fidel Pintos" author="Carlos Bahr" duration="3:03" popularity="2"/>
+    <track name="Yo me llamo Eloy Peralta" vocal="Alberto Echagüe" year="1944-08-28" genre="Milonga" composer="Arturo Vicente De Bassi" duration="2:51" popularity="3"/>
+    <track name="No nos veremos nunca" vocal="Alberto Echagüe" year="1944-08-28" genre="Tango" composer="Juan D'Arienzo" author="Carlos Waiss" duration="3:29" popularity="5"/>
+    <track name="La madrugada" vocal="Alberto Echagüe" year="1944-09-21" genre="Tango" composer="José Razzano, Saúl Salinas" author="José Razzano, Saúl Salinas" duration="2:35" popularity="6"/>
+    <track name="El romántico" vocal="Instrumental" year="1944-09-21" genre="Tango" composer="Arturo Vicente De Bassi" duration="3:06" popularity="5"/>
+    <track name="El rezongón" vocal="Instrumental" year="1944-10-24" genre="Tango" duration="2:39" popularity="1"/>
+    <track name="La mañana" vocal="Alberto Echagüe" year="1944-10-24" genre="Milonga" composer="Miguel Bucino" author="Miguel Bucino" duration="2:23" popularity="2"/>
+    <track name="A suerte y verdad" vocal="Alberto Echagüe" year="1944-10-24" genre="Tango" composer="Carlos M. Parodi" author="Carlos Waiss" duration="2:34" popularity="1"/>
+    <track name="Venus" vocal="Instrumental" year="1944-10-24" genre="Tango" composer="Alfredo Bevilacqua" author="Antonio Polito" duration="2:38" popularity="2"/>
+    <track name="Seamos amigos" vocal="Alberto Echagüe" year="1944-12-15" genre="Tango" composer="Domingo Rulio" author="Princípe Cubano" duration="2:40" popularity="2"/>
+    <track name="Oro de ley" vocal="Alberto Echagüe" year="1944-12-15" genre="Milonga" composer="Juri Roman" author="Carlos Waiss" popularity="4"/>
+    <track name="Clavel" vocal="Alberto Echagüe" year="1944-12-15" genre="Milonga" author="Miguel Bucino" duration="2:24" popularity="1"/>
+    <track name="El paisanito" vocal="Alberto Echagüe" year="1944-12-15" genre="Milonga" composer="Pascual Clausi" author="Melecio Pérez" duration="2:09" popularity="5"/>
+    <track name="Me gusta bailar milonga" vocal="Alberto Echagüe" year="1944-12-26" genre="Milonga" composer="Pintín Castellanos" author="Pintín Castellanos" duration="2:02" popularity="4"/>
+    <track name="Magdala" vocal="Armando Laborde" year="1944-12-26" genre="Tango" composer="Rodolfo Biagi" author="Francisco Gorrindo" duration="2:39" popularity="2"/>
+    <track name="Color cielo" vocal="Armando Laborde" year="1944-12-26" genre="Tango" composer="Antonio Bonavena" author="Antonio Bonavena" duration="3:06" popularity="2"/>
+    <track name="Vieja volanta" vocal="Alberto Echagüe" year="1944-12-26" genre="Tango" composer="Ernesto de la Cruz" author="Francisco Alfredo Marino" duration="2:36"/>
+    <track name="Aparcero" vocal="Alberto Echagüe, Armando Laborde" year="1945-04-17" genre="Tango" composer="Anselmo Aieta" author="Antonio Radicci"/>
+    <track name="Pájaro sin luz" vocal="Armando Laborde" year="1945-04-17" genre="Tango" composer="Carlos Marchisio" author="Carmelo Santiago" duration="3:26" popularity="1"/>
+    <track name="Sigueme, si puedes" vocal="Instrumental" year="1945-04-17" genre="Tango" composer="J. Caldarella, A. Scarpino"/>
+    <track name="Corrientes y Esmeralda" vocal="Alberto Echagüe" year="1945-05-04" genre="Tango" composer="Francisco Pracánico" author="Celedonio Flores" duration="2:36" popularity="11"/>
+    <track name="La pena del payador" vocal="Armando Laborde" year="1945-05-04" genre="Vals" composer="José Servidio, Luis Servidio" author="Eduardo Escaris Méndez" duration="2:41" popularity="1"/>
+    <track name="Si supiera que la extraño" vocal="Armando Laborde" year="1945-05-04" genre="Tango" composer="Héctor Varela" author="Carlos Waiss" duration="3:01" popularity="6"/>
+    <track name="Ya estamos iguales" vocal="Alberto Echagüe" year="1945-06-25" genre="Tango" composer="Anselmo Aieta" author="Francisco García" duration="2:41" popularity="1"/>
+    <track name="El tren de las once" vocal="Armando Laborde" year="1945-06-25" genre="Tango" duration="3:01" popularity="2"/>
+    <track name="Me duele el corazón" vocal="Armando Laborde" year="1945-07-26" genre="Vals" duration="2:21" popularity="1"/>
+    <track name="El pensamiento" vocal="Instrumental" year="1945-07-26" genre="Tango" composer="José Martínez" author="Francisco García" duration="2:36" popularity="6"/>
+    <track name="Andanzas" vocal="Alberto Echagüe" year="1945-07-26" genre="Tango" composer="Eladio Blanco" author="Carlos Waiss" duration="2:36" popularity="1"/>
+    <track name="Pregonera" vocal="Armando Laborde" year="1945-08-28" genre="Tango" composer="Alfredo De Angelis" author="José Rótulo" duration="2:51" popularity="2"/>
+    <track name="Aquí he venido a cantar" vocal="Armando Laborde" year="1945-08-28" genre="Tango" composer="Fulvio Salamanca" author="Carlos Bahr" duration="2:53" popularity="1"/>
+    <track name="Azul y oro" vocal="Instrumental" year="1945-08-28" genre="Tango" duration="2:35" popularity="2"/>
+    <track name="Canchero" vocal="Alberto Echagüe" year="1945-10-03" genre="Tango" composer="Arturo Vicente De Bassi" author="Celedonio Flores" duration="2:52" popularity="5"/>
+    <track name="Vamos zaino" vocal="Armando Laborde" year="1945-10-03" genre="Tango" composer="Enrique Cadícamo" author="Enrique Cadícamo" duration="2:56" popularity="2"/>
+    <track name="Don Alfonso" vocal="Instrumental" year="1945-10-26" genre="Tango" composer="Héctor Varela, Eladio Blanco" duration="2:49" popularity="2"/>
+    <track name="Leguisamo solo" vocal="Alberto Echagüe" year="1945-10-26" genre="Tango" composer="Modesto Hugo Papavero" author="Modesto Hugo Papavero" duration="2:52" popularity="4"/>
+    <track name="Yo no espero nada" vocal="Alberto Echagüe" year="1945-12-24" genre="Tango" duration="2:58" popularity="2"/>
+    <track name="Del pasado" vocal="Alberto Echagüe, Armando Laborde" year="1945-12-24" genre="Milonga" composer="Francisco Alfredo Marino" author="Francisco Alfredo Marino"/>
+    <track name="Siempre amigos" vocal="Alberto Echagüe" year="1945-12-24" genre="Tango" composer="Benjamin Tagle Lara" author="Carlos Vicente Geroni Flores" duration="2:36" popularity="1"/>
+    <track name="La galarcita" vocal="Instrumental" year="1945-12-24" genre="Tango" author="Antonio Polito" duration="2:32" popularity="3"/>
+    <track name="Con alma de tango" vocal="Armando Laborde" year="1946-03-06" genre="Tango" composer="Juan D'Arienzo" author="Carlos Waiss" duration="2:48" popularity="5"/>
+    <track name="Tendrás que llorar" vocal="Alberto Echagüe, Armando Laborde" year="1946-03-06" genre="Vals" composer="Cristino Tapia" author="Cristino Tapia"/>
+    <track name="La espuela" vocal="Instrumental" year="1946-03-06" genre="Milonga" duration="2:37" popularity="3"/>
+    <track name="Te espero en Rodríguez Peña" vocal="Alberto Echagüe" year="1946-03-06" genre="Tango" composer="Héctor Varela" author="Carlos Waiss" duration="2:58" popularity="3"/>
+    <track name="Don Goyo" vocal="Instrumental" year="1946-03-06" genre="Tango" composer="Luis Bernstein" duration="2:32" popularity="2"/>
+    <track name="Lo mismo que ayer" vocal="Alberto Echagüe, Armando Laborde" year="1946-05-03" genre="Vals" composer="Juan D'Arienzo, Héctor Varela"/>
+    <track name="Pan comido" vocal="Alberto Echagüe" year="1946-05-03" genre="Tango" author="Enrique Dizeo" duration="2:15" popularity="12"/>
+    <track name="Siete leguas" vocal="Armando Laborde" year="1946-05-03" genre="Tango" composer="Teófilo Lespés" author="Carlos Waiss" duration="2:33" popularity="1"/>
+    <track name="El entrerriano" vocal="Instrumental" year="1946-08-26" genre="Tango" composer="Rosendo Mendizábal" author="Ernesto Temes" duration="2:30" popularity="3"/>
+    <track name="Condesita" vocal="Armando Laborde" year="1946-08-26" genre="Tango" author="Mario Battistella" duration="2:57" popularity="1"/>
+    <track name="Chaparrón" vocal="Alberto Echagüe" year="1946-08-26" genre="Milonga" composer="Pintín Castellanos" author="Francisco García" duration="2:07" popularity="4"/>
+    <track name="Desde aquella noche" vocal="Armando Laborde" year="1946-08-26" genre="Tango" composer="Fulvio Salamanca" author="Carlos Bahr" duration="3:31" popularity="7"/>
+    <track name="No tienes corazón" vocal="Armando Laborde" year="1946-08-26" genre="Vals" composer="Nicolás Vaccaro, Nicolás Alberto Tavarozzi" author="Santiago Luis D. Adamini" duration="2:23" popularity="2"/>
+    <track name="Me grita el corazón" vocal="Armando Laborde" year="1946-08-26" genre="Tango" composer="Miguel Bonano" duration="2:31" popularity="2"/>
+    <track name="Sábado Inglés" vocal="Instrumental" year="1946-10-18" genre="Tango" composer="Juan Félix Maglio" author="Eugenio Cárdenas" duration="2:38" popularity="4"/>
+    <track name="Sin amor" vocal="Armando Laborde" year="1946-10-18" genre="Tango" composer="Anselmo Aieta" author="Nolo López" duration="2:39" popularity="1"/>
+    <track name="Con todo mi corazón" vocal="Alberto Echagüe" year="1946-10-18" genre="Tango" composer="Ángel F. Condercuri" author="Reynaldo Yiso / Ghiso" duration="2:36" popularity="4"/>
+    <track name="Loca" vocal="Instrumental" year="1946-10-18" genre="Tango" composer="Manuel Jovés" author="Antonio Viergol" duration="2:42" popularity="2"/>
+    <track name="Tiene razón amigazo" vocal="Alberto Echagüe" year="1946-10-30" genre="Tango" author="Enrique Dizeo" duration="2:43" popularity="2"/>
+    <track name="La canción de mi tristeza" vocal="Armando Laborde" year="1946-10-30" genre="Tango" composer="Juan Sánchez Gorio" author="Horacio Sanguinetti" duration="3:05" popularity="1"/>
+    <track name="Yo no sé llorar" vocal="Alberto Echagüe, Armando Laborde" year="1946-12-06" genre="Tango" composer="Joaquín Do Reyes" author="Celedonio Flores"/>
+    <track name="Calandria pampa" vocal="Alberto Echagüe" year="1946-12-06" genre="Milonga" duration="2:14" popularity="3"/>
+    <track name="Esta noche me emborracho" vocal="Alberto Echagüe" year="1946-12-06" genre="Tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:25" popularity="1"/>
+    <track name="El tarta" vocal="Alberto Echagüe" year="1946-12-23" genre="Tango" composer="José María Rizzuti" author="Emilio Augusto Oscar Fresedo" duration="2:53" popularity="3"/>
+    <track name="Se apagó una estrella" vocal="Armando Laborde" year="1946-12-23" genre="Vals" composer="Gerónimo Yorio" duration="2:38" popularity="2"/>
+    <track name="Triste soledad" vocal="Armando Laborde" year="1947-02-27" genre="Tango" duration="2:36"/>
+    <track name="Lágrimas" vocal="Instrumental" year="1947-04-30" genre="Tango" composer="Edgardo Donato" author="Maruja Pacheco Huergo" duration="2:33" popularity="2"/>
+    <track name="Y entonces lloraras" vocal="Armando Laborde" year="1947-04-30" genre="Tango" composer="Héctor Varela" author="Carlos Waiss"/>
+    <track name="Dos amores" vocal="Armando Laborde" year="1947-05-13" genre="Tango" composer="Antonio Sureda" author="Gerónimo Sureda" duration="2:35" popularity="1"/>
+    <track name="La guitarrita" vocal="Instrumental" year="1947-05-13" genre="Tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="2:02" popularity="3"/>
+    <track name="El penado catorce" vocal="Alberto Echagüe" year="1947-05-20" genre="Tango" composer="Agustín Magaldi, Pedro Noda" author="Carlos Pesce" duration="2:35" popularity="6"/>
+    <track name="El pollo Ricardo" vocal="Instrumental" year="1947-05-20" genre="Tango" composer="Luis Alberto Fernandez" author="Luis Alberto Fernandez" duration="3:05" popularity="1"/>
+    <track name="Por dos caminos" vocal="Alberto Echagüe, Armando Laborde" year="1947-06-19" genre="Milonga" author="Carlos Waiss"/>
+    <track name="Cambalache" vocal="Alberto Echagüe" year="1947-06-19" genre="Tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="2:52" popularity="15"/>
+    <track name="Cartón Junao" vocal="Alberto Echagüe" year="1947-08-08" genre="Tango" composer="Juan D'Arienzo, Héctor Varela" author="Carlos Waiss" duration="3:25" popularity="5"/>
+    <track name="Rawson" vocal="Instrumental" year="1947-08-08" genre="Tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="3:17" popularity="3"/>
+    <track name="Muchachita del recuerdo" vocal="Armando Laborde" year="1947-09-17" genre="Tango" duration="2:52" popularity="1"/>
+    <track name="Dios te salve, m'hijo" vocal="Armando Laborde" year="1947-09-17" genre="Tango" composer="Agustín Magaldi, Pedro Noda" author="Luis Acosta García" duration="2:33" popularity="3"/>
+    <track name="Don Horacio" vocal="Instrumental" year="1947-12-17" genre="Tango" composer="Pintín Castellanos" duration="2:30" popularity="6"/>
+    <track name="Lenguas de fuego" vocal="Armando Laborde" year="1947-12-17" genre="Tango" composer="Juan D'Arienzo, Héctor Varela" author="Carlos Waiss" duration="3:07" popularity="5"/>
+    <track name="Dale, dale caballito" vocal="Armando Laborde" year="1947-12-17" genre="Milonga" composer="Fulvio Salamanca" author="Carlos Bahr" duration="2:28" popularity="2"/>
+    <track name="El viento me cuenta cosas" vocal="Alberto Echagüe, Armando Laborde" year="1947-12-17" genre="Milonga" composer="Miguel Bucino" author="Miguel Bucino"/>
+    <track name="Contra luz" vocal="Instrumental" year="1947-12-17" genre="Tango" duration="2:34" popularity="4"/>
+    <track name="Campeona" vocal="Instrumental" year="1947-12-17" genre="Milonga" popularity="1"/>
+    <track name="Ladrón de sueños" vocal="Armando Laborde" year="1947-12-23" genre="Tango" author="Héctor Marcó" duration="2:36" popularity="2"/>
+    <track name="Felicia" vocal="Instrumental" year="1947-12-23" genre="Tango" composer="Enrique Saborido" author="Carlos Mauricio Pacheco" duration="3:00" popularity="1"/>
+    <track name="Olga" vocal="Instrumental" year="1948-02-18" genre="Vals" duration="2:28" popularity="1"/>
+    <track name="Hotel Victoria" vocal="Instrumental" year="1948-02-18" genre="Tango" duration="2:28" popularity="5"/>
+    <track name="Una y mil noches" vocal="Armando Laborde" year="1948-05-07" genre="Tango" composer="Oreste Cufaro" author="Carlos Bahr" duration="2:35" popularity="2"/>
+    <track name="El choclo" vocal="Instrumental" year="1948-05-07" genre="Tango" composer="Ángel Villoldo" author="Enrique Discépolo, Juan Carlos Marambio Catán" duration="2:34" popularity="3"/>
+    <track name="El raje" vocal="Alberto Echagüe" year="1948-05-07" genre="Milonga" composer="Juan D'Arienzo, Héctor Varela" author="Carlos Waiss" duration="3:06" popularity="9"/>
+    <track name="Barajando" vocal="Alberto Echagüe" year="1948-06-15" genre="Tango" composer="Nicolás Vaccaro" author="Eduardo Escaris Méndez" duration="2:58" popularity="7"/>
+    <track name="Qué apuro tengo" vocal="Alberto Echagüe" year="1948-06-15" genre="Tango" composer="Eladio Blanco" author="Carlos Bahr" duration="2:33" popularity="3"/>
+    <track name="Don Juan" vocal="Instrumental" year="1948-06-15" genre="Tango" composer="Ernesto Ponzio" duration="2:34" popularity="4"/>
+    <track name="Pampa y huella" vocal="Alberto Echagüe, Armando Laborde" year="1948-09-23" genre="Tango" author="Héctor Marcó"/>
+    <track name="Eterna" vocal="Alberto Echagüe" year="1948-09-23" genre="Vals" composer="Fulvio Salamanca" author="Carlos Bahr" duration="2:30" popularity="3"/>
+    <track name="Pof pof" vocal="Instrumental" year="1948-09-23" genre="Tango" composer="Vicente Greco" duration="2:22" popularity="4"/>
+    <track name="Derecho viejo" vocal="Instrumental" year="1948-09-23" genre="Tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="2:30" popularity="3"/>
+    <track name="Chichipía" vocal="Alberto Echagüe" year="1949-04-06" genre="Tango" composer="Juan D'Arienzo, Héctor Varela" author="Carlos Waiss" duration="2:49" popularity="6"/>
+    <track name="La morocha" vocal="Instrumental" year="1949-04-06" genre="Tango" composer="Enrique Saborido" author="Ángel Villoldo" duration="2:26" popularity="4"/>
+    <track name="Santa Madrecita" vocal="Armando Laborde" year="1949-04-06" genre="Tango" composer="Juan D'Arienzo, Héctor Varela" author="Carlos Waiss" duration="3:00" popularity="5"/>
+    <track name="Caña" vocal="Armando Laborde" year="1949-04-06" genre="Tango" duration="3:30" popularity="2"/>
+    <track name="Delfino" vocal="Instrumental" year="1949-04-06" genre="Tango" duration="2:30" popularity="4"/>
+    <track name="La payanca" vocal="Instrumental" year="1949-04-06" genre="Tango" composer="Augusto Pedro Berto" author="Jesús Fernández Blanco" duration="2:59" popularity="5"/>
+    <track name="Vencido" vocal="Alberto Echagüe" year="1949-04-06" genre="Tango" composer="Oreste Cufaro" author="Héctor Gagliardi" duration="2:31" popularity="2"/>
+    <track name="Pampa" vocal="Instrumental" year="1949-04-06" genre="Tango" composer="Francisco Pracánico" duration="2:23" popularity="2"/>
+    <track name="La maleva" vocal="Instrumental" year="1949-07-26" genre="Tango" composer="Antonio Buglione" author="Mario Alberto Pardo" duration="3:22" popularity="4"/>
+    <track name="Farabute" vocal="Alberto Echagüe" year="1949-07-26" genre="Tango" duration="2:28" popularity="11"/>
+    <track name="As de bastos" vocal="Instrumental" year="1949-11-24" genre="Tango" composer="L. Caruso" popularity="3"/>
+    <track name="Yuyo brujo" vocal="Armando Laborde" year="1949-11-24" genre="Tango" composer="Benjamin Garcia" author="Carlos Waiss" duration="2:31" popularity="7"/>
+    <track name="Don Pacifico" vocal="Instrumental" year="1949-11-24" genre="Tango" composer="Arturo Vicente De Bassi" duration="2:38" popularity="4"/>
+    <track name="Amarga sospecha" vocal="Armando Laborde" year="1949-11-24" genre="Tango" composer="Fulvio Salamanca" author="Carlos Bahr" duration="2:43" popularity="5"/>
+    <track name="La catrera" vocal="Instrumental" year="1949-11-24" genre="Tango" composer="Arturo Vicente De Bassi" duration="2:31" popularity="2"/>
+    <track name="Si yo la quiero" vocal="Armando Laborde" year="1949-11-24" genre="Tango" composer="José Di Pilato" author="Carlos Bahr" duration="2:40" popularity="1"/>
+    <track name="El potro" vocal="Instrumental" year="1949-12-19" genre="Milonga" composer="Pintín Castellanos" duration="2:10" popularity="6"/>
+    <track name="Mi cariñito" vocal="Alberto Echagüe, Armando Laborde" year="1949-12-19" genre="Vals" composer="Alfredo De Angelis" author="José Rótulo"/>
+    <track name="Nació en pompeya" vocal="Alberto Echagüe" year="1949-12-19" genre="Tango" composer="N. Paredes, J. Rótulo"/>
+    <track name="Un cambio te viene bién" vocal="Alberto Echagüe" year="1949-12-19" genre="Milonga" composer="Eladio Blanco" author="Francisco Alfredo Marino" duration="2:20"/>
+    <track name="El rey del compás" vocal="Instrumental" year="1949-12-19" genre="Tango" composer="Princípe Cubano" author="Princípe Cubano" duration="2:31" popularity="4"/>
+    <track name="Unión Cívica" vocal="Instrumental" year="1949-12-19" genre="Tango" composer="Domingo Santa Cruz" duration="2:25" popularity="3"/>
+</discography>

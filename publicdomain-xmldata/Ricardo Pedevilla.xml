@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<discography orchestra="Ricardo Pedevilla" source="tango.info">
+    <track name="Cuidao con los 50" vocal="Instrumental" year="1950-11-21" genre="tango"/>
+    <track name="El amanecer" vocal="Instrumental" year="1950-11-28" genre="tango" composer="Roberto Firpo" duration="2:20" popularity="2"/>
+    <track name="El caburé" vocal="Instrumental" year="1951-12-05" genre="tango" composer="Arturo Vicente De Bassi" duration="2:30"/>
+    <track name="El incendio" vocal="Instrumental" year="1953-10-06" genre="tango" composer="Arturo Vicente De Bassi" duration="2:52"/>
+    <track name="El pollo Ricardo" vocal="Instrumental" year="1950-01-03" genre="tango" composer="Luis Alberto Fernandez" author="Luis Alberto Fernandez" duration="2:40"/>
+    <track name="Marianito" vocal="Instrumental" year="1950-12-27" genre="tango"/>
+    <track name="Mascotita de marfíl" vocal="Instrumental" year="1951-09-03" genre="vals"/>
+    <track name="Organito de la tarde" vocal="Instrumental" year="1950-11-21" genre="tango" composer="Cátulo Castillo" author="José González Castillo (Juan de León)" duration="2:40" popularity="1"/>
+    <track name="Patria" vocal="Hugo Del Valle" year="1952-12-05" genre="milonga" duration="3:15"/>
+    <track name="Siete palabras" vocal="Instrumental" year="1951-12-05" genre="tango" composer="Juan Félix Maglio" author="Alfredo Bigeschi" duration="2:39"/>
+    <track name="Ventanita de arrabal" vocal="Oscar Serpa" year="1950" genre="tango" composer="Antonio Scatasso" author="Pascual Contursi" duration="2:40"/>
+    <track name="Vida mía" vocal="Instrumental" year="1952" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" duration="2:39"/>
+</discography>

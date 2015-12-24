@@ -1,0 +1,9 @@
+in the upper level CMakeLists.txt of taglib add:
+add_definitions ( /Zc:wchar_t-)
+
+cmake -G "NMake Makefiles" -DENABLE_STATIC=ON -DHAVE_ZLIB=0 -DWITH_MP4=1 -DTAGLIB_STATIC=1 -DCMAKE_BUILD_TYPE=release ..
+
+
+be sure to compile all code with
+#define TAGLIB_STATIC 1
+

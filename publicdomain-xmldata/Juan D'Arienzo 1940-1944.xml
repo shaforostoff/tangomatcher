@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<discography orchestra="Juan D'Arienzo" source="tangoteca">
+    <track name="Entre dos fuegos" vocal="Instrumental" year="1940-04-12" genre="Tango" composer="Alberto Lopez Buchardo" duration="2:18" popularity="3"/>
+    <track name="Salí de perdedor" vocal="Alberto Reynal" year="1940-04-12" genre="Milonga" composer="Héctor Varela" duration="2:31"/>
+    <track name="Chirusa" vocal="Alberto Reynal" year="1940-05-17" genre="Tango" composer="Juan D'Arienzo" author="Nolo López" duration="2:49" popularity="2"/>
+    <track name="A una mujer" vocal="Alberto Reynal" year="1940-05-17" genre="Vals" composer="Horacio Salgán" author="Carmelo Volpe" duration="2:32" popularity="2"/>
+    <track name="El pillín" vocal="Instrumental" year="1940-06-07" genre="Tango" composer="Francisco Canaro" duration="3:13" popularity="2"/>
+    <track name="Cajita de música" vocal="Alberto Reynal" year="1940-06-07" genre="Milonga" composer="Pintín Castellanos" duration="2:16" popularity="1"/>
+    <track name="Fibras" vocal="Instrumental" year="1940-06-27" genre="Vals" composer="Eduardo Bonessi" duration="2:20"/>
+    <track name="Tucumán" vocal="Instrumental" year="1940-06-27" genre="Tango" composer="José Luis Padula" duration="2:54" popularity="1"/>
+    <track name="La bicoca" vocal="Instrumental" year="1940-08-08" genre="Tango" duration="2:24" popularity="5"/>
+    <track name="Barracas al sud" vocal="Carlos Casares" year="1940-08-08" genre="Milonga" composer="Fulvio Salamanca" author="Julio Alberto" duration="2:28" popularity="2"/>
+    <track name="El tigre Millán" vocal="Alberto Reynal" year="1940-08-22" genre="Tango" composer="Francisco Canaro" author="Francisco Canaro" duration="2:55" popularity="5"/>
+    <track name="Ríe, payaso" vocal="Carlos Casares" year="1940-08-22" genre="Tango" composer="Virgilio Carmon" author="Emilio Luis Ramón Falero" duration="2:33" popularity="9"/>
+    <track name="La clavada" vocal="Instrumental" year="1940-10-09" genre="Tango" composer="Ernesto F. Zambonini" author="Ernesto F. Zambonini" duration="2:24" popularity="4"/>
+    <track name="Yo también" vocal="Carlos Casares" year="1940-10-09" genre="Tango" composer="Luis Nicolas Visca" author="Luis Rubistein" duration="2:24" popularity="4"/>
+    <track name="Canaro en París" vocal="Instrumental" year="1940-11-21" genre="Tango" composer="Alejandro Scarpino" duration="2:34" popularity="4"/>
+    <track name="El corazón me engañó" vocal="Alberto Reynal" year="1940-11-21" genre="Tango" composer="Miguel Bucino" author="Miguel Bucino" duration="2:23" popularity="4"/>
+    <track name="No te engañes corazón" vocal="Alberto Reynal" year="1940-12-12" genre="Tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:28" popularity="6"/>
+    <track name="Milonga del ochenta y tres" vocal="Alberto Reynal" year="1940-12-12" genre="Milonga" duration="2:20" popularity="3"/>
+    <track name="Esclavas blancas" vocal="Alberto Reynal" year="1940-12-12" genre="Tango" duration="2:55" popularity="3"/>
+    <track name="Flor del mal" vocal="Héctor Mauré" year="1940-12-12" genre="Vals" popularity="3"/>
+    <track name="Quasi nada" vocal="Instrumental" year="1940-12-31" genre="Tango" composer="J. Maglio, F. Brancatti" popularity="5"/>
+    <track name="Miedo" vocal="Héctor Mauré" year="1940-12-31" genre="Vals" composer="Elvino Vardaro, Antonio Oscar Arona" author="Francisco García" duration="2:21" popularity="2"/>
+    <track name="Fuegos artificiales" vocal="Instrumental" year="1941-02-26" genre="Tango" composer="Eduardo Arolas, Roberto Firpo" duration="2:40" popularity="3"/>
+    <track name="Almanaque de ilusión" vocal="Alberto Reynal" year="1941-02-26" genre="Tango" composer="Nicolás Alberto Tavarozzi" author="Héctor Marcó" duration="3:00" popularity="7"/>
+    <track name="Ya lo ves" vocal="Héctor Mauré" year="1941-04-28" genre="Tango" composer="Juan D'Arienzo" author="Luis Rubistein" duration="2:37" popularity="8"/>
+    <track name="Candombe oriental" vocal="Alberto Reynal" year="1941-04-28" genre="Milonga" composer="Pintín Castellanos" author="Pintín Castellanos" duration="2:25" popularity="4"/>
+    <track name="Dime, mi amor" vocal="Héctor Mauré" year="1941-05-21" genre="Tango" composer="Rodolfo Sciammarella" author="Manuel Romero" duration="2:39" popularity="8"/>
+    <track name="Quién te iguala" vocal="Instrumental" year="1941-05-21" genre="Tango" composer="Alejandro Michetti" author="Francisco Bohigas" duration="2:27" popularity="3"/>
+    <track name="Tierrita" vocal="Héctor Mauré" year="1941-06-09" genre="Tango" composer="Agustín Bardi" author="Jesús Fernández Blanco" duration="3:03" popularity="11"/>
+    <track name="Adiós querida" vocal="Héctor Mauré" year="1941-06-09" genre="Vals" composer="Horacio Salgán" author="Carmelo Volpe" duration="2:30" popularity="5"/>
+    <track name="Nunca más" vocal="Héctor Mauré" year="1941-07-14" genre="Tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="3:08" popularity="14"/>
+    <track name="Canaro" vocal="Instrumental" year="1941-07-14" genre="Tango" composer="José Martínez" duration="2:37" popularity="5"/>
+    <track name="El olivo (El olvido)" vocal="Héctor Mauré" year="1941-07-14" genre="Tango" composer="A. Scatasso, J.D. Vivas, N. Cabral" popularity="11"/>
+    <track name="Humillación" vocal="Héctor Mauré" year="1941-07-14" genre="Tango" composer="Rodolfo Biagi" author="Carlos Bahr" duration="2:22" popularity="12"/>
+    <track name="Bolada de aficionado" vocal="Instrumental" year="1941-07-29" genre="Milonga" composer="Ángel Villoldo" duration="2:30" popularity="5"/>
+    <track name="Olvidao" vocal="Alberto Reynal" year="1941-07-29" genre="Tango" composer="Guillermo Barbieri" author="Enrique Cadícamo" duration="2:39" popularity="4"/>
+    <track name="Hernani" vocal="Instrumental" year="1941-09-12" genre="Tango" duration="2:31" popularity="3"/>
+    <track name="El rey del compás" vocal="Instrumental" year="1941-09-12" genre="Tango" composer="Princípe Cubano" author="Princípe Cubano" duration="2:25" popularity="9"/>
+    <track name="La serenata de ayer" vocal="Héctor Mauré" year="1941-09-12" genre="Vals" composer="Manuel Buzón" author="Ismael Roberto Aguilar" duration="2:11" popularity="10"/>
+    <track name="Sobre el pucho" vocal="Héctor Mauré" year="1941-09-12" genre="Tango" composer="S. Piana, J.G. Castillo" popularity="16"/>
+    <track name="Orquesta típica" vocal="Alberto Reynal" year="1941-10-24" genre="Tango" composer="Enrique Cadícamo" author="Enrique Cadícamo" duration="2:30" popularity="3"/>
+    <track name="Carnavalera" vocal="Héctor Mauré" year="1941-10-24" genre="Milonga" composer="Sebastián Piana" author="Homero Manzi" duration="2:39" popularity="7"/>
+    <track name="Cuatro palabras" vocal="Héctor Mauré" year="1941-11-12" genre="Vals" composer="Luis Rubistein" author="Luis Rubistein" duration="2:11" popularity="9"/>
+    <track name="El resero" vocal="Instrumental" year="1941-11-12" genre="Tango" duration="2:56" popularity="6"/>
+    <track name="El calabozo" vocal="Instrumental" year="1941-12-15" genre="Tango" composer="Augusto Gentile" duration="2:55" popularity="2"/>
+    <track name="El vals de los abuelos" vocal="Héctor Mauré" year="1941-12-15" genre="Vals" composer="Luis Rubistein" duration="2:23" popularity="1"/>
+    <track name="Infamia" vocal="Héctor Mauré" year="1941-12-15" genre="Tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:02" popularity="10"/>
+    <track name="El porteño" vocal="Héctor Mauré" year="1941-12-15" genre="Milongón" composer="Francisco Canaro" author="Antonio Botta, José González Castillo (Juan de León), Luis César Amadori" duration="2:22" popularity="1"/>
+    <track name="Garronero" vocal="Héctor Mauré" year="1942-03-25" genre="Tango" composer="Juan D'Arienzo" duration="2:46" popularity="6"/>
+    <track name="El naranjerito" vocal="Héctor Mauré" year="1942-03-25" genre="Milonga" composer="Alberto Nery, Héctor Varela" author="Homero Expósito" duration="2:26" popularity="1"/>
+    <track name="Culpas ajenas" vocal="Alberto Reynal" year="1942-03-25" genre="Tango" composer="Ernesto Ponzio" author="Jorge Curi" duration="3:20" popularity="1"/>
+    <track name="Consejos" vocal="Alberto Reynal" year="1942-04-22" genre="Tango" composer="Juan D'Arienzo" author="Nolo López" duration="2:43" popularity="3"/>
+    <track name="Barranca abajo (Cancion de Soledad)" vocal="Héctor Mauré" year="1942-04-22" genre="Tango" composer="M.G. Servetto" popularity="1"/>
+    <track name="Loca" vocal="Instrumental" year="1942-04-22" genre="Tango" composer="Manuel Jovés" author="Antonio Viergol" duration="2:37" popularity="2"/>
+    <track name="Vidas marcadas" vocal="Alberto Reynal" year="1942-04-29" genre="Tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:32" popularity="2"/>
+    <track name="Muchachita porteña" vocal="Héctor Mauré" year="1942-04-29" genre="Vals" composer="Mariano Mores" author="Alberto Vacarezza" duration="2:33" popularity="1"/>
+    <track name="Mírame en la cara" vocal="Héctor Mauré" year="1942-06-18" genre="Tango" composer="Héctor Varela" author="Luis Castiñeira" duration="2:59" popularity="8"/>
+    <track name="Tierra negra" vocal="Instrumental" year="1942-06-18" genre="Tango" composer="Graciano De Leone, Juan F. Noli" author="Francisco Antonio Bastardi" duration="2:44" popularity="3"/>
+    <track name="El amasijo" vocal="Instrumental" year="1942-06-18" genre="Tango" duration="2:33" popularity="2"/>
+    <track name="El retobao" vocal="Héctor Mauré" year="1942-07-21" genre="Tango" author="Francisco Antonio Lio" duration="2:48" popularity="1"/>
+    <track name="Y se van los años" vocal="Héctor Mauré" year="1942-07-21" genre="Tango" composer="Cayetano Puglisi" author="Luis Castiñeira" duration="2:36" popularity="2"/>
+    <track name="Tu pañuelo" vocal="Héctor Mauré" year="1942-07-21" genre="Vals" composer="Antonio Polito" author="Ivan Diez" duration="2:59" popularity="1"/>
+    <track name="Claudinette" vocal="Héctor Mauré" year="1942-08-12" genre="Tango" composer="Enrique Delfino" author="Julián Centeya" duration="2:30" popularity="15"/>
+    <track name="Tirando a matar" vocal="Héctor Mauré" year="1942-08-12" genre="Milonga" composer="Pintín Castellanos" duration="2:58" popularity="11"/>
+    <track name="Pompas de jabón" vocal="Juan Carlos Lamas" year="1942-09-24" genre="Tango" composer="Roberto Emilio Goyeneche" author="Enrique Cadícamo" duration="2:28" popularity="4"/>
+    <track name="Embrujamiento" vocal="Juan Carlos Lamas" year="1942-09-24" genre="Tango" composer="Dante Smurra, Ricardo Malerba" author="Manuel Enrique Ferradás Campos" duration="2:47" popularity="1"/>
+    <track name="Sans souci" vocal="Instrumental" year="1942-09-24" genre="Tango" composer="Enrique Delfino" author="Enrique Delfino" duration="2:27" popularity="3"/>
+    <track name="Vieja recova" vocal="Juan Carlos Lamas" year="1942-09-24" genre="Tango" composer="Rodolfo Sciammarella" author="Enrique Cadícamo" duration="2:36" popularity="7"/>
+    <track name="Cortada de San Ignacio" vocal="Héctor Mauré" year="1942-09-24" genre="Milonga" composer="Horacio Salgán" author="Carmelo Volpe" duration="2:20" popularity="6"/>
+    <track name="El lazo" vocal="Instrumental" year="1942-10-27" genre="Tango" author="Eugenio Cárdenas" duration="3:00" popularity="1"/>
+    <track name="Criollita linda" vocal="Héctor Mauré" year="1942-10-27" genre="Vals" duration="2:28" popularity="1"/>
+    <track name="Carancho" vocal="Juan Carlos Lamas" year="1942-10-27" genre="Tango" composer="Fulvio Salamanca" author="Héctor Marcó" duration="2:40" popularity="1"/>
+    <track name="Seguime corazón" vocal="Juan Carlos Lamas" year="1942-10-27" genre="Tango" composer="Baldomero Suárez" author="Jesús Fernández Blanco" duration="2:30" popularity="1"/>
+    <track name="Chiqué" vocal="Instrumental" year="1942-12-22" genre="Tango" composer="Ricardo Luis Brignolo" author="Ricardo Luis Brignolo" duration="2:52" popularity="4"/>
+    <track name="Compadrón" vocal="Héctor Mauré" year="1942-12-22" genre="Tango" composer="Luis Nicolas Visca" author="Enrique Cadícamo" duration="2:46" popularity="14"/>
+    <track name="Cicatrices" vocal="Héctor Mauré" year="1942-12-22" genre="Tango" composer="Adolfo Rafael Avilés" author="Enrique Maroni" duration="2:18" popularity="14"/>
+    <track name="Independencia" vocal="Instrumental" year="1942-12-22" genre="Tango" composer="Alfredo Bevilacqua" author="Antonio Polito" duration="2:35" popularity="3"/>
+    <track name="Tan solo tu" vocal="Héctor Mauré" year="1942-12-22" genre="Vals" composer="Mariano Mores" author="Elizardo Martínez Vilas" duration="2:29" popularity="1"/>
+    <track name="La rumbita candombé" vocal="Héctor Mauré" year="1942-12-29" genre="Milonga" composer="Osvaldo Novarro, Raúl Fortunato" author="Mario Battistella" duration="2:43" popularity="1"/>
+    <track name="Pobre Mascarita" vocal="Juan Carlos Lamas" year="1942-12-29" genre="Tango" composer="Orlando Romanelli" author="Salvador Granata" duration="2:35" popularity="3"/>
+    <track name="Judas" vocal="Héctor Mauré" year="1942-12-29" genre="Tango" composer="Carlos Marchisio" author="Carmelo Santiago" duration="2:54" popularity="5"/>
+    <track name="Enamorado (Metido)" vocal="Héctor Mauré" year="1943-06-23" genre="Tango" composer="Principe Cubano" popularity="7"/>
+    <track name="Música de mi Argentina" vocal="Juan Carlos Lamas" year="1943-06-23" genre="Milonga" composer="Miguel Bucino" duration="2:17" popularity="1"/>
+    <track name="Tres horas" vocal="Héctor Mauré" year="1943-06-23" genre="Tango" composer="Héctor Varela" author="Alberto Nery" duration="2:56"/>
+    <track name="Se fue" vocal="Héctor Mauré" year="1943-06-23" genre="Vals" composer="H. Salgán, P. Valdez"/>
+    <track name="Arlette" vocal="Héctor Mauré" year="1943-06-23" genre="Tango" composer="Antonio Bonavena" author="Horacio Sanguinetti" duration="3:22" popularity="4"/>
+    <track name="Vea, vea" vocal="Instrumental" year="1943-07-13" genre="Tango" composer="Roberto Firpo" author="Carlos Waiss" duration="2:37" popularity="7"/>
+    <track name="Tango brujo" vocal="Héctor Mauré" year="1943-07-13" genre="Tango" composer="Francisco Canaro" author="Francisco Canaro" duration="2:47" popularity="7"/>
+    <track name="Tabú" vocal="Héctor Mauré" year="1943-07-13" genre="Milonga" composer="Titi Rossi" duration="2:08" popularity="2"/>
+    <track name="Si la llegaran a ver" vocal="Héctor Mauré" year="1943-09-28" genre="Tango" composer="Juan D'Arienzo" author="Enrique Cadícamo" duration="2:35" popularity="8"/>
+    <track name="Aunque vivas en el cielo" vocal="Héctor Mauré" year="1943-09-28" genre="Vals" composer="Fulvio Salamanca" author="Héctor Marcó" duration="2:33"/>
+    <track name="Aguilucho" vocal="Héctor Mauré" year="1943-09-28" genre="Tango" duration="2:34" popularity="3"/>
+    <track name="Yo quiero cantar un tango" vocal="Héctor Mauré" year="1943-09-28" genre="Tango" composer="Miguel Nijensohn" author="José Maria Suñe" duration="2:56" popularity="3"/>
+    <track name="Corrales viejos" vocal="Instrumental" year="1943-09-28" genre="Milonga" composer="Anselmo Aieta" author="Francisco Laino, Antonio Radicci" duration="2:10" popularity="3"/>
+    <track name="Aquel muchacho de la orquesta" vocal="Juan Carlos Lamas" year="1943-09-28" genre="Tango" composer="Luis Caruso" duration="2:34"/>
+    <track name="Uno" vocal="Héctor Mauré" year="1943-11-23" genre="Tango" composer="Mariano Mores" author="Enrique Discépolo" duration="3:00" popularity="15"/>
+    <track name="Joaquina" vocal="Instrumental" year="1943-11-23" genre="Tango" composer="Juan Bergamino" duration="3:22" popularity="3"/>
+    <track name="La cumparsita" vocal="Instrumental" year="1943-11-23" genre="Tango" composer="Gerardo Matos Rodríguez" author="Pascual Contursi, Enrique Maroni, Gerardo Matos Rodríguez" duration="3:29" popularity="5"/>
+    <track name="La puñalada" vocal="Instrumental" year="1943-11-23" genre="Milonga" composer="Pintín Castellanos" author="Celedonio Flores" duration="2:02" popularity="4"/>
+    <track name="Candombe rioplatense" vocal="Juan Carlos Lamas" year="1943-12-27" genre="Milonga Candombe" composer="Pintín Castellanos" author="Carmelo Santiago" duration="2:29" popularity="1"/>
+    <track name="A Mercedes" vocal="Héctor Mauré" year="1943-12-27" genre="Vals" composer="Hugo Gutiérrez" author="Venancio Clauso" duration="2:29" popularity="3"/>
+    <track name="Es inútil que la llores" vocal="Juan Carlos Lamas" year="1943-12-27" genre="Tango" composer="Salvador Grupillo" author="Luis Caruso" duration="2:43" popularity="3"/>
+    <track name="Prisionero" vocal="Héctor Mauré" year="1943-12-27" genre="Vals" composer="Anselmo Aieta" author="Francisco García" duration="2:35" popularity="4"/>
+    <track name="Viejo tintero" vocal="Juan Carlos Lamas" year="1943-12-27" genre="Tango" composer="Graciano De Leone" duration="2:36" popularity="2"/>
+    <track name="Lilián" vocal="Héctor Mauré" year="1944-05-17" genre="Tango" composer="Héctor Varela" author="Luis Caruso" duration="3:23" popularity="17"/>
+    <track name="El apache argentino" vocal="Instrumental" year="1944-05-17" genre="Tango" composer="Manuel Gregorio Aróztegui" duration="3:11" popularity="7"/>
+    <track name="Las doce" vocal="Héctor Mauré" year="1944-05-17" genre="Tango" composer="Juan D'Arienzo" author="Nolo López" duration="2:30" popularity="2"/>
+    <track name="Ana María" vocal="Héctor Mauré" year="1944-05-17" genre="Milonga" composer="Fulvio Salamanca" duration="2:15" popularity="1"/>
+    <track name="La mentirosa" vocal="Instrumental" year="1944-06-09" genre="Tango" composer="A. Aieta" popularity="6"/>
+    <track name="El huracán" vocal="Instrumental" year="1944-07-07" genre="Tango" composer="Osvaldo Donato, Edgardo Donato" author="Nolo López" duration="2:23" popularity="7"/>
+    <track name="Amarras" vocal="Héctor Mauré" year="1944-07-21" genre="Tango" composer="Carlos Marchisio" author="Carmelo Santiago" duration="3:28" popularity="13"/>
+</discography>
