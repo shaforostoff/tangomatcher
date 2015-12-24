@@ -224,7 +224,7 @@
     <track name="Esta noche de copas" vocal="Jorge Falcón" year="1973" genre="Tango" composer="Juan Carlos Howard" author="José María Contursi"/>
     <track name="Estrella" vocal="Rodolfo Lesica" year="" genre="" composer="Sebastián Piana"/>
     <track name="Fantasia tanguera" vocal="Instrumental" year="" genre=""/>
-    <track name="Fueron tres años" vocal="Instrumental" year="" genre="Tango" duration="3:29"/>
+    <track name="Fueron tres años" vocal="Jorge Falcón" year="1973" genre="Tango" duration="3:29"/>
     <track name="Fumando espero" vocal="Instrumental" year="" genre="Tango"/>
     <track name="Gaucha" vocal="Ernesto Herrera, Armando Laborde" year="" genre="" composer="Pedro Laurenz" author="Luis Rubistein"/>
     <track name="Gran muñeca" vocal="Instrumental" year="" genre="Tango" composer="Alfredo Bevilacqua" author="Antonio Polito"/>
@@ -252,7 +252,7 @@
     <track name="No me hablen de ella" vocal="Rodolfo Lesica" year="1957" genre="Tango"/>
     <track name="No, no llores más" vocal="Ernesto Herrera" year="1958" genre="Tango" composer="Ángel Cabral" author="Reynaldo Yiso / Ghiso"/>
     <track name="Una noche menos y una noche mas" vocal="Jorge Falcón" year="1973" genre="Tango"/>
-    <track name="Nuestra historieta termino" vocal="Instrumental" year="1973" genre="Tango"/>
+    <track name="Nuestra historieta termino" vocal="Jorge Falcón" year="1973" genre="Tango"/>
     <track name="Nueve de Julio" vocal="Instrumental" year="1957" genre="Tango" composer="José Luis Padula" author="Lito Bayardo" duration="2:45"/>
     <track name="Orillera" vocal="Instrumental" year="" genre="" composer="Oscar Bassil"/>
     <track name="Para vos, chirola" vocal="Instrumental" year="" genre=""/>
@@ -294,4 +294,14 @@
     <track name="Yo no quiero que se entere" vocal="Carlos Yanel" year="1958" genre="Tango" composer="Leo Lipesker"/>
     <track name="Yo sé que no me engano" vocal="Jorge Falcón" year="1973" genre="Tango" author="Abel Aznar"/>
     <track name="Yo te canto Buenos Aires" vocal="Ernesto Herrera" year="" genre="" composer="Héctor Varela" author="Carlos Waiss"/>
+	<track name="Fueron tres años" vocal="Héctor Mauré" year="1956" genre="Tango"/>
+	<track name="Hoy es tarde" vocal="Héctor Mauré" year="1956" genre="Tango"/>
+	<track name="Malevaje" vocal="Héctor Mauré" year="1955" genre="Tango"/>
+	<track name="No mientas" vocal="Héctor Mauré" year="1955" genre="Tango"/>
+	<track name="Amarras" vocal="Héctor Mauré" year="1955" genre="Tango"/>
+	<track name="Demasiado tarde" vocal="Héctor Mauré" year="1955" genre="Tango"/>
+	<track name="Porque soy Reo" vocal="Héctor Mauré" year="1955" genre="Tango"/>
+	<track name="Cartas viejas" vocal="Héctor Mauré" year="1955" genre="Tango"/>
+	<track name="Barrio Reo" vocal="Héctor Mauré" year="1954" genre="Tango"/>
+
 </discography>

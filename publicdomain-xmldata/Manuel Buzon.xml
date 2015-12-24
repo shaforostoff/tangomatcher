@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<discography orchestra="Manuel Buzón" source="tango.info">
+    <track name="Al cerrar los ojos" vocal="Amadeo Mandarino" year="1942-09-04" genre="tango" composer="Manuel Buzón" author="Cesar Felipe Vedani" duration="2:57"/>
+    <track name="Al cerrar los ojos" vocal="Osvaldo Moreno" year="1942-09-04" genre="tango" composer="Manuel Buzón" author="Cesar Felipe Vedani" duration="3:01" popularity="2"/>
+    <track name="Al verla pasar" vocal="Amadeo Mandarino" year="1942-02-11" genre="tango" composer="Joaquín Mora" author="José María Contursi" duration="3:08" popularity="5"/>
+    <track name="Alice" vocal="Instrumental" year="1942-05-12" genre="tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="2:35" popularity="6"/>
+    <track name="Callecita de mi barrio" vocal="Rosita Quiroga" year="1925-09-28" genre="tango" composer="Alberto Laporte, Otelo Gasparini" author="Enrique Maroni"/>
+    <track name="Canto al tango" vocal="Osvaldo Moreno" year="1943-02-10" genre="tango" composer="Federico Scorticati" duration="2:49" popularity="4"/>
+    <track name="Compadre y buen mozo" vocal="Osvaldo Moreno" year="1943-01-13" genre="tango" duration="2:37" popularity="2"/>
+    <track name="Ficha de oro" vocal="Osvaldo Moreno" year="1942-11-17" genre="milonga" author="Enrique Dizeo" duration="2:56" popularity="2"/>
+    <track name="Fueye" vocal="Amadeo Mandarino" year="1942-06-05" genre="tango" composer="Charlo" author="Homero Manzi" duration="2:52" popularity="9"/>
+    <track name="Jazmín Simón" vocal="Amadeo Mandarino" year="1942-05-12" genre="milonga" composer="Sebastián Piana" author="Cátulo Castillo" popularity="2"/>
+    <track name="Lamento" vocal="Rosita Quiroga" year="1925-09-28" genre="tango"/>
+    <track name="Mano brava" vocal="Amadeo Mandarino" year="1942-02-11" genre="milonga" composer="Francisco Canaro, Juan Canaro" duration="2:41" popularity="4"/>
+    <track name="Mediodía" vocal="Osvaldo Moreno" year="1943-01-13" genre="tango" composer="Manuel Buzón" author="Celedonio Flores" duration="3:10" popularity="5"/>
+    <track name="Mi vida fué una milonga" vocal="Osvaldo Moreno" year="1943-02-10" genre="milonga" duration="2:38" popularity="3"/>
+    <track name="Miedo" vocal="Amadeo Mandarino" year="1942-06-05" genre="vals" composer="Elvino Vardaro, Antonio Oscar Arona" author="Francisco García" duration="2:28" popularity="2"/>
+    <track name="Muchacho" vocal="Rosita Quiroga" year="1925-09-17" genre="tango" composer="Edgardo Donato" author="Celedonio Flores" duration="3:24" popularity="2"/>
+    <track name="Música de organito" vocal="Amadeo Mandarino" year="1942-03-31" genre="milonga" duration="2:27" popularity="2"/>
+    <track name="Nunca pensé" vocal="Osvaldo Moreno" year="1942-11-17" genre="tango" composer="Carlos Marchisio" author="Carmelo Santiago" duration="2:39" popularity="2"/>
+    <track name="Pichón enamorado" vocal="Osvaldo Moreno" year="1942-09-04" genre="vals" author="Mario Battistella" duration="2:18" popularity="2"/>
+    <track name="Qué has hecho de mi cariño? | Royal Pigall" vocal="Amadeo Mandarino" year="1942-03-31" genre="tango" duration="2:40" popularity="2"/>
+    <track name="Mano brava" vocal="Instrumental" year="" genre="milonga" composer="Francisco Canaro, Juan Canaro" duration="2:45"/>
+</discography>
