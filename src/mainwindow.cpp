@@ -9,7 +9,7 @@
 
 
 #include <QtCore>
-#include <QtXml>
+#include <QDomDocument>
 #include <QtGlobal>
 #include <QSortFilterProxyModel>
 #include <QProgressBar>
