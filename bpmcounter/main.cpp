@@ -1,12 +1,11 @@
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QtCore/QDebug>
 #include "beatcounter.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    a.setOrganizationDomain("program.net.ua");
     a.setOrganizationName("BeatCounter");
     a.setApplicationName("BeatCounter");
     BeatCounter w;
