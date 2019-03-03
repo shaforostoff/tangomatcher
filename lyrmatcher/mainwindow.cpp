@@ -6,6 +6,8 @@
 #include <QtGui>
 #include <QtXml>
 #include <QtGlobal>
+#include <QFileSystemModel>
+#include <QShortcut>
 
 #include <taglib/fileref.h>
 #include <taglib/tag.h>
@@ -97,7 +99,21 @@ void loadLyrics(QString filename, SongLyrDataVector& songData)
     //qSort<>(songData.begin(), songData.end(), nameLengthLessThan);
 }
 
+class NiceDateFileSystemModel: public QFileSystemModel
+{
+public:
+	NiceDateFileSystemModel(QObject* p): QFileSystemModel(p){}
 
+	QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const
+	{
+		if(index.column()==3 && role == Qt::DisplayRole)
+		{
+			QDateTime date = QFileSystemModel::lastModified(index);
+			return date.toString(Qt::ISODate).left(10);
+		}
+		return QFileSystemModel::data(index, role);
+	}	
+};
 
 MainWindow::MainWindow(QWidget *parent)
  : QMainWindow(parent)
@@ -109,10 +125,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->label->hide();
     ui->filterEdit->hide();
+	//ui->folderToMatch->lineEdit()->setPlaceholderText("Root path of folder with music");
 
     setAcceptDrops(true);
 
-    model=new QFileSystemModel(this);
+    model=new NiceDateFileSystemModel(this);
     model->setRootPath(QDir::currentPath());
     model->setNameFilters(QStringList("*.xml"));
     model->setNameFilterDisables(false);
