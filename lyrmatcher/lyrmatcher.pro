@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui xml
+QT       += core gui xml widgets
 
 TARGET = lyrmatcher
 TEMPLATE = app
@@ -22,7 +22,7 @@ win32: DEFINES += TAGLIB_STATIC
 
 unix: LIBS += -ltag
 win32: LIBS += ../taglib/build/taglib/tag.lib
-win32: INCLUDEPATH += ../taglib ../taglib/taglib ../taglib/taglib/mpeg/id3v2 ../taglib/taglib/toolkit ../taglib/build
+win32: INCLUDEPATH += ../taglib ../taglib/taglib ../taglib/taglib/mpeg/id3v2 ../taglib/taglib/toolkit ../taglib/taglib/flac ../taglib/build
 #win32: INCLUDEPATH += ../taglib/include ../taglib/build
 
 
