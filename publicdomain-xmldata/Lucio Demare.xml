@@ -8,7 +8,7 @@
     <track name="Bailongo de los domingos" vocal="Raúl Berón" year="1943-07-13" genre="Tango" composer="Oscar Arona" author="Francisco García Jiménez" popularity="6"/>
     <track name="Bandoneón arrabalero" vocal="Agustín Irusta" year="1928" genre="Tango" composer="Bachicha" author="Pascual Contursi"/>
     <track name="Barrio de tango" vocal="Armando Garrido" year="1955" genre="Tango" composer="Aníbal Troilo" author="Homero Manzi"/>
-    <track name="Canción de rango (Pa' que se callen)" vocal="Roberto Arrieta" year="1942-11-10" genre="Tango" composer="Raúl Kaplún" author="José María Suñé" popularity="4"/>
+    <track name="Canción de rango (Pa' que se callen)" vocal="Roberto Arrieta" year="1942-11-10" genre="Tango" composer="Raúl Kaplún" author="José María Suñé"/>
     <track name="Canta pajarito" vocal="Raúl Berón" year="1943-06-10" genre="Tango" composer="Juan José Guichandut" author="Oscar Rubens" duration="3:24" popularity="3"/>
     <track name="Carnavalito" vocal="Raúl Berón" year="1943-01-09" genre="Candombe" composer="Machingo Ábalos, Adolfo Ábalos C, Adolfo Ábalos" popularity="8"/>
     <track name="Chatero de aquel entonces" vocal="Raúl Berón" year="1943-04-01" genre="Milonga" composer="Julián Ortiz" author="Luis Mejías" popularity="1"/>
@@ -22,7 +22,7 @@
     <track name="Dónde" vocal="Armando Garrido" year="1954" genre="Tango" composer="Lucio Demare D, Agustín Irusta" duration="3:20"/>
     <track name="Dos corazones" vocal="Horacio Quintana" year="1944-09-25" genre="Vals" composer="Francisco Canaro" author="Ivo Pelay" duration="2:40" popularity="6"/>
     <track name="Dos palabras por favor" vocal="Raúl Berón" year="1943-10-13" genre="Tango" composer="Luis Visca" author="Luis Rubistein" duration="2:29" popularity="4"/>
-    <track name="El aguacero (Canción de la Pampa)" vocal="Horacio Quintana" year="1944-11-14" genre="Tango" composer="Cátulo Castillo" author="José González Castillo" popularity="6"/>
+    <track name="El aguacero (Canción de la Pampa)" vocal="Horacio Quintana" year="1944-11-14" genre="Tango" composer="Cátulo Castillo" author="José González Castillo"/>
     <track name="El barco María" vocal="Raúl Berón" year="1944-01-12" genre="Tango" composer="Carlos Viván" author="Horacio Sanguinetti"/>
     <track name="El chupete" vocal="Instrumental" year="1942-10-09" genre="Tango" composer="Ricardo Gaudenzio" author="Antonio Polito" duration="3:12" popularity="11"/>
     <track name="El naranjerito" vocal="Juan Carlos Miranda" year="1942-04-14" genre="Milonga" composer="Héctor Varela, Alberto Nery" author="Homero Expósito" duration="3:17" popularity="5"/>
@@ -33,7 +33,7 @@
     <track name="Están sonando las ocho" vocal="Horacio Quintana" year="1944-07-24" genre="Tango" composer="Juan Larenza" author="Cátulo Castillo" duration="3:04" popularity="6"/>
     <track name="Florcita" vocal="Instrumental" year="1945-01-03" genre="Tango" composer="Agustín Bardi" duration="2:58" popularity="1"/>
     <track name="Gricel" vocal="Instrumental" year="1957" genre="Tango" composer="Mariano Mores" author="José María Contursi" duration="2:05" popularity="1"/>
-    <track name="Humildad (solo de piano)" vocal="Instrumental" year="1953-01-27" genre="Tango" composer="Lucio Demare" author="Alfredo Navarrine" popularity="3"/>
+    <track name="Humildad (solo de piano)" vocal="Instrumental" year="1953-01-27" genre="Tango" composer="Lucio Demare" author="Alfredo Navarrine"/>
     <track name="Igual que un bandoneón" vocal="Horacio Quintana" year="1945-01-03" genre="Tango" composer="José Raúl Iglesias" author="Juan Bautista Gatti" duration="3:00" popularity="7"/>
     <track name="La cachila" vocal="Instrumental" year="1957" genre="Tango" composer="Eduardo Arolas" author="Héctor Polito" duration="2:36" popularity="1"/>
     <track name="La calle sin sueño" vocal="Tania" year="1959" genre="Tango" composer="Lucio Demare" author="Enrique Cadícamo" duration="3:12" popularity="1"/>
@@ -85,7 +85,7 @@
     <track name="Ribereña" vocal="Juan Carlos Miranda" year="1942-03-13" genre="Vals" composer="Víctor Braña, Santiago Coppola" author="Enrique Gaudino" popularity="2"/>
     <track name="Ropa blanca" vocal="Raúl Berón" year="1943-06-10" genre="Candombe" composer="Alfredo Malerba" author="Homero Manzi" duration="2:57" popularity="5"/>
     <track name="Rosa peregrina/Lupe" vocal="Instrumental" year="1952-01-18" genre="Vals"/>
-    <track name="Se fue (Un vals)" vocal="Raúl Berón" year="1943-07-13" genre="Vals" composer="Horacio Salgán" author="Oscar Rubens" popularity="8"/>
+    <track name="Se fue (Un vals)" vocal="Raúl Berón" year="1943-07-13" genre="Vals" composer="Horacio Salgán" author="Oscar Rubens"/>
     <track name="Se va una tarde más" vocal="Horacio Quintana" year="1944-08-24" genre="Tango" composer="Enrique Cantore" author="Luis Caruso" duration="3:04" popularity="2"/>
     <track name="Señores yo soy del centro" vocal="Horacio Quintana" year="1944-11-14" genre="Milonga" composer="Armando Baliotti" author="Santiago Adamini" duration="2:30" popularity="5"/>
     <track name="Sentimiento tanguero" vocal="Instrumental" year="1955" genre="Tango" composer="Lucio Demare"/>

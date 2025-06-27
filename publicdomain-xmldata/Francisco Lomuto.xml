@@ -1,458 +1,654 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <discography orchestra="Francisco Lomuto" source="tango.info">
-    <track name="A contramano" vocal="Charlo" year="1928-03-10" genre="tango" composer="Luis Teisseire" author="Juan Andrés Caruso" popularity="2"/>
-    <track name="A la gran muñeca" vocal="Jorge Omar" year="1936-01-15" genre="tango" composer="Jesús Ventura" author="Miguel Osés" duration="3:05" popularity="1"/>
-    <track name="A la luz del candil" vocal="Instrumental" year="1927-08-08" genre="tango" composer="Carlos Vicente Geroni Flores" author="Julio Plácido Navarrine" duration="3:15" popularity="6"/>
-    <track name="A la manera sudamericana" vocal="Instrumental" year="1931-12-07" genre="rumba" popularity="1"/>
+    <track name="13" vocal="Instrumental" year="1938-02-09" genre="tango" duration="2:48"/>
+    <track name="A contramano" vocal="Charlo" year="1928-03-10" genre="tango" composer="Luis Teisseire" author="Juan Andrés Caruso" duration="2:58" popularity="3"/>
+    <track name="A la gran muñeca" vocal="Jorge Omar" year="1936-01-15" genre="tango" composer="Jesús Ventura" author="Miguel Osés" duration="3:05" popularity="3"/>
+    <track name="A la luz del candil" vocal="Instrumental" year="1927-08-08" genre="tango" composer="Carlos Vicente Geroni Flores" author="Julio Plácido Navarrine" duration="3:15" popularity="8"/>
+    <track name="A la manera sudamericana" vocal="Instrumental" year="1939-12-07" genre="rumba" duration="2:40"/>
+    <track name="A mí que me importa" vocal="Jorge Omar" year="1939-08-29" genre="tango" composer="Francisco Lomuto" author="Manuel Romero" duration="2:36" popularity="1"/>
+    <track name="A quién le puede importar" vocal="Fernando Díaz" year="1939-12-09" genre="tango" composer="Mariano Mores" author="Enrique Cadícamo" duration="2:50" popularity="1"/>
     <track name="A su memoria" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-10-01" genre="vals" composer="Antonio Sureda" author="Homero Manzi" duration="2:48" popularity="1"/>
-    <track name="A toda vela" vocal="Charlo" year="1928" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto"/>
-    <track name="A-tisket a-tasket" vocal="Instrumental" year="1939-03-30" genre="Foxtrot"/>
-    <track name="Acacias" vocal="Fernando Díaz" year="1933-07-14" genre="tango" composer="Alberto Gambino" author="Enrique Miguel Gaudino" popularity="1"/>
-    <track name="Adiós, muchachos" vocal="Jorge Omar" year="1942-05-05" genre="tango" composer="Julio César Alberto Sanders" author="Cesar Felipe Vedani" duration="2:46" popularity="3"/>
-    <track name="Adiós, muchachos" vocal="Instrumental" year="1927-12-29" genre="tango" composer="Julio César Alberto Sanders" author="Cesar Felipe Vedani" popularity="1"/>
-    <track name="Afilador" vocal="Fernando Díaz" year="1932-09-27" genre="ranchera" composer="Francisco Pracánico" author="Emilio Magaldi" popularity="1"/>
-    <track name="Alguna vez" vocal="Charlo" year="1929" genre="tango" composer="Enrique Discépolo" author="Francisco García"/>
+    <track name="A toda vela" vocal="Charlo" year="1928" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="2:43"/>
+    <track name="A-tisket a-tasket" vocal="Instrumental" year="1939-03-30" genre="foxtrot" popularity="1"/>
+    <track name="Acacias" vocal="Fernando Díaz" year="1933-07-14" genre="tango" composer="Alberto Gambino" author="Enrique Miguel Gaudino" duration="3:01" popularity="1"/>
+    <track name="Adiós, muchachos" vocal="Jorge Omar" year="1942-05-05" genre="tango" composer="Julio César Alberto Sanders" author="Cesar Felipe Vedani" duration="2:46" popularity="6"/>
+    <track name="Adiós, muchachos" vocal="Instrumental" year="1927-12-29" genre="tango" composer="Julio César Alberto Sanders" author="Cesar Felipe Vedani" duration="2:44" popularity="1"/>
+    <track name="Afilador" vocal="Fernando Díaz" year="1932-09-27" genre="ranchera" composer="Francisco Pracánico" author="Emilio Magaldi" duration="3:19" popularity="2"/>
+    <track name="Ahora que estamos solos" vocal="Fernando Díaz" year="1942-07-24" genre="vals" composer="Francisco Lomuto" author="Antonio Botta, Ivo Pelay" popularity="1"/>
+    <track name="Alguna vez" vocal="Charlo" year="1929" genre="tango" composer="Enrique Discépolo" author="Francisco García" duration="2:52"/>
     <track name="Alma criolla" vocal="Instrumental" year="1929-12-20" genre="tango" popularity="4"/>
-    <track name="Alma de indio" vocal="Charlo" year="1930-04-05" genre="tango" composer="Augusto Gentile" author="Pedro Numa Cordoba" popularity="1"/>
-    <track name="Alma del bandoneón" vocal="Fernando Díaz" year="1934-12-27" genre="tango" composer="Enrique Discépolo" author="Luis César Amadori, Enrique Discépolo" popularity="1"/>
-    <track name="Alma en pena" vocal="Alberto Rivera" year="1950-10-27" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="2:56" popularity="1"/>
+    <track name="Alma de indio" vocal="Charlo" year="1930-04-05" genre="tango" composer="Augusto Gentile" author="Pedro Numa Cordoba" duration="2:55" popularity="1"/>
+    <track name="Alma del bandoneón" vocal="Fernando Díaz" year="1934-12-27" genre="tango" composer="Enrique Discépolo" author="Luis César Amadori, Enrique Discépolo" duration="3:00" popularity="4"/>
+    <track name="Alma en pena" vocal="Alberto Rivera" year="1950-10-27" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="2:56" popularity="2"/>
     <track name="Alma en pena" vocal="Charlo" year="1928-10-15" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="3:11" popularity="2"/>
-    <track name="Almita" vocal="Instrumental" year="1927-08-20" genre="tango" duration="2:50"/>
-    <track name="Aló.... aló" vocal="Lely Morel" year="1934-12-27" genre="fox rumba"/>
-    <track name="Alondra" vocal="Instrumental" year="1931-06-26" genre="tango" duration="2:52"/>
-    <track name="Amargor" vocal="Fernando Díaz" year="1932-05-09" genre="tango" composer="Francisco Lomuto" author="Claudio Frollo" duration="2:45"/>
-    <track name="Amigos de ayer" vocal="Fernando Díaz" year="1942-10-20" genre="tango" composer="Enrique Rodríguez" author="Enrique Cadícamo"/>
-    <track name="Amor que se hace llanto" vocal="Fernando Díaz" year="1942-08-25" genre="tango" author="José María Contursi"/>
-    <track name="Amor y celos" vocal="Instrumental" year="1930-09-30" genre="vals" composer="Miguel Padula" author="Alfredo Faustino Roldan" duration="2:34" popularity="3"/>
-    <track name="Amurado" vocal="Instrumental" year="1927-04-08" genre="tango" composer="Pedro Maffia, Pedro Laurenz" author="José Pedro de Grandis" duration="2:48"/>
-    <track name="Andate con la otra" vocal="Charlo" year="1928-07-13" genre="tango" composer="Carlos Vicente Geroni Flores" author="Enrique Dizeo" popularity="4"/>
-    <track name="Andate | No te vayas" vocal="Fernando Díaz" year="1933-05-31" genre="tango" popularity="3"/>
-    <track name="Aquel amor" vocal="Instrumental" year="1929-04-13" genre="tango" composer="Francisco De Caro" duration="3:00"/>
-    <track name="Aquel nocturno" vocal="Fernando Díaz" year="1932-05-09" genre="tango" composer="Daniel Álvarez" author="Daniel Álvarez" duration="3:21" popularity="2"/>
-    <track name="Aquella mujercita" vocal="Fernando Díaz" year="1931-11-30" genre="vals" composer="Francisco Lomuto" duration="3:06" popularity="1"/>
-    <track name="Aquí me pongo a cantar" vocal="Alberto Rivera" year="1945-08-08" genre="milonga" composer="Carlos Marcucci" author="Enrique Cadícamo" duration="2:19"/>
-    <track name="Arrepentido" vocal="Jorge Omar" year="1936-09-04" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella"/>
-    <track name="Arrorró" vocal="Instrumental" year="1927-06-11" genre="tango"/>
+    <track name="Almita" vocal="Instrumental" year="1927-08-20" genre="tango" duration="2:50" popularity="1"/>
+    <track name="Aló... aló" vocal="Lely Morel" year="1934-12-27" genre="fox rumba" duration="3:24" popularity="1"/>
+    <track name="Alondra" vocal="Instrumental" year="1931-06-26" genre="tango" duration="2:52" popularity="1"/>
+    <track name="Amargor" vocal="Fernando Díaz" year="1932-05-09" genre="tango" composer="Francisco Lomuto" author="Claudio Frollo" duration="2:45" popularity="1"/>
+    <track name="Amigos de ayer" vocal="Fernando Díaz" year="1942-10-20" genre="tango" composer="Enrique Rodríguez" author="Enrique Cadícamo" duration="2:58" popularity="1"/>
+    <track name="Amor campero" vocal="Fernando Díaz" year="1934-07-16" genre="ranchera" duration="3:07"/>
+    <track name="Amor en Budapest" vocal="Jorge Omar" year="1941-02-28" genre="foxtrot" duration="2:28"/>
+    <track name="Amor que se hace llanto" vocal="Fernando Díaz" year="1942-08-25" genre="tango" author="José María Contursi" duration="2:25" popularity="1"/>
+    <track name="Amor y celos" vocal="Instrumental" year="1930-09-30" genre="vals" composer="Miguel Padula" author="Alfredo Faustino Roldan" duration="2:34" popularity="4"/>
+    <track name="Amor y vals" vocal="Jorge Omar" year="1942-10-20" genre="vals" composer="Rodolfo Biagi" author="Carlos Bahr" duration="2:26"/>
+    <track name="Amor, cómo me has ponido" vocal="Fernando Díaz" year="1934-02-19" genre="ranchera" composer="Enrique Delfino" author="Mario Fernando Rada" duration="3:05"/>
+    <track name="Amurado" vocal="Instrumental" year="1927-04-08" genre="tango" composer="Pedro Maffia, Pedro Laurenz" author="José Pedro de Grandis" duration="2:45" popularity="2"/>
+    <track name="Anda a verla" vocal="Charlo" year="1933-12-28" genre="" composer="Pedro Maffia, Pedro Laurenz" author="José Pedro de Grandis" duration="2:46"/>
+    <track name="Andate con la otra" vocal="Charlo" year="1928-07-13" genre="tango" composer="Carlos Vicente Geroni Flores" author="Enrique Dizeo" duration="2:53" popularity="5"/>
+    <track name="Andate | No te vayas" vocal="Fernando Díaz" year="1933-05-31" genre="tango" composer="Carlos Vicente Geroni Flores" author="Enrique Dizeo" duration="2:46" popularity="3"/>
+    <track name="Aquel amor" vocal="Instrumental" year="1929-04-13" genre="tango" composer="Francisco De Caro" duration="2:59" popularity="1"/>
+    <track name="Aquel nocturno" vocal="Fernando Díaz" year="1932-05-09" genre="tango" composer="Daniel Álvarez" author="Daniel Álvarez" duration="3:21" popularity="3"/>
+    <track name="Aquella mujercita" vocal="Fernando Díaz" year="1931-11-30" genre="vals" composer="Francisco Lomuto" duration="3:06" popularity="2"/>
+    <track name="Aquí me pongo a cantar" vocal="Alberto Rivera" year="1945-08-08" genre="milonga" composer="Carlos Marcucci" author="Enrique Cadícamo" duration="2:19" popularity="2"/>
+    <track name="Argentina" vocal="Jorge Omar, Luis 'Cucaracha' Zinkes" year="1937-09-23" genre="ranchera" composer="Héctor Lomuto" duration="2:27" popularity="1"/>
+    <track name="Arrepentido" vocal="Jorge Omar" year="1936-09-04" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:46" popularity="2"/>
+    <track name="Arrorró" vocal="Instrumental" year="1927-06-11" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:50" popularity="1"/>
     <track name="Arroz con leche" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-09-03" genre="ranchera" author="Francisco Lomuto" duration="2:50" popularity="1"/>
-    <track name="Así te quiero" vocal="Instrumental" year="1927-07-06" genre="tango" popularity="1"/>
-    <track name="Aterrizaje" vocal="Instrumental" year="1928-03-23" genre="tango" duration="2:43"/>
-    <track name="Atorrante" vocal="Charlo" year="1929-05-06" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Alberto Vacarezza" popularity="2"/>
-    <track name="Aunque parezca mentira" vocal="Fernando Díaz" year="1932-06-27" genre="tango" composer="Francisco Lomuto" duration="3:26" popularity="1"/>
-    <track name="Ausencia gris" vocal="Jorge Omar" year="1943-01-28" genre="tango" composer="Roberto Nievas Blanco" author="Julio Jorge Nelson"/>
-    <track name="Azabache" vocal="Fernando Díaz, Jorge Omar" year="1942-10-20" genre="milonga candombe" composer="Enrique Francini, Héctor Stamponi" author="Homero Expósito" popularity="2"/>
-    <track name="Bacán fulero" vocal="Instrumental" year="1927-06-11" genre="tango" composer="Ricardo Luis Brignolo" duration="2:52" popularity="3"/>
-    <track name="Bajo un cielo de estrellas" vocal="Fernando Díaz" year="1941-04-09" genre="vals" composer="Enrique Francini, Héctor Stamponi" author="José María Contursi" duration="2:49"/>
+    <track name="Así te quiero" vocal="Instrumental" year="1927-07-06" genre="tango" author="Francisco Lomuto" duration="2:44" popularity="2"/>
+    <track name="Aterrizaje" vocal="Charlo" year="1928-03-23" genre="tango" author="Francisco Lomuto" duration="2:41" popularity="1"/>
+    <track name="Atorrante" vocal="Charlo" year="1929-05-06" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Alberto Vacarezza" popularity="3"/>
+    <track name="Aunque parezca mentira" vocal="Fernando Díaz" year="1932-06-27" genre="tango" composer="Francisco Lomuto" duration="3:26" popularity="2"/>
+    <track name="Ausencia gris" vocal="Jorge Omar" year="1943-01-28" genre="tango" composer="Roberto Nievas Blanco" author="Julio Jorge Nelson" popularity="1"/>
+    <track name="Ay, mi nena" vocal="Jorge Omar" year="1937-09-23" genre="vals" composer="Francisco Lomuto" author="Antonio Botta" duration="2:24" popularity="2"/>
+    <track name="Azabache" vocal="Fernando Díaz, Jorge Omar" year="1942-10-20" genre="milonga candombe" composer="Enrique Francini, Héctor Stamponi" author="Homero Expósito" duration="2:53" popularity="6"/>
+    <track name="Bacán fulero" vocal="Instrumental" year="1927-06-11" genre="tango" composer="Ricardo Luis Brignolo" duration="2:54" popularity="4"/>
+    <track name="Bajo el cielo azul" vocal="Fernando Díaz" year="1942-01-09" genre="vals" composer="Francisco Canaro" author="Ivo Pelay" popularity="1"/>
+    <track name="Bajo un cielo de estrellas" vocal="Fernando Díaz" year="1941-04-09" genre="vals" composer="Enrique Francini, Héctor Stamponi" author="José María Contursi" duration="2:49" popularity="4"/>
+    <track name="Bajo un cielo de estrellas (Por ella...)" vocal="Fernando Díaz" year="1941-04-09" genre="vals" composer="Enrique Francini, Héctor Stamponi" author="José María Contursi" duration="2:51"/>
+    <track name="Banderita" vocal="Fernando Díaz, Jorge Omar" year="1941-05-05" genre="ranchera" composer="Héctor Lomuto" author="Héctor Lomuto" duration="2:31" popularity="1"/>
+    <track name="Bandoneón" vocal="Instrumental" year="1927-12-29" genre="tango" composer="Sebastián Piana, Pedro Maffia" author="José González Castillo (Juan de León)" duration="2:34"/>
+    <track name="Barrio bravo" vocal="Charlo" year="1929-02-06" genre="tango" composer="Santiago Ricci" author="Genaro Terrone" duration="3:01"/>
     <track name="Barrio viejo" vocal="Instrumental" year="1929-07-05" genre="tango" composer="Guillermo Barbieri" author="Eugenio Cárdenas" duration="2:56" popularity="1"/>
-    <track name="Bartolo toca la flauta" vocal="Fernando Díaz" year="1931-11-09" genre="ranchera" duration="3:05"/>
-    <track name="Besos de mujer" vocal="Jorge Omar" year="1941-08-13" genre="tango"/>
-    <track name="Bibelot" vocal="Fernando Díaz" year="1934-06-01" genre="tango" composer="Francisco De Caro" author="Mario Gomila" popularity="4"/>
-    <track name="Bichito" vocal="Instrumental" year="1927-06-11" genre="tango" popularity="1"/>
-    <track name="Bigotito" vocal="Fernando Díaz" year="1931-12-03" genre="tango" composer="Manuel Buzón" author="Ismael Roberto Aguilar" duration="3:13" popularity="2"/>
-    <track name="Bigotito" vocal="Instrumental" year="1930-07-02" genre="tango" composer="Manuel Buzón" author="Ismael Roberto Aguilar" popularity="1"/>
-    <track name="Buena racha" vocal="Instrumental" year="1928-11-09" genre="tango" duration="2:51" popularity="2"/>
-    <track name="Buenos Aires" vocal="Jorge Omar" year="1941-06-27" genre="tango" composer="Manuel Jovés" author="Manuel Romero"/>
-    <track name="Buenos Aires" vocal="Instrumental" year="1930-04-15" genre="tango" composer="Manuel Jovés" author="Manuel Romero" duration="2:58" popularity="8"/>
-    <track name="Buenos Aires querido" vocal="Charlo" year="1928-05-03" genre="tango" composer="Charlo" author="Enrique Cadícamo" duration="2:33" popularity="1"/>
-    <track name="Bulín de la alegría" vocal="Instrumental" year="1924" genre="tango"/>
-    <track name="Cachadora" vocal="Alberto Rivera" year="1950-06-06" genre="tango" composer="Francisco Lomuto"/>
-    <track name="Cachadora" vocal="Charlo" year="1928-11-30" genre="tango" composer="Francisco Lomuto" popularity="1"/>
+    <track name="Bartolo toca la flauta" vocal="Fernando Díaz" year="1931-11-09" genre="ranchera" composer="Guillermo Barbieri" author="Eugenio Cárdenas" duration="3:05" popularity="1"/>
+    <track name="Besame mi amor" vocal="Alberto Rivera" year="1944-06-28" genre="tango" composer="Enrique Lomuto" author="Oscar Rubens" duration="2:43"/>
+    <track name="Besos de mujer" vocal="Jorge Omar" year="1941-08-13" genre="tango" composer="Enrique Lomuto" author="Oscar Rubens" duration="2:37" popularity="1"/>
+    <track name="Bibelot" vocal="Fernando Díaz" year="1934-06-01" genre="tango" composer="Francisco De Caro" author="Mario Gomila" duration="2:44" popularity="8"/>
+    <track name="Bichito" vocal="Instrumental" year="1927-06-11" genre="tango" composer="Francisco De Caro" author="Mario Gomila" duration="2:49" popularity="2"/>
+    <track name="Bigotito" vocal="Fernando Díaz" year="1931-12-03" genre="tango" composer="Manuel Buzón" author="Ismael Roberto Aguilar" duration="3:13" popularity="3"/>
+    <track name="Bigotito" vocal="Instrumental" year="1930-07-02" genre="tango" composer="Manuel Buzón" author="Ismael Roberto Aguilar" duration="3:03" popularity="2"/>
+    <track name="Botarate" vocal="Príncipe Azul" year="1930-11-07" genre="tango" composer="Alberto Hilarion Acuña" author="José De Cicco" duration="2:32"/>
+    <track name="Buena racha" vocal="Instrumental" year="1928-11-09" genre="tango" duration="2:51" popularity="3"/>
+    <track name="Buenos Aires" vocal="Jorge Omar" year="1941-06-27" genre="tango" composer="Manuel Jovés" author="Manuel Romero" duration="2:48" popularity="2"/>
+    <track name="Buenos Aires" vocal="Instrumental" year="1930-04-15" genre="tango" composer="Manuel Jovés" author="Manuel Romero" duration="2:58" popularity="9"/>
+    <track name="Buenos Aires querido" vocal="Charlo" year="1928-05-03" genre="tango" composer="Charlo" author="Enrique Cadícamo" duration="2:34" popularity="2"/>
+    <track name="Bulín de la alegría" vocal="Instrumental" year="1924" genre="tango" composer="Charlo" author="Enrique Cadícamo"/>
+    <track name="Cachadora" vocal="Alberto Rivera" year="1950-06-06" genre="tango" composer="Francisco Lomuto" popularity="1"/>
+    <track name="Cachadora" vocal="Charlo" year="1928-11-30" genre="tango" composer="Francisco Lomuto" duration="2:43" popularity="2"/>
     <track name="Cachadora" vocal="Instrumental" year="1928-11-30" genre="tango" composer="Francisco Lomuto"/>
-    <track name="Cadenas" vocal="Fernando Díaz" year="1933-10-06" genre="tango" composer="Luis Rubistein" author="Luis Rubistein" popularity="1"/>
-    <track name="Caído del cielo" vocal="Instrumental" year="1927-12-02" genre="tango" composer="Antonio Polito" duration="2:50" popularity="2"/>
-    <track name="Callecita de mi novia" vocal="Jorge Omar" year="1938-02-24" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="2:40"/>
-    <track name="Callejera" vocal="Charlo" year="1929-09-17" genre="tango" composer="Fausto Frontera" author="Enrique Cadícamo" popularity="1"/>
-    <track name="Caminito" vocal="Cerry Brian, Jorge Omar" year="1935-06-16" genre="tango" composer="Juan de Dios Filiberto" author="Gabino Coria Peñaloza" duration="3:19" popularity="3"/>
-    <track name="Campanita" vocal="Instrumental" year="1927-04-08" genre="tango" popularity="1"/>
-    <track name="Canchero viejo" vocal="Instrumental" year="1927-06-14" genre="tango" popularity="2"/>
-    <track name="Candombe" vocal="Carlos Galarce" year="1943-06-21" genre="candombe" composer="Francisco Canaro" author="Francisco Canaro" popularity="1"/>
-    <track name="Candombe criollo" vocal="Fernando Díaz, Jorge Omar" year="1942-01-09" genre="milonga candombe" composer="Francisco Lomuto" author="Francisco Lomuto"/>
-    <track name="Cantando se van las penas" vocal="Jorge Omar" year="1942-12-09" genre="tango" composer="Juan Canaro" author="Fermin Carballeda"/>
-    <track name="Cap Polonio" vocal="Instrumental" year="1927-10-28" genre="tango" composer="Adolfo Rosquella/ Adolfo Rosquellas" popularity="1"/>
-    <track name="Caricias" vocal="Jorge Omar" year="1937-05-07" genre="tango" composer="Juan Martí" author="Alfredo Bigeschi" duration="2:49" popularity="1"/>
-    <track name="Carioca" vocal="Instrumental" year="1934-09-14" genre="rumba" composer="Alejandro Romay" author="Alejandro Romay"/>
-    <track name="Carmen" vocal="Charlo" year="1928-12-24" genre="vals" composer="Fulvio Salamanca" author="Fulvio Salamanca" popularity="2"/>
-    <track name="Cascada de perlas" vocal="Instrumental" year="1929-11-19" genre="tango" duration="3:20" popularity="2"/>
-    <track name="Catalina" vocal="Fernando Díaz" year="1943-01-28" genre="vals" duration="2:31" popularity="1"/>
-    <track name="Catamarca" vocal="Instrumental" year="1943-05-11" genre="tango" composer="Eduardo Arolas" author="Jesús Fernández Blanco" duration="2:34" popularity="3"/>
-    <track name="Cervecinas calientes | Hot pretzels" vocal="Instrumental" year="1939-10-25" genre="Foxtrot"/>
-    <track name="Chatita" vocal="Jorge Omar" year="1942-01-02" genre="rumba" popularity="1"/>
-    <track name="Chiqué" vocal="Instrumental" year="1927-07-16" genre="tango" composer="Ricardo Luis Brignolo" author="Ricardo Luis Brignolo" duration="3:11" popularity="4"/>
-    <track name="Chiquilina" vocal="Fernando Díaz" year="1933-09-07" genre="ranchera" composer="Carlos Bahr" popularity="1"/>
+    <track name="Cadenas" vocal="Fernando Díaz" year="1933-10-06" genre="tango" composer="Luis Rubistein" author="Luis Rubistein" duration="2:37" popularity="1"/>
+    <track name="Caído del cielo" vocal="Instrumental" year="1927-12-02" genre="tango" composer="Antonio Polito" duration="2:50" popularity="3"/>
+    <track name="Callecita de mi novia" vocal="Jorge Omar" year="1938-02-24" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="2:38" popularity="2"/>
+    <track name="Callejera" vocal="Charlo" year="1929-09-17" genre="tango" composer="Fausto Frontera" author="Enrique Cadícamo" duration="2:44" popularity="1"/>
+    <track name="Cambalache" vocal="Ernesto Famá" year="?" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="2:28"/>
+    <track name="Cambalache" vocal="Fernando Díaz" year="1934-12-27" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:32" popularity="1"/>
+    <track name="Caminito" vocal="Cerry Brian, Jorge Omar" year="1935-06-16" genre="tango" composer="Juan de Dios Filiberto" author="Gabino Coria Peñaloza" duration="3:19" popularity="6"/>
+    <track name="Campanita" vocal="Instrumental" year="1927-04-08" genre="tango" duration="3:04" popularity="1"/>
+    <track name="Canchero viejo" vocal="Instrumental" year="1927-06-14" genre="tango" popularity="3"/>
+    <track name="Candombe" vocal="Carlos Galarce" year="1943-06-21" genre="candombe" composer="Francisco Canaro" author="Francisco Canaro" duration="2:28" popularity="2"/>
+    <track name="Candombe criollo" vocal="Fernando Díaz, Jorge Omar" year="1942-01-09" genre="milonga candombe" composer="Francisco Lomuto" author="Francisco Lomuto" popularity="2"/>
+    <track name="Cantando se van las penas" vocal="Jorge Omar" year="1942-12-09" genre="tango" composer="Juan Canaro" author="Fermin Carballeda" duration="2:39" popularity="1"/>
+    <track name="Cap Polonio" vocal="Instrumental" year="1927-10-28" genre="tango" composer="Adolfo Rosquella/ Adolfo Rosquellas" popularity="2"/>
+    <track name="Caricias" vocal="Jorge Omar" year="1937-05-07" genre="tango" composer="Juan Martí" author="Alfredo Bigeschi" duration="2:54" popularity="3"/>
+    <track name="Carioca" vocal="Instrumental" year="1934-09-14" genre="rumba" composer="Alejandro Romay" author="Alejandro Romay" duration="3:05" popularity="2"/>
+    <track name="Carmen" vocal="Charlo" year="1928-12-24" genre="vals" composer="Fulvio Salamanca" author="Fulvio Salamanca" popularity="3"/>
+    <track name="Cascada de perlas" vocal="Instrumental" year="1929-11-19" genre="tango" duration="3:20" popularity="3"/>
+    <track name="Catalina" vocal="Fernando Díaz" year="1943-01-28" genre="vals" duration="2:31" popularity="2"/>
+    <track name="Catamarca" vocal="Instrumental" year="1943-05-11" genre="tango" composer="Eduardo Arolas" author="Jesús Fernández Blanco" duration="2:34" popularity="5"/>
+    <track name="Ceferino" vocal="Fernando Díaz" year="1934-09-06" genre="tango" duration="3:07" popularity="1"/>
+    <track name="Cervecinas calientes | Hot pretzels" vocal="Instrumental" year="1939-10-25" genre="foxtrot"/>
+    <track name="Charito" vocal="Jorge Omar" year="1937-05-07" genre="paso doble" composer="Héctor Lomuto" duration="2:57" popularity="1"/>
+    <track name="Chatita" vocal="Jorge Omar" year="1942-01-02" genre="rumba" duration="2:33" popularity="3"/>
+    <track name="Chingolito" vocal="Charlo" year="1928" genre="tango" duration="2:47"/>
+    <track name="Chiqué" vocal="Instrumental" year="1927-07-16" genre="tango" composer="Ricardo Luis Brignolo" author="Ricardo Luis Brignolo" duration="3:11" popularity="5"/>
+    <track name="Chiquilina" vocal="Fernando Díaz" year="1933-09-07" genre="ranchera" composer="Carlos Bahr" duration="2:55" popularity="1"/>
     <track name="Chiquita" vocal="Charlo" year="1928-12-10" genre="vals"/>
-    <track name="Chorra" vocal="Charlo" year="1928-08-30" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="3"/>
-    <track name="Churrasca" vocal="Fernando Díaz" year="1934-06-21" genre="tango" composer="Francisco Lomuto" duration="3:14" popularity="1"/>
-    <track name="Cicatrices" vocal="Instrumental" year="1927-08-08" genre="tango" composer="Adolfo Rafael Avilés" author="Enrique Maroni" duration="2:42" popularity="4"/>
-    <track name="Cobardía" vocal="Fernando Díaz" year="1933-07-07" genre="tango" composer="Charlo" duration="3:16" popularity="5"/>
-    <track name="Colo" vocal="Fernando Díaz" year="1931-09-24" genre="tango" duration="3:09" popularity="1"/>
+    <track name="Chorra" vocal="Charlo" year="1928-08-30" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:02" popularity="3"/>
+    <track name="Churrasca" vocal="Fernando Díaz" year="1934-06-21" genre="tango" composer="Francisco Lomuto" duration="3:14" popularity="3"/>
+    <track name="Cicatrices" vocal="Instrumental" year="1927-08-08" genre="tango" composer="Adolfo Rafael Avilés" author="Enrique Maroni" duration="2:42" popularity="5"/>
+    <track name="Cobardía" vocal="Fernando Díaz" year="1933-07-07" genre="tango" composer="Charlo" duration="3:16" popularity="8"/>
+    <track name="Cofre de mis recuerdos" vocal="Jorge Omar" year="1942-07-31" genre="vals" composer="Francisco Lomuto" author="Ivo Pelay, Antonio Botta" duration="2:47"/>
+    <track name="Colo" vocal="Fernando Díaz" year="1931-09-24" genre="tango" composer="Francisco Lomuto" author="Ivo Pelay, Antonio Botta" duration="3:09" popularity="2"/>
     <track name="Colorao, colorao" vocal="Instrumental" year="1930-05-06" genre="tango" composer="Alberto Hilarion Acuña" author="Celedonio Flores" duration="3:03"/>
     <track name="Colorao, colorao" vocal="Instrumental" year="1930-06-11" genre="tango" composer="Alberto Hilarion Acuña" author="Celedonio Flores" duration="2:56"/>
-    <track name="Comadre" vocal="Instrumental" year="1929-07-26" genre="tango" author="Celedonio Flores" popularity="1"/>
-    <track name="Como abrazao a un rencor | Como abrazado a un rencor" vocal="Fernando Díaz" year="1941-08-13" genre="tango"/>
-    <track name="Como gato entre las leñas" vocal="Fernando Díaz" year="1933-05-12" genre="ranchera" composer="Azucena Maizani" popularity="1"/>
-    <track name="Como las aves" vocal="María Teresa Greco" year="1939-08-29" genre="tango" composer="Francisco Lomuto" author="Manuel Romero"/>
-    <track name="Como los nardos en flor" vocal="Instrumental" year="1930-04-15" genre="tango" popularity="4"/>
-    <track name="Cómo se muere de amor" vocal="Fernando Díaz" year="1933-09-07" genre="tango" composer="Daniel Álvarez" popularity="4"/>
-    <track name="Compadrito" vocal="Instrumental" year="1927-06-11" genre="tango"/>
-    <track name="Condena | S.O.S." vocal="Instrumental" year="1937-12-26" genre="tango"/>
-    <track name="Confesión" vocal="Instrumental" year="1929" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo, Luis César Amadori" duration="2:59"/>
+    <track name="Comadre" vocal="Instrumental" year="1929-07-26" genre="tango" author="Celedonio Flores" duration="3:23" popularity="2"/>
+    <track name="Como abrazado a un rencor" vocal="Fernando Díaz" year="1941-08-13" genre="tango" author="Celedonio Flores" duration="2:36"/>
+    <track name="Como abrazao a un rencor | Como abrazado a un rencor" vocal="Fernando Díaz" year="1941-08-13" genre="tango" author="Celedonio Flores" duration="2:37" popularity="1"/>
+    <track name="Como gato entre las leñas" vocal="Fernando Díaz" year="1933-05-12" genre="ranchera" composer="Azucena Maizani" duration="2:30" popularity="1"/>
+    <track name="Como las aves" vocal="María Teresa Greco" year="1939-08-29" genre="tango" composer="Francisco Lomuto" author="Manuel Romero" duration="2:32" popularity="2"/>
+    <track name="Como los nardos en flor" vocal="Instrumental" year="1930-04-15" genre="tango" duration="2:57" popularity="5"/>
+    <track name="Cómo se muere de amor" vocal="Fernando Díaz" year="1933-09-07" genre="tango" composer="Daniel Álvarez" duration="3:15" popularity="6"/>
+    <track name="Compadrito" vocal="Instrumental" year="1927-06-11" genre="tango" composer="Daniel Álvarez" duration="2:47" popularity="1"/>
+    <track name="Compadrón" vocal="Instrumental" year="1927" genre="tango" composer="Luis Nicolas Visca" author="Enrique Cadícamo" duration="3:06"/>
+    <track name="Con mi perro" vocal="Alberto Rivera" year="1946-08-22" genre="milonga" composer="Aníbal Troilo" author="José María Contursi" duration="2:37"/>
+    <track name="Con nostalgias y saudades" vocal="Fernando Díaz, Jorge Omar" year="1942-01-02" genre="samba" composer="Aníbal Troilo" author="José María Contursi" duration="3:04"/>
+    <track name="Condena" vocal="Instrumental" year="1937-12-26" genre="tango" composer="Enrique Discépolo, Francisco Pracánico" author="Enrique Discépolo" duration="2:37" popularity="2"/>
+    <track name="Confesión" vocal="Instrumental" year="1929" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo, Luis César Amadori" duration="2:57" popularity="1"/>
     <track name="Congojas que matan" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-09-24" genre="vals" duration="2:23" popularity="2"/>
-    <track name="Copa de ajenjo" vocal="Fernando Díaz" year="1941-07-28" genre="tango" composer="Juan Canaro" author="Carlos Pesce" popularity="2"/>
+    <track name="Copa de ajenjo" vocal="Fernando Díaz" year="1941-07-28" genre="tango" composer="Juan Canaro" author="Carlos Pesce" duration="2:46" popularity="7"/>
     <track name="Corazón" vocal="Instrumental" year="1928-03-10" genre="vals" composer="Eduardo Bianco"/>
-    <track name="Corazón de oro" vocal="Instrumental" year="1930-07-16" genre="tango" composer="Francisco Canaro" author="Jesús Fernández Blanco" duration="2:58"/>
-    <track name="Criolla linda" vocal="Instrumental" year="1942-01-02" genre="tango" composer="Vicente Gorrese, Bernardo Germino" author="Luis Rubistein" duration="2:34" popularity="6"/>
-    <track name="Cruz de palo" vocal="Instrumental" year="1929-08-14" genre="tango" composer="Guillermo Barbieri" author="Enrique Cadícamo" popularity="2"/>
-    <track name="Cuadrito porteño" vocal="Instrumental" year="1927-11-17" genre="tango" duration="2:53"/>
-    <track name="Cuando bronca el temporal" vocal="Charlo" year="1928" genre="tango" composer="Gerardo Matos Rodríguez"/>
-    <track name="Cuando despiertes" vocal="Instrumental" year="1929-09-20" genre="tango" popularity="1"/>
-    <track name="Cuando estaba enamorado" vocal="Fernando Díaz" year="1940-04-11" genre="vals" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" popularity="1"/>
-    <track name="Cuando llora el corazón" vocal="Charlo" year="1929" genre="tango" composer="Juan Félix Maglio" author="Jesús Fernández Blanco"/>
-    <track name="Cuando llora la milonga" vocal="Instrumental" year="1930-10-17" genre="tango" composer="Juan de Dios Filiberto" author="Luis Mario" popularity="5"/>
-    <track name="Cuando llora la milonga" vocal="Instrumental" year="1941-08-08" genre="tango" composer="Juan de Dios Filiberto" author="Luis Mario" duration="2:46" popularity="5"/>
+    <track name="Corazón de oro" vocal="Instrumental" year="1930-07-16" genre="tango" composer="Francisco Canaro" author="Jesús Fernández Blanco" duration="2:57" popularity="2"/>
+    <track name="Corazón de porteña" vocal="Instrumental" year="1927-04-30" genre="tango" composer="Juan Baüer (Firpito)" duration="2:50"/>
+    <track name="Corazón que me has herido" vocal="Alberto Rivera" year="1943-06-21" genre="tango" composer="Enrique Maciel" author="Carmelo Volpe" duration="3:01"/>
+    <track name="Corazón, no llores más" vocal="Jorge Omar" year="1942-07-31" genre="tango" composer="Francisco Lomuto" author="Ivo Pelay, Antonio Botta"/>
+    <track name="Corrientes y Esmeralda" vocal="Fernando Díaz" year="1934-05-08" genre="tango" composer="Francisco Pracánico" author="Celedonio Flores" duration="2:31" popularity="1"/>
+    <track name="Cosas del amor" vocal="Jorge Omar" year="1940-11-07" genre="polca" composer="Alfredo Malerba" author="Rodolfo Sciammarella" duration="2:20" popularity="1"/>
+    <track name="Criolla linda" vocal="Instrumental" year="1942-01-02" genre="tango" composer="Vicente Gorrese, Bernardo Germino" author="Luis Rubistein" duration="2:34" popularity="10"/>
+    <track name="Cruz de palo" vocal="Instrumental" year="1929-08-14" genre="tango" composer="Guillermo Barbieri" author="Enrique Cadícamo" duration="3:09" popularity="2"/>
+    <track name="Cuadrito porteño" vocal="Instrumental" year="1927-11-17" genre="tango" composer="Guillermo Barbieri" author="Enrique Cadícamo" duration="2:53" popularity="1"/>
+    <track name="Cuando bronca el temporal" vocal="Charlo" year="1928" genre="tango" composer="Gerardo Matos Rodríguez" duration="3:09"/>
+    <track name="Cuando despiertes" vocal="Instrumental" year="1929-09-20" genre="tango" popularity="3"/>
+    <track name="Cuando estaba enamorado" vocal="Fernando Díaz" year="1940-04-11" genre="vals" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:21" popularity="3"/>
+    <track name="Cuando llora el corazón" vocal="Charlo" year="1929-04-02" genre="tango" composer="Juan Félix Maglio" author="Jesús Fernández Blanco" duration="2:54" popularity="1"/>
+    <track name="Cuando llora la milonga" vocal="Instrumental" year="1930-10-17" genre="tango" composer="Juan de Dios Filiberto" author="Luis Mario" duration="3:40" popularity="7"/>
+    <track name="Cuando llora la milonga" vocal="Instrumental" year="1941-08-08" genre="tango" composer="Juan de Dios Filiberto" author="Luis Mario" duration="2:46" popularity="9"/>
     <track name="Cuando mi barrio se duerme" vocal="Charlo" year="1928-09-21" genre="tango" composer="Luis Teisseire" duration="2:49" popularity="1"/>
     <track name="Cuándo volverás" vocal="Instrumental" year="1927-08-20" genre="tango" composer="Pedro Maffia" author="José Horacio Staffolani" duration="2:52" popularity="1"/>
-    <track name="Cuentas claras" vocal="Instrumental" year="1930-06-18" genre="tango" duration="2:46"/>
-    <track name="Cuentos viejos" vocal="Instrumental" year="1928-11-30" genre="tango" popularity="3"/>
-    <track name="Dale celos!" vocal="Charlo" year="1932-06-09" genre="tango" author="Ivo Pelay" duration="3:14"/>
-    <track name="Dame tu amor" vocal="Fernando Díaz" year="1932-07-25" genre="Foxtrot" duration="2:52"/>
-    <track name="Damisela encantadora" vocal="Jorge Omar" year="1936-08-07" genre="vals" composer="Ernesto Lecuona" author="Ernesto Lecuona" duration="2:55" popularity="1"/>
-    <track name="Dandy" vocal="Charlo" year="1928-08-10" genre="tango" composer="Lucio Demare" author="Agustín Irusta, Roberto Fugazot" popularity="1"/>
-    <track name="Dandy" vocal="Instrumental" year="1928-08-10" genre="tango" composer="Lucio Demare" author="Agustín Irusta, Roberto Fugazot"/>
-    <track name="Danza maligna" vocal="Fernando Díaz" year="1932-11-14" genre="tango" author="Claudio Frollo" popularity="2"/>
-    <track name="De corazón" vocal="Charlo" year="1928-08-30" genre="tango" duration="3:00" popularity="2"/>
-    <track name="De igual a igual" vocal="Carlos Galarce" year="1945-04-30" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:41"/>
-    <track name="De los que quedas pocos" vocal="Fernando Díaz" year="1931-12-28" genre="ranchera" duration="2:52"/>
+    <track name="Cuatro de junio" vocal="Alberto Rivera, Carlos Galarce" year="1944-06-05" genre="marcha" composer="Pedro Maffia" author="José Horacio Staffolani" duration="3:15"/>
+    <track name="Cuentas claras" vocal="Instrumental" year="1930-06-18" genre="tango" composer="Pedro Maffia" author="José Horacio Staffolani" duration="2:43" popularity="2"/>
+    <track name="Cuentos viejos" vocal="Instrumental" year="1928-11-30" genre="tango" composer="Pedro Maffia" author="José Horacio Staffolani" duration="2:59" popularity="3"/>
+    <track name="Dale celos!" vocal="Charlo" year="1932-06-09" genre="tango" author="Ivo Pelay" duration="3:14" popularity="1"/>
+    <track name="Dame tu amor" vocal="Fernando Díaz" year="1932-07-25" genre="foxtrot" author="Ivo Pelay" duration="2:52" popularity="1"/>
+    <track name="Damisela encantadora" vocal="Jorge Omar" year="1936-08-07" genre="vals" composer="Ernesto Lecuona" author="Ernesto Lecuona" duration="2:55" popularity="4"/>
+    <track name="Dandy" vocal="Charlo" year="1928-08-10" genre="tango" composer="Lucio Demare" author="Agustín Irusta, Roberto Fugazot" duration="2:56" popularity="1"/>
+    <track name="Dandy" vocal="Instrumental" year="1928-08-10" genre="tango" composer="Lucio Demare" author="Agustín Irusta, Roberto Fugazot" duration="2:59"/>
+    <track name="Danza maligna" vocal="Fernando Díaz" year="1932-11-14" genre="tango" author="Claudio Frollo" duration="2:38" popularity="3"/>
+    <track name="Datero" vocal="Instrumental" year="1930-07-02" genre="tango" duration="3:12"/>
+    <track name="De contramano" vocal="Lita Morales" year="1938-05-09" genre="ranchera" composer="Francisco Canaro" author="Luis César Amadori" duration="2:33" popularity="1"/>
+    <track name="De corazón" vocal="Charlo" year="1928-08-30" genre="tango" duration="3:00" popularity="3"/>
+    <track name="De igual a igual" vocal="Carlos Galarce" year="1945-04-30" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:41" popularity="1"/>
+    <track name="De los que quedas pocos" vocal="Fernando Díaz" year="1931-12-28" genre="ranchera" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:52" popularity="1"/>
     <track name="De pura cepa" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-08-27" genre="ranchera" composer="Roberto Firpo" author="Benjamin Tagle Lara" duration="2:49"/>
-    <track name="De rincón a rincón" vocal="Instrumental" year="1927-11-25" genre="tango" composer="Santiago Paris" author="Santiago Scherini" duration="2:25" popularity="2"/>
-    <track name="De sol a sol" vocal="Fernando Díaz" year="1931-11-04" genre="tango" composer="Daniel López Barreto" author="Daniel López Barreto" duration="2:44"/>
-    <track name="De tardecita" vocal="Instrumental" year="1927-06-04" genre="tango" popularity="1"/>
-    <track name="De todo te olvidas | Cabeza de novia" vocal="Charlo" year="1929-12-13" genre="tango" popularity="1"/>
+    <track name="De puro guapo" vocal="Jorge Omar" year="1935-11-26" genre="tango milonga" composer="Pedro Laurenz" author="Manuel Andrés Meaños" duration="2:59" popularity="1"/>
+    <track name="De rincón a rincón" vocal="Instrumental" year="1927-11-25" genre="tango" composer="Santiago Paris" author="Santiago Scherini" duration="2:29" popularity="3"/>
+    <track name="De sol a sol" vocal="Fernando Díaz" year="1931-11-04" genre="tango" composer="Daniel López Barreto" author="Daniel López Barreto" duration="2:44" popularity="1"/>
+    <track name="De tardecita" vocal="Instrumental" year="1927-06-04" genre="tango" duration="2:49" popularity="2"/>
+    <track name="De todo te olvidas" vocal="Charlo" year="1929-12-13" genre="tango" composer="Salvador Merico" author="Enrique Cadícamo" duration="3:06" popularity="2"/>
     <track name="Decí pebeta porqué" vocal="Instrumental" year="1928-06-05" genre="tango" duration="2:50" popularity="1"/>
-    <track name="Déjame vivir la vida" vocal="Instrumental" year="1930" genre="tango" composer="Maria Isolina Godard" author="Francisco García"/>
-    <track name="Deje que la acompañe" vocal="Charlo" year="1929-08-14" genre="tango" composer="Augusto Gentile" author="Augusto Gentile" duration="2:57" popularity="3"/>
-    <track name="Desagravio" vocal="Alberto Rivera" year="1944-12-13" genre="tango" composer="Francisco Lomuto" author="Homero Manzi, José María Contursi" duration="2:41"/>
-    <track name="Desaliento" vocal="Jorge Omar" year="1938-08-12" genre="tango" composer="Armando Baliotti" author="Luis Castiñeira"/>
-    <track name="Diez chicas bonitas | ten pretty girls(palais glide" vocal="Jorge Omar" year="1939-12-17" genre="Foxtrot"/>
-    <track name="Dime que sí" vocal="Jorge Omar" year="1938-11-04" genre="vals cancion" composer="Alfonso Esparza Oteo"/>
-    <track name="Dímelo al oído" vocal="Alberto Rivera" year="1945-05-28" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:42" popularity="1"/>
-    <track name="Dios te salve, m'hijo" vocal="Fernando Díaz" year="1933-09-07" genre="tango" composer="Agustín Magaldi, Pedro Noda" author="Luis Acosta García" popularity="1"/>
+    <track name="Dejame con mis penas" vocal="Jorge Omar" year="1940-02-06" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="3:08" popularity="1"/>
+    <track name="Déjame vivir la vida" vocal="Instrumental" year="1930-04-24" genre="tango" composer="Maria Isolina Godard" author="Francisco García" duration="2:53" popularity="1"/>
+    <track name="Deje que la acompañe" vocal="Charlo" year="1929-08-14" genre="tango" composer="Augusto Gentile" author="Augusto Gentile" duration="2:57" popularity="4"/>
+    <track name="Demasiado tarde" vocal="Fernando Díaz" year="1942-01-02" genre="tango" composer="Julio De Caro" author="Rodolfo Sciammarella" popularity="1"/>
+    <track name="Desagravio" vocal="Alberto Rivera" year="1944-12-13" genre="tango" composer="Francisco Lomuto" author="Homero Manzi, José María Contursi" duration="2:41" popularity="1"/>
+    <track name="Desaliento" vocal="Jorge Omar" year="1938-08-12" genre="tango" composer="Armando Baliotti" author="Luis Castiñeira" duration="2:30" popularity="3"/>
+    <track name="Después arreglamos" vocal="Jorge Omar" year="1936-03-12" genre="tango" duration="3:05" popularity="1"/>
+    <track name="Dice una canción" vocal="Fernando Díaz" year="1942-08-25" genre="tango" composer="Francisco Lomuto" author="Ivo Pelay, Antonio Botta" duration="2:53"/>
+    <track name="Diez años pasan" vocal="Carlos Galarce" year="1945-06-26" genre="tango" composer="José Razzano, Cátulo Castillo" author="José Razzano, Cátulo Castillo" duration="2:46"/>
+    <track name="Diez chicas bonitas (Ten pretty girls)" vocal="Jorge Omar" year="1939-02-17" genre="foxtrot" composer="José Razzano, Cátulo Castillo" author="José Razzano, Cátulo Castillo" popularity="1"/>
+    <track name="Dime que sí" vocal="Jorge Omar" year="1938-11-04" genre="vals canción" composer="Alfonso Esparza Oteo" duration="2:33" popularity="2"/>
+    <track name="Dímelo al oído" vocal="Alberto Rivera" year="1945-05-28" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:42" popularity="3"/>
+    <track name="Dímelo al oído" vocal="Fernando Díaz" year="1934-02-19" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:32"/>
+    <track name="Dímelo al oído" vocal="Tito Schipa" year="1934" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:13"/>
+    <track name="Dios te salve, m'hijo" vocal="Fernando Díaz" year="1933-09-07" genre="tango" composer="Agustín Magaldi, Pedro Noda" author="Luis Acosta García" duration="2:43" popularity="1"/>
     <track name="Divagando" vocal="Jorge Torres" year="1931-04-24" genre="tango" composer="Juan Carlos Cáceres" author="Juan Carlos Cáceres"/>
-    <track name="Don Juan Malevo" vocal="Instrumental" year="1927-08-20" genre="tango" composer="Francisco Lomuto" duration="2:21"/>
-    <track name="Dónde está la que yo quiero" vocal="Jorge Omar" year="1938-08-12" genre="Foxtrot" composer="Héctor Lomuto"/>
-    <track name="Dónde están" vocal="Instrumental" year="1929-11-05" genre="tango" author="Hebert Fayet" duration="2:55" popularity="1"/>
-    <track name="Dónde estás, corazón?" vocal="Charlo" year="1928-03-31" genre="tango" composer="Augusto Pedro Berto, Luis Martinez Serrano" author="Augusto Pedro Berto, Luis Martinez Serrano" popularity="3"/>
-    <track name="Dónde hay un mango?" vocal="Fernando Díaz" year="1933-09-07" genre="ranchera" composer="Francisco Canaro" author="Ivo Pelay" popularity="1"/>
-    <track name="Dos rosas para ti" vocal="Jorge Omar" year="1936-04-30" genre="vals"/>
-    <track name="El aguacero" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-11-09" genre="tango" composer="Cátulo Castillo" author="José González Castillo (Juan de León)" duration="3:15"/>
+    <track name="Don Bernardo" vocal="Instrumental" year="1927" genre="tango" duration="2:50"/>
+    <track name="Don Goyo" vocal="Instrumental" year="1934-10-02" genre="tango" composer="Luis Bernstein" duration="2:29"/>
+    <track name="Don Juan Malevo" vocal="Jorge Omar" year="1937-07-30" genre="tango" composer="Francisco Lomuto" duration="2:47" popularity="1"/>
+    <track name="Don Juan Malevo" vocal="Instrumental" year="1927-08-20" genre="tango" composer="Francisco Lomuto" duration="2:18" popularity="1"/>
+    <track name="Dónde está la que yo quiero" vocal="Jorge Omar" year="1938-08-12" genre="foxtrot" composer="Héctor Lomuto" popularity="1"/>
+    <track name="Dónde están" vocal="Instrumental" year="1929-11-05" genre="tango" author="Hebert Fayet" duration="2:55" popularity="2"/>
+    <track name="Dónde estás, corazón?" vocal="Charlo" year="1928-03-31" genre="tango" composer="Augusto Pedro Berto, Luis Martinez Serrano" author="Augusto Pedro Berto, Luis Martinez Serrano" duration="2:51" popularity="4"/>
+    <track name="Dónde hay un mango?" vocal="Fernando Díaz" year="1933-09-07" genre="ranchera" composer="Francisco Canaro" author="Ivo Pelay" duration="3:14" popularity="1"/>
+    <track name="Dos corazones" vocal="Alberto Rivera" year="1944-06-28" genre="vals" composer="Francisco Canaro" author="Ivo Pelay" duration="2:34"/>
+    <track name="Dos rosas para ti" vocal="Jorge Omar" year="1936-04-23" genre="vals" composer="Francisco Canaro" author="Ivo Pelay" duration="3:06" popularity="2"/>
+    <track name="El 13" vocal="Instrumental" year="1938-02-09" genre="tango" composer="Francisco Canaro" author="Ivo Pelay" duration="2:49"/>
+    <track name="El aguacero" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-11-09" genre="tango" composer="Cátulo Castillo" author="José González Castillo (Juan de León)" duration="3:15" popularity="1"/>
+    <track name="El anzuelo" vocal="Fernando Díaz, Jorge Omar" year="1941-10-30" genre="vals" duration="2:43" popularity="1"/>
     <track name="El bailongo" vocal="Instrumental" year="1927-11-17" genre="tango"/>
-    <track name="El barco María" vocal="Carlos Galarce" year="1944-05-11" genre="tango" composer="Carlos Viván" author="Horacio Sanguinetti" duration="2:40" popularity="1"/>
-    <track name="El caballo del pueblo" vocal="Jorge Omar" year="1935-08-27" genre="tango" composer="Alberto Soifer" author="Manuel Romero"/>
-    <track name="El cantar de un tango" vocal="Fernando Díaz" year="1942-12-09" genre="tango"/>
-    <track name="El chino Pantaleón" vocal="Fernando Díaz" year="1942-06-17" genre="milonga" composer="Francisco Canaro" author="Francisco Canaro"/>
-    <track name="El cornetín del tranvía" vocal="Jorge Omar" year="1938-06-09" genre="tango" composer="Antonio Oscar Arona" author="Armando Tagini" duration="2:44" popularity="2"/>
-    <track name="El embrujo de tu violín" vocal="Jorge Omar" year="1938-11-28" genre="tango" author="Armando Tagini"/>
+    <track name="El barco María" vocal="Carlos Galarce" year="1944-05-11" genre="tango" composer="Carlos Viván" author="Horacio Sanguinetti" duration="2:40" popularity="3"/>
+    <track name="El caballo del pueblo" vocal="Jorge Omar" year="1935-08-27" genre="tango" composer="Alberto Soifer" author="Manuel Romero" duration="3:07" popularity="2"/>
+    <track name="El cantar de un tango" vocal="Fernando Díaz" year="1942-12-09" genre="tango" composer="Alberto Soifer" author="Manuel Romero" duration="3:06" popularity="1"/>
+    <track name="El chino Pantaleón" vocal="Fernando Díaz" year="1942-06-17" genre="milonga" composer="Francisco Canaro" author="Francisco Canaro" popularity="2"/>
+    <track name="El cornetín del tranvía" vocal="Jorge Omar" year="1938-06-09" genre="tango" composer="Antonio Oscar Arona" author="Armando Tagini" duration="2:44" popularity="8"/>
+    <track name="El día que te fuiste" vocal="Fernando Díaz, Jorge Omar" year="1940-04-04" genre="vals" composer="Héctor Lomuto" author="Héctor Lomuto" duration="2:56" popularity="1"/>
+    <track name="El día que yo pueda" vocal="Jorge Omar" year="1937-12-26" genre="tango" composer="Francisco Canaro" author="Celedonio Flores" duration="2:38" popularity="1"/>
+    <track name="El embrujo de tu violín" vocal="Jorge Omar" year="1938-11-28" genre="tango" author="Armando Tagini" duration="3:07" popularity="2"/>
     <track name="El hornero" vocal="Instrumental" year="1928-11-09" genre="tango" duration="3:24" popularity="1"/>
-    <track name="El irresistible" vocal="Fernando Díaz" year="1931-11-04" genre="tango" composer="Lorenzo Logatti" author="Carlos Pesce" duration="2:31" popularity="3"/>
-    <track name="El sol del veinticinco" vocal="Fernando Díaz, Jorge Omar" year="1939-05-09" genre="gato" composer="Carlos Gardel, José Razzano" author="Domingo V. Lombardi" duration="2:40"/>
-    <track name="El tilin tilin" vocal="Fernando Díaz, Jorge Omar" year="1942-06-25" genre="tanguillo gitano"/>
-    <track name="El viejito del acordeón" vocal="Jorge Omar" year="1936-04-23" genre="polca"/>
-    <track name="En la tranquera | A Mar del Plata yo no puedo ir" vocal="Charlo, -choir-" year="1930-04-05" genre="ranchera" popularity="1"/>
-    <track name="En mi rancho hay un zorzal" vocal="Fernando Díaz" year="1932-10-10" genre="ranchera" popularity="1"/>
-    <track name="Entre los tabacales" vocal="Fernando Díaz" year="1933-07-07" genre="rumba" popularity="1"/>
-    <track name="Entre sombras" vocal="Instrumental" year="1927-07-25" genre="tango" composer="Enrique Cadícamo" duration="2:43"/>
+    <track name="El irresistible" vocal="Fernando Díaz" year="1931-11-04" genre="tango" composer="Lorenzo Logatti" author="Carlos Pesce" duration="2:31" popularity="5"/>
+    <track name="El niño Jacinto" vocal="Alberto Rivera, Carlos Galarce" year="1943-05-11" genre="milonga" author="Luis Rubistein" duration="2:28"/>
+    <track name="El paso del pollo" vocal="Jorge Omar" year="1941-06-23" genre="foxtrot" author="Luis Rubistein" duration="2:23"/>
+    <track name="El picaflor" vocal="Fernando Díaz, Jorge Omar" year="1941-01-03" genre="baile porteño" composer="Francisco Lomuto" author="Enrique Cadícamo" duration="2:42" popularity="1"/>
+    <track name="El saleroso" vocal="Jorge Omar" year="1942-11-20" genre="paso doble" composer="Héctor Lomuto" duration="2:27"/>
+    <track name="El sol del 25" vocal="Fernando Díaz, Jorge Omar" year="1939-05-09" genre="gato" composer="Héctor Lomuto" duration="2:40" popularity="2"/>
+    <track name="El sombrero" vocal="Fernando Díaz" year="1942-11-28" genre="paso doble" composer="Héctor Lomuto" duration="2:44"/>
+    <track name="El tilín tilín" vocal="Fernando Díaz, Jorge Omar" year="1942-06-25" genre="tanguillo gitano" popularity="2"/>
+    <track name="El viejito del acordeón" vocal="Jorge Omar" year="1936-04-23" genre="polca" duration="2:50" popularity="2"/>
+    <track name="Elvira... te quiero" vocal="Fernando Díaz" year="1942-07-31" genre="vals" composer="Rodolfo Sciammarella" author="Manuel Romero"/>
+    <track name="Embrujo" vocal="Jorge Omar" year="1942-11-28" genre="paso doble" composer="Osvaldo Donato" author="Sandalio Gómez" duration="2:33"/>
+    <track name="En el fondo del mar" vocal="Alberto Rivera" year="1944-10-04" genre="vals" composer="Hipólito Basilio" author="Horacio Sanguinetti" duration="2:41"/>
+    <track name="En la tranquera | A Mar del Plata yo no puedo ir" vocal="Charlo, -choir-" year="1930-04-05" genre="ranchera" composer="Hipólito Basilio" author="Horacio Sanguinetti" popularity="1"/>
+    <track name="En mi rancho hay un zorzal" vocal="Fernando Díaz" year="1932-10-10" genre="ranchera" composer="Hipólito Basilio" author="Horacio Sanguinetti" duration="2:53" popularity="2"/>
+    <track name="Entre los tabacales" vocal="Fernando Díaz" year="1933-07-07" genre="rumba" composer="Hipólito Basilio" author="Horacio Sanguinetti" duration="3:25" popularity="1"/>
+    <track name="Entre sombras" vocal="Instrumental" year="1927-07-25" genre="tango" composer="Enrique Cadícamo" duration="2:40" popularity="1"/>
     <track name="Entre sueños" vocal="Charlo" year="1928-09-21" genre="tango" composer="Anselmo Aieta, Juan Polito" author="Francisco García" duration="3:22" popularity="1"/>
-    <track name="Era un budín" vocal="Instrumental" year="1927-06-14" genre="tango" popularity="3"/>
-    <track name="Escuchame che globero" vocal="Charlo" year="1929-07-05" genre="tango" duration="3:18"/>
-    <track name="Española rebonita" vocal="Fernando Díaz" year="1932-06-20" genre="tango" duration="3:08"/>
+    <track name="Era un budín" vocal="Instrumental" year="1927-06-14" genre="tango" duration="2:47" popularity="4"/>
+    <track name="Éramos tres" vocal="Jorge Omar" year="1937-04-02" genre="tango" composer="Enrique Lomuto" author="Luis Ángel Iribarren" duration="2:46" popularity="1"/>
+    <track name="Esclavo" vocal="Jorge Omar" year="1937-01-07" genre="tango" composer="Joaquín Mora" author="José María Contursi" duration="2:46" popularity="1"/>
+    <track name="Escuchame che globero" vocal="Charlo" year="1929-07-05" genre="tango" duration="3:17" popularity="1"/>
+    <track name="Española rebonita" vocal="Fernando Díaz" year="1932-06-20" genre="paso doble" duration="3:08" popularity="1"/>
     <track name="Espinas de una flor" vocal="Instrumental" year="1925" genre="tango"/>
-    <track name="Esta noche me emborracho" vocal="Instrumental" year="1928-06-05" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="1"/>
-    <track name="Estampilla" vocal="Charlo" year="1928-12-29" genre="tango" composer="Enrique Delfino" author="Manuel Romero" duration="3:16"/>
-    <track name="Esther" vocal="Jorge Omar" year="1935-08-27" genre="vals"/>
-    <track name="Evocacion" vocal="Instrumental" year="1929" genre="tango" composer="Carlos Gardel, Terig Tucci" author="Alfredo Le Pera"/>
-    <track name="Evocación" vocal="Instrumental" year="1929-07-26" genre="tango" composer="Carlos Gardel, Terig Tucci" author="Alfredo Le Pera" duration="2:59" popularity="1"/>
-    <track name="Flor de mi rancho" vocal="Fernando Díaz" year="1934-09-14" genre="ranchera"/>
+    <track name="Esquinas porteñas" vocal="Fernando Díaz" year="1934-03-23" genre="vals" composer="Sebastián Piana" author="Homero Manzi" duration="2:44" popularity="1"/>
+    <track name="Esta noche me emborracho" vocal="Instrumental" year="1928-06-05" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:10" popularity="2"/>
+    <track name="Estampilla" vocal="Charlo" year="1928-12-29" genre="tango" composer="Enrique Delfino" author="Manuel Romero" duration="3:14" popularity="1"/>
+    <track name="Esther" vocal="Jorge Omar" year="1935-08-27" genre="vals" composer="Enrique Delfino" author="Manuel Romero" duration="2:29" popularity="2"/>
+    <track name="Evocación" vocal="Instrumental" year="1929-07-26" genre="tango" composer="Carlos Gardel, Terig Tucci" author="Alfredo Le Pera" duration="2:59" popularity="2"/>
+    <track name="Flor de mi rancho" vocal="Fernando Díaz" year="1934-09-14" genre="ranchera" composer="Carlos Gardel, Terig Tucci" author="Alfredo Le Pera" duration="2:50" popularity="2"/>
     <track name="Flor del campo" vocal="Charlo" year="1928-03-10" genre="tango" composer="Francisco Canaro" author="Jesús Fernández Blanco" duration="2:44"/>
-    <track name="Flores divinas" vocal="Instrumental" year="1927-07-25" genre="tango"/>
-    <track name="Flores rojas" vocal="Charlo" year="1928-05-03" genre="tango" popularity="2"/>
-    <track name="Fuelle amigo" vocal="Charlo" year="1929-10-15" genre="tango" popularity="2"/>
+    <track name="Flores divinas" vocal="Instrumental" year="1927-07-25" genre="tango" composer="Francisco Canaro" author="Jesús Fernández Blanco"/>
+    <track name="Flores rojas" vocal="Charlo" year="1928-05-03" genre="tango" duration="2:57" popularity="3"/>
+    <track name="Fuelle amigo" vocal="Charlo" year="1929-10-15" genre="tango" duration="3:00" popularity="3"/>
     <track name="Fumando espero" vocal="Instrumental" year="1927-08-20" genre="tango" duration="3:02" popularity="5"/>
-    <track name="Galleguita" vocal="Fernando Díaz" year="1941-05-05" genre="tango" composer="Horacio Pettorossi" author="Alfredo Navarrine"/>
+    <track name="Galleguita" vocal="Fernando Díaz" year="1941-05-15" genre="tango" composer="Horacio Pettorossi" author="Alfredo Navarrine" duration="2:35" popularity="2"/>
     <track name="Gaucha" vocal="Instrumental" year="1930-11-19" genre="ranchera" composer="Pedro Laurenz" author="Luis Rubistein"/>
-    <track name="Gaucho ingrato" vocal="Fernando Díaz" year="1933-10-16" genre="ranchera"/>
-    <track name="Gil a rayas" vocal="Instrumental" year="1927-10-28" genre="tango" duration="3:06"/>
-    <track name="Gólgota" vocal="Jorge Omar" year="1938-10-14" genre="tango" composer="Rodolfo Biagi" author="Francisco Gorrindo" duration="2:23" popularity="3"/>
-    <track name="Goody goody" vocal="Instrumental" year="1936-08-07" genre="Foxtrot"/>
-    <track name="Grau 10" vocal="Dinah Lang" year="1935-07-04" genre="marcha"/>
-    <track name="Guadaña" vocal="Charlo" year="1928-10-15" genre="tango" popularity="2"/>
-    <track name="Guapito" vocal="Instrumental" year="1928-03-31" genre="tango" duration="2:46" popularity="3"/>
-    <track name="Hablame" vocal="Charlo" year="1932-06-08" genre="vals" duration="3:29"/>
-    <track name="Hablemos claro" vocal="Fernando Díaz" year="1933-07-14" genre="tango" composer="Alejandro Romay" popularity="3"/>
-    <track name="Hambre" vocal="Charlo" year="1932-04-18" genre="tango" composer="Juan Carlos Cobián" author="Enrique Cadícamo" duration="2:45"/>
-    <track name="Haragán" vocal="Instrumental" year="1928-08-31" genre="tango" composer="Enrique Delfino" author="Manuel Romero" duration="3:00"/>
-    <track name="Has muerto para mí" vocal="Príncipe Azul" year="1930-09-16" genre="tango" composer="Francisco Lomuto" author="Carlos Pesce" popularity="2"/>
-    <track name="Hasta luego" vocal="Instrumental" year="1927-06-04" genre="tango" composer="Edgardo Donato" popularity="1"/>
-    <track name="Hay que aprender a bailar" vocal="-choir-" year="1931-04-24" genre="Foxtrot" duration="2:57"/>
-    <track name="Hojas que caen" vocal="Fernando Díaz" year="1932-08-29" genre="tango" popularity="2"/>
-    <track name="Horchateras valencianas" vocal="Instrumental" year="1938-11-28" genre="Pasodoble"/>
-    <track name="Idolatría" vocal="Jorge Omar" year="1937-07-07" genre="vals" author="Nolo López" duration="2:40" popularity="1"/>
-    <track name="Imaginacíon" vocal="Fernando Díaz" year="1933-05-17" genre="vals" composer="Antonio Oscar Arona" author="Francisco García" popularity="1"/>
-    <track name="Indiferencia" vocal="Fernando Díaz" year="1933-05-17" genre="tango" composer="Rodolfo Biagi" author="Juan Carlos Thorry" popularity="3"/>
-    <track name="Intimas" vocal="Carlos Galarce" year="1944-08-11" genre="tango" composer="Alfonso Lacueva" author="Ricardo Luis Brignolo" popularity="1"/>
-    <track name="Intimas" vocal="Fernando Díaz" year="1931-12-22" genre="tango" composer="Alfonso Lacueva" author="Ricardo Luis Brignolo" duration="2:54" popularity="6"/>
-    <track name="Intimas" vocal="Instrumental" year="1927-09-21" genre="tango" composer="Alfonso Lacueva" author="Ricardo Luis Brignolo" popularity="1"/>
-    <track name="Isabelita" vocal="Fernando Díaz" year="1940-08-12" genre="vals" composer="Rodolfo Sciammarella" author="Manuel Romero"/>
-    <track name="Jugando jugando" vocal="Carlos Galarce" year="1944-12-13" genre="vals" duration="2:43"/>
-    <track name="Juventud" vocal="Instrumental" year="1930-04-25" genre="tango" composer="Juan Baüer (Firpito)" author="Roberto Aubriot Barboza" duration="2:52" popularity="4"/>
-    <track name="La calesita se destrozó | the many-go-round broke down" vocal="Instrumental" year="1937-11-26" genre="Foxtrot"/>
-    <track name="La calle maldita" vocal="Alberto Rivera" year="1950-04-25" genre="tango"/>
-    <track name="La canción del calavera" vocal="Instrumental" year="1929-02-06" genre="tango" popularity="1"/>
-    <track name="La canción del deporte" vocal="Fernando Díaz" year="1933-06-14" genre="canción" composer="Francisco Lomuto" author="Antonio Botta" popularity="3"/>
-    <track name="La chimentadora" vocal="Charlo" year="1932-06-09" genre="ranchera" duration="3:03"/>
-    <track name="La cuadrera" vocal="Jorge Omar" year="1936-06-05" genre="ranchera"/>
-    <track name="La cucaracha" vocal="Fernando Díaz" year="1934-02-12" genre="rumba" popularity="1"/>
-    <track name="La cumparsita" vocal="Instrumental" year="1924" genre="tango" composer="Gerardo Matos Rodríguez" author="Pascual Contursi, Enrique Maroni, Gerardo Matos Rodríguez"/>
-    <track name="La cumparsita" vocal="Instrumental" year="1936-10-03" genre="tango" composer="Gerardo Matos Rodríguez" author="Pascual Contursi, Enrique Maroni, Gerardo Matos Rodríguez" popularity="7"/>
-    <track name="La gayola" vocal="Fernando Díaz" year="1941-06-23" genre="tango" composer="Rafael Eulogio Tuegols" author="Armando Tagini" duration="3:15" popularity="2"/>
-    <track name="La mascarita" vocal="Instrumental" year="1927-06-11" genre="tango"/>
-    <track name="La melodía de nuestro adiós" vocal="Jorge Omar" year="1938-12-12" genre="tango" composer="Fioravanti Di Cicco" author="Carmelo Santiago" duration="2:24" popularity="1"/>
-    <track name="La oveja descarriada" vocal="Instrumental" year="1927-11-17" genre="tango" popularity="2"/>
-    <track name="La pagaras" vocal="Instrumental" year="1930" genre="tango"/>
-    <track name="La reina de los jazmines" vocal="Fernando Díaz" year="1933-12-07" genre="ranchera"/>
-    <track name="La revoltosa" vocal="Instrumental" year="1945-06-26" genre="tango" composer="Francisco Lomuto" duration="2:50"/>
+    <track name="Gaucho ingrato" vocal="Fernando Díaz" year="1933-10-16" genre="ranchera" composer="Pedro Laurenz" author="Luis Rubistein" duration="2:22" popularity="1"/>
+    <track name="Gil a rayas" vocal="Instrumental" year="1927-10-28" genre="tango" duration="3:05" popularity="1"/>
+    <track name="Gólgota" vocal="Jorge Omar" year="1938-10-14" genre="tango" composer="Rodolfo Biagi" author="Francisco Gorrindo" duration="2:30" popularity="8"/>
+    <track name="Goody goody" vocal="Instrumental" year="1936-08-07" genre="foxtrot" composer="Rodolfo Biagi" author="Francisco Gorrindo" popularity="1"/>
+    <track name="Gota de lluvia" vocal="Jorge Omar" year="1939-01-10" genre="vals" composer="Félix Lipesker" author="Homero Manzi" duration="2:34" popularity="1"/>
+    <track name="Grau 10" vocal="Dinah Lang" year="1935-07-04" genre="marcha" composer="Félix Lipesker" author="Homero Manzi" popularity="1"/>
+    <track name="Guadaña" vocal="Charlo" year="1928-10-15" genre="tango" duration="2:58" popularity="2"/>
+    <track name="Guapito" vocal="Instrumental" year="1928-03-31" genre="tango" duration="2:49" popularity="3"/>
+    <track name="Guitarra romana" vocal="Instrumental" year="1939-01-10" genre="tango" duration="2:29" popularity="1"/>
+    <track name="Hablame" vocal="Charlo" year="1932-06-08" genre="vals" duration="3:29" popularity="1"/>
+    <track name="Hablemos claro" vocal="Fernando Díaz" year="1933-07-14" genre="tango" composer="Alejandro Romay" duration="3:12" popularity="3"/>
+    <track name="Hambre" vocal="Charlo" year="1932-04-18" genre="tango" composer="Juan Carlos Cobián" author="Enrique Cadícamo" duration="2:45" popularity="1"/>
+    <track name="Haragán" vocal="Instrumental" year="1928-08-31" genre="tango" composer="Enrique Delfino" author="Manuel Romero" duration="2:59" popularity="1"/>
+    <track name="Has muerto para mí" vocal="Príncipe Azul" year="1930-09-16" genre="tango" composer="Francisco Lomuto" author="Carlos Pesce" popularity="3"/>
+    <track name="Hasta luego" vocal="Instrumental" year="1927-06-04" genre="tango" composer="Edgardo Donato" duration="2:52" popularity="2"/>
+    <track name="Hay que aclarar" vocal="Jorge Omar" year="1938-05-09" genre="tango" composer="Francisco Canaro" author="Ismael Roberto Aguilar" duration="2:38" popularity="1"/>
+    <track name="Hay que aprender a bailar" vocal="Jorge Omar" year="1937-07-30" genre="foxtrot" duration="2:35" popularity="1"/>
+    <track name="Hay que aprender a bailar" vocal="-choir-" year="1931-04-24" genre="foxtrot" duration="2:57"/>
+    <track name="Hay que aprender solfeo" vocal="Jorge Omar" year="1938-06-24" genre="foxtrot" composer="Martin Darré" duration="2:15" popularity="1"/>
+    <track name="Hojas que caen" vocal="Fernando Díaz" year="1932-08-29" genre="tango" duration="2:38" popularity="3"/>
+    <track name="Horchateras valencianas" vocal="Instrumental" year="1938-11-28" genre="paso doble" duration="2:16" popularity="2"/>
+    <track name="Humos de ilusión" vocal="Instrumental" year="1927-10-14" genre="tango" duration="2:45" popularity="1"/>
+    <track name="Idolatría" vocal="Jorge Omar" year="1937-07-07" genre="vals criollo" author="Nolo López" duration="2:46" popularity="3"/>
+    <track name="Imaginacíon" vocal="Fernando Díaz" year="1933-05-17" genre="vals" composer="Antonio Oscar Arona" author="Francisco García" duration="2:47" popularity="1"/>
+    <track name="Indiferencia" vocal="Fernando Díaz" year="1933-05-17" genre="tango" composer="Rodolfo Biagi" author="Juan Carlos Thorry" duration="2:45" popularity="4"/>
+    <track name="Íntimas" vocal="Carlos Galarce" year="1944-08-11" genre="tango" composer="Alfonso Lacueva" author="Ricardo Luis Brignolo" popularity="3"/>
+    <track name="Íntimas" vocal="Fernando Díaz" year="1931-12-22" genre="tango" composer="Alfonso Lacueva" author="Ricardo Luis Brignolo" duration="2:54" popularity="8"/>
+    <track name="Íntimas" vocal="Instrumental" year="1927-09-21" genre="tango" composer="Alfonso Lacueva" author="Ricardo Luis Brignolo" duration="3:11" popularity="1"/>
+    <track name="Isabelita" vocal="Fernando Díaz" year="1940-08-12" genre="vals" composer="Rodolfo Sciammarella" author="Manuel Romero" duration="2:37" popularity="2"/>
+    <track name="Jalouise (celos)" vocal="Instrumental" year="1943-12-07" genre="" composer="Rodolfo Sciammarella" author="Manuel Romero" duration="3:07"/>
+    <track name="Jugando, jugando" vocal="Carlos Galarce" year="1944-12-13" genre="vals" duration="2:43" popularity="1"/>
+    <track name="Juventud" vocal="Instrumental" year="1930-04-25" genre="tango" composer="Juan Baüer (Firpito)" author="Roberto Aubriot Barboza" duration="2:52" popularity="5"/>
+    <track name="La calesita se destrozó (The marry-go-round broke down)" vocal="Instrumental" year="1937-11-26" genre="foxtrot" composer="Juan Baüer (Firpito)" author="Roberto Aubriot Barboza" popularity="1"/>
+    <track name="La calle maldita" vocal="Alberto Rivera" year="1950-04-25" genre="tango" composer="Juan Baüer (Firpito)" author="Roberto Aubriot Barboza" popularity="1"/>
+    <track name="La canción de la noche" vocal="Jorge Omar" year="1935-08-08" genre="vals" composer="Juan Baüer (Firpito)" author="Roberto Aubriot Barboza" duration="2:49" popularity="1"/>
+    <track name="La canción del calavera" vocal="Instrumental" year="1929-02-06" genre="tango" popularity="2"/>
+    <track name="La canción del camino" vocal="Jorge Omar" year="1938-05-03" genre="canción" composer="Francisco Lomuto" author="Manuel Romero" duration="2:32" popularity="2"/>
+    <track name="La canción del deporte" vocal="Fernando Díaz" year="1933-06-14" genre="canción" composer="Francisco Lomuto" author="Antonio Botta" duration="2:55" popularity="3"/>
+    <track name="La canción del deporte" vocal="Alberto Rivera" year="1944-06-06" genre="marcha" composer="Francisco Lomuto" author="Antonio Botta" duration="2:26"/>
+    <track name="La canción del estudiante" vocal="Jorge Omar" year="1939-05-09" genre="marcha" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:34" popularity="1"/>
+    <track name="La canción del soldado" vocal="Alberto Rivera" year="1943-11-19" genre="marcha" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:44"/>
+    <track name="La chimentadora" vocal="Charlo" year="1932-06-09" genre="ranchera" duration="3:03" popularity="1"/>
+    <track name="La cuadrera" vocal="Jorge Omar" year="1936-06-05" genre="ranchera" duration="2:30" popularity="2"/>
+    <track name="La cucaracha" vocal="Fernando Díaz, -choir-" year="1934-02-12" genre="rumba" duration="2:18" popularity="5"/>
+    <track name="La cumparsita" vocal="Instrumental" year="1924" genre="tango" composer="Gerardo Matos Rodríguez" author="Pascual Contursi, Enrique Maroni, Gerardo Matos Rodríguez" duration="2:41"/>
+    <track name="La cumparsita" vocal="Instrumental" year="1936-10-03" genre="tango" composer="Gerardo Matos Rodríguez" author="Pascual Contursi, Enrique Maroni, Gerardo Matos Rodríguez" duration="3:03" popularity="12"/>
+    <track name="La gayola" vocal="Fernando Díaz" year="1941-06-23" genre="tango" composer="Rafael Eulogio Tuegols" author="Armando Tagini" duration="3:15" popularity="7"/>
+    <track name="La hija de Don Juan Alba" vocal="Alberto Rivera" year="1943-06-08" genre="paso doble" composer="Rafael Eulogio Tuegols" author="Armando Tagini" duration="2:44"/>
+    <track name="La manera sudamericana" vocal="Instrumental" year="1931-12-07" genre="rumba" composer="Rafael Eulogio Tuegols" author="Armando Tagini" duration="2:38" popularity="1"/>
+    <track name="La manera sudamericana" vocal="Instrumental" year="1939-12-07" genre="rumba" composer="Rafael Eulogio Tuegols" author="Armando Tagini" duration="2:31"/>
+    <track name="La mascarita" vocal="Instrumental" year="1927-06-11" genre="tango" duration="3:05" popularity="1"/>
+    <track name="La melodía de nuestro adiós" vocal="Jorge Omar" year="1938-12-12" genre="tango" composer="Fioravanti Di Cicco" author="Carmelo Santiago" duration="2:24" popularity="5"/>
+    <track name="La oveja descarriada" vocal="Instrumental" year="1927-11-17" genre="tango" duration="2:51" popularity="3"/>
+    <track name="La pagaras" vocal="Instrumental" year="1930" genre="tango" duration="2:51"/>
+    <track name="La princesa está triste" vocal="Jorge Omar" year="1940-08-01" genre="vals" composer="Ernesto Lecuona" duration="2:15" popularity="1"/>
+    <track name="La reina de los jazmines" vocal="Fernando Díaz" year="1933-12-07" genre="ranchera" composer="Ernesto Lecuona" duration="2:37" popularity="1"/>
+    <track name="La revoltosa" vocal="Instrumental" year="1945-06-26" genre="tango" composer="Francisco Lomuto" duration="2:50" popularity="2"/>
+    <track name="La rezongona" vocal="Instrumental" year="1938-02-09" genre="tango" composer="Francisco Lomuto" duration="2:41" popularity="1"/>
+    <track name="La serenata del burrito (The donkey serenade)" vocal="Instrumental" year="1938-12-12" genre="foxtrot" composer="Francisco Lomuto" duration="2:29" popularity="1"/>
     <track name="La traición" vocal="Instrumental" year="1929-03-08" genre="tango" duration="2:49"/>
-    <track name="La última ficha" vocal="Instrumental" year="1927-06-04" genre="tango"/>
+    <track name="La última ficha" vocal="Instrumental" year="1927-06-04" genre="tango" duration="3:03" popularity="1"/>
     <track name="La última ronda" vocal="Instrumental" year="1929-08-23" genre="tango" composer="Julio Pollero" duration="2:53"/>
-    <track name="La zandunga" vocal="Instrumental" year="1939-07-14" genre="canción popular mexicana"/>
+    <track name="La zandunga" vocal="Fernando Díaz" year="1939-07-14" genre="canción popular mexicana" duration="2:27" popularity="2"/>
     <track name="Lágrimas de mujer" vocal="Instrumental" year="1929-11-05" genre="tango" duration="2:53" popularity="1"/>
-    <track name="Lagrimitas" vocal="Instrumental" year="1927-12-29" genre="tango" composer="Emilio Marchiano, José Rainelli" author="Emilio Marchiano" duration="2:41" popularity="2"/>
-    <track name="Lamento criollo" vocal="Instrumental" year="1928-10-15" genre="tango" popularity="5"/>
-    <track name="Las cuarenta" vocal="Jorge Omar" year="1937-07-30" genre="tango" composer="Roberto Grela" author="Francisco Gorrindo" duration="2:46" popularity="1"/>
-    <track name="Las perlas de tu boca" vocal="Jorge Omar" year="1935-10-08" genre="rumba" popularity="2"/>
-    <track name="Lechuza" vocal="Instrumental" year="1927-06-14" genre="tango" composer="Julio Plácido Navarrine" author="Alfredo Navarrine"/>
-    <track name="Lejanía" vocal="Charlo" year="1930-07-16" genre="tango" popularity="1"/>
-    <track name="Linda francesita" vocal="Charlo" year="1928-03-31" genre="tango" duration="2:54"/>
-    <track name="Lindo tipo de varón" vocal="Charlo" year="1928-04-14" genre="tango" composer="Charlo" author="Enrique Cadícamo" popularity="4"/>
-    <track name="Llevame en tus alas" vocal="Fernando Díaz" year="1931-12-28" genre="tango" duration="2:50" popularity="2"/>
-    <track name="Lo han visto con otra" vocal="Carlos Galarce" year="1943-05-15" genre="tango" composer="Horacio Pettorossi" author="Horacio Pettorossi"/>
-    <track name="Lo que vieron mis ojos" vocal="Fernando Díaz, Mercedes Simone" year="1933-07-22" genre="vals" composer="Juan Canaro" author="Jesús Fernández Blanco" popularity="4"/>
-    <track name="Lonjazos" vocal="Fernando Díaz" year="1932-10-10" genre="tango" composer="Andrés Domenech" author="Jesús Fernández Blanco" popularity="1"/>
-    <track name="Los granaderos de San Martín" vocal="Fernando Díaz, Jorge Omar" year="1939-10-04" genre="ranchera"/>
-    <track name="Los ojos más lindos" vocal="Jorge Omar" year="1942-06-17" genre="tango" composer="Francisco Canaro" author="Francisco Canaro"/>
-    <track name="Lucecitas de mi pueblo" vocal="Fernando Díaz" year="1933-05-31" genre="tango" composer="Enrique Delfino"  duration="2:52"/>
-    <track name="Madreselva" vocal="Jorge Omar" year="1938-08-24" genre="tango" composer="Francisco Canaro" duration="2:41" popularity="3"/>
-    <track name="Mal de ausencia" vocal="Fernando Díaz" year="1932-12-06" genre="vals" composer="Francisco Canaro" author="Ivo Pelay"/>
-    <track name="Malevaje" vocal="Charlo" year="1928-09-28" genre="tango" composer="Juan de Dios Filiberto" author="Enrique Discépolo" popularity="2"/>
-    <track name="Mamita | Flor de angustia" vocal="Instrumental" year="1929-03-08" genre="tango" duration="2:46" popularity="3"/>
-    <track name="Mano a mano" vocal="Jorge Omar" year="1936-10-03" genre="tango" composer="Carlos Gardel, José Razzano" author="Celedonio Flores" popularity="5"/>
-    <track name="Mantelito blanco" vocal="Alberto Rivera" year="1944-09-15" genre="vals"/>
-    <track name="Mar de fondo" vocal="Instrumental" year="1931-12-22" genre="tango" composer="Daniel Álvarez" popularity="7"/>
-    <track name="Marcha atrás" vocal="Charlo" year="1928-08-02" genre="tango" composer="Enrique Delfino" author="Arturo Rodríguez Bustamante" duration="2:28"/>
-    <track name="Marchina do grande gallo" vocal="Dinah Lang" year="1936-09-04" genre="marcha"/>
-    <track name="Marioneta" vocal="Charlo" year="1928-10-29" genre="tango" composer="Juan José Martín Guichandut" author="Armando Tagini" popularity="3"/>
-    <track name="Mariposa" vocal="Instrumental" year="1927-04-30" genre="tango" duration="2:50" popularity="1"/>
-    <track name="Martirio" vocal="Fernando Díaz" year="1940-09-18" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="1"/>
-    <track name="Mary lou" vocal="Instrumental" year="1927-05-10" genre="Foxtrot"/>
-    <track name="Media noche" vocal="Instrumental" year="1929-08-17" genre="tango" composer="Aníbal Troilo" author="Héctor Gagliardi" duration="2:54"/>
-    <track name="Mentiras de amor" vocal="Fernando Díaz" year="1932-11-10" genre="vals" composer="Francisco De Caro" author="Manuel Andrés Meaños"/>
-    <track name="Meterete" vocal="Instrumental" year="1926" genre="tango" popularity="1"/>
-    <track name="Mi cotorrito bohemio" vocal="Instrumental" year="1929" genre="tango"/>
-    <track name="Mi mejor canción" vocal="Alberto Rivera" year="1949-10-06" genre="tango"/>
-    <track name="Mi pibe" vocal="Instrumental" year="1929-07-19" genre="tango" composer="Enrique Delfino" author="Manuel Romero" duration="2:51" popularity="2"/>
-    <track name="Mi provinciana" vocal="Charlo" year="1932-04-18" genre="tango" composer="Gerardo Matos Rodríguez" author="Manuel Romero" duration="3:05" popularity="5"/>
-    <track name="Mi reflexión" vocal="Fernando Díaz" year="1942-07-24" genre="tango"/>
-    <track name="Mimi" vocal="Fernando Díaz" year="1932-09-08" genre="Foxtrot"/>
-    <track name="Mirando la luna" vocal="Fernando Díaz" year="1932-11-14" genre="Foxtrot"/>
-    <track name="Mireya" vocal="Instrumental" year="1928-03-31" genre="tango" popularity="2"/>
-    <track name="Mis horas tristes" vocal="Instrumental" year="1929-06-13" genre="tango" composer="Ángel F. Condercuri" duration="2:53" popularity="1"/>
-    <track name="Misa de once" vocal="Charlo" year="1929-11-26" genre="tango" composer="Juan José Martín Guichandut" author="Armando Tagini" duration="3:28" popularity="2"/>
-    <track name="Misa de once" vocal="Príncipe Azul" year="1929-11-26" genre="tango" composer="Juan José Martín Guichandut" author="Armando Tagini" duration="3:25"/>
-    <track name="Moneda corriente" vocal="Charlo" year="1929-10-15" genre="tango" popularity="2"/>
-    <track name="Monte criollo" vocal="Jorge Omar" year="1935-05-09" genre="tango" composer="Francisco Pracánico" author="Homero Manzi" popularity="1"/>
-    <track name="Morena mía" vocal="Fernando Díaz" year="1932-06-20" genre="Pasodoble" duration="3:18"/>
-    <track name="Mosca muerta" vocal="Instrumental" year="1929-07-26" genre="tango" duration="2:58"/>
-    <track name="Mosca muerta" vocal="Instrumental" year="1929-08-23" genre="tango" duration="3:04"/>
-    <track name="Mosterio" vocal="Fernando Díaz" year="1939-07-14" genre="tango"/>
-    <track name="Mucha clase" vocal="Instrumental" year="1927-03-23" genre="tango" popularity="3"/>
-    <track name="Muchachita rosarina" vocal="Carlos Galarce" year="1943-07-28" genre="tango" duration="2:47"/>
-    <track name="Muchacho" vocal="Instrumental" year="1925" genre="tango" composer="Edgardo Donato" author="Celedonio Flores"/>
-    <track name="Mujer hechicera" vocal="Jorge Omar" year="1938-11-04" genre="Pasodoble"/>
-    <track name="Muñequita" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-09-03" genre="tango" composer="Francisco Lomuto" author="Adolfo Carlos Herschel" duration="2:52" popularity="4"/>
-    <track name="Muñequita" vocal="Miguel Montero" year="1949-10-06" genre="tango" composer="Francisco Lomuto" author="Adolfo Carlos Herschel" duration="2:56" popularity="1"/>
-    <track name="Muñequita" vocal="Instrumental" year="1927-07-16" genre="tango" composer="Francisco Lomuto" author="Adolfo Carlos Herschel" popularity="5"/>
-    <track name="Música triste" vocal="Instrumental" year="1931-05-08" genre="tango" popularity="6"/>
-    <track name="Nao se si vousé me entendé" vocal="Instrumental" year="1929-09-20" genre="maxixa"/>
-    <track name="Niebla" vocal="Alberto Rivera" year="1945-11-21" genre="tango" composer="Francisco Canaro, Mariano Mores" author="Ivo Pelay"/>
-    <track name="No cantes ese tango" vocal="Jorge Omar" year="1937-01-26" genre="tango" composer="Francisco Lomuto" duration="3:12"/>
-    <track name="No hay tierra como la mía" vocal="Fernando Díaz" year="1939-08-08" genre="milonga" composer="Charlo" author="Enrique Cadícamo" duration="2:32" popularity="2"/>
-    <track name="No lo heches al olvido" vocal="Fernando Díaz" year="1933-11-22" genre="tango"/>
-    <track name="No sigas mis pasos" vocal="Jorge Omar" year="1936-06-05" genre="tango" composer="Antonio Botta, Francisco Lomuto"/>
-    <track name="No te hagas mala sangre" vocal="Instrumental" year="1928-03-23" genre="tango" composer="Roberto Luratti" popularity="2"/>
-    <track name="No!" vocal="Charlo" year="1928-04-13" genre="tango" composer="Eduardo Arolas" author="Enrique Cadícamo" popularity="1"/>
-    <track name="Nocao de amor | Knock-out de amor" vocal="Instrumental" year="1930-05-16" genre="tango" popularity="1"/>
-    <track name="Noche de ronda" vocal="Instrumental" year="1937-05-28" genre="vals" duration="2:31"/>
-    <track name="Nostalgias" vocal="Jorge Omar" year="1936-10-28" genre="tango" composer="Juan Carlos Cobián" author="Enrique Cadícamo" duration="3:09" popularity="5"/>
-    <track name="Nunca" vocal="Príncipe Azul" year="1930-09-16" genre="tango" composer="Antonio Sureda" author="Celedonio Flores" duration="2:54" popularity="9"/>
-    <track name="Nunca más" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-08-27" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="2:48" popularity="4"/>
-    <track name="Nunca más" vocal="Miguel Montero" year="1950-04-25" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="2:40" popularity="1"/>
-    <track name="Nunca más" vocal="Instrumental" year="1927-07-19" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="2:50" popularity="1"/>
-    <track name="Ojos negros" vocal="Instrumental" year="1927-07-19" genre="tango" composer="Vicente Greco" author="Ernesto Temes" duration="2:52" popularity="3"/>
-    <track name="Ojos que no ven" vocal="Instrumental" year="1929-11-19" genre="tango"/>
-    <track name="Olímpicos" vocal="Instrumental" year="1928-06-16" genre="tango" popularity="1"/>
-    <track name="Olvidame para siempre" vocal="Instrumental" year="1927-06-14" genre="tango" duration="3:23"/>
-    <track name="Oración" vocal="Jorge Omar" year="1935-07-04" genre="tango"/>
-    <track name="Orgullosa" vocal="Instrumental" year="1929" genre="tango"/>
-    <track name="Otra vez" vocal="Jorge Omar" year="1938-06-09" genre="tango" composer="Jorge Fernández" author="José María Contursi" duration="2:38" popularity="2"/>
-    <track name="Pa' que te acordes" vocal="Charlo" year="1928" genre="tango" composer="Francisco Lomuto"/>
-    <track name="Pa' que te acordés" vocal="Charlo" year="1928-12-10" genre="tango" composer="Francisco Lomuto"/>
-    <track name="Palermo" vocal="Charlo" year="1929-04-02" genre="tango" composer="Enrique Delfino" author="Juan Villalba, Hermido Braga" popularity="2"/>
-    <track name="Pan" vocal="Instrumental" year="1930-12-13" genre="tango" composer="Eduardo Pereyra" author="Celedonio Flores" popularity="1"/>
-    <track name="Papanata" vocal="Fernando Díaz" year="1932-09-27" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" popularity="1"/>
-    <track name="Para Vigo me voy | Diga &quot;Sí, sí&quot;" vocal="Fernando Díaz, Luis 'Cucaracha' Zinkes" year="1937-04-02" genre="conga" popularity="1"/>
-    <track name="Paresito faraón" vocal="Fernando Díaz, Jorge Omar" year="1942-06-25" genre="garrotín"/>
-    <track name="Parque Patricios" vocal="Fernando Díaz" year="1941-06-27" genre="milonga" composer="Antonio Radicci" author="Francisco Laino" duration="2:21" popularity="4"/>
-    <track name="Parrillada" vocal="Fernando Díaz" year="1932-08-01" genre="ranchera"/>
-    <track name="Passa l'amore | Pasa El Amor" vocal="Jorge Omar" year="1937-11-26" genre="canzoneta"/>
-    <track name="Patadura" vocal="Instrumental" year="1929-05-06" genre="tango" author="Enrique Carrera Sotelo" popularity="3"/>
-    <track name="Pelossi" vocal="Instrumental" year="1924" genre="tango"/>
-    <track name="Pena maleva" vocal="Instrumental" year="1927-10-28" genre="tango" duration="3:08"/>
-    <track name="Penurias" vocal="Instrumental" year="1930-09-09" genre="tango" popularity="1"/>
-    <track name="Perdonala señor" vocal="Instrumental" year="1929" genre="tango"/>
-    <track name="Perfidia" vocal="Fernando Díaz" year="1940-05-15" genre="rumba" popularity="1"/>
-    <track name="Perfume de mujer" vocal="Instrumental" year="1927-12-02" genre="tango" composer="Juan José Martín Guichandut" author="Armando Tagini" popularity="3"/>
-    <track name="Pim, pam, pum" vocal="Charlo" year="1928-08-10" genre="tango" composer="Enrique Delfino" author="Alberto Vacarezza" popularity="1"/>
-    <track name="Piñataro" vocal="Instrumental" year="1930-04-05" genre="tango" duration="2:59"/>
-    <track name="Pinta maleva" vocal="Charlo" year="1929-07-05" genre="tango" composer="Luis Teisseire" author="Luis Teisseire" popularity="4"/>
-    <track name="Pirucha" vocal="Instrumental" year="1927-12-02" genre="tango" composer="Augusto Gentile" duration="2:53"/>
-    <track name="Plegaria" vocal="Fernando Díaz" year="1933-07-22" genre="vals" composer="Antonio Sureda" author="Gerónimo Sureda" popularity="1"/>
-    <track name="Pobre Mateo" vocal="Instrumental" year="1926" genre="tango" composer="Francisco Pracánico" author="Francisco Bohigas" popularity="1"/>
-    <track name="Pobre muchacha" vocal="Instrumental" year="1927-08-08" genre="tango" popularity="2"/>
-    <track name="Por dónde andará" vocal="Instrumental" year="1927-03-23" genre="tango" composer="Salvador Merico" author="Atilio Supparo" duration="2:40" popularity="1"/>
-    <track name="Por la vuelta" vocal="Jorge Omar" year="1939-02-28" genre="tango" composer="José Tinelli" author="Enrique Cadícamo" duration="2:35" popularity="5"/>
-    <track name="Por mi madre" vocal="Instrumental" year="1927" genre="tango" duration="2:48"/>
-    <track name="Porqué sos así" vocal="Instrumental" year="1927-12-02" genre="tango" popularity="2"/>
-    <track name="Primer auxilio" vocal="Instrumental" year="1929" genre="tango"/>
-    <track name="Prisionero" vocal="Charlo" year="1929-10-02" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="2:43" popularity="2"/>
-    <track name="Puerta cerrada | Porque!" vocal="Jorge Omar" year="1939-02-17" genre="tango"/>
-    <track name="Puerto nuevo" vocal="Fernando Díaz" year="1933-11-22" genre="tango" composer="Teófilo Lespés" author="Carlos Pesce" duration="2:58" popularity="4"/>
-    <track name="Puerto nuevo" vocal="Instrumental" year="1929-10-22" genre="tango" composer="Teófilo Lespés" author="Carlos Pesce" popularity="3"/>
-    <track name="Pura bulla" vocal="Instrumental" year="1929-05-14" genre="tango" duration="2:50" popularity="2"/>
-    <track name="Pura bulla" vocal="Instrumental" year="1929-05-21" genre="tango" duration="2:57"/>
-    <track name="Pura lata" vocal="Instrumental" year="1927-09-21" genre="tango" duration="2:53"/>
-    <track name="Puro cuento" vocal="Charlo" year="1929-06-21" genre="tango" composer="Acho Estol" author="Acho Estol" popularity="3"/>
-    <track name="Purrete de mi amor" vocal="Instrumental" year="1927-07-06" genre="" composer="Raúl Joaquín de los Hoyos" author="Luis Bayon Herrera" popularity="1"/>
-    <track name="Que habias sido mañera" vocal="Fernando Díaz" year="1933-10-16" genre="ranchera" popularity="1"/>
-    <track name="Que lindo es amar" vocal="Jorge Torres" year="1931-04-24" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" duration="3:21"/>
-    <track name="Qué lindo es estar metido | Que lindo es enamorarse" vocal="Instrumental" year="1927-12-29" genre="tango" popularity="1"/>
-    <track name="Qué me importa" vocal="Instrumental" year="1927-06-11" genre="tango" popularity="1"/>
-    <track name="Qué puntada!" vocal="Jorge Omar" year="1940-09-18" genre="corrido"/>
-    <track name="Qué tenés en la mirada?" vocal="Fernando Díaz" year="1932-05-23" genre="tango" duration="2:41" popularity="2"/>
-    <track name="Qué tiempo aquel" vocal="Jorge Omar" year="1938-02-24" genre="milonga" composer="Francisco Lomuto" author="Celedonio Flores" duration="2:33"/>
-    <track name="Qué vachaché" vocal="Instrumental" year="1928-05-03" genre="" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="2"/>
-    <track name="Quejidos del tango" vocal="Instrumental" year="1930-04-25" genre="tango" popularity="4"/>
-    <track name="Quién hubiera dicho!" vocal="Fernando Díaz" year="1932-07-25" genre="tango" composer="Rodolfo Sciammarella" author="Luis César Amadori" duration="2:55"/>
-    <track name="Quiero verte una vez más" vocal="Fernando Díaz" year="1940-08-12" genre="tango" composer="Mario Carmelo Canaro" author="José María Contursi" duration="2:31" popularity="4"/>
-    <track name="Quinielero" vocal="Charlo" year="1929-09-17" genre="tango" popularity="2"/>
-    <track name="Recuerdo" vocal="Instrumental" year="1941-08-08" genre="tango" composer="Osvaldo Pugliese" author="Eduardo Moreno"/>
-    <track name="Recuerdos" vocal="Instrumental" year="1929" genre="tango" composer="Carlos Gardel, José Razzano" author="Carlos Gardel, José Razzano"/>
-    <track name="Reina gitana" vocal="Fernando Díaz" year="1931-12-03" genre="Pasodoble" duration="3:12"/>
-    <track name="Remordimiento" vocal="Charlo" year="1930-06-18" genre="tango" composer="Juan Félix Maglio" author="José Perrusine Fernandez" popularity="1"/>
-    <track name="Remordimientos" vocal="Charlo" year="1930-06-18" genre="tango" composer="Alejandro Romay" duration="3:18"/>
-    <track name="Rencor" vocal="Fernando Díaz" year="1932-12-06" genre="tango" composer="Charlo" author="Luis César Amadori" popularity="2"/>
-    <track name="Rendido" vocal="Carlos Galarce" year="1945-06-26" genre="tango" composer="Alfredo Cordisco" author="ALBERTO ANDES LEIVA" duration="2:52"/>
-    <track name="Riendo" vocal="Fernando Díaz" year="1940-11-07" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:39" popularity="1"/>
-    <track name="Rincón florido" vocal="Jorge Omar" year="1937-12-26" genre="tango" composer="Canicoba Zayra" author="Oscar Lomuto"/>
-    <track name="Rinconada de mis tiempos" vocal="Fernando Díaz" year="1933-05-12" genre="tango" composer="José Martínez" author="Francisco Laino" popularity="3"/>
-    <track name="Risas y besos" vocal="Fernando Díaz" year="1932-06-27" genre="vals" duration="3:10" popularity="1"/>
-    <track name="Rubiecita" vocal="Charlo" year="1929-05-06" genre="tango" popularity="2"/>
-    <track name="Rulitos" vocal="Instrumental" year="1926" genre="tango" composer="Ricardo Luis Brignolo" author="José González Castillo (Juan de León)" popularity="1"/>
-    <track name="Sali de aqui" vocal="Fernando Díaz" year="1933-01-03" genre="ranchera"/>
-    <track name="Salud, dinero y amor" vocal="Jorge Omar" year="1939-08-08" genre="vals" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" popularity="3"/>
-    <track name="San Telmo" vocal="Charlo" year="1932-06-08" genre="tango" composer="Gerardo Matos Rodríguez" author="Ivo Pelay" duration="2:59" popularity="7"/>
-    <track name="Sangre azul" vocal="Instrumental" year="1927-10-14" genre="tango" duration="2:44"/>
-    <track name="Se fue" vocal="Instrumental" year="1927-11-17" genre="tango" composer="Mateo Villalba" popularity="1"/>
-    <track name="Se fue sin decir adiós" vocal="Fernando Díaz" year="1931-12-22" genre="tango" composer="Edgardo Donato" duration="2:41" popularity="1"/>
-    <track name="Se han sentado las carretas" vocal="Fernando Díaz, Jorge Omar" year="1939-10-25" genre="tango" composer="Agustín Bardi" author="Enrique Cadícamo" popularity="4"/>
-    <track name="Se te dio vuelta la taba" vocal="Fernando Díaz" year="1931-10-08" genre="tango" duration="2:40" popularity="3"/>
-    <track name="Secante" vocal="Charlo" year="1929-08-26" genre="tango" composer="Roque Biafore" author="Luis Rubistein" popularity="3"/>
-    <track name="Seleccion de tangos" vocal="Alberto Rivera, Miguel Montero" year="1949-11-02" genre="tango" duration="3:41"/>
-    <track name="Señor comisario" vocal="Charlo" year="1928-04-13" genre="tango" composer="Francisco Canaro" author="Francisco Canaro, Juan Andrés Caruso" popularity="1"/>
-    <track name="Sentimiento gaucho" vocal="Instrumental" year="1942-04-15" genre="tango" composer="Francisco Canaro, Rafael Canaro" author="Juan Andrés Caruso" duration="2:59" popularity="8"/>
-    <track name="Serenata" vocal="Carlos Galarce" year="1944-05-30" genre="milonga" composer="Rodolfo Sciammarella" author="Luis César Amadori" duration="2:15"/>
-    <track name="Serpentina doble" vocal="Instrumental" year="1929-03-02" genre="tango" duration="2:42" popularity="1"/>
-    <track name="Si dejaras de quererme" vocal="Jorge Omar" year="1935-10-08" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto"/>
-    <track name="Si soy así" vocal="Fernando Díaz" year="1933-06-14" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="3:17" popularity="9"/>
-    <track name="Si tu supieras" vocal="Fernando Díaz" year="1932-09-08" genre="ranchera" composer="Francisco Lomuto" author="Antonio Botta"/>
-    <track name="Si yo fuera capitán" vocal="Jorge Omar" year="1938-10-14" genre="Pasodoble"/>
-    <track name="Si yo te contara" vocal="Jorge Omar" year="1937-10-26" genre="tango" composer="Antonio Rodio" author="Celedonio Flores"/>
-    <track name="Siempre viva" vocal="Charlo" year="1928" genre="tango"/>
-    <track name="Sin chance" vocal="Instrumental" year="1929-06-14" genre="tango" duration="2:57" popularity="1"/>
-    <track name="Sin clemencia" vocal="Instrumental" year="1930-09-16" genre="tango" duration="2:51" popularity="4"/>
-    <track name="Sin dejar rastros" vocal="Instrumental" year="1927-11-25" genre="tango" composer="Francisco Lomuto" popularity="1"/>
-    <track name="Sol tropical | Amor tropical" vocal="Jorge Omar" year="1935-06-17" genre="rumba" popularity="1"/>
-    <track name="Solamente ella" vocal="Alberto Rivera" year="1944-09-15" genre="tango" composer="Lucio Demare" author="Homero Manzi" duration="3:13" popularity="1"/>
-    <track name="Sólo a una madre" vocal="Instrumental" year="1927-11-17" genre="tango"/>
-    <track name="Soltero... soy feliz!" vocal="Fernando Díaz" year="1932-11-10" genre="tango" popularity="2"/>
-    <track name="Sombras… nada más" vocal="Alberto Rivera" year="1943-11-09" genre="tango" composer="Francisco Lomuto" author="José María Contursi"/>
-    <track name="Son cosas del bandoneón" vocal="Jorge Omar" year="1940-02-08" genre="tango" composer="Enrique Rodríguez" author="Enrique Cadícamo" duration="3:01" popularity="1"/>
-    <track name="Soñador" vocal="Fernando Díaz" year="1933-01-03" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" popularity="2"/>
-    <track name="Soñé con un amor" vocal="Jorge Omar" year="1937-01-26" genre="tango" author="Jesús Fernández Blanco" duration="2:40" popularity="1"/>
-    <track name="Sorbos amargos" vocal="Fernando Díaz" year="1932-05-23" genre="tango" composer="Lucio Demare" author="Agustín Irusta, Roberto Fugazot" duration="3:24" popularity="1"/>
-    <track name="Sos bueno, vos también" vocal="Instrumental" year="1929-05-14" genre="tango" composer="Francisco Canaro" author="Juan Andrés Caruso" popularity="1"/>
-    <track name="Soy para ti" vocal="Fernando Díaz" year="1931-11-30" genre="rumba" popularity="3"/>
-    <track name="Soy un arlequín" vocal="Charlo" year="1929-06-21" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:24" popularity="1"/>
-    <track name="Soy un pobre gaucho" vocal="Charlo" year="1929-04-02" genre="tango" composer="Adolfo Perez" author="José Perrusine Fernandez" duration="2:52" popularity="2"/>
-    <track name="Soy un pobre presidiario" vocal="Jorge Omar" year="1937-10-26" genre="Pasodoble"/>
-    <track name="Sueño de juventud" vocal="Fernando Díaz" year="1931-10-08" genre="vals" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:21" popularity="1"/>
-    <track name="Sueño de poeta" vocal="Fernando Díaz" year="1931-10-01" genre="tango" duration="2:27"/>
-    <track name="Sus ojos se cerraron" vocal="Jorge Omar" year="1935-06-17" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" popularity="1"/>
-    <track name="Suscribite al 6,67%" vocal="Fernando Díaz" year="1932-08-29" genre="tango"/>
-    <track name="Suscribite al 6.67%" vocal="Fernando Díaz" year="1932-08-29" genre="tango" popularity="1"/>
-    <track name="Tango amigo" vocal="Fernando Díaz" year="1939-08-29" genre="tango" composer="Francisco Lomuto" author="Manuel Romero"/>
-    <track name="Tango amigo" vocal="Carmen Del Moral" year="1939-12-07" genre="tango" composer="Francisco Lomuto" author="Manuel Romero" duration="2:41" popularity="1"/>
-    <track name="Tango argentino" vocal="Instrumental" year="1929-04-02" genre="tango" composer="Juan Félix Maglio" author="Alfredo Bigeschi" duration="3:00"/>
-    <track name="Tango sin letra" vocal="Fernando Díaz" year="1933-10-06" genre="tango" composer="Cátulo Castillo" author="Venancio Clauso" popularity="2"/>
-    <track name="Tarde" vocal="Miguel Montero" year="1950-10-27" genre="tango" composer="José Canet" author="José Canet" duration="2:56" popularity="1"/>
-    <track name="Te aconsejo que me olvides" vocal="Instrumental" year="1928-10-15" genre="tango" composer="Pedro Maffia" author="Jorge Curi" duration="2:53" popularity="5"/>
-    <track name="Te acordaras de mi" vocal="Instrumental" year="1928" genre="tango"/>
-    <track name="Te engrupieron" vocal="Instrumental" year="1927-10-01" genre="tango" popularity="1"/>
-    <track name="Te quiero morena linda" vocal="Fernando Díaz" year="1939-10-04" genre="Pasodoble canción"/>
-    <track name="Tengo mil novias" vocal="Fernando Díaz" year="1940-02-08" genre="vals" composer="Enrique Rodríguez" author="Enrique Cadícamo"/>
-    <track name="Tiempos nuevos" vocal="Fernando Díaz" year="1932-05-03" genre="tango" duration="2:39" popularity="2"/>
-    <track name="Tocá un tango" vocal="Instrumental" year="1927-04-08" genre="tango" duration="2:46"/>
-    <track name="Todavía hay otarios" vocal="Instrumental" year="1929" genre="tango" composer="Manuel Pizarro"/>
-    <track name="Tormenta" vocal="Jorge Omar" year="1939-03-30" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="1"/>
-    <track name="Tradición" vocal="Instrumental" year="1927-12-29" genre="tango" composer="Fausto Frontera" author="Enrique Cadícamo" duration="2:42"/>
-    <track name="Tres, seis, diez" vocal="Carlos Galarce" year="1945-12-17" genre="" composer="José Razzano, Cátulo Castillo" author="José Razzano, Cátulo Castillo"/>
-    <track name="Triste comedia" vocal="Miguel Montero" year="1950-06-06" genre="tango" composer="Héctor Stamponi" author="Oscar Rubens" duration="2:40" popularity="1"/>
-    <track name="Tu abandono" vocal="Fernando Díaz" year="1932-08-01" genre="tango"/>
-    <track name="Tu disfraz" vocal="Instrumental" year="1928-06-05" genre="tango" composer="Ángel Danesi" duration="2:48"/>
-    <track name="Tu nobleza" vocal="Charlo" year="1930-06-18" genre="ranchera"/>
-    <track name="Tu sombra" vocal="Fernando Díaz" year="1934-12-27" genre="vals" composer="Enrique Discépolo" author="Luis César Amadori"/>
-    <track name="Un silvido en la noche" vocal="Carlos Galarce" year="1943-06-29" genre="tango" duration="2:53"/>
-    <track name="Un vals | Se fue" vocal="Carlos Galarce" year="1944-05-11" genre="vals" duration="2:26"/>
-    <track name="Una pena" vocal="Miguel Montero" year="1949-11-02" genre="tango" composer="Adolfo Rosquella/ Adolfo Rosquellas" author="Arturo Luis Albert" duration="3:23" popularity="1"/>
-    <track name="Una puerta y una ventana | Uma porta e uma janela" vocal="Dinah Lang" year="1936-10-28" genre="marcha"/>
-    <track name="Valse de la fisarmónica" vocal="Instrumental" year="1938-02-09" genre="vals"/>
-    <track name="Vendrás alguna vez?" vocal="Jorge Omar" year="1938-08-24" genre="tango" composer="Alfredo Malerba" author="Luis César Amadori"/>
-    <track name="Viajando en el subte" vocal="Fernando Díaz" year="1933-12-07" genre="Fox Trot" composer="Héctor Lomuto"/>
-    <track name="Viborita" vocal="Instrumental" year="1945-10-24" genre="tango" composer="Eduardo Arolas" author="Gabriel Clausi"/>
-    <track name="Vieja milonga" vocal="Instrumental" year="1928-10-15" genre="tango" composer="Eugenio Cárdenas" author="Samuel Castriota" duration="2:57"/>
-    <track name="Viejas alegrías" vocal="Jorge Omar" year="1937-07-07" genre="tango" composer="Charlo" author="Enrique Cadícamo"/>
-    <track name="Viejo amigo" vocal="Instrumental" year="1929-10-22" genre="tango" composer="Julio De Caro" popularity="2"/>
-    <track name="Violino tzigano | Violín gitano" vocal="Jorge Omar" year="1938-02-09" genre="en el tiempo de tango"/>
-    <track name="Volvé mi negra" vocal="Instrumental" year="1927-08-08" genre="tango" composer="José María Rizzuti" author="J. A. Diaz Gómez" duration="2:55"/>
-    <track name="Volvé pronto" vocal="Charlo" year="1928-08-30" genre="tango" composer="Francisco Lomuto" duration="3:11"/>
-    <track name="Y haces el novio?" vocal="Fernando Díaz" year="1934-12-27" genre="tango" popularity="1"/>
-    <track name="Y sonó el despertador" vocal="Alberto Rivera" year="1944-05-30" genre="tango" composer="Elizardo Martínez Vilas" author="Elizardo Martínez Vilas" duration="2:42"/>
-    <track name="Y te fuiste a París" vocal="Fernando Díaz" year="1934-11-29" genre="tango" composer="Eduardo Pereyra" author="Eduardo Pereyra" popularity="2"/>
-    <track name="Ya no cantas, Chingolo" vocal="Fernando Díaz, Jorge Omar" year="1942-05-05" genre="tango" composer="Antonio Scatasso" author="Edmundo Bianchi"/>
-    <track name="Yo nací para querer" vocal="Jorge Omar" year="1940-04-11" genre="tango" composer="Francisco Canaro" author="Francisco Canaro" popularity="2"/>
-    <track name="Yo que por tus besos me moría!" vocal="Fernando Díaz" year="1932-05-03" genre="vals" duration="3:01" popularity="1"/>
-    <track name="Yo te bendigo" vocal="Instrumental" year="1926" genre="tango" composer="Juan de Dios Filiberto" author="Julio A. Buron"/>
-    <track name="Zorro gris" vocal="Instrumental" year="1927-07-16" genre="tango" composer="Rafael Eulogio Tuegols" author="Francisco García" duration="2:39" popularity="3"/>
-    <track name="Zorro gris" vocal="Instrumental" year="1941-07-28" genre="tango" composer="Rafael Eulogio Tuegols" author="Francisco García" duration="2:06" popularity="6"/>
-    <track name="Zorro viejo" vocal="Instrumental" year="1928-03-23" genre="tango" duration="2:47"/>
-    <track name="Cambalache" vocal="Ernesto Famá" year="1934--1935" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo"/>
-    <track name="Si dejaras de quererme" vocal="Instrumental" year="" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto"/>
-    <track name="Vida mía...!" vocal="Instrumental" year="" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo"/>
-    <track name="Ya no cantas, Chingolo" vocal="-unspecified male-" year="1927--1930" genre="tango" composer="Antonio Scatasso" author="Edmundo Bianchi" duration="2:49"/>
+    <track name="Lagrimitas" vocal="Instrumental" year="1927-12-29" genre="tango" composer="Emilio Marchiano, José Rainelli" author="Emilio Marchiano" duration="2:42" popularity="3"/>
+    <track name="Lamento criollo" vocal="Instrumental" year="1928-10-15" genre="tango" popularity="6"/>
+    <track name="Las cuarenta" vocal="Jorge Omar" year="1937-07-30" genre="tango" composer="Roberto Grela" author="Francisco Gorrindo" duration="2:46" popularity="5"/>
+    <track name="Las perlas de tu boca" vocal="Jorge Omar" year="1935-10-08" genre="rumba" duration="2:54" popularity="4"/>
+    <track name="Lechuza" vocal="Instrumental" year="1927-06-14" genre="tango" composer="Julio Plácido Navarrine" author="Alfredo Navarrine" duration="3:11" popularity="1"/>
+    <track name="Lejanía" vocal="Charlo" year="1930-07-16" genre="tango" duration="2:57" popularity="1"/>
+    <track name="Linda francesita" vocal="Charlo" year="1928-03-31" genre="tango" duration="2:54" popularity="1"/>
+    <track name="Lindo tipo de varón" vocal="Charlo" year="1928-04-14" genre="tango" composer="Charlo" author="Enrique Cadícamo" popularity="6"/>
+    <track name="Lirio blanco" vocal="Fernando Díaz" year="1934-04-10" genre="vals" duration="3:07" popularity="2"/>
+    <track name="Lisón" vocal="Alberto Rivera" year="1944-10-04" genre="tango" composer="José Ranieri" author="Julián Centeya" duration="2:49" popularity="1"/>
+    <track name="Llanto" vocal="Fernando Díaz" year="1940-05-15" genre="tango" composer="Pedro Maffia" author="Homero Manzi" duration="2:36" popularity="2"/>
+    <track name="Llévame en tus alas" vocal="Fernando Díaz" year="1931-12-28" genre="tango" duration="2:50" popularity="4"/>
+    <track name="Llevátelo todo" vocal="Charlo" year="1928-08-10" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:26" popularity="1"/>
+    <track name="Lloraras, lloraras" vocal="Alberto Rivera" year="1945-05-28" genre="vals" composer="Hugo Gutiérrez" author="Homero Manzi" duration="2:53" popularity="1"/>
+    <track name="Lo han visto con otra" vocal="Carlos Galarce" year="1943-05-15" genre="tango" composer="Horacio Pettorossi" author="Horacio Pettorossi" duration="2:24" popularity="2"/>
+    <track name="Lo que no escuchó Dios" vocal="Fernando Díaz" year="1934-06-21" genre="vals" composer="Hugo Gutiérrez" author="Gustavo Durval Gogiose" duration="3:09" popularity="2"/>
+    <track name="Lo que vieron mis ojos" vocal="Fernando Díaz, Mercedes Simone" year="1933-07-22" genre="vals" composer="Juan Canaro" author="Jesús Fernández Blanco" duration="2:26" popularity="9"/>
+    <track name="Loco torbellino" vocal="Jorge Omar" year="1941-11-06" genre="tango" composer="Emilio Barbato" author="Homero Expósito" duration="2:36" popularity="1"/>
+    <track name="Loco turbión" vocal="Jorge Omar" year="1941-11-06" genre="tango" composer="Vicente Spina" author="Roberto Miro" popularity="1"/>
+    <track name="Lomuto" vocal="Instrumental" year="1940-02-23" genre="tango" composer="Vicente Spina" author="Roberto Miro" duration="2:32" popularity="3"/>
+    <track name="Lonjazos" vocal="Fernando Díaz" year="1932-10-10" genre="tango" composer="Andrés Domenech" author="Jesús Fernández Blanco" duration="2:41" popularity="3"/>
+    <track name="Los granaderos de San Martín" vocal="Fernando Díaz, Jorge Omar" year="1939-10-04" genre="ranchera" duration="2:32" popularity="3"/>
+    <track name="Los ojos más lindos" vocal="Jorge Omar" year="1942-06-17" genre="tango" composer="Francisco Canaro" author="Francisco Canaro" popularity="3"/>
+    <track name="Los piconeros" vocal="Fernando Díaz" year="1939-04-26" genre="marcha" duration="2:37" popularity="2"/>
+    <track name="Lucecitas de mi pueblo" vocal="Fernando Díaz" year="1933-05-31" genre="tango" composer="Enrique Delfino" duration="2:46" popularity="2"/>
+    <track name="Luis María" vocal="Jorge Omar" year="1935-11-26" genre="tango" composer="Enrique Delfino" duration="2:30" popularity="2"/>
+    <track name="Luna arrabalera" vocal="Jorge Omar" year="1935-05-09" genre="tango" composer="Carlos Marcucci" author="Mario Gomila" duration="2:32" popularity="2"/>
+    <track name="Luna de arrabal" vocal="Fernando Díaz" year="1935-12-27" genre="vals" composer="Julio César Alberto Sanders" author="Enrique Cadícamo" duration="3:21" popularity="2"/>
+    <track name="Madreselva" vocal="Jorge Omar" year="1938-08-24" genre="tango" composer="Francisco Canaro" duration="2:41" popularity="7"/>
+    <track name="Mal de ausencia" vocal="Fernando Díaz" year="1932-12-06" genre="vals" composer="Francisco Canaro" author="Ivo Pelay" duration="2:26" popularity="2"/>
+    <track name="Mala suerte" vocal="Jorge Omar" year="1939-02-17" genre="tango" composer="Francisco Lomuto" author="Francisco Gorrindo" duration="3:04" popularity="2"/>
+    <track name="Malevaje" vocal="Charlo" year="1928-09-26" genre="tango" composer="Juan de Dios Filiberto" author="Enrique Discépolo" duration="3:21" popularity="3"/>
+    <track name="Mamita" vocal="Instrumental" year="1929-03-08" genre="tango" composer="Ángel Danesi" author="Francisco Bohigas" duration="2:46" popularity="4"/>
+    <track name="Mano a mano" vocal="Alberto Rivera" year="1944-08-11" genre="tango" composer="Carlos Gardel, José Razzano" author="Celedonio Flores" duration="2:29" popularity="1"/>
+    <track name="Mano a mano" vocal="Jorge Omar" year="1936-10-03" genre="tango" composer="Carlos Gardel, José Razzano" author="Celedonio Flores" duration="3:19" popularity="10"/>
+    <track name="Mantelito blanco" vocal="Alberto Rivera" year="1944-09-15" genre="vals" popularity="2"/>
+    <track name="Mar de fondo" vocal="Instrumental" year="1931-12-22" genre="tango" composer="Daniel Álvarez" duration="2:46" popularity="11"/>
+    <track name="Marcha atrás" vocal="Charlo" year="1928-08-02" genre="tango" composer="Enrique Delfino" author="Arturo Rodríguez Bustamante" duration="2:28" popularity="1"/>
+    <track name="Marchina do grande gallo" vocal="Dinah Lang" year="1936-09-04" genre="marcha" composer="Enrique Delfino" author="Arturo Rodríguez Bustamante" popularity="1"/>
+    <track name="Marchinha do grande gallo" vocal="Dinah Lang" year="1936-09-04" genre="marcha" composer="Enrique Delfino" author="Arturo Rodríguez Bustamante" duration="2:26" popularity="1"/>
+    <track name="Mariana" vocal="Fernando Díaz" year="1939-04-26" genre="paso doble" composer="Ricardo Malerba, Francisco Caso" author="Homero Manzi" duration="2:49" popularity="2"/>
+    <track name="Marioneta" vocal="Charlo" year="1928-10-29" genre="tango" composer="Juan José Martín Guichandut" author="Armando Tagini" duration="2:51" popularity="4"/>
+    <track name="Mariposa" vocal="Instrumental" year="1927-04-30" genre="tango" duration="2:50" popularity="3"/>
+    <track name="Martín Pescador" vocal="Jorge Omar" year="1935-07-19" genre="ranchera" composer="Francisco Pracánico" author="Emilio Magaldi" duration="2:50" popularity="2"/>
+    <track name="Martirio" vocal="Fernando Díaz" year="1940-09-18" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:16" popularity="4"/>
+    <track name="Mary lou" vocal="Instrumental" year="1927-05-10" genre="foxtrot" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="1"/>
+    <track name="Mas, mas siempre mas" vocal="Instrumental" year="1939-08-29" genre="marcha" composer="Enrique Discépolo" author="Enrique Discépolo" duration="2:36" popularity="1"/>
+    <track name="Me llaman el solitario" vocal="Alberto Rivera" year="1945-12-17" genre="tango" composer="Francisco Lomuto" author="Enrique Cadícamo" duration="3:23" popularity="1"/>
+    <track name="Media noche" vocal="Instrumental" year="1929-08-17" genre="tango" composer="Aníbal Troilo" author="Héctor Gagliardi" duration="2:54" popularity="2"/>
+    <track name="Media noche" vocal="Instrumental" year="1929-09-17" genre="tango" composer="Aníbal Troilo" author="Héctor Gagliardi" duration="2:55" popularity="2"/>
+    <track name="Melodias de America" vocal="Fernando Díaz" year="1941-11-06" genre="marcha canción" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" popularity="3"/>
+    <track name="Mentiras de amor" vocal="Fernando Díaz" year="1932-11-10" genre="vals" composer="Francisco De Caro" author="Manuel Andrés Meaños" duration="3:22" popularity="3"/>
+    <track name="Meterete" vocal="Instrumental" year="1926" genre="tango" popularity="5"/>
+    <track name="Mi camino" vocal="Jorge Omar" year="1937-01-07" genre="tango" composer="Antonio Rodio" author="José María Contursi" duration="2:45" popularity="3"/>
+    <track name="Mi consejo" vocal="Fernando Díaz" year="1934-07-16" genre="tango" composer="Juan Bautista Domingo Rezzano" author="Juan Bautista Domingo Rezzano" duration="2:35" popularity="2"/>
+    <track name="Mi corazón te llama" vocal="Carlos Galarce" year="1945-08-08" genre="tango" author="Enrique Cadícamo" duration="2:51" popularity="2"/>
+    <track name="Mi cotorrito bohemio" vocal="Instrumental" year="1929" genre="tango" author="Enrique Cadícamo" duration="2:42" popularity="2"/>
+    <track name="Mi mejor canción" vocal="Alberto Rivera" year="1949-10-06" genre="tango" author="Enrique Cadícamo" popularity="3"/>
+    <track name="Mi moro" vocal="Alberto Rivera" year="1946-08-22" genre="tango" composer="Carlos Gardel, José Razzano" author="Cátulo Castillo" duration="2:52" popularity="2"/>
+    <track name="Mi pesar" vocal="Jorge Omar" year="1935-06-16" genre="tango" composer="Mauricio Saiovich" author="Mauricio Saiovich" duration="2:32" popularity="3"/>
+    <track name="Mi pibe" vocal="Instrumental" year="1929-07-19" genre="tango" composer="Enrique Delfino" author="Manuel Romero" duration="2:51" popularity="6"/>
+    <track name="Mi provinciana" vocal="Charlo" year="1932-04-18" genre="tango" composer="Gerardo Matos Rodríguez" author="Manuel Romero" duration="3:05" popularity="8"/>
+    <track name="Mi reflexión" vocal="Fernando Díaz" year="1942-07-24" genre="tango" popularity="4"/>
+    <track name="Milongón" vocal="Jorge Omar" year="1939-02-28" genre="milonga" composer="Francisco Canaro" author="Homero Manzi" duration="2:15" popularity="4"/>
+    <track name="Mimi" vocal="Fernando Díaz" year="1932-09-08" genre="foxtrot" composer="Francisco Canaro" author="Homero Manzi" duration="3:14" popularity="3"/>
+    <track name="Mirando la luna" vocal="Fernando Díaz" year="1932-11-14" genre="foxtrot" composer="Francisco Canaro" author="Homero Manzi" duration="2:39" popularity="3"/>
+    <track name="Mireya" vocal="Instrumental" year="1928-03-31" genre="tango" composer="Francisco Canaro" author="Homero Manzi" duration="2:45" popularity="4"/>
+    <track name="Mis amigos de ayer" vocal="Carlos Galarce" year="1945-11-21" genre="tango" composer="Francisco Lomuto" author="José María Contursi" duration="3:03" popularity="2"/>
+    <track name="Mis horas tristes" vocal="Instrumental" year="1929-06-13" genre="tango" composer="Ángel F. Condercuri" duration="2:53" popularity="3"/>
+    <track name="Misa de once" vocal="Charlo" year="1929-11-26" genre="tango" composer="Juan José Martín Guichandut" author="Armando Tagini" duration="3:28" popularity="6"/>
+    <track name="Moneda corriente" vocal="Charlo" year="1929-10-15" genre="tango" duration="2:42" popularity="5"/>
+    <track name="Monotonía" vocal="Jorge Omar" year="1936-12-03" genre="tango" composer="Hugo Gutiérrez" author="Carlos Bahr" duration="3:09" popularity="4"/>
+    <track name="Montañita" vocal="Carlos Galarce" year="1943-07-28" genre="vals" composer="Hugo Gutiérrez" author="Carlos Bahr" duration="2:40" popularity="3"/>
+    <track name="Monte criollo" vocal="Jorge Omar" year="1935-05-09" genre="tango" composer="Francisco Pracánico" author="Homero Manzi" duration="2:49" popularity="9"/>
+    <track name="Morena mía" vocal="Fernando Díaz" year="1932-06-20" genre="paso doble" composer="Francisco Pracánico" author="Homero Manzi" duration="3:18" popularity="4"/>
+    <track name="Mosca muerta" vocal="Instrumental" year="1929-07-26" genre="tango" duration="2:58" popularity="3"/>
+    <track name="Mosca muerta" vocal="Instrumental" year="1929-08-23" genre="tango" duration="3:04" popularity="3"/>
+    <track name="Mosterio" vocal="Fernando Díaz, -choir-" year="1939-07-14" genre="tango" duration="2:54" popularity="5"/>
+    <track name="Mucha clase" vocal="Instrumental" year="1927-03-23" genre="tango" duration="2:48" popularity="7"/>
+    <track name="Muchachita del campo" vocal="Jorge Omar" year="1938-05-03" genre="tango" composer="Francisco Lomuto" author="Manuel Romero" duration="2:52" popularity="4"/>
+    <track name="Muchachita rosarina" vocal="Carlos Galarce" year="1943-07-28" genre="tango" composer="Francisco Lomuto" author="Manuel Romero" duration="2:47" popularity="4"/>
+    <track name="Muchacho" vocal="Instrumental" year="1925" genre="tango" composer="Edgardo Donato" author="Celedonio Flores" duration="2:34" popularity="3"/>
+    <track name="Mujer hechicera" vocal="Jorge Omar" year="1938-11-04" genre="paso doble" composer="Edgardo Donato" author="Celedonio Flores" duration="2:50" popularity="5"/>
+    <track name="Muñeca de cristal" vocal="Jorge Omar" year="1937-07-30" genre="vals" composer="Ernesto Lecuona" author="Ernesto Lecuona" duration="2:34" popularity="4"/>
+    <track name="Muñeca querida" vocal="Jorge Omar" year="1935" genre="vals" composer="Ernesto Lecuona" author="Ernesto Lecuona" duration="2:38" popularity="3"/>
+    <track name="Muñequita" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-09-03" genre="tango" composer="Francisco Lomuto" author="Adolfo Carlos Herschel" duration="2:52" popularity="8"/>
+    <track name="Muñequita" vocal="Miguel Montero" year="1949-10-06" genre="tango" composer="Francisco Lomuto" author="Adolfo Carlos Herschel" duration="2:56" popularity="5"/>
+    <track name="Muñequita" vocal="Instrumental" year="1927-07-16" genre="tango" composer="Francisco Lomuto" author="Adolfo Carlos Herschel" duration="2:46" popularity="9"/>
+    <track name="Música triste" vocal="Instrumental" year="1931-05-08" genre="tango" duration="3:23" popularity="10"/>
+    <track name="Nao se si vousé me entendé" vocal="Instrumental" year="1929-09-20" genre="maxixa" popularity="3"/>
+    <track name="Negro lindo" vocal="Fernando Díaz" year="1940-10-18" genre="tango" composer="Francisco Lomuto" duration="2:51" popularity="5"/>
+    <track name="Niebla" vocal="Alberto Rivera" year="1945-11-21" genre="tango" composer="Francisco Canaro, Mariano Mores" author="Ivo Pelay" duration="2:42" popularity="4"/>
+    <track name="No cantes ese tango" vocal="Jorge Omar" year="1937-01-26" genre="tango" composer="Francisco Lomuto" duration="3:20" popularity="5"/>
+    <track name="No hay tierra como la mía" vocal="Fernando Díaz" year="1939-08-08" genre="milonga" composer="Charlo" author="Enrique Cadícamo" duration="2:32" popularity="8"/>
+    <track name="No lo eches al olvido" vocal="Fernando Díaz" year="1933-11-22" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="3:12" popularity="3"/>
+    <track name="No lo heches al olvido" vocal="Fernando Díaz" year="1933-11-22" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="3:04" popularity="3"/>
+    <track name="No me pidas la &quot;exclusiva&quot;" vocal="Jorge Omar" year="1941-01-03" genre="tango" composer="Julio De Caro" author="Enrique Cadícamo" duration="2:32" popularity="4"/>
+    <track name="No sigas mis pasos" vocal="Jorge Omar" year="1936-06-05" genre="tango" composer="Antonio Botta, Francisco Lomuto" duration="2:41" popularity="5"/>
+    <track name="No te hagas mala sangre" vocal="Instrumental" year="1928-03-23" genre="tango" composer="Roberto Luratti" popularity="7"/>
+    <track name="No tengo más que un amor" vocal="Fernando Díaz" year="1941-10-30" genre="tango" composer="Francisco Lomuto" author="Manuel Meaños" duration="2:50" popularity="4"/>
+    <track name="No!" vocal="Charlo" year="1928-04-13" genre="tango" composer="Eduardo Arolas" author="Enrique Cadícamo" duration="3:01" popularity="4"/>
+    <track name="Nocao de amor | Knock-out de amor" vocal="Instrumental" year="1930-05-16" genre="tango" composer="Eduardo Arolas" author="Enrique Cadícamo" duration="2:50" popularity="4"/>
+    <track name="Noche de ronda" vocal="Instrumental" year="1937-05-28" genre="vals" duration="2:31" popularity="6"/>
+    <track name="Nos encontramos al pasar" vocal="Alberto Rivera" year="1945-04-30" genre="tango" composer="Raúl Kaplún" author="José Maria Suñe" duration="2:56" popularity="3"/>
+    <track name="Nostalgias" vocal="Jorge Omar" year="1936-10-28" genre="tango" composer="Juan Carlos Cobián" author="Enrique Cadícamo" duration="3:09" popularity="11"/>
+    <track name="Nostalgias y saudades" vocal="Fernando Díaz, Jorge Omar" year="1942-01-02" genre="zamba" composer="Martin Darré" author="Juan Pueblito" popularity="3"/>
+    <track name="Nota porteña" vocal="Fernando Díaz" year="1934-11-06" genre="tango" author="Juan De La Calle" duration="2:35" popularity="4"/>
+    <track name="Novillero" vocal="Jorge Omar" year="1937-04-02" genre="paso doble" composer="María Teresa Lara" author="María Teresa Lara" duration="2:43" popularity="4"/>
+    <track name="Nunca" vocal="Príncipe Azul" year="1930-09-16" genre="tango" composer="Antonio Sureda" author="Celedonio Flores" duration="2:54" popularity="12"/>
+    <track name="Nunca más" vocal="Alberto Hilarion Acuña, Fernando Díaz" year="1931-08-27" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="2:48" popularity="7"/>
+    <track name="Nunca más" vocal="Carlos Acuña, Fernando Díaz" year="1931-08-27" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="2:45" popularity="3"/>
+    <track name="Nunca más" vocal="Miguel Montero" year="1950-04-25" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="2:40" popularity="5"/>
+    <track name="Nunca más" vocal="Instrumental" year="1927-07-19" genre="tango" composer="Francisco Lomuto" author="Oscar Lomuto" duration="2:50" popularity="5"/>
+    <track name="Nyrka" vocal="Fernando Díaz" year="1934-09-06" genre="vals" duration="3:11" popularity="4"/>
+    <track name="Oh johnny, oh johnny" vocal="Fernando Díaz" year="1940" genre="foxtrot" duration="2:08" popularity="3"/>
+    <track name="Ojos negros" vocal="Instrumental" year="1927-07-19" genre="tango" composer="Vicente Greco" author="Ernesto Temes" duration="2:52" popularity="7"/>
+    <track name="Ojos que no ven" vocal="Instrumental" year="1929-11-19" genre="tango" composer="Vicente Greco" author="Ernesto Temes" popularity="3"/>
+    <track name="Ojos verdes" vocal="Alberto Rivera" year="1943-06-29" genre="vals" composer="Humberto Canaro" author="Alfredo Defilpo" duration="2:27" popularity="3"/>
+    <track name="Olímpicos" vocal="Instrumental" year="1928-06-16" genre="tango" composer="Humberto Canaro" author="Alfredo Defilpo" duration="2:50" popularity="4"/>
+    <track name="Olvidame para siempre" vocal="Instrumental" year="1927-06-14" genre="tango" composer="Humberto Canaro" author="Alfredo Defilpo" duration="3:23" popularity="4"/>
+    <track name="Oración" vocal="Jorge Omar" year="1935-07-04" genre="tango" duration="2:30" popularity="5"/>
+    <track name="Orgullosa" vocal="Instrumental" year="1929" genre="tango" duration="3:21" popularity="3"/>
+    <track name="Otra vez" vocal="Jorge Omar" year="1938-06-09" genre="tango" composer="Jorge Fernández" author="José María Contursi" duration="2:38" popularity="7"/>
+    <track name="Pa' que te acordes" vocal="Charlo" year="1928" genre="tango" composer="Francisco Lomuto" duration="3:24" popularity="3"/>
+    <track name="Pa' que te acordés" vocal="Charlo" year="1928-12-10" genre="tango" composer="Francisco Lomuto" popularity="3"/>
+    <track name="Palermo" vocal="Charlo" year="1929-04-02" genre="tango" composer="Enrique Delfino" author="Juan Villalba, Hermido Braga" duration="3:26" popularity="5"/>
+    <track name="Paloma" vocal="Alberto Rivera" year="1944-12-19" genre="vals" composer="Juan José Martín Guichandut" author="Horacio Sanguinetti" duration="2:14" popularity="3"/>
+    <track name="Pan" vocal="Instrumental" year="1930-12-13" genre="tango" composer="Eduardo Pereyra" author="Celedonio Flores" duration="3:08" popularity="5"/>
+    <track name="Papanata" vocal="Fernando Díaz" year="1932-09-27" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="2:33" popularity="5"/>
+    <track name="Papel picado" vocal="Fernando Díaz" year="1934-03-23" genre="tango" composer="Cátulo Castillo" author="José González Castillo (Juan de León)" duration="2:51" popularity="4"/>
+    <track name="Paquiya" vocal="Jorge Omar" year="1936-07-02" genre="paso doble" duration="2:55" popularity="3"/>
+    <track name="Para que lo oigan" vocal="Alberto Rivera" year="1946-08-22" genre="milonga" composer="Miguel Bucino" author="Miguel Bucino" duration="2:19" popularity="3"/>
+    <track name="Para Vigo me voy | Diga &quot;Sí, sí&quot;" vocal="Jorge Omar, Luis 'Cucaracha' Zinkes" year="1937-04-02" genre="conga" composer="Miguel Bucino" author="Miguel Bucino" duration="3:04" popularity="6"/>
+    <track name="Parece mentira" vocal="Fernando Díaz" year="1935-12-27" genre="tango" composer="Antonio Rodio" author="Rodolfo Sciammarella" duration="3:09" popularity="4"/>
+    <track name="Paresito faraón" vocal="Fernando Díaz, Jorge Omar" year="1942-06-25" genre="garrotín" popularity="5"/>
+    <track name="Parque Patricios" vocal="Fernando Díaz" year="1941-06-27" genre="milonga" composer="Antonio Radicci" author="Francisco Laino" duration="2:21" popularity="9"/>
+    <track name="Parrillada" vocal="Fernando Díaz" year="1932-08-01" genre="ranchera" composer="Antonio Radicci" author="Francisco Laino" duration="2:17" popularity="4"/>
+    <track name="Passa l'amore (Pasa el amor)" vocal="Jorge Omar" year="1937-11-26" genre="canzoneta" composer="Antonio Radicci" author="Francisco Laino" duration="2:57" popularity="5"/>
+    <track name="Patadura" vocal="Instrumental" year="1929-05-06" genre="tango" author="Enrique Carrera Sotelo" duration="2:59" popularity="7"/>
+    <track name="Pelossi" vocal="Instrumental" year="1924" genre="tango" author="Enrique Carrera Sotelo" popularity="3"/>
+    <track name="Pena maleva" vocal="Instrumental" year="1927-10-28" genre="tango" author="Enrique Carrera Sotelo" duration="3:07" popularity="4"/>
+    <track name="Pensalo bien" vocal="Charlo" year="1929-12-13" genre="tango" composer="Juan Visciglio" author="Nolo López, Julio Alberto" duration="2:56" popularity="3"/>
+    <track name="Penurias" vocal="Instrumental" year="1930-09-09" genre="tango" composer="Juan Visciglio" author="Nolo López, Julio Alberto" duration="3:02" popularity="4"/>
+    <track name="Perdonala señor" vocal="Instrumental" year="1929" genre="tango" composer="Juan Visciglio" author="Nolo López, Julio Alberto" duration="2:58" popularity="3"/>
+    <track name="Perfidia" vocal="Fernando Díaz" year="1940-05-15" genre="bolero" duration="2:36" popularity="6"/>
+    <track name="Perfume de mujer" vocal="Instrumental" year="1927-12-02" genre="tango" composer="Juan José Martín Guichandut" author="Armando Tagini" duration="2:47" popularity="6"/>
+    <track name="Perfume gaucho" vocal="Fernando Díaz" year="1934-11-06" genre="ranchera" composer="Domingo Pelle" author="Alfredo Ángel Pelaia" duration="3:08" popularity="4"/>
+    <track name="Pero el día que me quieras" vocal="Fernando Díaz" year="1934-12-02" genre="tango" composer="Enrique Santos Discépolo" author="Luis César Amadori" duration="2:48" popularity="4"/>
+    <track name="Pero yo sé" vocal="Charlo" year="1928-07-14" genre="tango" composer="Azucena Maizani" author="Azucena Maizani" duration="2:49" popularity="3"/>
+    <track name="Pialando leguas" vocal="Instrumental" year="1946-08-22" genre="tango" composer="Osvaldo Sosa Cordero" author="Osvaldo Sosa Cordero" duration="3:17" popularity="3"/>
+    <track name="Pim, pam, pum" vocal="Charlo" year="1928-08-10" genre="tango" composer="Enrique Delfino" author="Alberto Vacarezza" duration="2:21" popularity="4"/>
+    <track name="Piñataro" vocal="Instrumental" year="1930-04-05" genre="tango" composer="Enrique Delfino" author="Alberto Vacarezza" duration="2:56" popularity="5"/>
+    <track name="Pinta maleva" vocal="Charlo" year="1929-07-05" genre="tango" composer="Luis Teisseire" author="Luis Teisseire" duration="3:02" popularity="8"/>
+    <track name="Pirucha" vocal="Instrumental" year="1927-12-02" genre="tango" composer="Augusto Gentile" duration="2:52" popularity="4"/>
+    <track name="Plegaria" vocal="Fernando Díaz" year="1933-07-22" genre="vals" composer="Antonio Sureda" author="Gerónimo Sureda" duration="2:34" popularity="4"/>
+    <track name="Pobre Mateo" vocal="Instrumental" year="1926" genre="tango" composer="Francisco Pracánico" author="Francisco Bohigas" popularity="5"/>
+    <track name="Pobre muchacha" vocal="Instrumental" year="1927-08-08" genre="tango" duration="2:54" popularity="6"/>
+    <track name="Por dónde andará" vocal="Instrumental" year="1927-03-23" genre="tango" composer="Salvador Merico" author="Atilio Supparo" duration="2:40" popularity="4"/>
+    <track name="Por el rosedal" vocal="Alberto Rivera" year="1943-08-11" genre="vals" duration="2:17" popularity="3"/>
+    <track name="Por la vuelta" vocal="Jorge Omar" year="1939-02-28" genre="tango" composer="José Tinelli" author="Enrique Cadícamo" duration="2:35" popularity="11"/>
+    <track name="Por mi madre" vocal="Instrumental" year="1927" genre="tango" duration="2:48" popularity="4"/>
+    <track name="Por una cabeza" vocal="Jorge Omar" year="1935-08-08" genre="tango canción" composer="Carlos Gardel" author="Alfredo Le Pera" duration="2:59" popularity="4"/>
+    <track name="Porqué sos así" vocal="Instrumental" year="1927-12-02" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" duration="2:48" popularity="6"/>
+    <track name="Presidio" vocal="Instrumental" year="1931-06-26" genre="tango" composer="Augusto Pedro Berto" duration="3:00" popularity="3"/>
+    <track name="Primer auxilio" vocal="Instrumental" year="1929" genre="tango" composer="Augusto Pedro Berto" duration="2:48" popularity="3"/>
+    <track name="Prisionero" vocal="Charlo" year="1929-10-02" genre="tango" composer="Anselmo Aieta" author="Francisco García" duration="2:43" popularity="6"/>
+    <track name="Propina" vocal="Fernando Díaz" year="1934-12-27" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="2:57" popularity="7"/>
+    <track name="Puerta cerrada (Porque!)" vocal="Jorge Omar" year="1939-02-17" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="2:37" popularity="8"/>
+    <track name="Puerto camaronero" vocal="Fernando Díaz" year="1940-02-06" genre="bulerias" composer="Juan Mostazo Morales" author="Juan Mostazo Morales" duration="2:24" popularity="7"/>
+    <track name="Puerto nuevo" vocal="Jorge Omar" year="1936-04-01" genre="marcha canción" composer="Teófilo Lespés" author="Carlos Pesce" duration="2:58" popularity="7"/>
+    <track name="Puerto nuevo" vocal="Fernando Díaz" year="1933-11-22" genre="tango" composer="Teófilo Lespés" author="Carlos Pesce" duration="2:58" popularity="11"/>
+    <track name="Puerto nuevo" vocal="Instrumental" year="1929-10-22" genre="tango" composer="Teófilo Lespés" author="Carlos Pesce" duration="2:55" popularity="10"/>
+    <track name="Pura bulla" vocal="Instrumental" year="1929-05-14" genre="tango" duration="2:50" popularity="8"/>
+    <track name="Pura bulla" vocal="Instrumental" year="1929-05-21" genre="tango" duration="2:57" popularity="6"/>
+    <track name="Pura lata" vocal="Instrumental" year="1927-09-21" genre="tango" duration="2:52" popularity="7"/>
+    <track name="Puro cuento" vocal="Charlo" year="1929-06-21" genre="tango" composer="Acho Estol" author="Acho Estol" duration="2:58" popularity="9"/>
+    <track name="Purrete de mi amor" vocal="Instrumental" year="1927-07-06" genre="tango" composer="Raúl Joaquín de los Hoyos" author="Luis Bayon Herrera" popularity="8"/>
+    <track name="Qué facil es decir!..." vocal="Jorge Omar" year="1936-03-12" genre="tango" composer="Rodolfo Sciammarella" duration="3:16" popularity="7"/>
+    <track name="Que habias sido mañera" vocal="Fernando Díaz" year="1933-10-16" genre="ranchera" composer="Rodolfo Sciammarella" duration="2:25" popularity="7"/>
+    <track name="Qué hacés, Patoruzú?" vocal="Fernando Díaz" year="1934-06-01" genre="ranchera" duration="2:35" popularity="7"/>
+    <track name="Qué linda es la vida" vocal="Jorge Omar" year="1941-04-09" genre="tango" composer="Cristino Tapia" author="Cristino Tapia" duration="2:38" popularity="7"/>
+    <track name="Que lindo es amar" vocal="Jorge Torres" year="1931-04-24" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" duration="3:21" popularity="6"/>
+    <track name="Qué lindo es estar metido | Qué lindo es enamorarse" vocal="Instrumental" year="1927-12-29" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" popularity="8"/>
+    <track name="Qué me importa" vocal="Instrumental" year="1927-06-11" genre="tango" duration="2:49" popularity="9"/>
+    <track name="Que nadie se entere" vocal="Jorge Omar" year="1936-12-03" genre="tango" composer="Alberto Gómez" author="Alberto Gómez" duration="2:30" popularity="8"/>
+    <track name="Qué puntada!" vocal="Jorge Omar" year="1940-09-18" genre="corrido" popularity="7"/>
+    <track name="Que siga la fiesta" vocal="Carlos Galarce" year="1943-12-07" genre="tarantela" duration="2:13" popularity="6"/>
+    <track name="Qué te importa que te llore" vocal="Fernando Díaz" year="1942-08-25" genre="tango" composer="Miguel Caló" author="Osmar Maderna" duration="2:46" popularity="6"/>
+    <track name="Qué tenés en la mirada?" vocal="Fernando Díaz" year="1932-05-23" genre="tango" duration="2:41" popularity="9"/>
+    <track name="Qué tiempo aquel" vocal="Jorge Omar" year="1938-02-24" genre="milonga" composer="Francisco Lomuto" author="Celedonio Flores" duration="2:33" popularity="9"/>
+    <track name="Qué vachaché" vocal="Instrumental" year="1928-05-03" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" popularity="9"/>
+    <track name="Quejidos del tango" vocal="Instrumental" year="1930-04-25" genre="tango" popularity="11"/>
+    <track name="Quereme un poco más" vocal="Jorge Omar" year="1936-04-01" genre="tango" duration="3:15" popularity="7"/>
+    <track name="Quién hubiera dicho!" vocal="Fernando Díaz" year="1932-07-25" genre="tango" composer="Rodolfo Sciammarella" author="Luis César Amadori" duration="2:55" popularity="7"/>
+    <track name="Quiero verte una vez más" vocal="Fernando Díaz" year="1940-08-12" genre="tango" composer="Mario Carmelo Canaro" author="José María Contursi" duration="2:31" popularity="14"/>
+    <track name="Quimera" vocal="Jorge Omar" year="1941-11-06" genre="vals" composer="Luis Viapiana, Juan Manuel Gonzalez Martínez" author="Roberto Aubriot Barboza" popularity="7"/>
+    <track name="Quinielero" vocal="Charlo" year="1929-09-17" genre="tango" popularity="9"/>
+    <track name="Rancho embrujao" vocal="Instrumental" year="1929-11-19" genre="tango" author="Francisco García" duration="2:58" popularity="6"/>
+    <track name="Recuerdo" vocal="Instrumental" year="1941-08-08" genre="tango" composer="Osvaldo Pugliese" author="Eduardo Moreno" duration="3:01" popularity="8"/>
+    <track name="Recuerdos" vocal="Instrumental" year="1929" genre="tango" composer="Carlos Gardel, José Razzano" author="Carlos Gardel, José Razzano" duration="2:49" popularity="6"/>
+    <track name="Reina gitana" vocal="Fernando Díaz" year="1931-12-03" genre="paso doble" composer="Carlos Gardel, José Razzano" author="Carlos Gardel, José Razzano" duration="3:12" popularity="7"/>
+    <track name="Remordimiento" vocal="Charlo" year="1930-06-18" genre="tango" composer="Juan Félix Maglio" author="José Perrusine Fernandez" duration="3:18" popularity="7"/>
+    <track name="Remordimientos" vocal="Charlo" year="1930-06-18" genre="tango" composer="Alejandro Romay" duration="3:18" popularity="6"/>
+    <track name="Rencor" vocal="Fernando Díaz" year="1932-12-06" genre="tango" composer="Charlo" author="Luis César Amadori" duration="3:11" popularity="9"/>
+    <track name="Rendido" vocal="Carlos Galarce" year="1945-06-26" genre="tango" composer="Alfredo Cordisco" author="ALBERTO ANDES LEIVA" duration="2:52" popularity="7"/>
+    <track name="Renuncio" vocal="Jorge Omar" year="1937-12-26" genre="tango" composer="Miguel Bucino" author="Miguel Bucino" duration="2:44" popularity="7"/>
+    <track name="Rezongos" vocal="Instrumental" year="1927" genre="tango" composer="José María Rizzuti" author="Eduardo Calvo" duration="2:47" popularity="6"/>
+    <track name="Riendo" vocal="Fernando Díaz" year="1940-11-07" genre="tango" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:39" popularity="10"/>
+    <track name="Rincón florido" vocal="Jorge Omar" year="1937-12-26" genre="tango" composer="Canicoba Zayra" author="Oscar Lomuto" duration="2:35" popularity="8"/>
+    <track name="Rinconada de mis tiempos" vocal="Fernando Díaz" year="1933-05-12" genre="tango" composer="José Martínez" author="Francisco Laino" duration="2:58" popularity="10"/>
+    <track name="Risas y besos" vocal="Fernando Díaz" year="1932-06-27" genre="vals" duration="3:10" popularity="8"/>
+    <track name="Rival" vocal="Jorge Omar" year="1936-07-02" genre="vals" duration="3:22" popularity="7"/>
+    <track name="Rosario, volveré" vocal="Alberto Rivera" year="1943-07-28" genre="tango" duration="2:32" popularity="6"/>
+    <track name="Rosas negras" vocal="Fernando Díaz" year="1942-04-15" genre="vals" composer="Severo Vietri" author="Alfredo Navarrine" popularity="7"/>
+    <track name="Rubiecita" vocal="Charlo" year="1929-05-06" genre="tango" popularity="9"/>
+    <track name="Rulitos" vocal="Instrumental" year="1926" genre="tango" composer="Ricardo Luis Brignolo" author="José González Castillo (Juan de León)" popularity="8"/>
+    <track name="Sali de aqui" vocal="Fernando Díaz" year="1933-01-03" genre="ranchera" composer="Ricardo Luis Brignolo" author="José González Castillo (Juan de León)" duration="2:36" popularity="7"/>
+    <track name="Salud, dinero y amor" vocal="Jorge Omar" year="1939-08-08" genre="vals" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:24" popularity="13"/>
+    <track name="San Francisco" vocal="Instrumental" year="1937-04-02" genre="foxtrot" composer="Rodolfo Sciammarella" author="Rodolfo Sciammarella" duration="2:38" popularity="7"/>
+    <track name="San Telmo" vocal="Charlo" year="1932-06-08" genre="tango" composer="Gerardo Matos Rodríguez" author="Ivo Pelay" duration="2:59" popularity="17"/>
+    <track name="Sangre azul" vocal="Instrumental" year="1927-10-14" genre="tango" duration="2:44" popularity="7"/>
+    <track name="Sangre española" vocal="Jorge Omar" year="1938-07-22" genre="paso doble" composer="Héctor Lomuto" duration="2:20" popularity="7"/>
+    <track name="Se fue" vocal="Instrumental" year="1927-11-17" genre="tango" composer="Mateo Villalba" duration="2:50" popularity="7"/>
+    <track name="Se fue sin decir adiós" vocal="Fernando Díaz" year="1931-12-22" genre="tango" composer="Edgardo Donato" duration="2:41" popularity="8"/>
+    <track name="Se han sentado las carretas" vocal="Fernando Díaz, Jorge Omar" year="1939-10-25" genre="tango" composer="Agustín Bardi" author="Enrique Cadícamo" duration="3:03" popularity="14"/>
+    <track name="Se necesita una estrella" vocal="Fernando Díaz, Jorge Omar" year="1940-04-04" genre="" composer="Agustín Bardi" author="Enrique Cadícamo" duration="2:59" popularity="6"/>
+    <track name="Se te dio vuelta la taba" vocal="Fernando Díaz" year="1931-10-08" genre="tango" duration="2:40" popularity="11"/>
+    <track name="Secante" vocal="Charlo" year="1929-08-26" genre="tango" composer="Roque Biafore" author="Luis Rubistein" duration="2:57" popularity="9"/>
+    <track name="Selección de tangos" vocal="Alberto Rivera, Miguel Montero" year="1949-11-02" genre="tango" duration="3:41" popularity="7"/>
+    <track name="Señor comisario" vocal="Charlo" year="1928-04-13" genre="tango" composer="Francisco Canaro" author="Francisco Canaro, Juan Andrés Caruso" duration="2:27" popularity="7"/>
+    <track name="Sentimiento gaucho" vocal="Instrumental" year="1942-04-15" genre="tango" composer="Francisco Canaro, Rafael Canaro" author="Juan Andrés Caruso" duration="2:59" popularity="21"/>
+    <track name="Serenata" vocal="Carlos Galarce" year="1944-05-30" genre="milonga" composer="Rodolfo Sciammarella" author="Luis César Amadori" duration="2:15" popularity="8"/>
+    <track name="Serenata" vocal="Fernando Díaz" year="1934-04-10" genre="tango" composer="Rodolfo Sciammarella" author="Luis César Amadori" duration="2:19" popularity="7"/>
+    <track name="Serenata gitana" vocal="Charlo" year="1933" genre="paso doble" composer="Rodolfo Sciammarella" author="Luis César Amadori" duration="3:29" popularity="6"/>
+    <track name="Serpentina doble" vocal="Instrumental" year="1929-03-02" genre="tango" duration="2:42" popularity="9"/>
+    <track name="Sha-sha" vocal="Jorge Omar" year="1940" genre="foxtrot" duration="2:20" popularity="6"/>
+    <track name="Si dejaras de quererme" vocal="Alberto Rivera, Carlos Galarce" year="1944-12-19" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:58" popularity="6"/>
+    <track name="Si dejarás de quererme" vocal="Jorge Omar" year="1935-10-08" genre="tango" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:57" popularity="6"/>
+    <track name="Si soy así" vocal="Fernando Díaz" year="1933-06-14" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="3:17" popularity="16"/>
+    <track name="Si tú supieras" vocal="Fernando Díaz" year="1932-09-08" genre="ranchera" composer="Francisco Lomuto" author="Antonio Botta" duration="2:47" popularity="7"/>
+    <track name="Si tú supieras querer" vocal="Fernando Díaz" year="1934-10-02" genre="foxtrot" composer="Carmelo Aguila" author="Francisco Lomuto" duration="2:48" popularity="6"/>
+    <track name="Si yo fuera capitán" vocal="Jorge Omar" year="1938-10-14" genre="paso doble" composer="Carmelo Aguila" author="Francisco Lomuto" duration="2:31" popularity="8"/>
+    <track name="Si yo te contara" vocal="Jorge Omar" year="1937-10-26" genre="tango" composer="Antonio Rodio" author="Celedonio Flores" duration="2:46" popularity="8"/>
+    <track name="Siempre viva" vocal="Charlo" year="1928" genre="tango" composer="Antonio Rodio" author="Celedonio Flores" duration="3:06" popularity="6"/>
+    <track name="Sin chance" vocal="Instrumental" year="1929-06-14" genre="tango" duration="2:57" popularity="8"/>
+    <track name="Sin clemencia" vocal="Instrumental" year="1930-09-16" genre="tango" duration="2:51" popularity="11"/>
+    <track name="Sin dejar rastros" vocal="Instrumental" year="1927-11-25" genre="tango" composer="Francisco Lomuto" duration="2:45" popularity="7"/>
+    <track name="Sin dejar rastros" vocal="Instrumental" year="1939-12-07" genre="tango" composer="Francisco Lomuto" duration="2:32" popularity="6"/>
+    <track name="Sin el pan y sin la torta" vocal="Fernando Díaz" year="1941-05-05" genre="vals" composer="Héctor Lomuto" author="Héctor Lomuto" duration="2:47" popularity="7"/>
+    <track name="Sol tropical | Amor tropical" vocal="Jorge Omar" year="1935-06-17" genre="rumba" composer="Héctor Lomuto" author="Héctor Lomuto" duration="3:14" popularity="9"/>
+    <track name="Solamente ella" vocal="Alberto Rivera" year="1944-09-15" genre="tango" composer="Lucio Demare" author="Homero Manzi" duration="3:13" popularity="8"/>
+    <track name="Sólo a una madre" vocal="Instrumental" year="1927-11-17" genre="tango" composer="Lucio Demare" author="Homero Manzi" popularity="6"/>
+    <track name="Soltero... soy feliz!" vocal="Fernando Díaz" year="1932-11-10" genre="tango" duration="3:03" popularity="9"/>
+    <track name="Sombras nada más" vocal="Alberto Rivera" year="1943-11-09" genre="tango" composer="Francisco Lomuto" author="José María Contursi" duration="2:57" popularity="7"/>
+    <track name="Son cosas del bandoneón" vocal="Jorge Omar" year="1940-02-08" genre="tango" composer="Enrique Rodríguez" author="Enrique Cadícamo" duration="3:01" popularity="9"/>
+    <track name="Soñador" vocal="Fernando Díaz" year="1933-01-03" genre="tango" composer="Francisco Lomuto" author="Antonio Botta" duration="2:32" popularity="9"/>
+    <track name="Soñé con un amor" vocal="Jorge Omar" year="1937-01-26" genre="tango" author="Jesús Fernández Blanco" duration="2:44" popularity="9"/>
+    <track name="Sorbos amargos" vocal="Fernando Díaz" year="1932-05-23" genre="tango" composer="Lucio Demare" author="Agustín Irusta, Roberto Fugazot" duration="3:24" popularity="8"/>
+    <track name="Sos bueno, vos también" vocal="Instrumental" year="1929-05-14" genre="tango" composer="Francisco Canaro" author="Juan Andrés Caruso" duration="3:22" popularity="7"/>
+    <track name="Soy feliz" vocal="Alberto Rivera" year="1944-11-15" genre="milonga" composer="Francisco Canaro" author="Juan Andrés Caruso" duration="2:15" popularity="6"/>
+    <track name="Soy para ti" vocal="Fernando Díaz" year="1931-11-30" genre="rumba" duration="3:21" popularity="10"/>
+    <track name="Soy un arlequín" vocal="Charlo" year="1929-06-21" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:24" popularity="7"/>
+    <track name="Soy un pobre gaucho" vocal="Charlo" year="1929-04-02" genre="tango" composer="Adolfo Perez" author="José Perrusine Fernandez" duration="2:52" popularity="8"/>
+    <track name="Soy un pobre presidiario" vocal="Jorge Omar" year="1937-10-26" genre="paso doble" composer="Adolfo Perez" author="José Perrusine Fernandez" duration="2:52" popularity="8"/>
+    <track name="Sueño de juventud" vocal="Fernando Díaz" year="1931-10-08" genre="vals" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:21" popularity="8"/>
+    <track name="Sueño de poeta" vocal="Fernando Díaz" year="1931-10-01" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="2:27" popularity="7"/>
+    <track name="Sus ojos se cerraron" vocal="Jorge Omar" year="1935-06-17" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" duration="2:44" popularity="9"/>
+    <track name="Suscribite al 6,67%" vocal="Fernando Díaz" year="1932-08-29" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" duration="2:47" popularity="7"/>
+    <track name="Suscribite al 6.67%" vocal="Fernando Díaz" year="1932-08-29" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" duration="2:46" popularity="7"/>
+    <track name="Tango amigo" vocal="Fernando Díaz" year="1939-08-29" genre="tango" composer="Francisco Lomuto" author="Manuel Romero" duration="2:36" popularity="8"/>
+    <track name="Tango amigo" vocal="Carmen Del Moral" year="1939-12-07" genre="tango" composer="Francisco Lomuto" author="Manuel Romero" duration="2:41" popularity="8"/>
+    <track name="Tango argentino" vocal="Instrumental" year="1929-04-02" genre="tango" composer="Juan Félix Maglio" author="Alfredo Bigeschi" duration="2:57" popularity="8"/>
+    <track name="Tango sin letra" vocal="Fernando Díaz" year="1933-10-06" genre="tango" composer="Cátulo Castillo" author="Venancio Clauso" duration="3:03" popularity="9"/>
+    <track name="Tarde" vocal="Miguel Montero" year="1950-10-27" genre="tango" composer="José Canet" author="José Canet" duration="2:56" popularity="8"/>
+    <track name="Tata, me quiero casar" vocal="Fernando Díaz" year="1935-01-28" genre="ranchera" composer="José Mocciola" author="Francisco Laino" duration="2:40" popularity="7"/>
+    <track name="Te aconsejo que me olvides" vocal="Instrumental" year="1928-10-15" genre="tango" composer="Pedro Maffia" author="Jorge Curi" duration="2:53" popularity="12"/>
+    <track name="Te acordaras de mi" vocal="Instrumental" year="1928" genre="tango" composer="Pedro Maffia" author="Jorge Curi" duration="2:45" popularity="6"/>
+    <track name="Te engrupieron" vocal="Instrumental" year="1927-10-01" genre="tango" composer="Pedro Maffia" author="Jorge Curi" duration="2:48" popularity="8"/>
+    <track name="Te quiero" vocal="Jorge Omar" year="1937-05-26" genre="foxtrot" composer="Francisco Canaro" author="Francisco Canaro" duration="2:40" popularity="7"/>
+    <track name="Te quiero, morena linda" vocal="Fernando Díaz" year="1939-10-04" genre="paso doble canción" composer="Francisco Canaro" author="Francisco Canaro" popularity="7"/>
+    <track name="Tengo mil novias" vocal="Fernando Díaz" year="1940-02-08" genre="vals" composer="Enrique Rodríguez" author="Enrique Cadícamo" duration="2:26" popularity="8"/>
+    <track name="Ti pi tin" vocal="Jorge Omar" year="1938-07-22" genre="vals" composer="María Grever" duration="2:10" popularity="7"/>
+    <track name="Tiempos nuevos" vocal="Fernando Díaz" year="1932-05-03" genre="tango" duration="2:39" popularity="10"/>
+    <track name="Toca un tango" vocal="Instrumental" year="1927-04-08" genre="tango" duration="2:46" popularity="6"/>
+    <track name="Tocá un tango" vocal="Instrumental" year="1927-04-08" genre="tango" duration="2:46" popularity="6"/>
+    <track name="Todavía hay otarios" vocal="Instrumental" year="1929" genre="tango" composer="Manuel Pizarro" duration="3:13" popularity="6"/>
+    <track name="Tormenta" vocal="Jorge Omar" year="1939-03-30" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="2:35" popularity="10"/>
+    <track name="Tradición" vocal="Instrumental" year="1927-12-29" genre="tango" composer="Fausto Frontera" author="Enrique Cadícamo" duration="2:44" popularity="7"/>
+    <track name="Tres, seis, diez" vocal="Carlos Galarce" year="1945-12-17" genre="tango" composer="José Razzano, Cátulo Castillo" author="José Razzano, Cátulo Castillo" duration="2:39" popularity="7"/>
+    <track name="Triste comedia" vocal="Miguel Montero" year="1950-06-06" genre="tango" composer="Héctor Stamponi" author="Oscar Rubens" duration="2:40" popularity="8"/>
+    <track name="Tu abandono" vocal="Fernando Díaz" year="1932-08-01" genre="tango" composer="Héctor Stamponi" author="Oscar Rubens" duration="2:42" popularity="7"/>
+    <track name="Tu disfraz" vocal="Instrumental" year="1928-06-05" genre="tango" composer="Ángel Danesi" duration="2:48" popularity="6"/>
+    <track name="Tu nobleza" vocal="Charlo" year="1930-06-18" genre="ranchera" composer="Ángel Danesi" popularity="6"/>
+    <track name="Tu sombra" vocal="Fernando Díaz" year="1934-12-27" genre="vals" composer="Enrique Discépolo" author="Luis César Amadori" duration="2:56" popularity="8"/>
+    <track name="Tus amores" vocal="Jorge Omar" year="1941-10-30" genre="paso doble" composer="Héctor Lomuto" author="Héctor Lomuto" duration="2:46" popularity="7"/>
+    <track name="Un buen consejo" vocal="Instrumental" year="1927" genre="tango" composer="Américo L. Bonani" duration="2:23" popularity="6"/>
+    <track name="Un silbido en la noche" vocal="Carlos Galarce" year="1943-06-29" genre="tango" composer="Pedro Sassone" author="José Sassone" duration="2:53" popularity="7"/>
+    <track name="Un vals | Se fue" vocal="Carlos Galarce" year="1944-05-11" genre="vals" composer="Pedro Sassone" author="José Sassone" duration="2:26" popularity="7"/>
+    <track name="Una pena" vocal="Miguel Montero" year="1949-11-02" genre="tango" composer="Adolfo Rosquella/ Adolfo Rosquellas" author="Arturo Luis Albert" duration="3:23" popularity="8"/>
+    <track name="Una puerta y una ventana (Uma porta e uma janela)" vocal="Dinah Lang" year="1936-10-28" genre="marcha" composer="Adolfo Rosquella/ Adolfo Rosquellas" author="Arturo Luis Albert" duration="2:55" popularity="8"/>
+    <track name="Uno-dos-tres" vocal="Fernando Díaz, Jorge Omar" year="1941-02-28" genre="conga" duration="2:32" popularity="7"/>
+    <track name="Valse de la fisarmonica" vocal="Instrumental" year="1938-02-09" genre="vals" duration="2:46" popularity="6"/>
+    <track name="Valse de la fisarmónica" vocal="Instrumental" year="1938-02-09" genre="vals" popularity="6"/>
+    <track name="Varón" vocal="Jorge Omar" year="1939-02-17" genre="milonga" composer="Francisco Lomuto" author="Celedonio Flores" duration="2:22" popularity="7"/>
+    <track name="Velocidad" vocal="Fernando Díaz" year="1935-01-28" genre="foxtrot" composer="Francisco Lomuto" author="Antonio Botta" duration="2:51" popularity="7"/>
+    <track name="Vendrás alguna vez?" vocal="Jorge Omar" year="1938-08-24" genre="tango" composer="Alfredo Malerba" author="Luis César Amadori" duration="2:34" popularity="9"/>
+    <track name="Ventanita de arrabal" vocal="Instrumental" year="1927" genre="tango" composer="Antonio Scatasso" author="Pascual Contursi" duration="2:42" popularity="6"/>
+    <track name="Viajando en el subte" vocal="Fernando Díaz" year="1933-12-07" genre="foxtrot" composer="Héctor Lomuto" duration="3:32" popularity="7"/>
+    <track name="Viborita" vocal="Instrumental" year="1945-10-24" genre="tango" composer="Eduardo Arolas" author="Gabriel Clausi" duration="2:51" popularity="7"/>
+    <track name="Vieja milonga" vocal="Instrumental" year="1928-10-15" genre="tango" composer="Eugenio Cárdenas" author="Samuel Castriota" duration="2:57" popularity="7"/>
+    <track name="Viejas alegrías" vocal="Jorge Omar" year="1937-07-07" genre="tango" composer="Charlo" author="Enrique Cadícamo" duration="2:52" popularity="8"/>
+    <track name="Viejo amigo" vocal="Instrumental" year="1929-10-22" genre="tango" composer="Julio De Caro" duration="2:54" popularity="10"/>
+    <track name="Viernes de pasión" vocal="Alberto Rivera" year="1945-10-24" genre="tango" duration="2:48" popularity="6"/>
+    <track name="Violín gitano (Violino tzigano)" vocal="Jorge Omar" year="1938-02-09" genre="en tiempo de tango" duration="3:17" popularity="8"/>
+    <track name="Virgencita de arrabal" vocal="Instrumental" year="1927" genre="tango" composer="Rodolfo Sciammarella" author="Eduardo Beccar" duration="2:47" popularity="6"/>
+    <track name="Viva mi patria" vocal="Alberto Rivera, Carlos Galarce" year="1943-11-09" genre="ranchera" composer="Rodolfo Sciammarella" author="Eduardo Beccar" duration="2:17" popularity="6"/>
+    <track name="Volvé mi negra" vocal="Instrumental" year="1927-08-08" genre="tango" composer="José María Rizzuti" author="J. A. Diaz Gómez" duration="2:55" popularity="7"/>
+    <track name="Volvé pronto" vocal="Charlo" year="1928-08-30" genre="tango" composer="Francisco Lomuto" duration="3:09" popularity="7"/>
+    <track name="Volvió una noche" vocal="Jorge Omar" year="1935-07-19" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" duration="3:28" popularity="7"/>
+    <track name="Y haces el novio?" vocal="Fernando Díaz" year="1934-12-27" genre="tango" composer="Carlos Gardel" author="Alfredo Le Pera" duration="2:20" popularity="9"/>
+    <track name="Y sonó el despertador" vocal="Alberto Rivera" year="1944-05-30" genre="tango" composer="Elizardo Martínez Vilas" author="Elizardo Martínez Vilas" duration="2:42" popularity="7"/>
+    <track name="Y te fuiste a París" vocal="Fernando Díaz" year="1934-11-29" genre="tango" composer="Eduardo Pereyra" author="Eduardo Pereyra" duration="3:04" popularity="13"/>
+    <track name="Ya no cantas, Chingolo" vocal="Fernando Díaz, Jorge Omar" year="1942-05-05" genre="tango" composer="Antonio Scatasso" author="Edmundo Bianchi" popularity="8"/>
+    <track name="Ya no estas tan sonriente como antes" vocal="Fernando Díaz" year="1934-11-29" genre="vals" composer="Francisco Lomuto" author="Antonio Botta" duration="3:29" popularity="7"/>
+    <track name="Ya sé que siguen hablando" vocal="Alberto Rivera" year="1943-06-08" genre="tango" composer="Héctor Palacios" duration="2:34" popularity="6"/>
+    <track name="Ya te he dicho" vocal="Instrumental" year="1927" genre="tango" composer="Benito R. Atella" duration="2:52" popularity="6"/>
+    <track name="Yendo a ver al mago de oz" vocal="Fernando Díaz" year="1939-12-19" genre="foxtrot" composer="Benito R. Atella" duration="2:16" popularity="6"/>
+    <track name="Yo nací para querer" vocal="Jorge Omar" year="1940-04-11" genre="tango" composer="Francisco Canaro" author="Francisco Canaro" duration="2:52" popularity="10"/>
+    <track name="Yo no se decir que no" vocal="Jorge Omar" year="1936-01-15" genre="foxtrot" composer="Francisco Canaro" author="Francisco Canaro" duration="3:33" popularity="6"/>
+    <track name="Yo no sé que buscaran" vocal="Fernando Díaz" year="1940-10-18" genre="polca" composer="Victor Braña" duration="2:30" popularity="7"/>
+    <track name="Yo que por tus besos me moría!" vocal="Fernando Díaz" year="1932-05-03" genre="vals" duration="3:01" popularity="8"/>
+    <track name="Yo quiero ser bataclana" vocal="Instrumental" year="1941-05-15" genre="paso doble" composer="Rodolfo Sciammarella" author="Manuel Romero" duration="2:36" popularity="7"/>
+    <track name="Yo quisiera un novio" vocal="Fernando Díaz" year="1934-05-08" genre="ranchera" duration="2:21" popularity="7"/>
+    <track name="Yo seré como tu quieras" vocal="Jorge Omar" year="1938-06-24" genre="tango" composer="Héctor Lomuto" duration="2:35" popularity="7"/>
+    <track name="Yo soy aquel muchacho" vocal="Fernando Díaz" year="1934-07-31" genre="tango" composer="Joaquín Mora, Vicente Luis Russo" author="Maximo José Orsi" duration="2:37" popularity="7"/>
+    <track name="Yo te bendigo" vocal="Instrumental" year="1926" genre="tango" composer="Juan de Dios Filiberto" author="Julio A. Buron" popularity="6"/>
+    <track name="Zaraza" vocal="Charlo" year="1929-04-14" genre="tango" composer="Alfonso Tagle Lara, Benjamin Tagle Lara" author="Alfonso Tagle Lara, Benjamin Tagle Lara" duration="3:04" popularity="6"/>
+    <track name="Zorro gris" vocal="Instrumental" year="1927-07-16" genre="tango" composer="Rafael Eulogio Tuegols" author="Francisco García" duration="2:39" popularity="10"/>
+    <track name="Zorro gris" vocal="Instrumental" year="1941-07-28" genre="tango" composer="Rafael Eulogio Tuegols" author="Francisco García" duration="2:06" popularity="15"/>
+    <track name="Adiós, pampa mía" vocal="Alberto Rivera" year="1945-10-24" genre="tango" composer="Francisco Canaro, Mariano Mores, Ivo Pelay" author="Francisco Canaro, Mariano Mores, Ivo Pelay" duration="2:39" popularity="6"/>
+    <track name="Amor, que me has ponido" vocal="Fernando Díaz" year="" genre="" composer="Francisco Canaro, Mariano Mores, Ivo Pelay" author="Francisco Canaro, Mariano Mores, Ivo Pelay" duration="3:07" popularity="6"/>
+    <track name="Azul y blanca" vocal="Carlos Galarce" year="" genre="" author="Francisco Lomuto" duration="2:44" popularity="6"/>
+    <track name="Copas, amigas y besos" vocal="Alberto Rivera" year="1944-11-15" genre="tango" composer="Mariano Mores" author="Enrique Cadícamo" duration="2:42" popularity="6"/>
+    <track name="La solterona" vocal="Jorge Omar" year="" genre="" composer="Francisco Lomuto" author="Francisco Lomuto" duration="2:40" popularity="6"/>
+    <track name="Paquilla" vocal="Jorge Omar" year="" genre="" composer="Francisco Lomuto" author="Adolfo Carlos Herschel" duration="2:55" popularity="6"/>
+    <track name="Petruschka" vocal="Alberto Rivera, Carlos Galarce" year="" genre="" composer="Francisco Pracánico" author="Vicente Gargaglione Retta, Carlos Virgilio Dumont" duration="2:17" popularity="6"/>
+    <track name="Vida mía...!" vocal="Tito Schipa" year="" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo" popularity="6"/>
+    <track name="Ya no cantas, Chingolo" vocal="-unspecified male-" year="1927--1930" genre="tango" composer="Antonio Scatasso" author="Edmundo Bianchi" duration="2:49" popularity="6"/>
 </discography>
