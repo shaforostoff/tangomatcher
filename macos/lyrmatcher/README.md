@@ -54,14 +54,21 @@ launch on another machine. `INSTALL.txt` in the archive tells the recipient how 
 | ⌘↩ | Write lyrics to the matched files |
 | ⇧⌘↩ | Write, then jump to the next file with matches |
 | ⌘R | Re-index the music folder |
+| ⌘. | Cancel a running write |
 
 Double-click a matched file to play it; right-click for **Reveal in Finder**.
 
+Writing runs off the main thread. The status bar shows a determinate progress bar, the file
+currently being tagged, and a Cancel button — tagging 80 FLACs means rewriting close to a
+gigabyte, which takes around 15 seconds. Cancelling stops before the next file; files already
+written stay written.
+
 ### Toggles
 
-- **Add minuses** — the Qt "add minuses" behaviour. Wraps the title in the `- ` / ` -` boundary
-  markers so it only matches when it occupies a whole `Orquesta - Title - Vocalist - Year`
-  segment. Without it, `Nada` also matches `Nada mas`.
+- **Add minuses** — on by default. Applies both boundary constraints to a title whose filename
+  carries no markers of its own, so it only matches a whole ` - ` separated field. Without it,
+  `Nada.xml` also matches `Nada mas que un corazon`. On a `NNN - Title.ext` library this costs
+  almost no coverage and removes most false hits, which is why it defaults on.
 - **Fuzzy** — off by default. When nothing matches literally, falls back to edit distance against
   each ` - ` separated part of the filename, accepting anything under 20 % different. Fuzzy hits
   are badged in the results list. This will occasionally pair genuinely different titles

@@ -89,7 +89,9 @@ struct ContentView: View {
                     Spacer()
                     Button("Write tags") { model.writeSelected() }
                         .keyboardShortcut(.return, modifiers: .command)
-                        .disabled(model.matches.isEmpty || model.translationsToWrite.isEmpty)
+                        .disabled(model.matches.isEmpty
+                            || model.translationsToWrite.isEmpty
+                            || model.isWriting)
                 }
             }
             .padding(6)
@@ -140,17 +142,37 @@ struct ContentView: View {
 
     private var statusBar: some View {
         HStack(spacing: 8) {
-            if model.isScanning {
-                ProgressView().controlSize(.small)
+            if let progress = model.progress {
+                if let fraction = progress.fraction {
+                    ProgressView(value: fraction)
+                        .frame(width: 140)
+                    Text("\(progress.completed)/\(progress.total)")
+                        .font(.caption.monospacedDigit())
+                        .foregroundStyle(.secondary)
+                } else {
+                    ProgressView().controlSize(.small)
+                }
+                Text(progress.label)
+                    .font(.caption)
+                    .lineLimit(1)
+                    .truncationMode(.middle)
+                Spacer()
+                Button("Cancel") { model.cancelWriting() }
+                    .controlSize(.small)
+            } else {
+                if model.isScanning {
+                    ProgressView().controlSize(.small)
+                }
+                Text(model.status)
+                    .font(.caption)
+                    .lineLimit(1)
+                    .truncationMode(.middle)
+                Spacer()
             }
-            Text(model.status)
-                .font(.caption)
-                .lineLimit(1)
-                .truncationMode(.middle)
-            Spacer()
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
+        .frame(height: 22)
     }
 
     @ToolbarContentBuilder
