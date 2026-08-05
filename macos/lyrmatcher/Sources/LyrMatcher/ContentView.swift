@@ -89,7 +89,7 @@ struct ContentView: View {
                     Spacer()
                     Button("Write tags") { model.writeSelected() }
                         .keyboardShortcut(.return, modifiers: .command)
-                        .disabled(model.matches.isEmpty || model.document.isEmpty)
+                        .disabled(model.matches.isEmpty || model.translationsToWrite.isEmpty)
                 }
             }
             .padding(6)
@@ -99,7 +99,8 @@ struct ContentView: View {
 
     private var lyricsPreview: some View {
         ScrollView {
-            Text(model.document.isEmpty ? "" : model.document.previewText)
+            // Shows exactly what would be written, so the Spanish-only filter is visible.
+            Text(model.document.previewText(spanishOnly: model.spanishOnly))
                 .font(.system(.body, design: .default))
                 .textSelection(.enabled)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -164,6 +165,10 @@ struct ContentView: View {
             Toggle("Overwrite", isOn: $model.overwrite)
                 .toggleStyle(.button)
                 .help("Replace lyrics that are already present instead of skipping the file")
+            Toggle("Spanish only", isOn: $model.spanishOnly)
+                .toggleStyle(.button)
+                .help("Spanish only (Exclude translations) — write just the spa lyrics, "
+                    + "leaving out the English and Russian translations")
         }
     }
 

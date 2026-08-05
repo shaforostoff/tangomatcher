@@ -25,10 +25,24 @@ public struct Translation: Hashable, Sendable {
         self.contents = contents
     }
 
-    /// Three-letter ISO-639-2 code for the ID3 `USLT` frame; `und` when the file has no usable
-    /// `lang` attribute.
+    /// The language to treat this entry as.
+    ///
+    /// A `<translation>` with no `lang` attribute (or an empty one) is the Spanish original —
+    /// the lyrics collection only ever labels the translations away from it.
+    public var effectiveLanguage: String {
+        let trimmed = language.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? LyricsDocument.spanishLanguageCode : trimmed
+    }
+
+    public var isSpanish: Bool {
+        effectiveLanguage.caseInsensitiveCompare(LyricsDocument.spanishLanguageCode) == .orderedSame
+    }
+
+    /// Three-letter ISO-639-2 code for the ID3 `USLT` frame; `und` when the `lang` attribute is
+    /// present but too short to be a usable code.
     public var id3LanguageCode: String {
-        let ascii = language.lowercased().unicodeScalars.filter { (0x61...0x7A).contains($0.value) }
+        let ascii = effectiveLanguage.lowercased().unicodeScalars
+            .filter { (0x61...0x7A).contains($0.value) }
         let code = String(String.UnicodeScalarView(ascii))
         guard code.count >= 3 else { return "und" }
         return String(code.prefix(3))
@@ -45,17 +59,30 @@ public struct LyricsDocument: Sendable {
 
     public var isEmpty: Bool { translations.isEmpty }
 
+    /// ISO-639-2 code for the Spanish original, as the collection writes it.
+    public static let spanishLanguageCode = "spa"
+
     /// The title shown in the UI — the Spanish original when present, otherwise the first entry.
     public var primaryName: String {
-        translations.first(where: { $0.language == "spa" })?.name
+        translations.first(where: \.isSpanish)?.name
             ?? translations.first?.name
             ?? ""
     }
 
+    /// The translations to embed.
+    ///
+    /// - Parameter spanishOnly: keeps just the Spanish original, dropping the English and Russian
+    ///   translations many of the XML files also carry. Entries with no `lang` attribute count as
+    ///   Spanish — see `Translation.effectiveLanguage`.
+    public func translations(spanishOnly: Bool) -> [Translation] {
+        guard spanishOnly else { return translations }
+        return translations.filter(\.isSpanish)
+    }
+
     /// Human-readable rendering for the preview pane, matching `MainWindow::displayLyrics`.
-    public var previewText: String {
-        translations
-            .map { "[\($0.language)] \($0.name)\n\($0.contents)\n" }
+    public func previewText(spanishOnly: Bool = false) -> String {
+        translations(spanishOnly: spanishOnly)
+            .map { "[\($0.effectiveLanguage)] \($0.name)\n\($0.contents)\n" }
             .joined(separator: "\n")
     }
 

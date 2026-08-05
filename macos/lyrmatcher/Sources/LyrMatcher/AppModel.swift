@@ -44,6 +44,9 @@ final class AppModel: ObservableObject {
     @Published var allowFuzzy = Defaults.allowFuzzy {
         didSet { Defaults.allowFuzzy = allowFuzzy; refreshMatches() }
     }
+    @Published var spanishOnly = Defaults.spanishOnly {
+        didSet { Defaults.spanishOnly = spanishOnly }
+    }
 
     // MARK: Selection and derived state
 
@@ -177,9 +180,18 @@ final class AppModel: ObservableObject {
         return false
     }
 
+    /// The translations that would actually be embedded, after the Spanish-only filter.
+    var translationsToWrite: [LyrMatcherCore.Translation] {
+        document.translations(spanishOnly: spanishOnly)
+    }
+
     func writeSelected() {
         guard let file = selectedFile else { return }
-        let reports = write(document: document, to: matches)
+        guard !translationsToWrite.isEmpty else {
+            status = "\(file.baseName): no Spanish lyrics in this file."
+            return
+        }
+        let reports = write(translations: translationsToWrite, to: matches)
         status = summary(of: reports, prefix: file.baseName)
     }
 
@@ -194,6 +206,9 @@ final class AppModel: ObservableObject {
         let overwriteNote = overwrite
             ? "Overwrite is ON — lyrics already in those files will be replaced."
             : "Overwrite is off — files that already have lyrics are skipped."
+        let languageNote = spanishOnly
+            ? "Spanish only is ON — translations are left out, and titles with no Spanish lyrics are skipped."
+            : "All translations in each file will be written."
 
         let alert = NSAlert()
         alert.messageText = "Write lyrics for \(candidates.count) titles?"
@@ -201,6 +216,7 @@ final class AppModel: ObservableObject {
             This embeds lyrics into every music file matching the \(candidates.count) \
             currently listed lyrics files.
             \(overwriteNote)
+            \(languageNote)
             """
         alert.alertStyle = .warning
         alert.addButton(withTitle: "Write All")
@@ -214,6 +230,7 @@ final class AppModel: ObservableObject {
     func writeAll() {
         var reports: [WriteReport] = []
         var seenStems = Set<String>()
+        var withoutSpanish = 0
 
         for file in visibleLyricsFiles {
             // `Malena_.xml` and `Malena.xml` normalise to the same stem; writing both would just
@@ -223,21 +240,25 @@ final class AppModel: ObservableObject {
 
             let hits = matches(for: file, addMinuses: addMinuses)
             guard !hits.isEmpty else { continue }
-            guard let document = try? LyricsDocument.load(contentsOf: file.url),
-                  !document.isEmpty
-            else { continue }
+            guard let document = try? LyricsDocument.load(contentsOf: file.url) else { continue }
 
-            reports += write(document: document, to: hits)
+            let translations = document.translations(spanishOnly: spanishOnly)
+            guard !translations.isEmpty else {
+                if !document.isEmpty { withoutSpanish += 1 }
+                continue
+            }
+
+            reports += write(translations: translations, to: hits)
         }
 
-        status = summary(of: reports, prefix: "All")
+        status = summary(of: reports, prefix: "All", withoutSpanish: withoutSpanish)
     }
 
-    private func write(document: LyricsDocument, to matches: [MatchedFile]) -> [WriteReport] {
+    private func write(translations: [LyrMatcherCore.Translation], to matches: [MatchedFile]) -> [WriteReport] {
         matches.map { match in
             do {
                 let outcome = try TagWriter.write(
-                    translations: document.translations,
+                    translations: translations,
                     to: match.file,
                     overwrite: overwrite
                 )
@@ -248,8 +269,16 @@ final class AppModel: ObservableObject {
         }
     }
 
-    private func summary(of reports: [WriteReport], prefix: String) -> String {
-        guard !reports.isEmpty else { return "\(prefix): nothing to write." }
+    private func summary(
+        of reports: [WriteReport],
+        prefix: String,
+        withoutSpanish: Int = 0
+    ) -> String {
+        guard !reports.isEmpty else {
+            return withoutSpanish > 0
+                ? "\(prefix): nothing to write — \(withoutSpanish) titles have no Spanish lyrics."
+                : "\(prefix): nothing to write."
+        }
 
         var written = 0, skipped = 0, unchanged = 0
         var failures: [String] = []
@@ -268,6 +297,7 @@ final class AppModel: ObservableObject {
         var parts = ["\(prefix): \(written) written"]
         if skipped > 0 { parts.append("\(skipped) skipped (already tagged)") }
         if unchanged > 0 { parts.append("\(unchanged) unchanged") }
+        if withoutSpanish > 0 { parts.append("\(withoutSpanish) titles have no Spanish lyrics") }
         if !failures.isEmpty { parts.append("\(failures.count) failed — \(failures[0])") }
         return parts.joined(separator: ", ") + "."
     }
@@ -292,6 +322,10 @@ enum Defaults {
     static var overwrite: Bool {
         get { store.bool(forKey: "overwrite") }
         set { store.set(newValue, forKey: "overwrite") }
+    }
+    static var spanishOnly: Bool {
+        get { store.bool(forKey: "spanishOnly") }
+        set { store.set(newValue, forKey: "spanishOnly") }
     }
     static var allowFuzzy: Bool {
         get { store.bool(forKey: "allowFuzzy") }

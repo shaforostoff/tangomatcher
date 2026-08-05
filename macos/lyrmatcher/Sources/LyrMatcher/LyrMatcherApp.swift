@@ -51,6 +51,9 @@ struct LyrMatcherApp: App {
                 Toggle("Overwrite Existing Lyrics", isOn: Binding(
                     get: { model.overwrite }, set: { model.overwrite = $0 }
                 ))
+                Toggle("Spanish only (Exclude translations)", isOn: Binding(
+                    get: { model.spanishOnly }, set: { model.spanishOnly = $0 }
+                ))
 
                 Divider()
 
