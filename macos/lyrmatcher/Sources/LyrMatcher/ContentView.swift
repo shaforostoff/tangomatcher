@@ -33,13 +33,21 @@ struct ContentView: View {
                 .focused($filterFocused)
                 .padding(6)
 
-            List(model.visibleLyricsFiles, selection: $model.selection) { file in
-                Text(file.baseName)
-                    .lineLimit(1)
-                    .truncationMode(.middle)
-                    .tag(file.id)
+            ScrollViewReader { proxy in
+                List(model.visibleLyricsFiles, selection: $model.selection) { file in
+                    Text(file.baseName)
+                        .lineLimit(1)
+                        .truncationMode(.middle)
+                        .tag(file.id)
+                }
+                .listStyle(.inset(alternatesRowBackgrounds: true))
+                .onChange(of: model.revealRequest) { request in
+                    guard let request else { return }
+                    withAnimation(.easeInOut(duration: 0.15)) {
+                        proxy.scrollTo(request.id, anchor: .center)
+                    }
+                }
             }
-            .listStyle(.inset(alternatesRowBackgrounds: true))
 
             Divider()
             HStack(spacing: 6) {

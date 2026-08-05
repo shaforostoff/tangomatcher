@@ -60,6 +60,11 @@ final class AppModel: ObservableObject {
     @Published var progress: BatchProgress?
     var isWriting: Bool { progress != nil }
 
+    /// Asks the list to scroll a row into view. Only set for selections the app makes itself —
+    /// scrolling on a row the user just clicked would yank the list out from under them.
+    @Published private(set) var revealRequest: RevealRequest?
+    private var revealSequence = 0
+
     private var scanTask: Task<Void, Never>?
     private var writeTask: Task<Void, Never>?
 
@@ -178,6 +183,7 @@ final class AppModel: ObservableObject {
             let candidate = visibleLyricsFiles[index]
             if !matches(for: candidate, addMinuses: addMinuses).isEmpty {
                 selection = candidate.id
+                reveal(candidate.id)
                 return true
             }
         }
@@ -185,6 +191,13 @@ final class AppModel: ObservableObject {
             ? "At the end of the list — nothing further to search."
             : "No further lyrics files have matching music files."
         return false
+    }
+
+    /// The sequence number makes every request distinct, so asking twice for the same row still
+    /// scrolls — otherwise a repeated ⌘G onto an unchanged selection would do nothing.
+    private func reveal(_ id: LyricsFile.ID) {
+        revealSequence += 1
+        revealRequest = RevealRequest(id: id, sequence: revealSequence)
     }
 
     /// The translations that would actually be embedded, after the Spanish-only filter.
@@ -401,6 +414,12 @@ final class AppModel: ObservableObject {
         if !failures.isEmpty { parts.append("\(failures.count) failed — \(failures[0])") }
         return parts.joined(separator: ", ") + "."
     }
+}
+
+/// A request to scroll one row of the lyrics list into view.
+struct RevealRequest: Equatable {
+    let id: LyricsFile.ID
+    let sequence: Int
 }
 
 /// Progress of a running write, shown in the status bar.
