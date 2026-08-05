@@ -229,18 +229,22 @@ enum ID3v2Tagger {
 
     // MARK: - Top level
 
-    static func write(
+    /// Rebuilds an ID3v2 tag with this document's lyrics in place of any it already had.
+    ///
+    /// Shared by the MP3 writer and the AIFF one, which keeps its tag inside an `ID3 ` chunk.
+    ///
+    /// - Parameter existing: the raw tag bytes, or `nil`/empty when the file carries none.
+    /// - Returns: the new tag bytes, or `nil` when the file already has lyrics and `overwrite`
+    ///   is off.
+    static func tagWithLyrics(
+        existing: Data?,
         translations: [Translation],
-        to url: URL,
         overwrite: Bool
-    ) throws -> WriteOutcome {
-        let data = try Data(contentsOf: url, options: .mappedIfSafe)
-        let parsed = try parse(data)
-
-        var tag = parsed.tag ?? Tag(majorVersion: 4, frames: [])
+    ) throws -> Data? {
+        var tag = try existing.flatMap { try parse($0).tag } ?? Tag(majorVersion: 4, frames: [])
 
         if tag.frames.contains(where: { $0.id == uslt }) {
-            guard overwrite else { return .skippedExisting }
+            guard overwrite else { return nil }
             tag.frames.removeAll { $0.id == uslt }
         }
 
@@ -259,7 +263,25 @@ enum ID3v2Tagger {
             )
         }
 
-        let newTag = try serialize(tag)
+        return try serialize(tag)
+    }
+
+    static func write(
+        translations: [Translation],
+        to url: URL,
+        overwrite: Bool
+    ) throws -> WriteOutcome {
+        let data = try Data(contentsOf: url, options: .mappedIfSafe)
+        let parsed = try parse(data)
+
+        guard let newTag = try tagWithLyrics(
+            existing: parsed.tag == nil ? nil : data.slice(0, parsed.audioOffset),
+            translations: translations,
+            overwrite: overwrite
+        ) else {
+            return .skippedExisting
+        }
+
         guard let audio = data.slice(parsed.audioOffset, data.count - parsed.audioOffset) else {
             throw TagWriteError.malformed("audio stream")
         }

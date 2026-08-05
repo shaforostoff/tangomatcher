@@ -52,6 +52,7 @@ public enum TagWriter {
     ///
     /// - MP3: one `USLT` frame per translation, each tagged with its own language code, so a
     ///   player can offer the Spanish original and the translations side by side.
+    /// - AIFF: the same `USLT` frames, in the file's `ID3 ` chunk.
     /// - FLAC: a single `LYRICS` Vorbis comment holding all translations.
     /// - MP4/M4A: a single `©lyr` atom holding all translations.
     ///
@@ -70,6 +71,8 @@ public enum TagWriter {
             return try FLACTagger.write(translations: translations, to: file.url, overwrite: overwrite)
         case .mp4:
             return try MP4Tagger.write(translations: translations, to: file.url, overwrite: overwrite)
+        case .aiff:
+            return try AIFFTagger.write(translations: translations, to: file.url, overwrite: overwrite)
         }
     }
 

@@ -25,9 +25,9 @@ public enum TextNormalization {
         "\u{2010}", "\u{2011}", "\u{2012}", "\u{2013}", "\u{2014}", "\u{2015}", "\u{2212}",
     ]
 
-    /// Characters folded to a plain space. Underscores are the common stand-in for spaces in
-    /// filenames that came off a filesystem that disliked them.
-    private static let spaceScalars: Set<Unicode.Scalar> = ["_", "\u{00A0}"]
+    /// Characters folded to a plain space: underscores from filesystems that disliked spaces,
+    /// and `+` from names that went through URL encoding (`Aroma+de+amor+15285_RP.aif`).
+    private static let spaceScalars: Set<Unicode.Scalar> = ["_", "+", "\u{00A0}"]
 
     /// Strips inverted/regular `!` and `?` then removes diacritics, so `ñ`→`n`, `á`→`a`,
     /// `ü`→`u`, `ç`→`c`. Mirrors `deaccent()` in `lyrmatcher/utils.cpp`.

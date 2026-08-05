@@ -70,6 +70,52 @@ enum Fixtures {
         return out
     }
 
+    // MARK: AIFF
+
+    /// `FORM…AIFF` with a COMM chunk, optional `ID3 ` chunk, then SSND.
+    ///
+    /// - Parameter existingTag: raw ID3v2 bytes to plant in an `ID3 ` chunk ahead of the audio.
+    static func aiff(existingTag: Data? = nil, oddSizedChunk: Bool = false) -> Data {
+        func chunk(_ id: String, _ payload: Data) -> Data {
+            var out = Data(id.utf8)
+            out.append(Data.be(UInt32(payload.count)))
+            out.append(payload)
+            if payload.count % 2 == 1 { out.append(0x00) }   // pad to even
+            return out
+        }
+
+        var body = Data("AIFF".utf8)
+        body.append(chunk("COMM", Data(repeating: 0x11, count: 18)))
+        if oddSizedChunk {
+            body.append(chunk("NAME", Data("odd".utf8)))     // 3 bytes: forces a pad byte
+        }
+        if let existingTag { body.append(chunk("ID3 ", existingTag)) }
+        body.append(chunk("SSND", audioBytes))
+
+        var out = Data("FORM".utf8)
+        out.append(Data.be(UInt32(body.count)))
+        out.append(body)
+        return out
+    }
+
+    /// Walks an AIFF and returns its chunks as (id, payload), so tests can assert on structure.
+    static func aiffChunks(in data: Data) throws -> [(id: String, payload: Data)] {
+        guard data.slice(0, 4) == Data("FORM".utf8) else {
+            throw TagWriteError.malformed("not an AIFF")
+        }
+        var result: [(String, Data)] = []
+        var cursor = 12
+        while cursor + 8 <= data.count {
+            guard let id = data.fourCC(at: cursor),
+                  let size = data.beUInt32(at: cursor + 4),
+                  let payload = data.slice(cursor + 8, Int(size))
+            else { throw TagWriteError.malformed("AIFF chunk") }
+            result.append((id, Data(payload)))
+            cursor += 8 + Int(size) + (Int(size) % 2)
+        }
+        return result
+    }
+
     // MARK: MP4
 
     static func atom(_ type: String, _ body: Data) -> Data {
