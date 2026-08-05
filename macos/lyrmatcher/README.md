@@ -20,6 +20,24 @@ builds and launches it; `make test` runs the suite.
 Requires macOS 13 or later and Swift 5.9 (Xcode 15). `open Package.swift` also works if you would
 rather build from Xcode.
 
+### Release packaging
+
+```bash
+./package.sh
+```
+
+Runs the tests, builds a universal (arm64 + x86_64) binary, stamps the version into the bundle,
+ad-hoc signs it, and writes `dist/LyrMatcher-<version>-macos-universal.tar.xz` plus a `.sha256`
+alongside it. The archive holds the app, `README.md`, `LICENSE` and an `INSTALL.txt`; it is
+unpacked and re-verified before the script reports success.
+
+The version comes from `git describe` when a `v*` tag exists, otherwise from `Info.plist` with
+the short commit appended. `--version`, `--arch native`, `--skip-tests` and `--output` override
+the defaults — see `./package.sh --help`.
+
+The build is ad-hoc signed, not Developer ID signed or notarised, so Gatekeeper blocks the first
+launch on another machine. `INSTALL.txt` in the archive tells the recipient how to get past it.
+
 ## Using it
 
 1. Pick the folder holding the `*.xml` lyrics files (bottom left).

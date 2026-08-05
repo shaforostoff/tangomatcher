@@ -2,3 +2,4 @@
 LyrMatcher.app/
 *.xcodeproj
 .swiftpm/
+dist/
