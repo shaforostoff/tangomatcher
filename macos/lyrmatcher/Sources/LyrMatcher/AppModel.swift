@@ -162,8 +162,8 @@ final class AppModel: ObservableObject {
 
     /// Selects the next lyrics file that has at least one matching music file.
     ///
-    /// Like the Qt version this searches with the boundary markers forced on, so it skips over
-    /// entries that would only match loosely, then restores the user's own setting for display.
+    /// Searches with the user's own "Add minuses" setting. Qt forced the boundary markers on for
+    /// the scan, which meant it walked past every title the results list would have shown.
     @discardableResult
     func findNextWithMatches() -> Bool {
         guard !visibleLyricsFiles.isEmpty else { return false }
@@ -171,12 +171,14 @@ final class AppModel: ObservableObject {
 
         for index in start..<visibleLyricsFiles.count {
             let candidate = visibleLyricsFiles[index]
-            if !matches(for: candidate, addMinuses: true).isEmpty {
+            if !matches(for: candidate, addMinuses: addMinuses).isEmpty {
                 selection = candidate.id
                 return true
             }
         }
-        status = "No further lyrics files have matching music files."
+        status = start >= visibleLyricsFiles.count
+            ? "At the end of the list — nothing further to search."
+            : "No further lyrics files have matching music files."
         return false
     }
 
