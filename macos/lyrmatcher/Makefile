@@ -2,7 +2,7 @@ CONFIG ?= release
 APP    := LyrMatcher.app
 BIN    := .build/$(CONFIG)/LyrMatcher
 
-.PHONY: all build app run test clean
+.PHONY: all build app run test package clean
 
 all: app
 
@@ -26,6 +26,10 @@ run: app
 test:
 	swift test
 
+## Universal release tarball in dist/. See ./package.sh --help for the options.
+package:
+	./package.sh
+
 clean:
 	swift package clean
-	rm -rf $(APP)
+	rm -rf $(APP) dist
