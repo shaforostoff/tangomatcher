@@ -26,28 +26,18 @@ public enum MatchTier: Comparable, Hashable, Sendable {
     }
 }
 
-/// A literal search string derived from the XML filename, plus its normalised form.
-public struct SearchStem: Hashable, Sendable {
-    public let raw: String
-    public let normalized: String
-
-    public init(raw: String) {
-        self.raw = raw
-        self.normalized = TextNormalization.simplify(raw)
-    }
-}
-
 /// Everything needed to test music filenames against one lyrics XML file.
 public struct MatchPlan: Sendable {
-    /// Literal stems, in the order the Qt app built them.
-    public let stems: [SearchStem]
-    /// The title with the `- ` / ` -` boundary markers and `_` variant suffix removed, used as
-    /// the reference string for fuzzy scoring.
+    /// The title with the `- ` / ` -` markers and the `_` variant suffix removed.
     public let bareTitle: String
-    /// Normalised `bareTitle`.
+    /// Normalised `bareTitle` — the string actually looked for in a filename.
     public let normalizedBareTitle: String
+    /// The title must start the filename or a ` - ` separated field.
+    public let requireSegmentStart: Bool
+    /// The title must end the filename or a ` - ` separated field.
+    public let requireSegmentEnd: Bool
 
-    public var isUsable: Bool { stems.contains { !$0.normalized.isEmpty } }
+    public var isUsable: Bool { !normalizedBareTitle.isEmpty }
 }
 
 public enum TitleMatcher {
@@ -56,31 +46,25 @@ public enum TitleMatcher {
     /// the discography matcher in `src/mainwindow.cpp` used.
     public static let fuzzyThreshold = 0.2
 
-    /// Builds the search stems for an XML file, mirroring `MainWindow::displayLyrics()`.
+    /// Builds the match rule for one XML file.
+    ///
+    /// The `- ` / ` -` markers in the XML filename are read as boundary constraints rather than
+    /// as literal text. Qt spliced them into a `*stem*` glob, which silently requires something
+    /// to follow the title — so `Una carta -.xml` could never match `014 - Una carta.flac`,
+    /// where the title ends the name. Treating them as constraints keeps what they are for
+    /// (`- Nada` must not match `Nada mas`) and works at either end of the filename.
     ///
     /// - Parameters:
     ///   - xmlBaseName: XML filename with the `.xml` extension already removed.
-    ///   - addMinuses: the Qt "Add minuses" toggle — forces the `- `/` -` boundary markers on
-    ///     so a short title only matches when it occupies a whole ` - ` separated segment.
+    ///   - addMinuses: the Qt "Add minuses" toggle — applies both constraints to a title whose
+    ///     filename carries no markers of its own.
     public static func plan(xmlBaseName: String, addMinuses: Bool) -> MatchPlan {
-        var stem = xmlBaseName
-        if addMinuses && !stem.hasPrefix("- ") { stem = "- " + stem }
-        if addMinuses && !stem.hasSuffix(" -") { stem = stem + " -" }
-
-        var stems = [SearchStem(raw: stem)]
-
-        // Qt also globbed `*<stem sans trailing '-'>(*` so that `Title -` still finds
-        // `Title (instrumental)`. Qt gated this on the first glob having hit; we always add it,
-        // since it can only widen the result set and the gate looked accidental.
-        if stem.hasSuffix(" -") {
-            stems.append(SearchStem(raw: String(stem.dropLast()) + "("))
-        }
-
         let bare = bareTitle(xmlBaseName: xmlBaseName)
         return MatchPlan(
-            stems: stems,
             bareTitle: bare,
-            normalizedBareTitle: TextNormalization.simplify(bare)
+            normalizedBareTitle: TextNormalization.simplify(bare),
+            requireSegmentStart: addMinuses || xmlBaseName.hasPrefix("- "),
+            requireSegmentEnd: addMinuses || xmlBaseName.hasSuffix(" -")
         )
     }
 
@@ -102,9 +86,7 @@ public enum TitleMatcher {
         plan: MatchPlan,
         allowFuzzy: Bool
     ) -> MatchTier? {
-        for stem in plan.stems where !stem.normalized.isEmpty {
-            if normalized.contains(stem.normalized) { return .literal }
-        }
+        if literalMatch(in: normalized, plan: plan) { return .literal }
 
         guard allowFuzzy, !plan.normalizedBareTitle.isEmpty else { return nil }
         guard let distance = bestSegmentDistance(
@@ -114,6 +96,44 @@ public enum TitleMatcher {
 
         let ratio = Double(distance) / Double(plan.normalizedBareTitle.count)
         return ratio < fuzzyThreshold ? .fuzzy(distance: distance) : nil
+    }
+
+    /// True when the title occurs in the filename at a position satisfying the plan's boundary
+    /// constraints. Every occurrence is tried, not just the first — `Poema` in
+    /// `Poemas - Poema - 1935` matches on the second one.
+    static func literalMatch(in name: String, plan: MatchPlan) -> Bool {
+        let title = plan.normalizedBareTitle
+        guard !title.isEmpty else { return false }
+
+        var searchFrom = name.startIndex
+        while let found = name.range(of: title, range: searchFrom..<name.endIndex) {
+            if (!plan.requireSegmentStart || isSegmentStart(name, found.lowerBound)),
+               (!plan.requireSegmentEnd || isSegmentEnd(name, found.upperBound)) {
+                return true
+            }
+            searchFrom = name.index(after: found.lowerBound)
+        }
+        return false
+    }
+
+    /// Start of the name, or just after a ` - ` field separator.
+    private static func isSegmentStart(_ name: String, _ index: String.Index) -> Bool {
+        if index == name.startIndex { return true }
+        guard let twoBack = name.index(index, offsetBy: -2, limitedBy: name.startIndex) else {
+            return false
+        }
+        return name[twoBack..<index] == "- "
+    }
+
+    /// End of the name, the start of the next ` - ` field, or a ` (distinguisher)` — the case
+    /// Qt handled with a second `<title> (` glob.
+    private static func isSegmentEnd(_ name: String, _ index: String.Index) -> Bool {
+        if index == name.endIndex { return true }
+        guard let twoOn = name.index(index, offsetBy: 2, limitedBy: name.endIndex) else {
+            return false
+        }
+        let next = name[index..<twoOn]
+        return next == " -" || next == " ("
     }
 
     /// Smallest edit distance between `title` and any ` - ` separated segment of `fileName`,

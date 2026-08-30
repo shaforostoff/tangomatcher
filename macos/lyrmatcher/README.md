@@ -85,12 +85,18 @@ The XML filenames encode the match themselves, and that convention is preserved:
 | Filename | Means |
 | --- | --- |
 | `Poema.xml` | `Poema` anywhere in the music filename |
-| `- Nada.xml` | `Nada` must start a ` - ` separated segment |
+| `- Nada.xml` | `Nada` must start the filename or a ` - ` separated field |
 | `Intima -.xml` | `Intima` must end one — also matches `Intima (instrumental)` |
 | `- Volver -.xml` | both ends |
 | `Malena_.xml` | a parked alternate version of `Malena.xml` |
 
-The difference from the Qt version is that both sides are normalised before comparing, so the
+The markers are boundary constraints, not literal text. Qt spliced them into a `*stem*` glob,
+which quietly required something to follow the title, so `Una carta -.xml` could never match
+`014 - Una carta.flac` — a library named `NNN - Title.ext` puts the title last. Reading them as
+constraints keeps what they are for (`- Nada.xml` still does not match `Nada mas`) and works at
+either end of the name.
+
+The other difference from the Qt version is that both sides are normalised before comparing, so the
 usual mismatches disappear: accents (`ñ`→`n`, `Adiós`/`Adios`), underscores standing in for
 spaces (`Di_Sarli_-_Que_vas_buscando_muñeca`), missing commas and exclamation/question marks
 (`¡Rie, payaso!` / `Rie payaso`), typographic quotes and dashes, and casing. Hyphens and
@@ -137,8 +143,12 @@ Tests/LyrMatcherCoreTests/  44 tests, including a real AAC round trip via afconv
 ## Differences from the Qt version
 
 - The music library is indexed once instead of re-walked for every selection.
+- The `- ` / ` -` filename markers are boundary constraints rather than literal glob text, so a
+  title also matches at the start or end of a filename. See "How matching works" above.
 - The `Title (` fallback glob is always tried; Qt only tried it when the primary glob had already
   hit, which looked accidental.
+- ⌘G ("Find next with matches") searches with the current **Add minuses** setting. Qt's F3 forced
+  the markers on for the scan, so it walked past titles the results list would have shown.
 - "Write all" de-duplicates lyrics files whose titles normalise identically (`Malena.xml` and
   `Malena_.xml`), which would otherwise overwrite each other, and asks for confirmation first.
 - Writing a file that already has lyrics skips just that file; the Qt code returned out of the

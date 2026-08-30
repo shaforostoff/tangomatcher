@@ -91,9 +91,49 @@ final class TitleMatcherTests: XCTestCase {
         XCTAssertEqual(matches("Nada", "Demare - Nada - Berón - 1944", addMinuses: true), .literal)
     }
 
-    func testAddMinusesDoesNotDoubleExistingMarkers() {
-        let plan = TitleMatcher.plan(xmlBaseName: "- Volver -", addMinuses: true)
-        XCTAssertEqual(plan.stems.first?.raw, "- Volver -")
+    func testMarkersBecomeBoundaryConstraints() {
+        let marked = TitleMatcher.plan(xmlBaseName: "- Volver -", addMinuses: false)
+        XCTAssertEqual(marked.normalizedBareTitle, "volver")
+        XCTAssertTrue(marked.requireSegmentStart)
+        XCTAssertTrue(marked.requireSegmentEnd)
+
+        let plain = TitleMatcher.plan(xmlBaseName: "Volver", addMinuses: false)
+        XCTAssertFalse(plain.requireSegmentStart)
+        XCTAssertFalse(plain.requireSegmentEnd)
+
+        // "Add minuses" applies both constraints without doubling anything up.
+        let forced = TitleMatcher.plan(xmlBaseName: "- Volver -", addMinuses: true)
+        XCTAssertEqual(forced.normalizedBareTitle, "volver")
+        XCTAssertTrue(forced.requireSegmentStart)
+        XCTAssertTrue(forced.requireSegmentEnd)
+    }
+
+    /// The regression this whole boundary rewrite is for: libraries named `NNN - Title.ext` put
+    /// the title last, so a trailing ` -` marker has nothing to sit in front of.
+    func testTrailingMarkerMatchesATitleThatEndsTheFilename() {
+        XCTAssertEqual(matches("Una carta -", "014 - Una carta"), .literal)
+        XCTAssertEqual(matches("- Maria -", "127 - Maria"), .literal)
+        XCTAssertEqual(matches("Naipe -", "096 - Naipe"), .literal)
+        XCTAssertEqual(matches("- Uno -", "068 - Uno"), .literal)
+
+        // Still discriminating: the title has to be the whole trailing field.
+        XCTAssertNil(matches("- Uno -", "034 - Un placer"))
+        XCTAssertNil(matches("Naipe -", "096 - Naipes rotos"))
+    }
+
+    func testLeadingMarkerMatchesATitleThatStartsTheFilename() {
+        XCTAssertEqual(matches("- Malena", "Malena - Troilo - 1942"), .literal)
+    }
+
+    func testAddMinusesWorksOnTheNumberedNamingScheme() {
+        XCTAssertEqual(matches("Malena", "027 - Malena - Take 1", addMinuses: true), .literal)
+        XCTAssertEqual(matches("Uno", "068 - Uno", addMinuses: true), .literal)
+        XCTAssertNil(matches("Nada", "102 - Nada mas que un corazon", addMinuses: true))
+    }
+
+    func testEveryOccurrenceIsConsidered() {
+        // The first "poema" fails the end constraint; the second one satisfies it.
+        XCTAssertEqual(matches("Poema -", "Poemas - Poema - 1935"), .literal)
     }
 
     func testBareTitleStripsAllDecorations() {
