@@ -40,11 +40,70 @@ final class LyricsDocumentTests: XCTestCase {
         XCTAssertEqual(document.primaryName, "Malena")
     }
 
+    func testSpanishOnlyDropsTranslations() throws {
+        let document = try LyricsDocument.parse(Data(sample.utf8))
+
+        XCTAssertEqual(document.translations(spanishOnly: false).map(\.language), ["spa", "rus"])
+        XCTAssertEqual(document.translations(spanishOnly: true).map(\.language), ["spa"])
+        XCTAssertEqual(document.translations(spanishOnly: true).first?.name, "Malena")
+    }
+
+    func testSpanishOnlyYieldsNothingWhenThereIsNoSpanishVersion() throws {
+        let xml = #"<lyrics><translation lang="eng" name="X">text</translation></lyrics>"#
+        let document = try LyricsDocument.parse(Data(xml.utf8))
+
+        XCTAssertFalse(document.isEmpty)
+        XCTAssertTrue(document.translations(spanishOnly: true).isEmpty)
+    }
+
+    func testPreviewTextHonoursTheSpanishOnlyFilter() throws {
+        let document = try LyricsDocument.parse(Data(sample.utf8))
+
+        XCTAssertTrue(document.previewText().contains("[rus]"))
+        XCTAssertFalse(document.previewText(spanishOnly: true).contains("[rus]"))
+        XCTAssertTrue(document.previewText(spanishOnly: true).contains("[spa] Malena"))
+    }
+
     func testLanguageCodeFallsBackToUnd() {
         XCTAssertEqual(Translation(language: "spa").id3LanguageCode, "spa")
-        XCTAssertEqual(Translation(language: "").id3LanguageCode, "und")
         XCTAssertEqual(Translation(language: "en").id3LanguageCode, "und")
         XCTAssertEqual(Translation(language: "pt-BR").id3LanguageCode, "ptb")
+    }
+
+    func testUnspecifiedLanguageMeansSpanish() {
+        for raw in ["", "  ", "\n"] {
+            let translation = Translation(language: raw)
+            XCTAssertEqual(translation.effectiveLanguage, "spa", "raw: \(raw.debugDescription)")
+            XCTAssertEqual(translation.id3LanguageCode, "spa", "raw: \(raw.debugDescription)")
+            XCTAssertTrue(translation.isSpanish, "raw: \(raw.debugDescription)")
+        }
+
+        XCTAssertTrue(Translation(language: "SPA").isSpanish)
+        XCTAssertFalse(Translation(language: "eng").isSpanish)
+    }
+
+    func testTranslationWithoutLangAttributeIsKeptBySpanishOnly() throws {
+        let xml = """
+            <lyrics>
+            <translation name="Malena" source="s">original</translation>
+            <translation lang="eng" name="Malena" source="s">translated</translation>
+            </lyrics>
+            """
+        let document = try LyricsDocument.parse(Data(xml.utf8))
+
+        XCTAssertEqual(document.translations.count, 2)
+        XCTAssertEqual(
+            document.translations(spanishOnly: true).map(\.contents),
+            ["original"]
+        )
+        XCTAssertEqual(document.primaryName, "Malena")
+        XCTAssertTrue(document.previewText(spanishOnly: true).hasPrefix("[spa] Malena"))
+    }
+
+    func testUnlabelledTranslationIsTaggedAsSpanish() throws {
+        let xml = #"<lyrics><translation name="Malena">original</translation></lyrics>"#
+        let document = try LyricsDocument.parse(Data(xml.utf8))
+        XCTAssertEqual(document.translations.first?.id3LanguageCode, "spa")
     }
 
     func testMalformedXMLThrows() {

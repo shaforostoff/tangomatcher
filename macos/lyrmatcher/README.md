@@ -50,6 +50,15 @@ Double-click a matched file to play it; right-click for **Reveal in Finder**.
   (`Maleza` / `Malena`), so review before writing.
 - **Overwrite** — off by default; files that already carry lyrics are skipped. Turn it on to
   replace them.
+- **Spanish only (Exclude translations)** — off by default. Most XML files carry the Spanish
+  original plus English and/or Russian translations, and all of them are written. Turn this on to
+  embed only the `spa` version. The preview pane follows the setting, so you always see what will
+  be written. Titles with no Spanish version are then skipped, and the status line reports how
+  many.
+
+  A `<translation>` with no `lang` attribute (or an empty one) counts as Spanish: it is kept by
+  this filter and its `USLT` frame is tagged `spa`. Every file currently in `lyrics-xmldata`
+  labels its languages, so this only matters for hand-edited additions.
 
 ## How matching works
 
@@ -76,6 +85,9 @@ See [`TextNormalization.swift`](Sources/LyrMatcherCore/TextNormalization.swift) 
 
 Same payloads as the Qt/TagLib version, CRLF line endings included, so files tagged by either app
 look identical to a player.
+
+"Translation" below means each `<translation>` element of the XML file that survives the
+**Spanish only** filter.
 
 - **MP3** — one `USLT` frame per translation, each carrying its own ISO-639-2 language code and
   the translation's title as the content descriptor. A file's existing tag version is kept: v2.3

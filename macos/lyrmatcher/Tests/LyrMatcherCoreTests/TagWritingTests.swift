@@ -111,6 +111,24 @@ final class ID3v2TaggerTests: TaggerTestCase {
         XCTAssertEqual(try Fixtures.id3Lyrics(in: Data(contentsOf: file.url)).map(\.description), ["Poem"])
     }
 
+    func testSpanishOnlyDocumentWritesASingleFrame() throws {
+        let document = LyricsDocument(translations: [spanish, english])
+        let file = try makeFile("song.mp3", Fixtures.mp3WithID3v23())
+
+        XCTAssertEqual(
+            try TagWriter.write(
+                translations: document.translations(spanishOnly: true),
+                to: file,
+                overwrite: true
+            ),
+            .written(1)
+        )
+
+        let frames = try Fixtures.id3Lyrics(in: Data(contentsOf: file.url))
+        XCTAssertEqual(frames.map(\.language), ["spa"])
+        XCTAssertEqual(frames.map(\.description), ["Poema"])
+    }
+
     func testRewritingIsIdempotent() throws {
         let file = try makeFile("song.mp3", Fixtures.mp3WithID3v23())
         _ = try TagWriter.write(translations: [spanish, english], to: file, overwrite: true)
