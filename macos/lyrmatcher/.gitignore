@@ -1,0 +1,4 @@
+.build/
+LyrMatcher.app/
+*.xcodeproj
+.swiftpm/
