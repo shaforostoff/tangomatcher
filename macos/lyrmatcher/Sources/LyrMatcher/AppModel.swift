@@ -56,7 +56,12 @@ final class AppModel: ObservableObject {
     @Published private(set) var matches: [MatchedFile] = []
     @Published private(set) var status = ""
 
+    /// Non-nil while a write is running. `total == 0` means the work list is still being built.
+    @Published var progress: BatchProgress?
+    var isWriting: Bool { progress != nil }
+
     private var scanTask: Task<Void, Never>?
+    private var writeTask: Task<Void, Never>?
 
     init() {
         reloadLyricsFolder()
@@ -193,15 +198,17 @@ final class AppModel: ObservableObject {
             status = "\(file.baseName): no Spanish lyrics in this file."
             return
         }
-        let reports = write(translations: translationsToWrite, to: matches)
-        status = summary(of: reports, prefix: file.baseName)
+        run(
+            jobs: [WriteJob(title: file.baseName, lyricsURL: file.url, targets: matches.map(\.file))],
+            label: file.baseName
+        )
     }
 
     /// Write ALL edits every matching file in the library at once, so make the user say yes.
     func confirmWriteAll() {
-        let candidates = visibleLyricsFiles.filter { !matches(for: $0, addMinuses: addMinuses).isEmpty }
-        guard !candidates.isEmpty else {
-            status = "No lyrics files have matching music files."
+        guard !isWriting else { return }
+        guard !visibleLyricsFiles.isEmpty else {
+            status = "No lyrics files listed."
             return
         }
 
@@ -213,10 +220,10 @@ final class AppModel: ObservableObject {
             : "All translations in each file will be written."
 
         let alert = NSAlert()
-        alert.messageText = "Write lyrics for \(candidates.count) titles?"
+        alert.messageText = "Write lyrics for every matching file?"
         alert.informativeText = """
-            This embeds lyrics into every music file matching the \(candidates.count) \
-            currently listed lyrics files.
+            This scans the \(visibleLyricsFiles.count) currently listed lyrics files and embeds \
+            lyrics into every music file they match.
             \(overwriteNote)
             \(languageNote)
             """
@@ -228,47 +235,138 @@ final class AppModel: ObservableObject {
         writeAll()
     }
 
-    /// Writes lyrics for every lyrics file that has matches, in one pass.
+    /// Writes lyrics for every listed lyrics file that has matches.
     func writeAll() {
-        var reports: [WriteReport] = []
-        var seenStems = Set<String>()
-        var withoutSpanish = 0
+        run(jobs: nil, label: "All")
+    }
 
-        for file in visibleLyricsFiles {
+    func cancelWriting() {
+        writeTask?.cancel()
+        progress?.label = "Cancelling…"
+    }
+
+    // MARK: Batch engine
+
+    /// One lyrics file and the music files it will be written into.
+    private struct WriteJob: Sendable {
+        let title: String
+        let lyricsURL: URL
+        let targets: [MusicFile]
+    }
+
+    /// Runs a batch off the main thread, publishing progress after every file.
+    ///
+    /// - Parameter jobs: `nil` means "work the whole visible list", which is itself expensive
+    ///   enough on a large library to be worth doing in the background.
+    private func run(jobs: [WriteJob]?, label: String) {
+        guard !isWriting else { return }
+
+        progress = BatchProgress(completed: 0, total: jobs?.reduce(0) { $0 + $1.targets.count } ?? 0,
+                                 label: jobs == nil ? "Finding matches…" : label)
+
+        // Snapshot everything the background work needs; all of it is Sendable.
+        let files = visibleLyricsFiles
+        let index = musicIndex
+        let addMinuses = self.addMinuses
+        let allowFuzzy = self.allowFuzzy
+        let resultFilter = self.resultFilter
+        let spanishOnly = self.spanishOnly
+        let overwrite = self.overwrite
+
+        writeTask = Task {
+            let work: [WriteJob]
+            if let jobs {
+                work = jobs
+            } else {
+                work = await Task.detached(priority: .userInitiated) {
+                    Self.buildJobs(
+                        from: files, index: index, addMinuses: addMinuses,
+                        allowFuzzy: allowFuzzy, resultFilter: resultFilter
+                    )
+                }.value
+            }
+
+            guard !Task.isCancelled else { return finish([], 0, label: label, cancelled: true) }
+
+            progress?.total = work.reduce(0) { $0 + $1.targets.count }
+
+            var reports: [WriteReport] = []
+            var withoutSpanish = 0
+
+            for job in work {
+                guard !Task.isCancelled else { break }
+
+                // Parsing the XML is cheap but there can be hundreds of them.
+                let translations = await Task.detached(priority: .userInitiated) {
+                    (try? LyricsDocument.load(contentsOf: job.lyricsURL))?
+                        .translations(spanishOnly: spanishOnly) ?? []
+                }.value
+
+                guard !translations.isEmpty else {
+                    withoutSpanish += 1
+                    progress?.completed += job.targets.count
+                    continue
+                }
+
+                for target in job.targets {
+                    guard !Task.isCancelled else { break }
+                    progress?.label = "\(job.title) → \(target.relativePath)"
+
+                    // The expensive part: whole-file rewrites, several MB each.
+                    let report = await Task.detached(priority: .userInitiated) {
+                        TagWriter.report(
+                            translations: translations, to: target, overwrite: overwrite
+                        )
+                    }.value
+
+                    reports.append(report)
+                    progress?.completed += 1
+                }
+            }
+
+            finish(reports, withoutSpanish, label: label, cancelled: Task.isCancelled)
+        }
+    }
+
+    /// Pairs every lyrics file that has matches with its music files. Pure, so it can run
+    /// off the main actor.
+    private nonisolated static func buildJobs(
+        from files: [LyricsFile],
+        index: MusicIndex,
+        addMinuses: Bool,
+        allowFuzzy: Bool,
+        resultFilter: String
+    ) -> [WriteJob] {
+        var jobs: [WriteJob] = []
+        var seenStems = Set<String>()
+
+        for file in files {
             // `Malena_.xml` and `Malena.xml` normalise to the same stem; writing both would just
             // have the second overwrite the first.
             let stem = TextNormalization.simplify(TitleMatcher.bareTitle(xmlBaseName: file.baseName))
             guard seenStems.insert(stem).inserted else { continue }
 
-            let hits = matches(for: file, addMinuses: addMinuses)
+            let hits = index.matches(
+                for: TitleMatcher.plan(xmlBaseName: file.baseName, addMinuses: addMinuses),
+                allowFuzzy: allowFuzzy,
+                resultFilter: resultFilter
+            )
             guard !hits.isEmpty else { continue }
-            guard let document = try? LyricsDocument.load(contentsOf: file.url) else { continue }
-
-            let translations = document.translations(spanishOnly: spanishOnly)
-            guard !translations.isEmpty else {
-                if !document.isEmpty { withoutSpanish += 1 }
-                continue
-            }
-
-            reports += write(translations: translations, to: hits)
+            jobs.append(WriteJob(title: file.baseName, lyricsURL: file.url, targets: hits.map(\.file)))
         }
-
-        status = summary(of: reports, prefix: "All", withoutSpanish: withoutSpanish)
+        return jobs
     }
 
-    private func write(translations: [LyrMatcherCore.Translation], to matches: [MatchedFile]) -> [WriteReport] {
-        matches.map { match in
-            do {
-                let outcome = try TagWriter.write(
-                    translations: translations,
-                    to: match.file,
-                    overwrite: overwrite
-                )
-                return WriteReport(file: match.file, outcome: .success(outcome))
-            } catch {
-                return WriteReport(file: match.file, outcome: .failure(error))
-            }
-        }
+    private func finish(
+        _ reports: [WriteReport],
+        _ withoutSpanish: Int,
+        label: String,
+        cancelled: Bool
+    ) {
+        writeTask = nil
+        progress = nil
+        status = summary(of: reports, prefix: label, withoutSpanish: withoutSpanish)
+        if cancelled { status = "Cancelled. " + status }
     }
 
     private func summary(
@@ -286,13 +384,13 @@ final class AppModel: ObservableObject {
         var failures: [String] = []
 
         for report in reports {
-            switch report.outcome {
-            case .success(.written): written += 1
-            case .success(.skippedExisting): skipped += 1
-            case .success(.unchanged): unchanged += 1
-            case .success(.unsupported): skipped += 1
-            case let .failure(error):
-                failures.append("\(report.file.relativePath): \(error.localizedDescription)")
+            switch report.result {
+            case .done(.written): written += 1
+            case .done(.skippedExisting): skipped += 1
+            case .done(.unchanged): unchanged += 1
+            case .done(.unsupported): skipped += 1
+            case let .failed(message):
+                failures.append("\(report.file.relativePath): \(message)")
             }
         }
 
@@ -302,6 +400,18 @@ final class AppModel: ObservableObject {
         if withoutSpanish > 0 { parts.append("\(withoutSpanish) titles have no Spanish lyrics") }
         if !failures.isEmpty { parts.append("\(failures.count) failed — \(failures[0])") }
         return parts.joined(separator: ", ") + "."
+    }
+}
+
+/// Progress of a running write, shown in the status bar.
+struct BatchProgress {
+    var completed: Int
+    var total: Int
+    var label: String
+
+    /// `nil` while the work list is still being built, which drives an indeterminate bar.
+    var fraction: Double? {
+        total > 0 ? Double(completed) / Double(total) : nil
     }
 }
 
@@ -317,8 +427,10 @@ enum Defaults {
         get { store.string(forKey: "folderToMatch") ?? "" }
         set { store.set(newValue, forKey: "folderToMatch") }
     }
+    /// On by default: requiring the title to be a whole ` - ` separated field is what stops
+    /// `Nada` matching `Nada mas que un corazon`, and it costs almost no coverage.
     static var addMinuses: Bool {
-        get { store.bool(forKey: "addMinuses") }
+        get { store.object(forKey: "addMinuses") as? Bool ?? true }
         set { store.set(newValue, forKey: "addMinuses") }
     }
     static var overwrite: Bool {

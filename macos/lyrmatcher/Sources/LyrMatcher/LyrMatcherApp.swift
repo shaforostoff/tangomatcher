@@ -31,14 +31,21 @@ struct LyrMatcherApp: App {
 
                 Button("Write Lyrics") { model.writeSelected() }
                     .keyboardShortcut(.return, modifiers: .command)
+                    .disabled(model.isWriting)
 
                 Button("Write Lyrics and Find Next") {
                     model.writeSelected()
                     model.findNextWithMatches()
                 }
                 .keyboardShortcut(.return, modifiers: [.command, .shift])
+                .disabled(model.isWriting)
 
                 Button("Write ALL Lyrics…") { model.confirmWriteAll() }
+                    .disabled(model.isWriting)
+
+                Button("Cancel Writing") { model.cancelWriting() }
+                    .keyboardShortcut(".", modifiers: .command)
+                    .disabled(!model.isWriting)
 
                 Divider()
 

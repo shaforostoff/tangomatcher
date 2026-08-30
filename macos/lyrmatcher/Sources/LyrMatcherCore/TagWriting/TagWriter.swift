@@ -29,14 +29,20 @@ public enum TagWriteError: LocalizedError, Equatable {
     }
 }
 
+public enum WriteResult: Sendable {
+    case done(WriteOutcome)
+    /// Already rendered to a message, so the report can cross threads.
+    case failed(String)
+}
+
 /// One file's result, for the summary the UI shows after a batch write.
 public struct WriteReport: Sendable {
     public var file: MusicFile
-    public var outcome: Result<WriteOutcome, Error>
+    public var result: WriteResult
 
-    public init(file: MusicFile, outcome: Result<WriteOutcome, Error>) {
+    public init(file: MusicFile, result: WriteResult) {
         self.file = file
-        self.outcome = outcome
+        self.result = result
     }
 }
 
@@ -64,6 +70,21 @@ public enum TagWriter {
             return try FLACTagger.write(translations: translations, to: file.url, overwrite: overwrite)
         case .mp4:
             return try MP4Tagger.write(translations: translations, to: file.url, overwrite: overwrite)
+        }
+    }
+
+    /// `write` with the error already captured, for batch loops that must not stop on one bad
+    /// file. Safe to call off the main thread.
+    public static func report(
+        translations: [Translation],
+        to file: MusicFile,
+        overwrite: Bool
+    ) -> WriteReport {
+        do {
+            let outcome = try write(translations: translations, to: file, overwrite: overwrite)
+            return WriteReport(file: file, result: .done(outcome))
+        } catch {
+            return WriteReport(file: file, result: .failed(error.localizedDescription))
         }
     }
 }
