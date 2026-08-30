@@ -4,12 +4,14 @@ public enum AudioFormat: String, Sendable {
     case mp3
     case mp4   // .m4a / .mp4 / .m4b
     case flac
+    case aiff  // .aif / .aiff / .aifc
 
     public static func from(pathExtension: String) -> AudioFormat? {
         switch pathExtension.lowercased() {
         case "mp3": return .mp3
         case "m4a", "mp4", "m4b": return .mp4
         case "flac": return .flac
+        case "aif", "aiff", "aifc": return .aiff
         default: return nil
         }
     }

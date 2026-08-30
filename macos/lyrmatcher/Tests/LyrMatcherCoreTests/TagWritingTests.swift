@@ -258,6 +258,107 @@ final class FLACTaggerTests: TaggerTestCase {
     }
 }
 
+// MARK: - AIFF
+
+final class AIFFTaggerTests: TaggerTestCase {
+
+    func testWritesAnID3ChunkWhenTheFileHasNone() throws {
+        let file = try makeFile("song.aif", Fixtures.aiff())
+        XCTAssertEqual(
+            try TagWriter.write(translations: [spanish, english], to: file, overwrite: false),
+            .written(2)
+        )
+
+        let written = try Data(contentsOf: file.url)
+        let chunks = try Fixtures.aiffChunks(in: written)
+        XCTAssertEqual(chunks.map(\.id), ["COMM", "SSND", "ID3 "])
+
+        let frames = try Fixtures.id3Lyrics(in: try XCTUnwrap(chunks.last?.payload))
+        XCTAssertEqual(frames.map(\.language), ["spa", "eng"])
+        XCTAssertEqual(frames.map(\.description), ["Poema", "Poem"])
+    }
+
+    func testReplacesAnExistingID3ChunkAndKeepsItsOtherFrames() throws {
+        // Seed the chunk with a tag that already carries a title frame.
+        let seed = try XCTUnwrap(
+            try ID3v2Tagger.parse(Fixtures.mp3WithID3v23(title: "Poema")).tag
+        )
+        let file = try makeFile("song.aif", Fixtures.aiff(existingTag: try ID3v2Tagger.serialize(seed)))
+
+        XCTAssertEqual(
+            try TagWriter.write(translations: [spanish], to: file, overwrite: false),
+            .written(1)
+        )
+
+        let chunks = try Fixtures.aiffChunks(in: try Data(contentsOf: file.url))
+        XCTAssertEqual(chunks.map(\.id), ["COMM", "ID3 ", "SSND"], "chunk order must be preserved")
+
+        let tagData = try XCTUnwrap(chunks.first { $0.id == "ID3 " }?.payload)
+        let tag = try XCTUnwrap(try ID3v2Tagger.parse(tagData).tag)
+        XCTAssertTrue(tag.frames.contains { $0.id == "TIT2" })
+        XCTAssertEqual(try Fixtures.id3Lyrics(in: tagData).count, 1)
+    }
+
+    func testAudioAndFormSizeStayCorrect() throws {
+        let file = try makeFile("song.aif", Fixtures.aiff())
+        _ = try TagWriter.write(translations: [spanish], to: file, overwrite: false)
+
+        let written = try Data(contentsOf: file.url)
+        XCTAssertEqual(
+            Int(try XCTUnwrap(written.beUInt32(at: 4))),
+            written.count - 8,
+            "FORM size must cover everything after the size field"
+        )
+
+        let sound = try XCTUnwrap(try Fixtures.aiffChunks(in: written).first { $0.id == "SSND" })
+        XCTAssertEqual(sound.payload, Fixtures.audioBytes)
+    }
+
+    func testOddSizedChunksKeepTheirPadding() throws {
+        let file = try makeFile("song.aif", Fixtures.aiff(oddSizedChunk: true))
+        _ = try TagWriter.write(translations: [spanish], to: file, overwrite: false)
+
+        let written = try Data(contentsOf: file.url)
+        let chunks = try Fixtures.aiffChunks(in: written)
+        // Parsing at all proves the pad byte was re-emitted; SSND after it must be intact.
+        XCTAssertEqual(chunks.map(\.id), ["COMM", "NAME", "SSND", "ID3 "])
+        XCTAssertEqual(chunks.first { $0.id == "NAME" }?.payload, Data("odd".utf8))
+        XCTAssertEqual(chunks.first { $0.id == "SSND" }?.payload, Fixtures.audioBytes)
+    }
+
+    func testSkipsExistingLyricsUnlessOverwrite() throws {
+        let file = try makeFile("song.aif", Fixtures.aiff())
+        _ = try TagWriter.write(translations: [spanish], to: file, overwrite: false)
+
+        XCTAssertEqual(
+            try TagWriter.write(translations: [english], to: file, overwrite: false),
+            .skippedExisting
+        )
+        XCTAssertEqual(
+            try TagWriter.write(translations: [english], to: file, overwrite: true),
+            .written(1)
+        )
+
+        let tagData = try XCTUnwrap(
+            try Fixtures.aiffChunks(in: try Data(contentsOf: file.url)).first { $0.id == "ID3 " }?.payload
+        )
+        XCTAssertEqual(try Fixtures.id3Lyrics(in: tagData).map(\.description), ["Poem"])
+    }
+
+    func testRewritingIsIdempotent() throws {
+        let file = try makeFile("song.aif", Fixtures.aiff())
+        _ = try TagWriter.write(translations: [spanish, english], to: file, overwrite: true)
+        let first = try Data(contentsOf: file.url)
+        _ = try TagWriter.write(translations: [spanish, english], to: file, overwrite: true)
+        XCTAssertEqual(try Data(contentsOf: file.url), first)
+    }
+
+    func testRejectsSomethingThatIsNotAnAIFF() throws {
+        let file = try makeFile("bogus.aif", Data(repeating: 0x42, count: 512))
+        XCTAssertThrowsError(try TagWriter.write(translations: [spanish], to: file, overwrite: true))
+    }
+}
+
 // MARK: - MP4
 
 final class MP4TaggerTests: TaggerTestCase {

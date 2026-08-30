@@ -17,6 +17,14 @@ final class NormalizationTests: XCTestCase {
         )
     }
 
+    func testPlusSignsBecomeSpaces() {
+        XCTAssertEqual(TextNormalization.simplify("Aroma+de+amor"), "aroma de amor")
+        XCTAssertEqual(
+            TextNormalization.simplify("A+mi+no+me+interesa+10407-1_TT"),
+            "a mi no me interesa 10407-1 tt"
+        )
+    }
+
     func testDropsPunctuationButKeepsHyphensAndBraces() {
         XCTAssertEqual(TextNormalization.simplify("¡Rie, payaso!"), "rie payaso")
         XCTAssertEqual(TextNormalization.simplify("¿Donde estas, corazon?"), "donde estas corazon")
@@ -129,6 +137,30 @@ final class TitleMatcherTests: XCTestCase {
         XCTAssertEqual(matches("Malena", "027 - Malena - Take 1", addMinuses: true), .literal)
         XCTAssertEqual(matches("Uno", "068 - Uno", addMinuses: true), .literal)
         XCTAssertNil(matches("Nada", "102 - Nada mas que un corazon", addMinuses: true))
+    }
+
+    /// URL-encoded names with a trailing catalogue number, e.g. `Cielo+10093_RP.aif`.
+    func testCatalogueNumberEndsATitle() {
+        for addMinuses in [false, true] {
+            XCTAssertEqual(
+                matches("Cielo", "Cielo+10093_RP", addMinuses: addMinuses),
+                .literal, "addMinuses: \(addMinuses)"
+            )
+            XCTAssertEqual(
+                matches("A mi no me interesa", "A+mi+no+me+interesa+10407-1_TT", addMinuses: addMinuses),
+                .literal, "addMinuses: \(addMinuses)"
+            )
+            XCTAssertEqual(
+                matches("Sin palabras", "Sin+palabras+16000_RP", addMinuses: addMinuses),
+                .literal, "addMinuses: \(addMinuses)"
+            )
+        }
+
+        // A following *word* still ends nothing — this is what the constraint is for.
+        XCTAssertNil(matches("Cielo", "Cielo+de+estrellas+10093_RP", addMinuses: true))
+        XCTAssertNil(matches("Nada", "Nada+mas+que+un+corazon+1234_RP", addMinuses: true))
+        // ...and neither does a token that merely starts with a digit.
+        XCTAssertNil(matches("Cielo", "Cielo+2do+premio", addMinuses: true))
     }
 
     func testEveryOccurrenceIsConsidered() {

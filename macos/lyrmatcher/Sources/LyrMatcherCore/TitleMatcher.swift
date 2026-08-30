@@ -125,15 +125,39 @@ public enum TitleMatcher {
         return name[twoBack..<index] == "- "
     }
 
-    /// End of the name, the start of the next ` - ` field, or a ` (distinguisher)` — the case
-    /// Qt handled with a second `<title> (` glob.
+    /// End of the name, the start of the next ` - ` field, a ` (distinguisher)` — the case Qt
+    /// handled with a second `<title> (` glob — or a catalogue number.
     private static func isSegmentEnd(_ name: String, _ index: String.Index) -> Bool {
         if index == name.endIndex { return true }
         guard let twoOn = name.index(index, offsetBy: 2, limitedBy: name.endIndex) else {
             return false
         }
         let next = name[index..<twoOn]
-        return next == " -" || next == " ("
+        if next == " -" || next == " (" { return true }
+        return startsNumericToken(name, at: index)
+    }
+
+    /// True when the title is followed by a space and then a purely numeric token, as in
+    /// `Cielo 10093 rp` or `A mi no me interesa 10407-1 tt`.
+    ///
+    /// The point of the end constraint is that the title must not run into another *word*
+    /// (`Nada` must not match `Nada mas`). A catalogue or track number is not part of a title,
+    /// so it ends one just as a ` - ` separator does.
+    private static func startsNumericToken(_ name: String, at index: String.Index) -> Bool {
+        guard name[index] == " " else { return false }
+        var cursor = name.index(after: index)
+        var sawDigit = false
+
+        while cursor < name.endIndex, name[cursor] != " " {
+            let character = name[cursor]
+            if character.isNumber {
+                sawDigit = true
+            } else if character != "-" && character != "." {
+                return false
+            }
+            cursor = name.index(after: cursor)
+        }
+        return sawDigit
     }
 
     /// Smallest edit distance between `title` and any ` - ` separated segment of `fileName`,

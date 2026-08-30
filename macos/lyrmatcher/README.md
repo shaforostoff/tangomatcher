@@ -2,10 +2,10 @@
 
 A native Swift/SwiftUI rewrite of the Qt [`lyrmatcher`](../../lyrmatcher) app: it matches the
 XML lyrics files in [`lyrics-xmldata`](../../lyrics-xmldata) against a music library by filename
-and embeds the lyrics into the matching MP3, M4A and FLAC files.
+and embeds the lyrics into the matching MP3, M4A, FLAC and AIFF files.
 
-No Qt, no TagLib, no other dependency — the ID3v2, MP4 and FLAC tag writers are part of this
-package.
+No Qt, no TagLib, no other dependency — the ID3v2, MP4, FLAC and AIFF tag writers are part of
+this package.
 
 ## Building
 
@@ -103,11 +103,17 @@ which quietly required something to follow the title, so `Una carta -.xml` could
 constraints keeps what they are for (`- Nada.xml` still does not match `Nada mas`) and works at
 either end of the name.
 
+A trailing catalogue or track number also ends a title, so `Cielo.xml` matches
+`Cielo+10093_RP.aif`. The token has to be entirely numeric — a following *word* still ends
+nothing, which is the whole point of the constraint (`Cielo+de+estrellas+10093_RP` does not
+match).
+
 The other difference from the Qt version is that both sides are normalised before comparing, so the
-usual mismatches disappear: accents (`ñ`→`n`, `Adiós`/`Adios`), underscores standing in for
-spaces (`Di_Sarli_-_Que_vas_buscando_muñeca`), missing commas and exclamation/question marks
-(`¡Rie, payaso!` / `Rie payaso`), typographic quotes and dashes, and casing. Hyphens and
-parentheses survive normalisation because the boundary markers above depend on them.
+usual mismatches disappear: accents (`ñ`→`n`, `Adiós`/`Adios`), underscores and `+` standing in
+for spaces (`Di_Sarli_-_Que_vas_buscando_muñeca`, `Aroma+de+amor`), missing commas and
+exclamation/question marks (`¡Rie, payaso!` / `Rie payaso`), typographic quotes and dashes, and
+casing. Hyphens and parentheses survive normalisation because the boundary markers above depend
+on them.
 
 See [`TextNormalization.swift`](Sources/LyrMatcherCore/TextNormalization.swift) and
 [`TitleMatcher.swift`](Sources/LyrMatcherCore/TitleMatcher.swift).
@@ -124,6 +130,8 @@ look identical to a player.
   the translation's title as the content descriptor. A file's existing tag version is kept: v2.3
   tags get UTF-16 lyrics (the only Unicode encoding v2.3 allows), v2.4 and new tags get UTF-8.
   All other frames, artwork included, are preserved byte for byte.
+- **AIFF** — the same `USLT` frames, inside the file's `ID3 ` chunk (created if absent). Chunk
+  order and the even-length padding are preserved, and the `FORM` size is recomputed.
 - **FLAC** — a single `LYRICS` Vorbis comment with all translations concatenated. Other fields
   and metadata blocks are untouched.
 - **M4A / MP4** — a single `©lyr` atom under `moov/udta/meta/ilst`, created along with the
@@ -142,9 +150,9 @@ Sources/LyrMatcherCore/     matching + tag writing, no UI (unit tested)
   MusicIndex.swift          recursive library scan, cached normalised names
   LyricsDocument.swift      <translation> XML parsing
   LyricsPayload.swift       the exact strings written into tags
-  TagWriting/               ID3v2, FLAC and MP4 writers
+  TagWriting/               ID3v2, AIFF, FLAC and MP4 writers
 Sources/LyrMatcher/         SwiftUI app
-Tests/LyrMatcherCoreTests/  44 tests, including a real AAC round trip via afconvert/AVFoundation
+Tests/LyrMatcherCoreTests/  64 tests, including a real AAC round trip via afconvert/AVFoundation
 ```
 
 ## Differences from the Qt version
