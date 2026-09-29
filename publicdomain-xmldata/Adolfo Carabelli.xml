@@ -19,11 +19,11 @@
     <track name="Manón" vocal="Alberto Gómez" year="1932-05-20" genre="tango" duration="3:05" popularity="2"/>
     <track name="Mar adentro" vocal="Carlos Lafuente" year="1933-10-10" genre="tango" duration="2:38" popularity="1"/>
     <track name="Mentira" vocal="Carlos Lafuente" year="1931-10-02" genre="tango" composer="Francisco Pracánico" author="Celedonio Flores" duration="2:53" popularity="8"/>
-    <track name="Mi evocación" vocal="Luis Díaz" year="1934" genre="Tango" duration="2:36" popularity="4"/>
-    <track name="Mi refugio" vocal="Alberto Gómez" year="1931-09-04" genre="tango" composer="Juan Carlos Cobián" author="Pedro Numa Cordoba" duration="3:19" popularity="6"/>
+    <track name="Mi evocación" vocal="Luis Díaz" year="1934-05-07" genre="Tango" duration="2:36" popularity="4"/>
+    <track name="Mi refugio" vocal="Alberto Gómez" year="1931-09-04" genre="tango" composer="Juan Carlos Cobián" author="Pedro Numa Cordoba" duration="3:19" popularity="7"/>
     <track name="Mía" vocal="Carlos Lafuente" year="1933-04-11" genre="tango" composer="Antonio Oscar Arona, Elvino Vardaro" author="Celedonio Flores" duration="2:41" popularity="7"/>
     <track name="Milonga sentimental" vocal="Carlos Lafuente" year="1932" genre="milonga" composer="Sebastián Piana" author="Homero Manzi" duration="2:55" popularity="3"/>
-    <track name="No le quiero mirar" vocal="Carlos Lafuente, Mercedes Simone" year="1932" genre="vals" duration="3:01" popularity="2"/>
+    <track name="No le quiero mirar" vocal="Carlos Lafuente, Mercedes Simone" year="1932-12-30" genre="vals" duration="3:01" popularity="2"/>
     <track name="Olvidao" vocal="Charlo" year="1932-03-18" genre="tango" composer="Guillermo Barbieri" author="Enrique Cadícamo" duration="2:55" popularity="4"/>
     <track name="Pa' que lagrimear" vocal="Carlos Lafuente" year="1933" genre="tango" composer="Sebastián Piana" author="Sebastián Piana" duration="2:36" popularity="6"/>
     <track name="Por dónde andará" vocal="Alberto Gómez" year="1932-05-24" genre="tango" composer="Salvador Merico" author="Atilio Supparo" duration="3:05" popularity="3"/>
@@ -53,7 +53,7 @@
     <track name="Chlo-e" vocal="Instrumental" year="1929" genre="foxtrot" label="Victor"/>
     <track name="Correndo o veo" vocal="Instrumental" year="1928" genre="maxixa" label="Victor"/>
     <track name="Cuna de las manolas" vocal="Instrumental" year="" genre="pasodoble"/>
-    <track name="El aeroplano" vocal="Instrumental" year="1927" genre="vals" composer="Pedro Datta" label="Victor" duration="2:36"/>
+    <track name="El aeroplano" vocal="Instrumental" year="1927-11-02" genre="vals" composer="Pedro Datta" label="Victor" duration="2:36"/>
     <track name="El cantar de los gitanos" vocal="Carlos Lafuente" year="1931" genre="pasodoble" duration="3:03"/>
     <track name="El puñal sevillano" vocal="Alberto Gómez" year="1932" genre="pasodoble" author="Francisco Brancatti" duration="3:17"/>
     <track name="Estoy loco por la bocina del automovil" vocal="Instrumental" year="" genre="foxtrot"/>
@@ -71,7 +71,6 @@
     <track name="Margarita punzó" vocal="Instrumental" year="1928" genre="canción montevideana" composer="Gerardo Matos Rodríguez" author="Fernando Silva Valdés" label="Victor"/>
     <track name="Me gusta mucho más" vocal="Instrumental" year="1929" genre="maxixa" label="Victor"/>
     <track name="Me vuelves loco" vocal="Alberto Gómez" year="1931" genre="foxtrot" duration="2:46"/>
-    <track name="Mi refugio" vocal="Instrumental" year="" genre="tango" composer="Juan Carlos Cobián" author="Pedro Numa Cordoba" duration="3:15"/>
     <track name="Mulatita" vocal="Instrumental" year="1928" genre="maxixa" label="Victor"/>
     <track name="Napolitana" vocal="Carlos Lafuente" year="" genre="tarantella"/>
     <track name="Negra consentida" vocal="Alberto Gómez" year="1932" genre="rumba" duration="3:11"/>
@@ -128,7 +127,7 @@
     <track name="Old Spain" vocal="Instrumental" year="1929" genre="Tango" label="Victor"/>
     <track name="Madrid" vocal="Instrumental" year="1929" genre="Tango" label="Victor"/>
     <track name="La dolores" vocal="Instrumental" year="1929" genre="Tango" label="Victor"/>
-    <track name="No mire mi chica" vocal="Instrumental" year="1929" genre="Tango" label="Victor"/>
+    <track name="No mire mi chica" vocal="Instrumental" year="1929" genre="Foxtrot" label="Victor"/>
     <track name="Mi casita malagueña" vocal="Instrumental" year="1929" genre="Tango" label="Victor"/>
     <track name="Yo me quiero casar" vocal="Instrumental" year="1929" genre="Tango" label="Victor"/>
     <track name="Tarde de toros" vocal="Instrumental" year="1929" genre="Tango" label="Victor"/>
