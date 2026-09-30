@@ -1,0 +1,9 @@
+# CMake build trees, the fetched SDKs and WTL, and the packaged component.
+/build
+/external
+/dist
+
+.DS_Store
+/.vs
+/CMakeUserPresets.json
+*.user

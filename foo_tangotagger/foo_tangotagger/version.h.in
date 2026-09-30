@@ -1,0 +1,11 @@
+#pragma once
+
+// Generated from version.h.in by CMake - do not edit, and do not add the
+// generated copy to git. The version's one home is project(VERSION) in the
+// top-level CMakeLists.txt.
+
+#define FOO_TANGOTAGGER_NAME    "Tango Tagger"
+#define FOO_TANGOTAGGER_VERSION "@PROJECT_VERSION@"
+
+// The SDK release this was built against, read out of scripts\get_sdk.ps1.
+#define FOO_TANGOTAGGER_SDK_VERSION "@FOO_TANGOTAGGER_SDK_VERSION@"
