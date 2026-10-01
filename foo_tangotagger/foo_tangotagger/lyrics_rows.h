@@ -17,11 +17,28 @@
 
 #include "title_match.h"
 
+//! Whether the lyrics written into the files end with links to the song's
+//! translations (see tangotagger::translation_links_text). Kept between
+//! sessions; off until the user turns it on.
+bool translation_links_enabled();
+void set_translation_links_enabled(bool enabled);
+
 enum class existing_lyrics
 {
-	none,       //!< no lyrics in the file
-	same,       //!< the file already has exactly these lyrics
-	different   //!< the file has other lyrics, which writing would replace
+	none,               //!< no lyrics in the file
+	same,               //!< the file already has exactly what would be written
+	same_without_links, //!< these lyrics, without the translation links writing would add
+	same_with_links,    //!< these lyrics, with translation links writing would leave out
+	different           //!< the file has other lyrics, which writing would replace
+};
+
+//! What a file's lyrics are, compared with a song's.
+enum class file_lyrics
+{
+	none,       //!< the file has no lyrics
+	text,       //!< the song's text
+	linked,     //!< the song's text and its translation links
+	other       //!< anything else
 };
 
 struct lyrics_row
@@ -36,11 +53,14 @@ struct lyrics_row
 	tangotagger::match_candidate match;
 	//! Credits on the track that name this song's composer or lyricist.
 	int credit_score = 0;
-	existing_lyrics existing = existing_lyrics::none;
+	file_lyrics in_file = file_lyrics::none;
 	bool checked = false;
 
 	//! False for a track nothing matched: no song, never checked.
 	bool matched() const { return match.kind != tangotagger::match_kind::none; }
+	//! The file's lyrics against what writing would put there now, which
+	//! depends on translation_links_enabled().
+	existing_lyrics existing() const;
 };
 
 struct lyrics_matches
@@ -60,8 +80,11 @@ struct lyrics_matches
 //! choice the tags cannot settle is listed but left to the user.
 lyrics_matches find_lyrics_matches(metadb_handle_list_cref tracks);
 
-//! The lyrics as they go into the tag: the text alone, CRLF line endings.
+//! The lyrics as they go into the tag: the text, then the translation links
+//! if translation_links_enabled(); CRLF line endings.
 pfc::string8 lyrics_tag_text(const tangotagger::song & s);
+//! The same with LF line endings, with or without the links.
+std::string lyrics_text(const tangotagger::song & s, bool with_links);
 
 //! The preview for a row: song title, credits, how it matched, the lyrics.
 //! `newline` is "\r\n" for a Win32 edit control and "\n" for Cocoa.
@@ -69,6 +92,9 @@ pfc::string8 lyrics_preview_text(const lyrics_row & row, const char * newline);
 
 //! The embedded song a row offers. Matched rows only.
 const tangotagger::song & row_song(const lyrics_row & row);
+
+//! "Music: X · Lyrics: Y", either half left out when unknown.
+pfc::string8 song_credits_text(const tangotagger::song & s);
 
 //! "exact", "exact 2/3", "similar", "no match".
 pfc::string8 match_label(const lyrics_row & row);

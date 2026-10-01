@@ -28,6 +28,7 @@ public:
 		COMMAND_HANDLER_EX(IDCANCEL, BN_CLICKED, OnCancel)
 		COMMAND_HANDLER_EX(IDC_CHECK_ALL, BN_CLICKED, OnCheckAll)
 		COMMAND_HANDLER_EX(IDC_CHECK_NONE, BN_CLICKED, OnCheckNone)
+		COMMAND_HANDLER_EX(IDC_TRANSLATION_LINKS, BN_CLICKED, OnTranslationLinks)
 		MSG_WM_CLOSE(OnClose)
 	END_MSG_MAP()
 
@@ -39,6 +40,7 @@ private:
 	void OnCancel(UINT uNotifyCode, int nID, CWindow wndCtl);
 	void OnCheckAll(UINT uNotifyCode, int nID, CWindow wndCtl);
 	void OnCheckNone(UINT uNotifyCode, int nID, CWindow wndCtl);
+	void OnTranslationLinks(UINT uNotifyCode, int nID, CWindow wndCtl);
 	void OnClose();
 	void OnFinalMessage(HWND) override;
 

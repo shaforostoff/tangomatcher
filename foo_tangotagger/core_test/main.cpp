@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "lyrics_db.h"
+#include "text_links.h"
 #include "title_match.h"
 
 using namespace tangotagger;
@@ -109,6 +110,50 @@ int main()
 		check(!s.name.empty() && !s.file_name.empty(), "song has a name: " + s.file_name);
 		check(s.text.size() > 50, "song has lyrics: " + s.file_name);
 		check(s.text.find('\r') == std::string::npos, "LF line endings: " + s.file_name);
+		if (!s.link.empty())
+		{
+			// The panel shows the source as a link; it has to be found as one.
+			const std::vector<text_link> links = find_links(s.link);
+			check(links.size() == 1 && links[0].url == s.link, "source link is a link: " + s.link);
+		}
+	}
+	std::size_t with_link = 0, with_translations = 0, translation_links = 0;
+	for (const song & s : songs)
+	{
+		with_link += s.link.empty() ? 0 : 1;
+		with_translations += s.translations.empty() ? 0 : 1;
+		for (const translation_link & t : s.translations)
+		{
+			translation_links++;
+			check(!t.language.empty() && find_links(t.link).size() == 1,
+			      "translation link is a link: " + s.file_name + ": " + t.link);
+		}
+		// Every translation in the text below the lyrics, each address
+		// found as a link there.
+		check(find_links(translation_links_text(s)).size() == s.translations.size(),
+		      "translation links text: " + s.file_name);
+	}
+	std::printf("%zu songs with a source link, %zu with %zu translation links\n",
+	            with_link, with_translations, translation_links);
+	check(with_link > 0, "source links embedded");
+	check(with_translations > 0, "translation links embedded");
+
+	{
+		song s = make_song("Amiga");
+		check(translation_links_text(s).empty(), "no translations, no text");
+		s.translations.push_back({ "rus", "", "tangoman", "http://r.com/" });
+		s.translations.push_back({ "eng", "Amiga", "Lucas", "https://a.com/amiga" });
+		s.translations.push_back({ "xyz", "", "Someone", "http://c.com/" });
+		s.translations.push_back({ "deu", "", "", "https://d.com/" });
+		s.translations.push_back({ "eng", "Let's Dance", "", "https://b.com/x" });
+		check(translation_links_text(s) ==
+		          "Translations:\n"
+		          "English, Lucas: https://a.com/amiga\n"
+		          "English, \"Let's Dance\": https://b.com/x\n"
+		          "German: https://d.com/\n"
+		          "Russian, tangoman: http://r.com/\n"
+		          "xyz, Someone: http://c.com/",
+		      "translation links text: format, English first, then by language");
 	}
 
 	const matcher m(songs);
@@ -258,6 +303,35 @@ int main()
 	expect_none(lo, "Cafe");
 	expect_none(lo, "Canto");
 	expect_none(lo, "Canto de amores perdidos");
+
+	// --- links in text ------------------------------------------------------------
+	auto links_of = [](const std::string & text)
+	{
+		std::vector<std::string> out;
+		for (const text_link & l : find_links(text)) out.push_back(l.url);
+		return out;
+	};
+	using strings = std::vector<std::string>;
+	check(links_of("tomado de: http://recitango.wm.com.ar/") == strings{ "http://recitango.wm.com.ar/" },
+	      "link at the end of a line");
+	check(links_of("(http://www.antoniotormo.com.ar) se puede") == strings{ "http://www.antoniotormo.com.ar" },
+	      "closing bracket not part of a link");
+	check(links_of("see https://en.wikipedia.org/wiki/Tango_(dance).") ==
+	          strings{ "https://en.wikipedia.org/wiki/Tango_(dance)" },
+	      "bracket the link opened kept, full stop dropped");
+	check(links_of("en www.todotango.com, y") == strings{ "http://www.todotango.com" }, "bare www. gets http://");
+	check(links_of("HTTPS://X.COM/a?b=1&c=2") == strings{ "HTTPS://X.COM/a?b=1&c=2" }, "case and query kept");
+	check(links_of("\xE2\x80\x9Chttp://a.com/x\xE2\x80\x9D") == strings{ "http://a.com/x" },
+	      "typographic quotes end a link");
+	check(links_of("a http://one.com b https://two.com") == strings{ "http://one.com", "https://two.com" },
+	      "two links");
+	check(links_of("no www. here, nor http:// alone").empty(), "prefix alone is no link");
+	check(links_of("xhttp://a.com wwwx.com file:///c:/x").empty(), "not mid-word, not other schemes");
+	{
+		const std::string t = "Fuente: http://a.com/b.";
+		const std::vector<text_link> l = find_links(t);
+		check(l.size() == 1 && t.substr(l[0].begin, l[0].end - l[0].begin) == "http://a.com/b", "link offsets");
+	}
 
 	std::printf("%d checks, %d failed\n", g_checks, g_failures);
 	return g_failures == 0 ? 0 : 1;

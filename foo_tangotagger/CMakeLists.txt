@@ -207,6 +207,8 @@ add_library(tangotagger_core STATIC
     core/lyrics_db.cpp
     core/lyrics_db.h
     core/payload_format.h
+    core/text_links.cpp
+    core/text_links.h
     core/title_match.cpp
     core/title_match.h
     "${TANGOTAGGER_LYRICS_BLOB}")

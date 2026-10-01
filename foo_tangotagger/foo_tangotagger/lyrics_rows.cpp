@@ -6,6 +6,8 @@
 #include "lyrics_db.h"
 #include "lyrics_field.h"
 
+#include "guid.h"
+
 #include <unordered_set>
 
 using tangotagger::match_kind;
@@ -31,10 +33,13 @@ namespace
 		return out.substr(b, out.find_last_not_of(" \t\n") - b + 1);
 	}
 
-	existing_lyrics existing_in(const file_info & info, const tangotagger::song & s)
+	cfg_bool cfg_translation_links(guid_cfg_translation_links, false);
+
+	file_lyrics existing_in(const file_info & info, const tangotagger::song & s)
 	{
-		const std::string ours = comparable(s.text.c_str());
-		existing_lyrics result = existing_lyrics::none;
+		const std::string text = comparable(s.text.c_str());
+		const std::string linked = comparable(lyrics_text(s, true).c_str());
+		file_lyrics result = file_lyrics::none;
 		for (const char * field : lyrics_known_fields)
 		{
 			const t_size count = info.meta_get_count_by_name(field);
@@ -42,8 +47,9 @@ namespace
 			{
 				const std::string theirs = comparable(info.meta_get(field, i));
 				if (theirs.empty()) continue;
-				if (theirs == ours) return existing_lyrics::same;
-				result = existing_lyrics::different;
+				if (theirs == text) return file_lyrics::text;
+				if (theirs == linked) return file_lyrics::linked;
+				result = file_lyrics::other;
 			}
 		}
 		return result;
@@ -97,7 +103,7 @@ namespace
 		// otherwise - including when they are these lyrics, which there is no
 		// point in writing again.
 		for (const lyrics_row & r : group)
-			if (r.existing != existing_lyrics::none) return -1;
+			if (r.in_file != file_lyrics::none) return -1;
 		return pick;
 	}
 }
@@ -106,7 +112,9 @@ lyrics_matches find_lyrics_matches(metadb_handle_list_cref tracks)
 {
 	lyrics_matches result;
 	const std::vector<tangotagger::song> & songs = tangotagger::embedded_songs();
-	const tangotagger::matcher m(songs);
+	// Built once: the lyrics panel matches the selected track on every
+	// selection change.
+	static const tangotagger::matcher m(songs);
 
 	// Selection order, each track once; the tracks nothing matched after all
 	// the others, where they do not break up the list of choices.
@@ -144,7 +152,7 @@ lyrics_matches find_lyrics_matches(metadb_handle_list_cref tracks)
 			lyrics_row row = base;
 			row.match = c;
 			row.credit_score = tangotagger::credit_overlap(credits, songs[c.song]);
-			if (have_info) row.existing = existing_in(info->info(), songs[c.song]);
+			if (have_info) row.in_file = existing_in(info->info(), songs[c.song]);
 			group.push_back(std::move(row));
 		}
 
@@ -174,9 +182,40 @@ const tangotagger::song & row_song(const lyrics_row & row)
 	return tangotagger::embedded_songs()[row.match.song];
 }
 
+bool translation_links_enabled()
+{
+	return cfg_translation_links;
+}
+
+void set_translation_links_enabled(bool enabled)
+{
+	cfg_translation_links = enabled;
+}
+
+existing_lyrics lyrics_row::existing() const
+{
+	switch (in_file)
+	{
+	case file_lyrics::none:  return existing_lyrics::none;
+	case file_lyrics::other: return existing_lyrics::different;
+	case file_lyrics::text:
+		// A song without translations has no links to add.
+		return translation_links_enabled() && !row_song(*this).translations.empty()
+		       ? existing_lyrics::same_without_links : existing_lyrics::same;
+	default:
+		return translation_links_enabled() ? existing_lyrics::same : existing_lyrics::same_with_links;
+	}
+}
+
+std::string lyrics_text(const tangotagger::song & s, bool with_links)
+{
+	const std::string links = with_links ? tangotagger::translation_links_text(s) : std::string();
+	return links.empty() ? s.text : s.text + "\n\n" + links;
+}
+
 pfc::string8 lyrics_tag_text(const tangotagger::song & s)
 {
-	return with_newlines(s.text, "\r\n");
+	return with_newlines(lyrics_text(s, translation_links_enabled()), "\r\n");
 }
 
 pfc::string8 lyrics_preview_text(const lyrics_row & row, const char * newline)
@@ -193,13 +232,8 @@ pfc::string8 lyrics_preview_text(const lyrics_row & row, const char * newline)
 
 	pfc::string_formatter out;
 	out << s.name.c_str() << newline;
-	if (!s.composer.empty() || !s.author.empty())
-	{
-		if (!s.composer.empty()) out << "Music: " << s.composer.c_str();
-		if (!s.composer.empty() && !s.author.empty()) out << "  \xC2\xB7  ";   // middle dot
-		if (!s.author.empty()) out << "Lyrics: " << s.author.c_str();
-		out << newline;
-	}
+	const pfc::string8 credits = song_credits_text(s);
+	if (!credits.is_empty()) out << credits << newline;
 	if (row.versions > 1)
 	{
 		out << "One of " << row.versions << " songs this title matches";
@@ -209,11 +243,33 @@ pfc::string8 lyrics_preview_text(const lyrics_row & row, const char * newline)
 	if (row.match.kind == match_kind::similar)
 		out << "Similar, not identical: the title reads \"" << row.match.track_key.c_str()
 		    << "\", the song \"" << row.match.song_key.c_str() << "\"." << newline;
-	if (row.existing == existing_lyrics::different)
+	switch (row.existing())
+	{
+	case existing_lyrics::different:
 		out << "The file already has other lyrics; writing replaces them." << newline;
-	else if (row.existing == existing_lyrics::same)
+		break;
+	case existing_lyrics::same:
 		out << "The file already has these lyrics." << newline;
-	out << newline << with_newlines(s.text, newline);
+		break;
+	case existing_lyrics::same_without_links:
+		out << "The file already has these lyrics, without the links to translations; writing adds them." << newline;
+		break;
+	case existing_lyrics::same_with_links:
+		out << "The file already has these lyrics, with links to translations; writing leaves the links out." << newline;
+		break;
+	default:
+		break;
+	}
+	out << newline << with_newlines(lyrics_text(s, translation_links_enabled()), newline);
+	return out;
+}
+
+pfc::string8 song_credits_text(const tangotagger::song & s)
+{
+	pfc::string_formatter out;
+	if (!s.composer.empty()) out << "Music: " << s.composer.c_str();
+	if (!s.composer.empty() && !s.author.empty()) out << "  \xC2\xB7  ";   // middle dot
+	if (!s.author.empty()) out << "Lyrics: " << s.author.c_str();
 	return out;
 }
 
@@ -230,8 +286,10 @@ const char * existing_label(existing_lyrics e)
 {
 	switch (e)
 	{
-	case existing_lyrics::same:      return "same";
-	case existing_lyrics::different: return "different";
+	case existing_lyrics::same:               return "same";
+	case existing_lyrics::same_without_links: return "same, no links";
+	case existing_lyrics::same_with_links:    return "same, with links";
+	case existing_lyrics::different:          return "different";
 	default:                         return "none";
 	}
 }

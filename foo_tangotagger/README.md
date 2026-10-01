@@ -8,6 +8,21 @@ the matches are listed with checkboxes; the checked ones are written to the
 file. The selected row's lyrics, with composer and lyricist, are shown below
 the list.
 
+## Lyrics panel
+
+The **Lyrics** panel shows the lyrics of the selected track (or the playing one,
+per foobar2000's selection viewer preference): the file's own LYRICS /
+UNSYNCED LYRICS, or else the built-in song its title matches - marked as not
+in the file - with composer, lyricist and the page the text comes from.
+Web addresses in the text are links and open in the default browser.
+
+- Windows: in the Default UI layout editor it is under *Selection
+  Information*. Ctrl+mouse wheel, Ctrl+Plus/Minus/0 or
+  the right-click menu set the text size, kept per panel; the menu also
+  toggles centring and copies the lyrics or a link.
+- macOS: add the element `tango-lyrics` to the layout. Cmd+Plus/Minus/0, a
+  pinch or the right-click menu set the text size.
+
 ## Matching
 
 Titles are compared as *keys*: accents folded (Años = Anos), case, punctuation
@@ -36,6 +51,21 @@ lyrics are listed (`same` / `different`) but left unchecked.
 | MP3                 | `UNSYNCED LYRICS` | ID3v2 USLT frame |
 | MP4 / M4A           | `LYRICS`          | ©lyr atom        |
 | FLAC, Ogg, Opus ... | `LYRICS`          | LYRICS field     |
+
+With **Add links to translations** checked (the setting is kept), the lyrics
+end with links to the song's translations:
+
+    Translations:
+    English, Paul Bottomer: https://www.youtube.com/watch?v=...
+    Russian, tangoman: http://tango-del-dia.livejournal.com/...
+
+They go into the same field as the lyrics. foobar2000's tag interface has no
+per-language lyrics fields (FLAC and MP4 have no notion of a lyrics language
+at all), and a second LYRICS value would be shown by most players instead of,
+or run together with, the lyrics. Only the
+links are embedded, never the translated text; they come from the
+`<translation>` elements `copy-publicdomain-lyrics.ps1` keeps empty for
+the purpose.
 
 ## Data
 

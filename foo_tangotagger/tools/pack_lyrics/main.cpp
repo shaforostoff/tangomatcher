@@ -114,6 +114,16 @@ namespace
 		return s.substr(b, s.find_last_not_of(ws) - b + 1);
 	}
 
+	//! Trimmed, with tabs and line breaks - the separators of the
+	//! translations field - as spaces.
+	std::string one_line(const std::string & s)
+	{
+		std::string out = trim(s);
+		for (char & c : out)
+			if (c == '\t' || c == '\n' || c == '\r') c = ' ';
+		return out;
+	}
+
 	std::string to_lf(const std::string & s)
 	{
 		std::string out;
@@ -165,12 +175,16 @@ namespace
 			return false;
 		}
 
-		// The Spanish translation; copy-publicdomain-lyrics.ps1 keeps nothing else,
-		// but the language is checked rather than assumed.
+		// The Spanish text, and a link to each translation that has one.
+		// copy-publicdomain-lyrics.ps1 leaves the other languages' elements
+		// empty - their attributes without their text - but the language is
+		// checked rather than assumed.
+		bool have_spanish = false;
+		std::string & translations = e.fields[tangotagger::payload_translations];
 		for (std::size_t pos = at;;)
 		{
 			const std::size_t t = xml.find("<translation", pos);
-			if (t == std::string::npos) { error = "no Spanish <translation>"; return false; }
+			if (t == std::string::npos) break;
 			const std::size_t tag_end = xml.find('>', t);
 			const std::size_t close = xml.find("</translation>", tag_end);
 			if (tag_end == std::string::npos || close == std::string::npos)
@@ -180,13 +194,25 @@ namespace
 			}
 			const std::string tag = xml.substr(t, tag_end - t);
 			pos = close;
-			if (attribute(tag, "lang") != "spa") continue;
+			const std::string lang = attribute(tag, "lang");
+			if (lang != "spa")
+			{
+				const std::string link = one_line(attribute(tag, "link"));
+				if (link.empty() || !attribute(tag, "deadlink").empty()) continue;
+				if (translations.find("\t" + link + "\n") != std::string::npos) continue;   // listed twice
+				translations += one_line(lang) + "\t" + one_line(attribute(tag, "name")) + "\t" +
+				                one_line(attribute(tag, "translator")) + "\t" + link + "\n";
+				continue;
+			}
+			if (have_spanish) continue;
+			have_spanish = true;
 
 			e.fields[tangotagger::payload_name] = trim(attribute(tag, "name"));
+			e.fields[tangotagger::payload_link] = trim(attribute(tag, "link"));
 			e.fields[tangotagger::payload_text] =
 				trim(to_lf(xml_unescape(xml.substr(tag_end + 1, close - tag_end - 1))));
-			break;
 		}
+		if (!have_spanish) { error = "no Spanish <translation>"; return false; }
 		e.fields[tangotagger::payload_file_name] = file_name;
 		e.fields[tangotagger::payload_composer] = trim(attribute(lyrics_tag, "composer"));
 		e.fields[tangotagger::payload_author] = trim(attribute(lyrics_tag, "author"));

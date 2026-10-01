@@ -128,6 +128,9 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 
 	NSButton * checkAll  = [NSButton buttonWithTitle:@"Check All"  target:self action:@selector(onCheckAll:)];
 	NSButton * checkNone = [NSButton buttonWithTitle:@"Check None" target:self action:@selector(onCheckNone:)];
+	NSButton * links = [NSButton checkboxWithTitle:@"Add links to translations" target:self
+	                                        action:@selector(onTranslationLinks:)];
+	links.state = translation_links_enabled() ? NSControlStateValueOn : NSControlStateValueOff;
 	NSButton * cancel    = [NSButton buttonWithTitle:@"Cancel"     target:self action:@selector(onCancel:)];
 	cancel.keyEquivalent = @"\033";   // Escape
 	_write = [NSButton buttonWithTitle:@"Write" target:self action:@selector(onWrite:)];
@@ -136,7 +139,7 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 	NSView * spacer = [[NSView alloc] initWithFrame:NSZeroRect];
 	[spacer setContentHuggingPriority:NSLayoutPriorityDefaultLow
 	                   forOrientation:NSLayoutConstraintOrientationHorizontal];
-	NSStackView * buttonRow = [NSStackView stackViewWithViews:@[ checkAll, checkNone, spacer, cancel, _write ]];
+	NSStackView * buttonRow = [NSStackView stackViewWithViews:@[ checkAll, checkNone, links, spacer, cancel, _write ]];
 	buttonRow.orientation = NSUserInterfaceLayoutOrientationHorizontal;
 	buttonRow.spacing = 8;
 	buttonRow.translatesAutoresizingMaskIntoConstraints = NO;
@@ -193,7 +196,7 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 	if ([identifier isEqualToString:col_match])    return str(match_label(r).get_ptr());
 	if (!r.matched()) return @"";
 	if ([identifier isEqualToString:col_song])     return str(row_song(r).name.c_str());
-	if ([identifier isEqualToString:col_existing]) return str(existing_label(r.existing));
+	if ([identifier isEqualToString:col_existing]) return str(existing_label(r.existing()));
 	return @"";
 }
 
@@ -300,6 +303,17 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 {
 	write_checked_lyrics(_matches->rows);
 	[self close];
+}
+
+//! What is written changes, and with it what the files already having it
+//! means: the Existing lyrics column and the preview follow.
+- (IBAction)onTranslationLinks:(NSButton *)sender
+{
+	set_translation_links_enabled(sender.state == NSControlStateValueOn);
+	[_table reloadData];
+	if (_table.selectedRow >= 0) [self showPreviewForRow:_table.selectedRow];
+	// The links are at the end: show the end, where the change is.
+	[_preview scrollRangeToVisible:NSMakeRange(_preview.string.length, 0)];
 }
 
 - (IBAction)onCancel:(id)sender

@@ -1,6 +1,8 @@
 #include "lyrics_db.h"
 #include "payload_format.h"
+#include "title_match.h"
 
+#include <algorithm>
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
@@ -86,6 +88,26 @@ namespace tangotagger
 			s.composer  = std::move(fields[payload_composer]);
 			s.author    = std::move(fields[payload_author]);
 			s.text      = std::move(fields[payload_text]);
+			s.link      = std::move(fields[payload_link]);
+			// lang TAB name TAB translator TAB link, a line each.
+			const std::string & t = fields[payload_translations];
+			for (std::size_t start = 0; start < t.size();)
+			{
+				std::size_t end = t.find('\n', start);
+				if (end == std::string::npos) end = t.size();
+				std::string parts[4];
+				std::size_t at = start;
+				for (int p = 0; p < 4; p++)
+				{
+					std::size_t tab = p < 3 ? t.find('\t', at) : end;
+					if (tab == std::string::npos || tab > end) tab = end;
+					parts[p].assign(t, at, tab - at);
+					at = (std::min)(tab + 1, end);
+				}
+				if (!parts[3].empty())
+					s.translations.push_back({ std::move(parts[0]), std::move(parts[1]), std::move(parts[2]), std::move(parts[3]) });
+				start = end + 1;
+			}
 			out.push_back(std::move(s));
 		}
 		if (pos != payload.size())
@@ -94,6 +116,56 @@ namespace tangotagger
 			return false;
 		}
 		return true;
+	}
+
+	namespace
+	{
+		const char * language_name(const std::string & code)
+		{
+			static const char * const names[][2] = {
+				{ "eng", "English" }, { "rus", "Russian" }, { "deu", "German" }, { "ger", "German" },
+				{ "ita", "Italian" }, { "nld", "Dutch" }, { "dut", "Dutch" }, { "fra", "French" },
+				{ "fre", "French" }, { "ukr", "Ukrainian" }, { "por", "Portuguese" }, { "pol", "Polish" },
+				{ "jpn", "Japanese" }, { "fin", "Finnish" }, { "swe", "Swedish" }, { "tur", "Turkish" },
+				{ "ell", "Greek" }, { "gre", "Greek" }, { "heb", "Hebrew" }, { "ces", "Czech" },
+			};
+			for (const auto & n : names)
+				if (code == n[0]) return n[1];
+			return nullptr;
+		}
+	}
+
+	std::string translation_links_text(const song & s)
+	{
+		if (s.translations.empty()) return std::string();
+		// English first, the other languages in alphabetical order of their
+		// names; one language's translations in the order the data has them.
+		auto display = [](const translation_link & t) -> std::string
+		{
+			const char * name = language_name(t.language);
+			return name != nullptr ? name : t.language;
+		};
+		std::vector<const translation_link *> order;
+		for (const translation_link & t : s.translations) order.push_back(&t);
+		std::stable_sort(order.begin(), order.end(), [&](const translation_link * a, const translation_link * b)
+		{
+			const bool a_eng = a->language == "eng", b_eng = b->language == "eng";
+			if (a_eng != b_eng) return a_eng;
+			return display(*a) < display(*b);
+		});
+
+		std::string out = "Translations:";
+		const std::string own = fold_key(s.name);
+		for (const translation_link * p : order)
+		{
+			const translation_link & t = *p;
+			out += "\n";
+			out += display(t);
+			if (!t.name.empty() && fold_key(t.name) != own) out += ", \"" + t.name + "\"";
+			if (!t.translator.empty()) out += ", " + t.translator;
+			out += ": " + t.link;
+		}
+		return out;
 	}
 
 	const std::vector<song> & embedded_songs()

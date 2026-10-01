@@ -30,11 +30,13 @@ set(FOO_TANGOTAGGER_SOURCES
     contextmenu.cpp
     file_info_filter_lyrics.cpp
     foo_tangotagger.cpp
+    lyrics_panel_content.cpp
     lyrics_rows.cpp
 
     file_info_filter_lyrics.h
     guid.h
     lyrics_field.h
+    lyrics_panel_content.h
     lyrics_rows.h
     stdafx.h
     tangotagger_ui.h
@@ -46,10 +48,12 @@ if(WIN32)
     list(APPEND FOO_TANGOTAGGER_SOURCES
         lyrics_dialog.cpp
         lyrics_dialog.h
+        lyrics_panel.cpp
         foo_tangotagger.rc
         resource.h)
 else()
     list(APPEND FOO_TANGOTAGGER_SOURCES
+        mac/lyrics_panel_mac.mm
         mac/lyrics_window_mac.mm
         mac/foobar2000-mac-class-suffix.h
 

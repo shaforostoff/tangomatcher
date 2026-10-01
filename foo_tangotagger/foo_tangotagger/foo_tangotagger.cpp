@@ -13,6 +13,19 @@
 	"Apple Silicon foobar2000 for Mac 2.6 or newer.\n"
 #endif
 
+#ifdef _WIN32
+#define LYRICS_PANEL_HELP \
+	"The Lyrics panel (Selection Information in the layout editor) shows the\n" \
+	"selected track's lyrics - the file's own, or the built-in ones its title\n" \
+	"matches. Ctrl+mouse wheel or the right-click menu sets the text size; links\n" \
+	"open in the web browser.\n"
+#else
+#define LYRICS_PANEL_HELP \
+	"The tango-lyrics layout element shows the selected track's lyrics - the\n" \
+	"file's own, or the built-in ones its title matches. Cmd+Plus/Minus, a pinch\n" \
+	"or the right-click menu sets the text size; links open in the web browser.\n"
+#endif
+
 #if FOO_TANGOTAGGER_PUBLIC_DOMAIN_ONLY
 #define FOO_TANGOTAGGER_DATA \
 	"The lyrics are in the public domain in Argentina: their authors died more\n" \
@@ -34,6 +47,8 @@ DECLARE_COMPONENT_VERSION(
 	"title by part of it, so \"Cafe\" is not \"Cafe Dominguez\". The matches are\n"
 	"listed with checkboxes; the checked ones are written to LYRICS (UNSYNCED\n"
 	"LYRICS, the ID3 USLT frame, for MP3).\n"
+	"\n"
+	LYRICS_PANEL_HELP
 	"\n"
 	FOO_TANGOTAGGER_DATA
 	"\n"

@@ -28,7 +28,10 @@ BOOL lyrics_dialog::OnInitDialog(CWindow wndFocus, LPARAM lInitParam)
 	m_list.AddColumnAutoWidth("Lyrics of");
 	m_list.AddColumn("Match", (std::max)(m_list.GetOptimalColumnWidthFixed("similar 2/5"),
 	                                     m_list.GetOptimalColumnWidthFixed("no match")));
-	m_list.AddColumn("Existing lyrics", m_list.GetOptimalColumnWidthFixed("Existing lyrics"));
+	m_list.AddColumn("Existing lyrics", (std::max)(m_list.GetOptimalColumnWidthFixed("Existing lyrics"),
+	                                               m_list.GetOptimalColumnWidthFixed("same, with links")));
+
+	CheckDlgButton(IDC_TRANSLATION_LINKS, translation_links_enabled() ? BST_CHECKED : BST_UNCHECKED);
 
 	uSetDlgItemText(m_hWnd, IDC_LYRICS_STATUS, lyrics_status_text(m_matches));
 	LabelWriteButton();
@@ -87,6 +90,18 @@ void lyrics_dialog::OnCheckNone(UINT, int, CWindow)
 	ChecksChanged();
 }
 
+//! What is written changes, and with it what the files already having it
+//! means: the Existing lyrics column and the preview follow.
+void lyrics_dialog::OnTranslationLinks(UINT, int, CWindow)
+{
+	set_translation_links_enabled(IsDlgButtonChecked(IDC_TRANSLATION_LINKS) == BST_CHECKED);
+	m_list.Invalidate();
+	const size_t sel = m_list.GetSingleSel();
+	if (sel != SIZE_MAX) ShowPreview(sel);
+	// The links are at the end: show the end, where the change is.
+	SendDlgItemMessage(IDC_LYRICS_PREVIEW, WM_VSCROLL, SB_BOTTOM, 0);
+}
+
 pfc::string8 lyrics_dialog::listGetSubItemText(ctx_t, size_t item, size_t subItem)
 {
 	const lyrics_row & r = m_matches.rows[item];
@@ -104,7 +119,7 @@ pfc::string8 lyrics_dialog::listGetSubItemText(ctx_t, size_t item, size_t subIte
 	case col_match:
 		return match_label(r);
 	case col_existing:
-		return r.matched() ? pfc::string8(existing_label(r.existing)) : pfc::string8();
+		return r.matched() ? pfc::string8(existing_label(r.existing())) : pfc::string8();
 	default:
 		return "";
 	}

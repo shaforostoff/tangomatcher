@@ -7,6 +7,7 @@
 #define IDC_LYRICS_STATUS               1003
 #define IDC_CHECK_ALL                   1004
 #define IDC_CHECK_NONE                  1005
+#define IDC_TRANSLATION_LINKS           1006
 
 #ifndef IDC_STATIC
 #define IDC_STATIC                      -1
