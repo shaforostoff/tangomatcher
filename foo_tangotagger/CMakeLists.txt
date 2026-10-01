@@ -48,7 +48,7 @@ set(LZMA_SDK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/lzma_sdk"
     CACHE PATH "Location of the unpacked LZMA SDK")
 set(TANGOTAGGER_LYRICS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-lyrics-publicdomain"
     CACHE PATH "Folder of lyrics XML files to embed")
-set(TANGOTAGGER_DISCOGRAPHY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../publicdomain-xmldata"
+set(TANGOTAGGER_DISCOGRAPHY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-discographies-publicdomain"
     CACHE PATH "Folder of discography XML files to embed")
 # OFF embeds every lyrics file in the folder, for a build of your own. ON
 # embeds only files marked pd_status="public domain" - the build to publish.

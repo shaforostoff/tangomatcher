@@ -131,7 +131,7 @@ The lyrics are read from `../xml-lyrics-publicdomain` at build time by
 `tools/pack_lyrics` and embedded LZMA-compressed (7-Zip's LZMA SDK) in the
 component.
 
-The discographies are read from `../publicdomain-xmldata` by
+The discographies are read from `../xml-discographies-publicdomain` by
 `tools/pack_discography`. A `X_tangoinfo.xml` or `X_bigwithmistakes.xml`
 is left out when the folder has `X.xml`, its better alternative; Edgardo
 Donato and Julio de Caro have only the tango.info file, which is used. Also

@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <cstring>
 
-// Generated at build time by tools/pack_discography, from ../publicdomain-xmldata.
+// Generated at build time by tools/pack_discography, from ../xml-discographies-publicdomain.
 extern const unsigned char tangotagger_discography_blob[];
 extern const std::size_t tangotagger_discography_blob_size;
 

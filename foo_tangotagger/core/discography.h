@@ -1,7 +1,7 @@
 #pragma once
 
 // The orchestra discographies compiled into the component: who recorded
-// what, with which singer, when. Read from ../publicdomain-xmldata at build
+// what, with which singer, when. Read from ../xml-discographies-publicdomain at build
 // time by tools/pack_discography.
 //
 // Standard C++ only, like lyrics_db.h.
