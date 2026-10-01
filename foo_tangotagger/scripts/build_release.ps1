@@ -20,7 +20,7 @@
     the archive name carries the version.
 
     The SDKs and WTL are fetched on the first configure; see scripts\get_sdk.ps1.
-    The lyrics are packed from ..\publicdomain-lyrics during the build.
+    The lyrics are packed from ..\xml-lyrics-publicdomain during the build.
 
 .PARAMETER Arch
     Which architectures to build. Default: x86 and x64.
@@ -30,7 +30,7 @@
 
 .PARAMETER PublicDomain
     Embed only the lyrics marked pd_status="public domain": the build to
-    publish. Without it every lyrics file in ..\publicdomain-lyrics goes in,
+    publish. Without it every lyrics file in ..\xml-lyrics-publicdomain goes in,
     and the archive is named -personal - it is for your own use and must not
     be published. Own build directory.
 

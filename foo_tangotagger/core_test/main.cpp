@@ -468,7 +468,7 @@ int main()
 		check(best_of(tags("La cumparsita", ""), &sure) != nullptr && !sure, "title alone: offered, never confident");
 	}
 	// An orchestra named: the others' recordings of the title are not offered.
-	check(best_of(tags("Naipe", "Francisco Canaro")) == nullptr, "an orchestra without a discography matches nothing");
+	check(best_of(tags("Naipe", "Enrique Rodriguez")) == nullptr, "an orchestra without a discography matches nothing");
 	check(best_of(tags("Cafe", "Carlos Di Sarli")) == nullptr || fold_key(best_of(tags("Cafe", "Carlos Di Sarli"))->name) != "cafedominguez",
 	      "no title by part of it");
 

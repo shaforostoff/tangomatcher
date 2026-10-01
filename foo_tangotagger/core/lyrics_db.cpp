@@ -9,7 +9,7 @@
 
 #include "LzmaDec.h"
 
-// Generated at build time by tools/pack_lyrics, from ../publicdomain-lyrics.
+// Generated at build time by tools/pack_lyrics, from ../xml-lyrics-publicdomain.
 extern const unsigned char tangotagger_lyrics_blob[];
 extern const std::size_t tangotagger_lyrics_blob_size;
 

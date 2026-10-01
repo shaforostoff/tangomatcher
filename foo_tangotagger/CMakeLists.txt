@@ -14,7 +14,7 @@
 # foobar2000 SDK, the LZMA SDK and - on Windows - WTL are fetched automatically
 # the first time you configure; see README.md.
 #
-# The lyrics are read from ../publicdomain-lyrics at build time and embedded,
+# The lyrics are read from ../xml-lyrics-publicdomain at build time and embedded,
 # LZMA-compressed, in the component.
 # ---------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ set(FB2K_WTL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/wtl"
     CACHE PATH "Location of the unpacked WTL (Windows only)")
 set(LZMA_SDK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/lzma_sdk"
     CACHE PATH "Location of the unpacked LZMA SDK")
-set(TANGOTAGGER_LYRICS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../publicdomain-lyrics"
+set(TANGOTAGGER_LYRICS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-lyrics-publicdomain"
     CACHE PATH "Folder of lyrics XML files to embed")
 set(TANGOTAGGER_DISCOGRAPHY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../publicdomain-xmldata"
     CACHE PATH "Folder of discography XML files to embed")

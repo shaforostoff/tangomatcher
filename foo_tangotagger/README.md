@@ -127,7 +127,7 @@ track's tags per line.
 
 ## Data
 
-The lyrics are read from `../publicdomain-lyrics` at build time by
+The lyrics are read from `../xml-lyrics-publicdomain` at build time by
 `tools/pack_lyrics` and embedded LZMA-compressed (7-Zip's LZMA SDK) in the
 component.
 
