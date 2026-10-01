@@ -16,8 +16,12 @@ converted to the XML format of `../xml-discographies-publicdomain`:
   `../xml-lyrics-publicdomain` or the other TTT sheets leave no doubt who is
   meant: the same song credited there to one person who fits the initials
   and surname, or only one such person credited at least twice in all of
-  them. Names that are ambiguous, unknown elsewhere or spelled differently
-  there are left as TTT has them;
+  them; and about 45 more looked up on the web for the song in question
+  (mostly milongandoblog.wordpress.com's Edgardo Donato discography,
+  todotango.com, el-recodo.com and Wikipedia). A surname is spelled
+  differently from TTT ("L Rubinstein" -> "Luis Rubistein") only where the
+  sources agree on it. Names that are still ambiguous or unknown are left as
+  TTT has them;
 - rows without recording data (sheet music, reissue notes) are left out;
 - the few recordings by other orchestras in the Orquesta Típica Victor sheet
   have files of their own.
