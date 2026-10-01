@@ -48,6 +48,8 @@ set(LZMA_SDK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/lzma_sdk"
     CACHE PATH "Location of the unpacked LZMA SDK")
 set(TANGOTAGGER_LYRICS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-lyrics-publicdomain"
     CACHE PATH "Folder of lyrics XML files to embed")
+set(TANGOTAGGER_DISCOGRAPHY_CC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-discographies-cc-by-sa-4.0"
+    CACHE PATH "Folder of CC BY-SA discography XML files to embed, preferred over the others")
 set(TANGOTAGGER_DISCOGRAPHY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-discographies-publicdomain"
     CACHE PATH "Folder of discography XML files to embed")
 # OFF embeds every lyrics file in the folder, for a build of your own. ON
@@ -206,7 +208,8 @@ add_custom_command(
 
 # --- the embedded discographies ---------------------------------------------
 # Facts about recordings - title, singers, date, genre - so the same in both
-# builds.
+# builds. Tango Time Travel's CC BY-SA 4.0 discographies come first: what
+# they have is left out of the others, and the component credits them.
 add_executable(pack_discography
     tools/pack_discography/main.cpp
     core/title_match.cpp)
@@ -214,15 +217,17 @@ target_include_directories(pack_discography PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}
 target_link_libraries(pack_discography PRIVATE lzma_enc)
 set_target_properties(pack_discography PROPERTIES FOLDER "tools")
 
-file(GLOB TANGOTAGGER_DISCOGRAPHY_FILES CONFIGURE_DEPENDS "${TANGOTAGGER_DISCOGRAPHY_DIR}/*.xml")
+file(GLOB TANGOTAGGER_DISCOGRAPHY_FILES CONFIGURE_DEPENDS
+     "${TANGOTAGGER_DISCOGRAPHY_CC_DIR}/*.xml" "${TANGOTAGGER_DISCOGRAPHY_DIR}/*.xml")
 set(TANGOTAGGER_DISCOGRAPHY_BLOB "${CMAKE_CURRENT_BINARY_DIR}/generated/discography_blob.cpp")
 add_custom_command(
     OUTPUT "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
     COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/generated"
-    COMMAND pack_discography "${TANGOTAGGER_DISCOGRAPHY_DIR}" "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
+    COMMAND pack_discography "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
+            "${TANGOTAGGER_DISCOGRAPHY_CC_DIR}" "${TANGOTAGGER_DISCOGRAPHY_DIR}"
     COMMAND "${CMAKE_COMMAND}" -E touch_nocreate "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
     DEPENDS pack_discography ${TANGOTAGGER_DISCOGRAPHY_FILES}
-    COMMENT "Packing discographies from ${TANGOTAGGER_DISCOGRAPHY_DIR}"
+    COMMENT "Packing discographies from ${TANGOTAGGER_DISCOGRAPHY_CC_DIR} and ${TANGOTAGGER_DISCOGRAPHY_DIR}"
     VERBATIM)
 
 # --- core: the data and the matching, no SDK -------------------------------

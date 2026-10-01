@@ -235,6 +235,18 @@ pfc::string8 disco_preview_text(const disco_row & row, const char * newline)
 			out << "    " << t.field.c_str() << ":  " << joined(current_of(row, t.field.c_str())).c_str()
 			    << "  \xE2\x86\x92  " << joined(t.values).c_str() << newline;
 	}
+	if (r.source >= 0)
+	{
+		// The credit CC BY-SA asks for: title, version, author, licence, links.
+		const tangotagger::discography_source & s = tangotagger::embedded_discography().sources[r.source];
+		if (changes.empty()) out << newline;
+		out << newline << "Source: discography \"" << s.title.c_str() << "\"";
+		if (!s.version.empty()) out << ", version " << s.version.c_str();
+		if (!s.date.empty()) out << " of " << s.date.c_str();
+		out << ", by " << s.author.c_str() << ", " << s.url.c_str() << " - licensed under " << s.licence.c_str();
+		if (!s.licence_url.empty()) out << ", " << s.licence_url.c_str();
+		out << "; converted and merged with other discographies.";
+	}
 	return out;
 }
 

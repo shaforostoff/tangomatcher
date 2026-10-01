@@ -1,8 +1,9 @@
 #pragma once
 
 // The orchestra discographies compiled into the component: who recorded
-// what, with which singer, when. Read from ../xml-discographies-publicdomain at build
-// time by tools/pack_discography.
+// what, with which singer, when. Read from ../xml-discographies-cc-by-sa-4.0
+// and ../xml-discographies-publicdomain at build time by
+// tools/pack_discography.
 //
 // Standard C++ only, like lyrics_db.h.
 
@@ -19,23 +20,42 @@ namespace tangotagger
 		std::string vocal;      //!< "Instrumental", or the singers, comma separated
 		std::string date;       //!< "1941-10-09", "1941-10", "1941" or empty
 		std::string genre;      //!< "Tango", "Vals", "Milonga", "Foxtrot"...; may be empty
+		int source = -1;        //!< index into discography::sources; -1 for public domain data
+	};
+
+	//! A discography under a licence that asks for credit: Tango Time
+	//! Travel's, CC BY-SA 4.0.
+	struct discography_source
+	{
+		std::string title;        //!< "Carlos di Sarli 1939-1941"
+		std::string version;      //!< "2.1"
+		std::string date;         //!< of that version: "2026-09-29"
+		std::string author;       //!< "Tango Time Travel / Moving Art Studio ASBL"
+		std::string url;          //!< the original
+		std::string licence;      //!< "CC BY-SA 4.0"
+		std::string licence_url;
 	};
 
 	struct discography
 	{
 		std::vector<std::string> orchestras;   //!< "Carlos di Sarli", "Orquesta Típica Víctor"...
 		std::vector<recording> recordings;     //!< by orchestra, then title
+		std::vector<discography_source> sources;
 	};
 
 	//! The payload layout, shared with the packer:
 	//!
-	//!     4 bytes    "TTD1"
+	//!     4 bytes    "TTD2"
+	//!     4 bytes    source count, little endian
+	//!     per source seven NUL-terminated strings, in the order of
+	//!                discography_source's fields
 	//!     4 bytes    orchestra count, little endian
 	//!     per orchestra its name, NUL-terminated
 	//!     4 bytes    recording count, little endian
-	//!     per recording five NUL-terminated strings: the orchestra's index
-	//!                in decimal, name, vocal, date, genre
-	const char discography_magic[4] = { 'T', 'T', 'D', '1' };
+	//!     per recording six NUL-terminated strings: the orchestra's index
+	//!                in decimal, name, vocal, date, genre, the source's
+	//!                index in decimal or empty
+	const char discography_magic[4] = { 'T', 'T', 'D', '2' };
 
 	//! Splits a decompressed payload into a discography. Returns false on
 	//! anything malformed.

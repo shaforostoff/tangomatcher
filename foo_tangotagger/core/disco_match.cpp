@@ -37,7 +37,7 @@ namespace tangotagger
 		{
 			static const char * const fillers[] = {
 				"orquesta", "orq", "orchestra", "orchestre", "orkestra", "y", "su", "and", "conjunto",
-				"dir", "director", "con", "la", "el", "los", "las", "his",
+				"dir", "director", "con", "la", "el", "los", "las", "his", "band",
 			};
 			for (const char * f : fillers)
 				if (w == f) return true;
@@ -52,6 +52,7 @@ namespace tangotagger
 			if (w == "quinteto" || w == "quintet" || w == "quintette") return "quinteto";
 			if (w == "cuarteto" || w == "quartet" || w == "quarteto" || w == "quartette") return "cuarteto";
 			if (w == "trio") return "trio";
+			if (w == "jazz") return "jazz";
 			return nullptr;
 		}
 
@@ -91,48 +92,6 @@ namespace tangotagger
 		}
 
 		bool is_digit(char c) { return c >= '0' && c <= '9'; }
-
-		//! 0 to 99 in Spanish words, as titles write them: "treinta y tres".
-		std::string spanish_number(int n)
-		{
-			static const char * const small[] = {
-				"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve",
-				"diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete",
-				"dieciocho", "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres",
-				"veinticuatro", "veinticinco", "veintiseis", "veintisiete", "veintiocho", "veintinueve",
-			};
-			static const char * const tens[] = { "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa" };
-			if (n < 30) return small[n];
-			std::string out = tens[n / 10 - 3];
-			if (n % 10 != 0) out = out + " y " + small[n % 10];
-			return out;
-		}
-
-		//! "Los 33 orientales" -> "Los treinta y tres orientales", "El 13" ->
-		//! "El trece": numbers of one or two digits standing alone spelled
-		//! out, which is how the discographies mostly have them. Empty when
-		//! there is no such number.
-		std::string spell_numbers(const std::string & s)
-		{
-			std::string out;
-			bool changed = false;
-			for (std::size_t i = 0; i < s.size();)
-			{
-				if (!is_digit(s[i])) { out += s[i++]; continue; }
-				std::size_t j = i;
-				while (j < s.size() && is_digit(s[j])) j++;
-				const bool alone = (i == 0 || !std::isalnum(static_cast<unsigned char>(s[i - 1]))) &&
-				                   (j == s.size() || !std::isalnum(static_cast<unsigned char>(s[j])));
-				if (alone && j - i <= 2)
-				{
-					out += spanish_number(std::atoi(s.substr(i, j - i).c_str()));
-					changed = true;
-				}
-				else out.append(s, i, j - i);
-				i = j;
-			}
-			return changed ? out : std::string();
-		}
 
 		void append_unique(std::vector<std::string> & to, const std::vector<std::string> & from)
 		{
@@ -402,13 +361,16 @@ namespace tangotagger
 				if (!words.empty())
 				{
 					person p = make_person<person>(words);
-					// "Orquesta Típica Víctor": "Victor" alone is a record
-					// label too; it takes "Típica" with it.
-					if (contains(words, "tipica") && p.surname.front() != "tipica")
+					// "Orquesta Típica Víctor", "Orquesta Típica Porteña",
+					// "Orquesta Victor Popular": named after no one, and
+					// "Victor" alone is a record label too. The two words
+					// go together.
+					const bool tipica = contains(words, "tipica"), victor = contains(words, "victor");
+					if ((tipica || victor) && words.size() == 2)
 					{
-						p.given.erase(std::remove(p.given.begin(), p.given.end(), "tipica"), p.given.end());
-						p.surname.front() = "tipica" + p.surname.front();
-						p.surname.push_back("otv");
+						p.surname = { words[0] + words[1] };
+						p.given.clear();
+						if (tipica && victor) p.surname.push_back("otv");
 					}
 					m.leaders.push_back(p);
 				}

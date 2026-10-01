@@ -356,6 +356,24 @@ int main()
 		}
 		check(donato == 1 && de_caro == 1, "Donato and De Caro from tango.info, having nothing better");
 		check(piazzolla == 1, "Astor and Ástor Piazzolla are one orchestra");
+		int laurenz = 0;
+		for (const std::string & o : disco.orchestras)
+			if (fold_key(o) == "pedrolaurenz") laurenz++;
+		check(laurenz == 1, "Pedro Laurenz and Pedro Láurenz are one orchestra");
+		std::size_t credited = 0, troilo_milongueando = 0;
+		for (const recording & r : disco.recordings)
+		{
+			if (r.source >= 0) credited++;
+			if (fold_key(disco.orchestras[r.orchestra]) == "anibaltroilo" && r.date == "1941-06-17" &&
+			    fold_key(r.name).compare(0, 12, "milongueando") == 0)
+				troilo_milongueando++;
+		}
+		check(!disco.sources.empty() && disco.sources.front().licence == "CC BY-SA 4.0" &&
+		          disco.sources.front().author.find("Tango Time Travel") != std::string::npos &&
+		          !disco.sources.front().url.empty() && !disco.sources.front().licence_url.empty(),
+		      "Tango Time Travel credited, with licence and links");
+		check(credited >= 1500, "Tango Time Travel's recordings carry their source");
+		check(troilo_milongueando == 1, "\"Milongueando en el 40\" and \"... en el cuarenta\" on one day are one recording");
 		bool sorted = true, dates_ok = true;
 		for (std::size_t i = 0; i < disco.recordings.size(); i++)
 		{
@@ -434,7 +452,7 @@ int main()
 	// The year picks the session; accents and commas do not matter.
 	expect_recording(tags("Al compas del corazon", "Di Sarli", "1942"), "Alberto Podestá", "1942-04-09", true);
 	// The singer in the artist field, the title or the file name.
-	expect_recording(tags("Al compás del corazón", "Carlos Di Sarli / Oscar Serpa"), "Oscar Serpa", "1952-10", true);
+	expect_recording(tags("Al compás del corazón", "Carlos Di Sarli / Oscar Serpa", "1953-12"), "Oscar Serpa", "1953-12-18", true);
 	expect_recording(tags("Al compás del corazón (Podestá)", "Carlos Di Sarli"), "Alberto Podestá", "1942-04-09", true);
 	expect_recording(tags("", "", "", "", "X:\\Music\\Di Sarli - Podesta - Al compas del corazon.mp3"),
 	                 "Alberto Podestá", "1942-04-09", true);

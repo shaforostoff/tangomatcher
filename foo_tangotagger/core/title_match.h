@@ -49,6 +49,12 @@ namespace tangotagger
 	//! ("Di Sarli - Rie payaso - 1940"), then each bracketed alternative title.
 	std::vector<std::string> title_keys(const std::string & title);
 
+	//! "Los 33 orientales" -> "Los treinta y tres orientales", "El 13" ->
+	//! "El trece": numbers of one or two digits standing alone spelled
+	//! out, which is how the discographies mostly have them. Empty when
+	//! there is no such number.
+	std::string spell_numbers(const std::string & s);
+
 	//! Optimal string alignment distance, giving up above `limit` (the return
 	//! value is then limit + 1).
 	int edit_distance(const std::string & a, const std::string & b, int limit);

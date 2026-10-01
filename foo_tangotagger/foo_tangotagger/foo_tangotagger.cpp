@@ -35,7 +35,10 @@
 	"Cantor\", the singer alone, a CANTOR field, or two artist values.\n"
 
 #define DISCOGRAPHIES_DATA \
-	"Discographies from todotango.com, tango.info and tangoteca.\n"
+	"Discographies from todotango.com, tango.info and tangoteca, and of Aníbal\n" \
+	"Troilo, Carlos di Sarli, Edgardo Donato, Horacio Salgán, Juan D'Arienzo,\n" \
+	"Lucio Demare, the Orquesta Típica Victor, Osvaldo Fresedo, Pedro Laurenz\n" \
+	"and Rodolfo Biagi from Tango Time Travel.\n"
 
 #if FOO_TANGOTAGGER_PUBLIC_DOMAIN_ONLY
 #define FOO_TANGOTAGGER_DATA \
@@ -69,7 +72,19 @@ DECLARE_COMPONENT_VERSION(
 	"\n"
 	FOO_TANGOTAGGER_PLATFORM
 	"\n"
-	"(c) 2026 Nick Shaforostov\n"
+	"(c) 2026 Nick Shaforostov. The component's code is released under the MIT\n"
+	"License.\n"
+	"\n"
+	"The Tango Time Travel discographies are (c) Tango Time Travel / Moving Art\n"
+	"Studio ASBL, https://tangotimetravel.be/category/release-notes/, licensed\n"
+	"under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA\n"
+	"4.0), https://creativecommons.org/licenses/by-sa/4.0/. Changes: converted\n"
+	"from the original spreadsheets, spellings normalised, and merged with the\n"
+	"other discographies, which leave out the recordings these have. The match\n"
+	"window names the discography, version and date of every recording taken\n"
+	"from them. The discography data in this component, adapted from theirs, is\n"
+	"shared under the same licence. Tango Time Travel does not endorse this\n"
+	"component.\n"
 	"\n"
 	"Used libraries:\n"
 	"LZMA SDK by Igor Pavlov - public domain.\n"

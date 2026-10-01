@@ -175,6 +175,9 @@ foreach ($a in $Arch) {
 # cmake -E tar produces the same zip on every PowerShell version, and CMake is
 # already a hard dependency here.
 Write-Host "`n=== Package ===" -ForegroundColor Cyan
+# The code's MIT licence, with its note on the CC BY-SA discography data;
+# foobar2000 ignores files in the archive that are not components.
+Copy-Item (Join-Path $root 'LICENSE') (Join-Path $stage 'LICENSE.txt') -Force
 $componentPath = Join-Path $distDir "foo_tangotagger-$version$suffix.fb2k-component"
 $symbolsPath   = Join-Path $distDir "foo_tangotagger-$version$suffix-symbols.zip"
 foreach ($p in @($componentPath, $symbolsPath)) {

@@ -131,13 +131,29 @@ The lyrics are read from `../xml-lyrics-publicdomain` at build time by
 `tools/pack_lyrics` and embedded LZMA-compressed (7-Zip's LZMA SDK) in the
 component.
 
-The discographies are read from `../xml-discographies-publicdomain` by
-`tools/pack_discography`. A `X_tangoinfo.xml` or `X_bigwithmistakes.xml`
-is left out when the folder has `X.xml`, its better alternative; Edgardo
-Donato and Julio de Caro have only the tango.info file, which is used. Also
-left out are recordings listed twice, such as `Anibal Troilo (all)` against
-`Anibal Troilo 1938-1950`. The result is about 9,250 recordings of 53
-orchestras in 85 KB. The discographies are the same in both builds.
+The discographies are read by `tools/pack_discography` from
+`../xml-discographies-cc-by-sa-4.0` - Tango Time Travel's, under CC BY-SA
+4.0 - and `../xml-discographies-publicdomain`, in that order. A recording
+the first folder has is left out of the second: the same orchestra and
+title - spelled a little differently, numbers in digits, an article dropped
+(`Tangos y copas` = `Tango y copas`, `Milonga del 83` = `Milonga del
+ochenta y tres`) - and the same singers within a month, or the same title on
+the same day. Each Tango Time Travel recording stands for at most one entry
+of each other file.
+
+Within the public domain folder, a `X_tangoinfo.xml` or
+`X_bigwithmistakes.xml` is left out when the folder has `X.xml`, its
+better alternative; Edgardo Donato and Julio de Caro have only the
+tango.info file, which is used. Also left out are recordings listed twice,
+such as `Anibal Troilo (all)` against `Anibal Troilo 1938-1950`. The
+result is about 9,250 recordings of 57 orchestras, 1,610 of them from Tango
+Time Travel, in 86 KB. The discographies are the same in both builds.
+
+Tango Time Travel's licence asks for credit: the about box names them, the
+licence and the changes made, and the match window's preview names the
+discography, version, date, author and links of every recording taken from
+them. The embedded discography data, being adapted from theirs, is under CC
+BY-SA 4.0 too.
 
 Two builds of the lyrics:
 
@@ -157,3 +173,12 @@ Two builds of the lyrics:
 
 or on macOS `scripts/build_release_macos.sh`. The foobar2000 SDK, WTL and the
 LZMA SDK are downloaded on the first configure (`scripts/get_sdk.ps1`).
+
+## Licence
+
+The component's code - this folder - is under the [MIT License](LICENSE).
+The data it embeds is not: Tango Time Travel's discographies, by Tango Time
+Travel / Moving Art Studio ASBL, and the discography data adapted from them
+are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/);
+the lyrics and the other discographies keep their own status. The about box
+says both.

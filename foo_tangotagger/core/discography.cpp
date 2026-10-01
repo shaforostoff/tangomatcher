@@ -6,7 +6,8 @@
 #include <cstdlib>
 #include <cstring>
 
-// Generated at build time by tools/pack_discography, from ../xml-discographies-publicdomain.
+// Generated at build time by tools/pack_discography, from ../xml-discographies-cc-by-sa-4.0
+// and ../xml-discographies-publicdomain.
 extern const unsigned char tangotagger_discography_blob[];
 extern const std::size_t tangotagger_discography_blob_size;
 
@@ -46,6 +47,14 @@ namespace tangotagger
 		if (payload.size() < 12 || std::memcmp(payload.data(), discography_magic, 4) != 0) return false;
 
 		std::size_t pos = 4;
+		const std::uint32_t sources = read_u32le(payload, pos);
+		pos += 4;
+		out.sources.resize(sources);
+		for (discography_source & s : out.sources)
+			for (std::string * f : { &s.title, &s.version, &s.date, &s.author, &s.url, &s.licence, &s.licence_url })
+				if (!next_string(payload, pos, *f)) return false;
+
+		if (payload.size() < pos + 4) return false;
 		const std::uint32_t orchestras = read_u32le(payload, pos);
 		pos += 4;
 		out.orchestras.resize(orchestras);
@@ -58,13 +67,15 @@ namespace tangotagger
 		out.recordings.resize(count);
 		for (recording & r : out.recordings)
 		{
-			std::string index;
+			std::string index, source;
 			if (!next_string(payload, pos, index) || !next_string(payload, pos, r.name) ||
 			    !next_string(payload, pos, r.vocal) || !next_string(payload, pos, r.date) ||
-			    !next_string(payload, pos, r.genre))
+			    !next_string(payload, pos, r.genre) || !next_string(payload, pos, source))
 				return false;
 			r.orchestra = std::atoi(index.c_str());
 			if (r.orchestra < 0 || static_cast<std::uint32_t>(r.orchestra) >= orchestras) return false;
+			r.source = source.empty() ? -1 : std::atoi(source.c_str());
+			if (r.source < -1 || (r.source >= 0 && static_cast<std::uint32_t>(r.source) >= sources)) return false;
 		}
 		return pos == payload.size();
 	}

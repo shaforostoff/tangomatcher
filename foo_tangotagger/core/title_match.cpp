@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <cstdint>
+#include <cctype>
 #include <cstdlib>
 
 namespace tangotagger
@@ -297,6 +298,24 @@ namespace tangotagger
 				if (!is_descriptor(words)) add_unique(aliases, join(words));
 			}
 		}
+
+		bool is_ascii_digit(char c) { return c >= '0' && c <= '9'; }
+
+		//! 0 to 99 in Spanish words, as titles write them: "treinta y tres".
+		std::string spanish_number(int n)
+		{
+			static const char * const small[] = {
+				"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve",
+				"diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete",
+				"dieciocho", "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres",
+				"veinticuatro", "veinticinco", "veintiseis", "veintisiete", "veintiocho", "veintinueve",
+			};
+			static const char * const tens[] = { "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa" };
+			if (n < 30) return small[n];
+			std::string out = tens[n / 10 - 3];
+			if (n % 10 != 0) out = out + " y " + small[n % 10];
+			return out;
+		}
 	}
 
 	std::vector<std::string> fold_words(const std::string & utf8)
@@ -384,6 +403,28 @@ namespace tangotagger
 		// the title proper.
 		for (const std::string & a : aliases) add_unique(keys, a);
 		return keys;
+	}
+
+	std::string spell_numbers(const std::string & s)
+	{
+		std::string out;
+		bool changed = false;
+		for (std::size_t i = 0; i < s.size();)
+		{
+			if (!is_ascii_digit(s[i])) { out += s[i++]; continue; }
+			std::size_t j = i;
+			while (j < s.size() && is_ascii_digit(s[j])) j++;
+			const bool alone = (i == 0 || !std::isalnum(static_cast<unsigned char>(s[i - 1]))) &&
+			                   (j == s.size() || !std::isalnum(static_cast<unsigned char>(s[j])));
+			if (alone && j - i <= 2)
+			{
+				out += spanish_number(std::atoi(s.substr(i, j - i).c_str()));
+				changed = true;
+			}
+			else out.append(s, i, j - i);
+			i = j;
+		}
+		return changed ? out : std::string();
 	}
 
 	int similar_limit(std::size_t shorter_length)
