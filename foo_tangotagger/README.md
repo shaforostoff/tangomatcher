@@ -143,11 +143,11 @@ of each other file.
 
 Within the public domain folder, a `X_tangoinfo.xml` or
 `X_bigwithmistakes.xml` is left out when the folder has `X.xml`, its
-better alternative; Edgardo Donato and Julio de Caro have only the
-tango.info file, which is used. Also left out are recordings listed twice,
-such as `Anibal Troilo (all)` against `Anibal Troilo 1938-1950`. The
-result is about 9,250 recordings of 57 orchestras, 1,610 of them from Tango
-Time Travel, in 86 KB. The discographies are the same in both builds.
+better alternative; Edgardo Donato, Francisco Canaro and Julio de Caro
+have only the tango.info file, which is used. Also left out are recordings
+listed twice, such as `Anibal Troilo (all)` against `Anibal Troilo
+1938-1950`. The result is about 12,100 recordings of 58 orchestras, 1,610
+of them from Tango Time Travel, in 110 KB. The discographies are the same in both builds.
 
 Tango Time Travel's licence asks for credit: the about box names them, the
 licence and the changes made, and the match window's preview names the
