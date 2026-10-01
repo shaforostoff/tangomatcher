@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Discography Carlos di Sarli 1939-1941, version 2.1 of 2026-09-29.
+  Source: Tango Time Travel / Moving Art Studio ASBL, https://tangotimetravel.be/wp-content/uploads/2025/06/Discography-Carlos-Di-Sarli-1938-1948-v2.1-TTT9.3-29.9.2026.ods
+  Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+  Changes: converted from the original ODS spreadsheet to this XML format;
+  dates written as YYYY-MM-DD, singer and genre spelling normalised, credits
+  split into composer and author where the source labels them (otherwise
+  kept together in "credits"), rows without recording data left out;
+  abbreviated composer and lyricist names ("E Donato") written in full
+  where other sources leave no doubt who is meant.
+
+  Tango Time Travel / Moving Art Studio ASBL
+  Scope: The TTT discographic data and accompanying discographic notes are licensed by Moving Art Studio ASBL under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), to the extent that Moving Art Studio ASBL holds the relevant rights.
+  Sharing and adapting: You may copy, share and adapt this material, including for commercial purposes. Retain the supplied attribution and notices, link to the licence and indicate changes. If you share adapted material, apply CC BY-SA 4.0 or a compatible licence as permitted by its terms. Do not imply that TTT endorses your changes or use.
+  Attribution: Tango Time Travel / Moving Art Studio ASBL. Retain the title, original version and date of this discography, together with all existing author and contributor credits. The original sheets and their credits remain part of this document.
+  Excluded material: This licence does not cover music files, separately published release notes, photographs, record-label or sleeve images, logos or trademarks. Third-party material retains its applicable rights. No rights are claimed over facts or material in the public domain.
+  Corrections: Proposed corrections and additions are welcome. Sending them to TTT is encouraged but is not a condition of this licence.
+  Licence: https://creativecommons.org/licenses/by-sa/4.0/
+  Source: https://tangotimetravel.be/category/release-notes/
+  Notice date: Licensing notice added: 22 September 2026. Historical publication dates and versions remain unchanged.
+-->
+<discography orchestra="Carlos di Sarli" source="Tango Time Travel" version="2.1" date="2026-09-29" licence="CC BY-SA 4.0" url="https://tangotimetravel.be/wp-content/uploads/2025/06/Discography-Carlos-Di-Sarli-1938-1948-v2.1-TTT9.3-29.9.2026.ods">
+    <track name="Corazón" vocal="Roberto Rufino" year="1939-12-11" genre="Tango" composer="Carlos Di Sarli" author="Héctor Marcó" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="38878-A" matrix="39089" take="1"/>
+    <track name="Retirao (El retirao)" vocal="Instrumental" year="1939-12-11" genre="Tango" composer="Carlos Posadas" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="38878-B" matrix="39090" take="1"/>
+    <track name="Catamarca" vocal="Instrumental" year="1940-02-09" genre="Tango" composer="Eduardo Arolas" author="Jesús Fernández Blanco" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="38924-A" matrix="39201" take="2"/>
+    <track name="Milonga del sentimiento" vocal="Roberto Rufino" year="1940-02-09" genre="Milonga" composer="Juan Carlos Barbará, Rafael Dadino" author="Juan Carlos Barbará, Rafael Dadino" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="38824-B" matrix="39202" take="2"/>
+    <track name="Alma mía" vocal="Roberto Rufino" year="1940-02-15" genre="Vals" composer="Diego Centeno" author="Héctor Marcó" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="38932-B" matrix="39211" take="2"/>
+    <track name="La trilla" vocal="Instrumental" year="1940-02-15" genre="Tango" composer="Eduardo Arolas" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="38932-A" matrix="39212" take="1"/>
+    <track name="El opio" vocal="Instrumental" year="1940-04-17" genre="Tango" composer="Francisco Canaro" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="38961-B" matrix="39255" take="1"/>
+    <track name="Milonga del centenario" vocal="Antonio Rodríguez Lesende" year="1940-04-17" genre="Milonga" composer="Carlos Di Sarli" author="Carlos Moreno" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="38961-A" matrix="39256" take="1"/>
+    <track name="Cosas olvidadas" vocal="Roberto Rufino" year="1940-06-19" genre="Tango" composer="Antonio Rodio" author="José María Contursi" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39005-B" matrix="39329" take="1"/>
+    <track name="El incendio" vocal="Instrumental" year="1940-06-19" genre="Tango" composer="Arturo De Bassi" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39005-A" matrix="39330" take="1"/>
+    <track name="Milonguero viejo" vocal="Instrumental" year="1940-07-04" genre="Tango" composer="Carlos Di Sarli" author="Enrique Carrera Sotelo" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39017-B" matrix="39362" take="1" comment="Alternate title « Fresedo » on its original sheet music"/>
+    <track name="Racing Club" vocal="Instrumental" year="1940-07-04" genre="Tango" composer="Vicente Greco" author="Ernesto Temes (Julian Porteño)" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39017-A" matrix="39361" take="1"/>
+    <track name="Ausencia" vocal="Agustín Volpe" year="1940-08-05" genre="Vals" composer="Carlos Gardel, José Razzano" author="Francisco Nicolás Bianco" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39041-A" matrix="39419" take="1"/>
+    <track name="El jaguar" vocal="Instrumental" year="1940-08-05" genre="Tango" composer="Atilio Lombardo" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39041-B" matrix="39420" take="1"/>
+    <track name="El pollo Ricardo" vocal="Instrumental" year="1940-09-23" genre="Tango" composer="Luis Alberto Fernández" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39086-B" matrix="39511" take="1"/>
+    <track name="En un beso la vida" vocal="Roberto Rufino" year="1940-09-23" genre="Tango" composer="Carlos Di Sarli" author="Héctor Marcó" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39086-A" matrix="39510" take="1"/>
+    <track name="Shusheta (El aristócrata)" vocal="Instrumental" year="1940-10-08" genre="Tango" composer="Juan Carlos Cobián" author="Enrique Cadícamo" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39110-A" matrix="39532" take="1"/>
+    <track name="Volver a soñar" vocal="Roberto Rufino" year="1940-10-08" genre="Tango" composer="Andrés Fraga" author="Francisco García Jiménez" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39110-B" matrix="39533" take="1"/>
+    <track name="Lo pasado, pasó" vocal="Roberto Rufino" year="1940-11-23" genre="Tango" composer="Miguel Bucino" author="Miguel Bucino" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39151-B" matrix="39652" take="1"/>
+    <track name="Nobleza de arrabal" vocal="Instrumental" year="1940-11-23" genre="Tango" composer="Francisco Canaro" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39151-A" matrix="39651" take="1"/>
+    <track name="Rosamel" vocal="Roberto Rufino" year="1940-12-11" genre="Vals" composer="Carlos Di Sarli" author="Héctor Marcó" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39185-B" matrix="39703" take="1"/>
+    <track name="Viviani" vocal="Instrumental" year="1940-12-11" genre="Tango" composer="Roberto Firpo" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39185-A" matrix="39702" take="1"/>
+    <track name="Charlemos" vocal="Roberto Rufino" year="1941-02-18" genre="Tango" composer="Luis Rubistein" author="Luis Rubistein" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39231-A" matrix="39806" take="1"/>
+    <track name="Pena mulata" vocal="Roberto Rufino" year="1941-02-18" genre="Milonga" composer="Sebastián Piana" author="Homero Manzi" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39231-B" matrix="39807" take="1"/>
+    <track name="Cortando camino" vocal="Roberto Rufino" year="1941-03-06" genre="Vals" composer="Fausto Frontera" author="Enrique Cadícamo" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39247-B" matrix="39827" take="1"/>
+    <track name="La cachila" vocal="Instrumental" year="1941-03-06" genre="Tango" composer="Eduardo Arolas" author="Héctor Polito" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39247-A" matrix="39826" take="1"/>
+    <track name="El estagiario" vocal="Instrumental" year="1941-04-18" genre="Tango" composer="Martín Lasala Álvarez" author="Martín Lasala Álvarez" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39266-A" matrix="39854" take="1"/>
+    <track name="Mi refugio" vocal="Instrumental" year="1941-04-18" genre="Tango" composer="Juan Carlos Cobián" author="Pedro Numa Córdoba" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39266-B" matrix="39855" take="1"/>
+    <track name="Bien frappé" vocal="Roberto Rufino" year="1941-05-20" genre="Tango" composer="Carlos Di Sarli" author="Héctor Marcó" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39295-A" matrix="39894" take="1"/>
+    <track name="Marianito" vocal="Instrumental" year="1941-05-20" genre="Tango" composer="Domingo Salerno" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39295-B" matrix="39895" take="1"/>
+    <track name="Cascabelito" vocal="Roberto Rufino" year="1941-06-06" genre="Tango" composer="José Bohr" author="Juan Andrés Caruso" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39320-A" matrix="59511" take="1"/>
+    <track name="Patotero sentimental" vocal="Roberto Rufino" year="1941-06-06" genre="Tango" composer="Manuel Jovés" author="Manuel Romero" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39331-B" matrix="59512" take="1" comment="Titel on record « Patotero »"/>
+    <track name="Griseta" vocal="Roberto Rufino" year="1941-06-21" genre="Tango" composer="Enrique Pedro Delfino" author="José González Castillo (Juan de León)" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39331-A" matrix="59528" take="1"/>
+    <track name="La torcacita" vocal="Instrumental" year="1941-06-21" genre="Tango" composer="José Martínez" author="Francisco Antonio Lío" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39320-B" matrix="59527" take="1"/>
+    <track name="Germaine" vocal="Instrumental" year="1941-07-16" genre="Tango" composer="Alberto López Buchardo" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39358-B" matrix="59582" take="1"/>
+    <track name="Marejada" vocal="Instrumental" year="1941-07-16" genre="Tango" composer="Roberto Firpo" author="Daniel López Barreto" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39358-A" matrix="59581" take="1"/>
+    <track name="Cuando el amor muere" vocal="Carlos Acuña" year="1941-08-02" genre="Tango" composer="Alfredo Malerba" author="Héctor Marcó" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39368-A" matrix="59686" take="1" comment="De la pel. Argentina « Una vez en la vida »"/>
+    <track name="Sentimiento criollo" vocal="Instrumental" year="1941-08-02" genre="Tango" composer="Roberto Firpo" author="Domingo Vicente Lombardi" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39368-B" matrix="59687" take="1"/>
+    <track name="Don Juan" vocal="Instrumental" year="1941-10-03" genre="Tango" composer="Ernesto Ponzio" author="Ricardo Podestá" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39431-A" matrix="59810" take="1"/>
+    <track name="El cielo en tus ojos" vocal="Roberto Rufino" year="1941-10-03" genre="Tango" composer="Francisco Pracánico" author="Francisco Bohigas" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39431-B" matrix="59811" take="1"/>
+    <track name="La morocha" vocal="Instrumental" year="1941-11-20" genre="Tango" composer="Enrique Saborido" author="Ángel Villoldo" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39462-A" matrix="59887" take="1"/>
+    <track name="La mulateada" vocal="Roberto Rufino" year="1941-11-20" genre="Milonga" composer="Julio Eduardo Del Puerto" author="Carlos Pesce" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39462-B" matrix="59886" take="1"/>
+    <track name="El recodo" vocal="Instrumental" year="1941-12-03" genre="Tango" composer="Alejandro Junnissi" author="Armando José María Tagini" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39491-A" matrix="59903" take="1"/>
+    <track name="Zorzal" vocal="Roberto Rufino" year="1941-12-03" genre="Milonga" composer="Dorita Zárate" author="Dorita Zárate" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39491-B" matrix="59902" take="1"/>
+    <track name="El paladín" vocal="Instrumental" year="1941-12-11" genre="Tango" composer="Agustín Bardi" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39539-A" matrix="59920" take="1"/>
+    <track name="Y hasta el cardo tiene flor" vocal="Instrumental" year="1941-12-11" genre="Tango" composer="Carlos Escobar" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39539-B" matrix="59921" take="1"/>
+    <track name="Lo mismo que antes" vocal="Roberto Rufino" year="1941-12-26" genre="Tango" composer="Ciriaco Ortiz" author="José María Contursi" label="RCA Victor" artist="Carlos Di Sarli y su orquesta típica" record="39520-B" matrix="59966" take="1"/>
+</discography>

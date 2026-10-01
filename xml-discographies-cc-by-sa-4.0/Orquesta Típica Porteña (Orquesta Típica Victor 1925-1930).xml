@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Discography Orquesta Típica Victor 1925-1930, version 1.9 of 2026-09-29.
+  Source: Tango Time Travel / Moving Art Studio ASBL, https://tangotimetravel.be/wp-content/uploads/2024/03/Discography-Orquesta-Tipica-Victor-1925-1930-v1.9-TTT11-29.9.2026.ods
+  Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+  Changes: converted from the original ODS spreadsheet to this XML format;
+  dates written as YYYY-MM-DD, singer and genre spelling normalised, credits
+  split into composer and author where the source labels them (otherwise
+  kept together in "credits"), rows without recording data left out;
+  abbreviated composer and lyricist names ("E Donato") written in full
+  where other sources leave no doubt who is meant.
+  Only the recordings by Orquesta Típica Porteña; the others are in "Orquesta Típica Victor 1925-1930.xml".
+
+  Tango Time Travel / Moving Art Studio ASBL
+  Scope: The TTT discographic data and accompanying discographic notes are licensed by Moving Art Studio ASBL under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), to the extent that Moving Art Studio ASBL holds the relevant rights.
+  Sharing and adapting: You may copy, share and adapt this material, including for commercial purposes. Retain the supplied attribution and notices, link to the licence and indicate changes. If you share adapted material, apply CC BY-SA 4.0 or a compatible licence as permitted by its terms. Do not imply that TTT endorses your changes or use.
+  Attribution: Tango Time Travel / Moving Art Studio ASBL. Retain the title, original version and date of this discography, together with all existing author and contributor credits. The original sheets and their credits remain part of this document.
+  Excluded material: This licence does not cover music files, separately published release notes, photographs, record-label or sleeve images, logos or trademarks. Third-party material retains its applicable rights. No rights are claimed over facts or material in the public domain.
+  Facsimiles excluded: The two Victor catalogue reproductions in the original sheets - the illustrated Discos Victor Ortofonicos cover and catalogue page 317 (Orquesta Tipica Victor) - are excluded from CC BY-SA 4.0. Their logos and artwork retain their applicable rights. No additional permission over these reproductions is granted here.
+  Corrections: Proposed corrections and additions are welcome. Sending them to TTT is encouraged but is not a condition of this licence.
+  Licence: https://creativecommons.org/licenses/by-sa/4.0/
+  Source: https://tangotimetravel.be/category/release-notes/
+  Notice date: Licensing notice added: 22 September 2026. Historical publication dates and versions remain unchanged.
+
+  Yellow lines : still missing from TTT11
+  Grey lines : not Orquesta Típica Victor
+  © 2024 TangoTimeTravel.be, part of album TTT11
+  Metadata research for high-resolution restoration
+  Audio transfers from original shellac records, first fixations
+  Private record collection of B. Beauloye and J. I. Brodesser
+  We only included the records of Orquesta Victor Popular we have in our collection, see here for a full discography: https://adp.library.ucsb.edu/index.php/mastertalent/detail/335671/Orquesta_Victor_Popular
+  Orquesta Argentina Victor is complete, just La cumparsita is missing, full discography here: https://adp.library.ucsb.edu/index.php/mastertalent/detail/335174/Orquesta_Argentina_Victor
+  Orquesta Típica Porteña until 1930 only 3 titles are missing: https://adp.library.ucsb.edu/index.php/mastertalent/detail/335638/Orquesta_Tpica_Portea
+-->
+<discography orchestra="Orquesta Típica Porteña" source="Tango Time Travel" version="1.9" date="2026-09-29" licence="CC BY-SA 4.0" url="https://tangotimetravel.be/wp-content/uploads/2024/03/Discography-Orquesta-Tipica-Victor-1925-1930-v1.9-TTT11-29.9.2026.ods">
+    <track name="Engrupido" vocal="Juan Carlos Delson" year="1930-01-07" genre="Tango" composer="Adolfo Antonio Mondino" author="Adolfo Antonio Mondino" label="Victor VE" artist="Orquesta Típica Porteña" record="47292-A" matrix="44950" take="4" comment="included in TTT11 release"/>
+    <track name="Esponjita" vocal="Instrumental" year="1930-01-07" genre="Tango" composer="René Cóspito" author="Armando José María Tagini" label="Victor VE" artist="Orquesta Típica Porteña" record="47292-B" matrix="44949" take="2" comment="included in TTT11 release"/>
+    <track name="Recóndita" vocal="Jaime Moreno" year="1930-02-05" genre="Tango" credits="Fausto Frontera – Tito Rueda" label="Victor VE" artist="Orquesta Típica Porteña" record="47315-B" matrix="60020" take="4" comment="still missing from TTT11"/>
+    <track name="Montevideo" vocal="Roberto Díaz" year="1930-01-15" genre="Vals" composer="Fausto Frontera" author="Francisco Brancatti" label="Victor VE" artist="Orquesta Típica Porteña" record="47370-A" matrix="44990" take="2" comment="included in TTT11 release"/>
+    <track name="Amante soñador (Dream Lover)" vocal="Instrumental" year="1930-06-12" genre="Vals" composer="Víctor Schertzinger" label="Victor VE" artist="Orquesta Típica Porteña" record="47402-A" matrix="60322" take="2" comment="included in TTT11 release ; de la pelicula „El Desfile del Amor“ de Paramount"/>
+    <track name="El neura" vocal="Instrumental" year="1930-06-12" genre="Tango" composer="Juan Carlos Rodríguez" label="Victor VE" artist="Orquesta Típica Porteña" record="47402-B" matrix="60323" take="2" comment="included in TTT11 release"/>
+    <track name="Soñé" vocal="Instrumental" year="1930-03-08" genre="Vals" credits="Juan C. Bazán - Alcides Palavesino" label="Victor VE" artist="Orquesta Típica Porteña" record="47403-A" matrix="60197" take="1" comment="still missing from TTT11"/>
+    <track name="Adiós... adiós" vocal="Teófilo Ibáñez, Carlos Lafuente" year="1930-11-05" genre="Vals" credits="Alfredo Ángel Pelaia" label="Victor VE" artist="Orquesta Típica Porteña" record="47523-A" matrix="60490" take="4" comment="still missing from TTT11"/>
+    <track name="Hace memoria" vocal="Instrumental" year="1930-11-05" genre="Tango" credits="Marcos Ramírez" label="Victor VE" artist="Orquesta Típica Porteña" record="47523-B" matrix="60491" take="2" comment="still missing from TTT11"/>
+    <track name="El flete" vocal="Ernesto Famá" year="1930-06-19" genre="Tango" composer="Vicente Greco" author="Gerónimo Gradito" label="Victor VE" artist="Orquesta Típica Porteña" record="47533-A" matrix="60433" take="1" comment="included in TTT11 release"/>
+    <track name="El cuatrero „El Tigre“" vocal="Instrumental" year="1930-06-19" genre="Tango" composer="Agustín Bardi" label="Victor VE" artist="Orquesta Típica Porteña" record="47533-B" matrix="60432" take="2" comment="included in TTT11 release"/>
+</discography>
