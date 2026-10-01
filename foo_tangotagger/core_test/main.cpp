@@ -1,9 +1,12 @@
-// core_test: the embedded lyrics and the title matching, without a host.
+// core_test: the embedded lyrics and discographies and the matching, without
+// a host.
 
 #include <cstdio>
 #include <string>
 #include <vector>
 
+#include "disco_match.h"
+#include "disco_tags.h"
 #include "lyrics_db.h"
 #include "text_links.h"
 #include "title_match.h"
@@ -331,6 +334,218 @@ int main()
 		const std::string t = "Fuente: http://a.com/b.";
 		const std::vector<text_link> l = find_links(t);
 		check(l.size() == 1 && t.substr(l[0].begin, l[0].end - l[0].begin) == "http://a.com/b", "link offsets");
+	}
+
+	// --- discographies --------------------------------------------------------------
+	const discography & disco = embedded_discography();
+	check(disco.orchestras.size() >= 40, "at least 40 orchestras embedded");
+	check(disco.recordings.size() >= 8000, "at least 8000 recordings embedded");
+	{
+		int fresedo = 0, piazzolla = 0;
+		for (const std::string & o : disco.orchestras)
+		{
+			if (fold_key(o) == "osvaldofresedo") fresedo++;
+			if (fold_key(o) == "astorpiazzolla") piazzolla++;
+		}
+		check(fresedo == 1, "one Osvaldo Fresedo, from the file without mistakes");
+		int donato = 0, de_caro = 0;
+		for (const std::string & o : disco.orchestras)
+		{
+			if (fold_key(o) == "edgardodonato") donato++;
+			if (fold_key(o) == "juliodecaro") de_caro++;
+		}
+		check(donato == 1 && de_caro == 1, "Donato and De Caro from tango.info, having nothing better");
+		check(piazzolla == 1, "Astor and Ástor Piazzolla are one orchestra");
+		bool sorted = true, dates_ok = true;
+		for (std::size_t i = 0; i < disco.recordings.size(); i++)
+		{
+			const recording & r = disco.recordings[i];
+			const std::size_t n = r.date.size();
+			if (n != 0 && n != 4 && n != 7 && n != 10) dates_ok = false;
+			if (i > 0 && disco.recordings[i - 1].orchestra != r.orchestra &&
+			    disco.orchestras[disco.recordings[i - 1].orchestra] > disco.orchestras[r.orchestra])
+				sorted = false;
+		}
+		check(dates_ok, "dates are yyyy, yyyy-mm or yyyy-mm-dd");
+		check(sorted, "recordings by orchestra");
+	}
+
+	check(singers_of("Instrumental").empty(), "instrumental has no singers");
+	check(singers_of("Floreal Ruiz, Edmundo Rivero") == std::vector<std::string>{ "Floreal Ruiz", "Edmundo Rivero" },
+	      "singers split on commas");
+	check(singers_of("Lita Morales y Horacio Lagos") == std::vector<std::string>{ "Lita Morales", "Horacio Lagos" },
+	      "singers split on y");
+	check(main_title("Canción de amor | La Chanson d'Amour") == "Canción de amor", "main title before the bar");
+
+	// Dates written anywhere, any way.
+	auto dates_in = [](const std::string & text)
+	{
+		std::string out;
+		for (const date_parts & d : find_dates(text))
+			out += (out.empty() ? "" : " ") + std::to_string(d.year) + "/" + std::to_string(d.month) + "/" +
+			       std::to_string(d.day);
+		return out;
+	};
+	check(dates_in("1941-10-09") == "1941/10/9", "iso date");
+	check(dates_in("1941\xE2\x80\x93" "02\xE2\x80\x93" "19") == "1941/2/19", "en dashes");
+	check(dates_in("09/08/1934") == "1934/8/9", "day/month/year");
+	check(dates_in("1938-06-22 \nGolden Ear+") == "1938/6/22", "date with a note");
+	check(dates_in("Todos de Rodolfo Biagi 1927-1948") == "1927/0/0 1948/0/0", "a range is two years");
+	check(dates_in("Di Sarli - Rie payaso - 1940.mp3") == "1940/0/0", "year in a file name");
+	check(dates_in("BAVE 69617-1 - 39552 B, 2606, 1106").empty(), "catalogue numbers are not dates");
+	check(parse_date("1952-10").year == 1952 && parse_date("1952-10").month == 10 && parse_date("1952-10").day == 0,
+	      "parse year-month");
+
+	const recording_matcher rm(disco);
+	auto best_of = [&](const track_tags & t, bool * confident = nullptr) -> const recording *
+	{
+		const track_match r = rm.find(t);
+		if (confident != nullptr) *confident = r.confident;
+		return r.candidates.empty() ? nullptr : &disco.recordings[r.candidates.front().recording];
+	};
+	auto describe_track = [&](const track_tags & t)
+	{
+		const track_match r = rm.find(t);
+		std::string s = "\"" + t.title + "\" / \"" + t.artist + "\" / \"" + t.path + "\" ->" +
+		                (r.confident ? " confident" : "");
+		for (const recording_match & c : r.candidates)
+		{
+			const recording & rec = disco.recordings[c.recording];
+			s += " [" + disco.orchestras[rec.orchestra] + " | " + rec.vocal + " | " + rec.date + " | " + rec.name + "]";
+		}
+		return s;
+	};
+	auto expect_recording = [&](const track_tags & t, const std::string & vocal, const std::string & date,
+	                            bool confident)
+	{
+		bool sure = false;
+		const recording * r = best_of(t, &sure);
+		check(r != nullptr && r->vocal == vocal && r->date == date && sure == confident,
+		      describe_track(t) + ", expected " + vocal + " " + date + (confident ? " confidently" : ""));
+	};
+	auto tags = [](const char * title, const char * artist, const char * dates = "", const char * comment = "",
+	               const char * path = "")
+	{
+		track_tags t;
+		t.title = title; t.artist = artist; t.dates = dates; t.comment = comment; t.path = path;
+		return t;
+	};
+
+	// The year picks the session; accents and commas do not matter.
+	expect_recording(tags("Al compas del corazon", "Di Sarli", "1942"), "Alberto Podestá", "1942-04-09", true);
+	// The singer in the artist field, the title or the file name.
+	expect_recording(tags("Al compás del corazón", "Carlos Di Sarli / Oscar Serpa"), "Oscar Serpa", "1952-10", true);
+	expect_recording(tags("Al compás del corazón (Podestá)", "Carlos Di Sarli"), "Alberto Podestá", "1942-04-09", true);
+	expect_recording(tags("", "", "", "", "X:\\Music\\Di Sarli - Podesta - Al compas del corazon.mp3"),
+	                 "Alberto Podestá", "1942-04-09", true);
+	// The date in the comment.
+	expect_recording(tags("Al compás del corazón", "Carlos Di Sarli", "", "1952-10-14"), "Oscar Serpa", "1952-10", true);
+	// Neither: two sessions, the user's call.
+	expect_recording(tags("Al compás del corazón", "Carlos Di Sarli"), "Alberto Podestá", "1942-04-09", false);
+	// Numbers as digits.
+	expect_recording(tags("Los 33 orientales", "Carlos Di Sarli - Instrumental", "1948-06-22"), "Instrumental",
+	                 "1948-06-22", true);
+	// The orchestra in the folder, the singer nowhere: by the date.
+	expect_recording(tags("Recuerdo", "", "1944", "", "X:\\Pugliese\\Recuerdo.flac"), "Instrumental", "1944-03-31", true);
+	// Another of the orchestra's singers named: not that recording.
+	{
+		const recording * r = best_of(tags("Recuerdo", "Osvaldo Pugliese - Jorge Maciel"));
+		check(r != nullptr && r->vocal == "Jorge Maciel", "the named singer's Recuerdo");
+	}
+	expect_recording(tags("A media luz", "Edgardo Donato - Horacio Lagos"), "Horacio Lagos", "1941-10-13", true);
+	expect_recording(tags("1937", "Julio De Caro"), "Luis Díaz", "1938-01-10", true);
+	// Nothing names an orchestra: every recording of the title is offered,
+	// none with confidence.
+	{
+		const track_match r = rm.find(tags("", "", "", "", "E:\\78rpm\\_elcorazonmeengano.flac"));
+		bool darienzo = false;
+		for (const recording_match & c : r.candidates)
+			darienzo = darienzo || (disco.orchestras[disco.recordings[c.recording].orchestra] == "Juan D'Arienzo" &&
+			                        disco.recordings[c.recording].vocal == "Alberto Reynal");
+		check(darienzo && !r.confident, describe_track(tags("", "", "", "", "E:\\78rpm\\_elcorazonmeengano.flac")) +
+		                                    ", expected D'Arienzo / Reynal offered, unchecked");
+		bool sure = true;
+		check(best_of(tags("La cumparsita", ""), &sure) != nullptr && !sure, "title alone: offered, never confident");
+	}
+	// An orchestra named: the others' recordings of the title are not offered.
+	check(best_of(tags("Naipe", "Francisco Canaro")) == nullptr, "an orchestra without a discography matches nothing");
+	check(best_of(tags("Cafe", "Carlos Di Sarli")) == nullptr || fold_key(best_of(tags("Cafe", "Carlos Di Sarli"))->name) != "cafedominguez",
+	      "no title by part of it");
+
+	// Every recording found from its own tags, written as a tagged file has
+	// them.
+	{
+		int missed = 0;
+		std::string misses;
+		for (const recording & r : disco.recordings)
+		{
+			track_tags t;
+			t.title = r.name;
+			t.artist = disco.orchestras[r.orchestra] + " - " + r.vocal;
+			t.dates = r.date;
+			const track_match tm = rm.find(t);
+			bool found = false;
+			for (const recording_match & c : tm.candidates)
+			{
+				const recording & o = disco.recordings[c.recording];
+				if (c.score != tm.candidates.front().score) break;
+				if (o.orchestra == r.orchestra && o.name == r.name && o.vocal == r.vocal && o.date == r.date) found = true;
+			}
+			if (!found && missed++ < 10) misses += "\n    " + describe_track(t);
+		}
+		check(missed == 0, std::to_string(missed) + " recordings not found from their own tags:" + misses);
+	}
+
+	// --- tags from a recording --------------------------------------------------------
+	check(title_with_notes("Que no sepan las estrellas", "Que no sepan las estrellas (decrackle)") ==
+	          "Que no sepan las estrellas (decrackle)", "lower case note kept");
+	check(title_with_notes("El internado", "El internado (2)") == "El internado (2)", "take number kept");
+	check(title_with_notes("Pobre negrito (Flor de Montserrat)", "Flor de Monserrat (Pobre negrito)") ==
+	          "Pobre negrito (Flor de Montserrat)", "alternative title dropped");
+	check(title_with_notes("Fea", "Fea - Alfredo Rojas - 1945") == "Fea", "singer and year in the title dropped");
+	check(title_with_notes("Canción de amor | La Chanson d'Amour", "") == "Canción de amor", "alternative after the bar dropped");
+	{
+		recording r;
+		r.date = "1952-09";
+		check(date_for(r, "1953-08-14") == "1953-08-14", "a finer date a year off kept");
+		check(date_for(r, "1953") == "1952-09", "a coarser date replaced");
+		check(date_for(r, "1960-01-01") == "1952-09", "a date years off replaced");
+		r.date = "";
+		check(date_for(r, "1953") == "1953", "nothing to replace it with");
+	}
+	{
+		discography d;
+		d.orchestras = { "Carlos di Sarli" };
+		recording sung{ 0, "Al compás del corazón", "Alberto Podestá", "1942-04-09", "Tango" };
+		recording duo{ 0, "Al compás del corazón", "Alberto Podestá, Oscar Serpa", "1942-04-09", "Tango" };
+		recording inst{ 0, "El once", "Instrumental", "1942-04-09", "Tango" };
+		auto artist = [&](const recording & r, artist_scheme s)
+		{
+			tag_options o;
+			o.scheme = s;
+			std::string out;
+			for (const tag_value & t : recording_tags(d, r, o, current_tags{}))
+				if (t.field == "ARTIST" || t.field == "CANTOR")
+					for (const std::string & v : t.values) out += (out.empty() ? "" : " | ") + t.field + "=" + v;
+			return out;
+		};
+		check(artist(sung, artist_scheme::orchestra_dash_singer) == "ARTIST=Carlos di Sarli - Alberto Podestá", "dash scheme");
+		check(artist(inst, artist_scheme::orchestra_dash_singer) == "ARTIST=Carlos di Sarli - Instrumental", "dash scheme, instrumental");
+		check(artist(duo, artist_scheme::orchestra_slash_singer) == "ARTIST=Carlos di Sarli / Alberto Podestá, Oscar Serpa", "slash scheme");
+		check(artist(inst, artist_scheme::orchestra_slash_singer) == "ARTIST=Carlos di Sarli", "slash scheme, instrumental");
+		check(artist(sung, artist_scheme::singer_only) == "ARTIST=Alberto Podestá", "singer scheme");
+		check(artist(inst, artist_scheme::singer_only) == "ARTIST=Instrumental", "singer scheme, instrumental");
+		check(artist(sung, artist_scheme::orchestra_and_cantor_field) == "ARTIST=Carlos di Sarli | CANTOR=Alberto Podestá", "CANTOR scheme");
+		check(artist(duo, artist_scheme::orchestra_and_singer_values) ==
+		          "ARTIST=Carlos di Sarli | ARTIST=Alberto Podestá | ARTIST=Oscar Serpa", "multi-value scheme");
+
+		tag_options only_artist;
+		only_artist.title = only_artist.album_artist = only_artist.date = only_artist.genre = false;
+		only_artist.scheme = artist_scheme::singer_only;
+		bool album_artist = false;
+		for (const tag_value & t : recording_tags(d, sung, only_artist, current_tags{}))
+			album_artist = album_artist || t.field == "ALBUM ARTIST";
+		check(album_artist, "the singer scheme always names the orchestra in ALBUM ARTIST");
 	}
 
 	std::printf("%d checks, %d failed\n", g_checks, g_failures);

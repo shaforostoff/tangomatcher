@@ -96,7 +96,7 @@ const tangotagger::song & row_song(const lyrics_row & row);
 //! "Music: X · Lyrics: Y", either half left out when unknown.
 pfc::string8 song_credits_text(const tangotagger::song & s);
 
-//! "exact", "exact 2/3", "similar", "no match".
+//! "exact", "similar", "no match".
 pfc::string8 match_label(const lyrics_row & row);
 const char * existing_label(existing_lyrics e);
 

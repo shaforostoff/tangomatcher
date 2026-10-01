@@ -48,6 +48,8 @@ set(LZMA_SDK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/lzma_sdk"
     CACHE PATH "Location of the unpacked LZMA SDK")
 set(TANGOTAGGER_LYRICS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../publicdomain-lyrics"
     CACHE PATH "Folder of lyrics XML files to embed")
+set(TANGOTAGGER_DISCOGRAPHY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../publicdomain-xmldata"
+    CACHE PATH "Folder of discography XML files to embed")
 # OFF embeds every lyrics file in the folder, for a build of your own. ON
 # embeds only files marked pd_status="public domain" - the build to publish.
 option(FOO_TANGOTAGGER_PUBLIC_DOMAIN_ONLY "Embed only lyrics marked public domain" OFF)
@@ -177,7 +179,7 @@ include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/lzma_sdk.cmake")
 # pack_lyrics is a build-machine tool: it runs during the build and is never
 # shipped. Every XML file is a dependency, so editing one re-packs; adding or
 # removing one is picked up by CONFIGURE_DEPENDS.
-add_executable(pack_lyrics tools/pack_lyrics/main.cpp)
+add_executable(pack_lyrics tools/pack_lyrics/main.cpp tools/pack_common.h)
 target_include_directories(pack_lyrics PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/core")
 target_link_libraries(pack_lyrics PRIVATE lzma_enc)
 set_target_properties(pack_lyrics PROPERTIES FOLDER "tools")
@@ -202,8 +204,35 @@ add_custom_command(
     COMMENT "Packing lyrics from ${TANGOTAGGER_LYRICS_DIR}"
     VERBATIM)
 
+# --- the embedded discographies ---------------------------------------------
+# Facts about recordings - title, singers, date, genre - so the same in both
+# builds.
+add_executable(pack_discography
+    tools/pack_discography/main.cpp
+    core/title_match.cpp)
+target_include_directories(pack_discography PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/core")
+target_link_libraries(pack_discography PRIVATE lzma_enc)
+set_target_properties(pack_discography PROPERTIES FOLDER "tools")
+
+file(GLOB TANGOTAGGER_DISCOGRAPHY_FILES CONFIGURE_DEPENDS "${TANGOTAGGER_DISCOGRAPHY_DIR}/*.xml")
+set(TANGOTAGGER_DISCOGRAPHY_BLOB "${CMAKE_CURRENT_BINARY_DIR}/generated/discography_blob.cpp")
+add_custom_command(
+    OUTPUT "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
+    COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/generated"
+    COMMAND pack_discography "${TANGOTAGGER_DISCOGRAPHY_DIR}" "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
+    COMMAND "${CMAKE_COMMAND}" -E touch_nocreate "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
+    DEPENDS pack_discography ${TANGOTAGGER_DISCOGRAPHY_FILES}
+    COMMENT "Packing discographies from ${TANGOTAGGER_DISCOGRAPHY_DIR}"
+    VERBATIM)
+
 # --- core: the data and the matching, no SDK -------------------------------
 add_library(tangotagger_core STATIC
+    core/disco_match.cpp
+    core/disco_match.h
+    core/disco_tags.cpp
+    core/disco_tags.h
+    core/discography.cpp
+    core/discography.h
     core/lyrics_db.cpp
     core/lyrics_db.h
     core/payload_format.h
@@ -211,7 +240,8 @@ add_library(tangotagger_core STATIC
     core/text_links.h
     core/title_match.cpp
     core/title_match.h
-    "${TANGOTAGGER_LYRICS_BLOB}")
+    "${TANGOTAGGER_LYRICS_BLOB}"
+    "${TANGOTAGGER_DISCOGRAPHY_BLOB}")
 target_include_directories(tangotagger_core PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/core")
 target_link_libraries(tangotagger_core PUBLIC lzma_dec)
 set_target_properties(tangotagger_core PROPERTIES FOLDER "foo_tangotagger")
@@ -227,6 +257,11 @@ add_subdirectory(foo_tangotagger)
 add_executable(match_titles tools/match_titles/main.cpp)
 target_link_libraries(match_titles PRIVATE tangotagger_core)
 set_target_properties(match_titles PROPERTIES FOLDER "tools")
+
+# The discography matching from the command line: one track's tags per line.
+add_executable(match_recordings tools/match_recordings/main.cpp)
+target_link_libraries(match_recordings PRIVATE tangotagger_core)
+set_target_properties(match_recordings PROPERTIES FOLDER "tools")
 
 option(FOO_TANGOTAGGER_BUILD_TESTS "Build the verification harness" ON)
 if(FOO_TANGOTAGGER_BUILD_TESTS)

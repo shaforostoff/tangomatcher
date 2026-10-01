@@ -26,20 +26,33 @@
 	"or the right-click menu sets the text size; links open in the web browser.\n"
 #endif
 
+#define DISCOGRAPHIES_HELP \
+	"Tango Tagger > Match discographies finds the selected tracks' recordings in\n" \
+	"the orchestra discographies built into the component - by the title, and by\n" \
+	"the orchestra, singer and date wherever the tags, the file name or its\n" \
+	"folder mention them - and fixes their title, artist, album artist, date and\n" \
+	"genre, with the singer where you want it: \"Orquesta - Cantor\", \"Orquesta /\n" \
+	"Cantor\", the singer alone, a CANTOR field, or two artist values.\n"
+
+#define DISCOGRAPHIES_DATA \
+	"Discographies from todotango.com, tango.info and tangoteca.\n"
+
 #if FOO_TANGOTAGGER_PUBLIC_DOMAIN_ONLY
 #define FOO_TANGOTAGGER_DATA \
 	"The lyrics are in the public domain in Argentina: their authors died more\n" \
-	"than 70 years ago. Texts from todotango.com; credits from tango.info and wikipedia.\n"
+	"than 70 years ago. Texts from todotango.com; credits from tango.info and wikipedia.\n" \
+	DISCOGRAPHIES_DATA
 #else
 #define FOO_TANGOTAGGER_DATA \
 	"This copy carries lyrics that are not in the public domain, contact me if you want specific lyrics to be removed.\n" \
-	"Texts from todotango.com; credits from tango.info and wikipedia.\n"
+	"Texts from todotango.com; credits from tango.info and wikipedia.\n" \
+	DISCOGRAPHIES_DATA
 #endif
 
 DECLARE_COMPONENT_VERSION(
 	FOO_TANGOTAGGER_NAME,
 	FOO_TANGOTAGGER_VERSION,
-	"Writes tango lyrics into your files.\n"
+	"Writes tango lyrics and discography data into your files.\n"
 	"\n"
 	"Select tracks, right-click, Tango Tagger > Find lyrics. Each\n"
 	"track's title is matched against the lyrics built into the component -\n"
@@ -49,6 +62,8 @@ DECLARE_COMPONENT_VERSION(
 	"LYRICS, the ID3 USLT frame, for MP3).\n"
 	"\n"
 	LYRICS_PANEL_HELP
+	"\n"
+	DISCOGRAPHIES_HELP
 	"\n"
 	FOO_TANGOTAGGER_DATA
 	"\n"

@@ -22,11 +22,13 @@ BOOL lyrics_dialog::OnInitDialog(CWindow wndFocus, LPARAM lInitParam)
 	// The fixed columns sized to what they hold; the three text columns share
 	// the rest.
 	const CSize dpi = m_list.GetDPI();
-	m_list.AddColumn("", MulDiv(24, dpi.cx, 96));
+	// The checkbox, and beside it the option number when a track has
+	// several songs to choose from.
+	m_list.AddColumn("", m_list.item_height() + m_list.GetOptimalColumnWidthFixed(" 8"));
 	m_list.AddColumnAutoWidth("Track title");
 	m_list.AddColumnAutoWidth("Artist");
 	m_list.AddColumnAutoWidth("Lyrics of");
-	m_list.AddColumn("Match", (std::max)(m_list.GetOptimalColumnWidthFixed("similar 2/5"),
+	m_list.AddColumn("Match", (std::max)(m_list.GetOptimalColumnWidthFixed("similar"),
 	                                     m_list.GetOptimalColumnWidthFixed("no match")));
 	m_list.AddColumn("Existing lyrics", (std::max)(m_list.GetOptimalColumnWidthFixed("Existing lyrics"),
 	                                               m_list.GetOptimalColumnWidthFixed("same, with links")));
@@ -107,6 +109,9 @@ pfc::string8 lyrics_dialog::listGetSubItemText(ctx_t, size_t item, size_t subIte
 	const lyrics_row & r = m_matches.rows[item];
 	switch (subItem)
 	{
+	case col_check:
+		if (r.versions < 2) return "";
+		return pfc::string8(" ") + pfc::format_int(r.version).c_str();
 	case col_title:
 		// A title's further candidates are indented under its first, so the
 		// group reads as one choice.

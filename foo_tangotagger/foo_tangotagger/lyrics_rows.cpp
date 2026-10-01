@@ -278,7 +278,6 @@ pfc::string8 match_label(const lyrics_row & row)
 	if (!row.matched()) return "no match";
 	pfc::string_formatter out;
 	out << (row.match.kind == match_kind::exact ? "exact" : "similar");
-	if (row.versions > 1) out << " " << row.version << "/" << row.versions;
 	return out;
 }
 

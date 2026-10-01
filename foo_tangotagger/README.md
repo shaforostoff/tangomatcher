@@ -1,6 +1,6 @@
 # Tango Tagger for foobar2000
 
-Writes tango lyrics into your files.
+Writes tango lyrics and discography data into your files.
 
 Select tracks, right-click, **Tango Tagger > Find lyrics...**.
 Each track's title is matched against the lyrics built into the component, and
@@ -67,11 +67,79 @@ links are embedded, never the translated text; they come from the
 `<translation>` elements `copy-publicdomain-lyrics.ps1` keeps empty for
 the purpose.
 
+## Match discographies
+
+**Tango Tagger > Match discographies...** finds each selected track's
+recording in the orchestra discographies built into the component and fixes
+its tags.
+
+Files come half-tagged in every way, so a track is not read field by field.
+Its title picks the recordings it could be: the same keys as the lyrics
+matching, plus numbers spelled out (`Los 33 orientales` = `Los treinta y tres
+orientales`), each side of `Palais de glace / Palé de glas`, and near misses
+within the orchestra's own recordings. Everything else on the track counts as
+evidence for or against each of them:
+
+- **orchestra**: the leader's surname in ARTIST, ALBUM ARTIST, CONDUCTOR,
+  PERFORMER..., the file name or its two parent folders. `Di Sarli`,
+  `Disarli`, `Carlos Di Sarli y su Orquesta Típica` and, for names of six letters
+  or more, one letter off (`D'Arienso`) all count. `Sexteto`/`Quartet` tells a
+  leader's small ensembles apart. When the track names an orchestra, only its
+  recordings are candidates. When it names none (`_elcorazonmeengano.flac` in
+  a folder `78rpm`), every recording with exactly that title is offered,
+  unchecked, best fitting first;
+- **singer**: the recording's singers named anywhere (`Carlos Di Sarli -
+  Roberto Rufino`, `Fea (Alfredo Rojas)`, a CANTOR field), or
+  `Instrumental`/`Instr.`. Another of the orchestra's singers named instead
+  counts against;
+- **date**: a full date, a month or a year in DATE, YEAR, ORIGINAL DATE...,
+  COMMENT, the title or the file name, written as `1941-10-09`, `1941.10.09`,
+  `09/10/1941` or `1941–10–09`. A year far off counts against, except one after
+  1990, which is the reissue's;
+- **genre**: tango, vals or milonga.
+
+A track's candidates are listed best first, at most one of them checked. The
+best is pre-checked when its title and orchestra match, nothing contradicts
+it, and no other candidate comes close. The rest is the user's call: two
+sessions of the same tune with nothing on the file to tell them apart are
+shown side by side.
+
+What is written, and where the singer goes, is chosen below the list and
+kept:
+
+| Scheme | ARTIST | Example |
+|---|---|---|
+| Orquesta - Cantor | orchestra and singer | `Carlos di Sarli - Roberto Rufino`, `Carlos di Sarli - Instrumental` (TangoTunes' renamed files) |
+| Orquesta / Cantor | orchestra and singer | `Carlos di Sarli / Roberto Rufino`, `Carlos di Sarli` (Tango Time Travel) |
+| Cantor | the singer | `Roberto Rufino`, `Instrumental`, with the orchestra in ALBUM ARTIST (TangoTunes' own tags) |
+| Orquesta, cantor in CANTOR | the orchestra | `Carlos di Sarli`, CANTOR `Roberto Rufino` |
+| Orquesta; Cantor | two values | `Carlos di Sarli`, `Roberto Rufino` |
+
+TITLE becomes the discography's title, keeping lower case notes in brackets
+from the old one (`(decrackle)`, `(2)`). ALBUM ARTIST becomes the orchestra and
+GENRE the discography's genre. DATE becomes the recording date, unless the
+file has a more precise date within a year of it: the discographies sometimes
+have only the month of a session that the label dates to the day. The preview
+shows each field before and after. Fields already right are left alone.
+
+`tools/match_recordings` runs the same matching from the command line, one
+track's tags per line.
+
 ## Data
 
 The lyrics are read from `../publicdomain-lyrics` at build time by
 `tools/pack_lyrics` and embedded LZMA-compressed (7-Zip's LZMA SDK) in the
-component. Two builds:
+component.
+
+The discographies are read from `../publicdomain-xmldata` by
+`tools/pack_discography`. A `X_tangoinfo.xml` or `X_bigwithmistakes.xml`
+is left out when the folder has `X.xml`, its better alternative; Edgardo
+Donato and Julio de Caro have only the tango.info file, which is used. Also
+left out are recordings listed twice, such as `Anibal Troilo (all)` against
+`Anibal Troilo 1938-1950`. The result is about 9,250 recordings of 53
+orchestras in 85 KB. The discographies are the same in both builds.
+
+Two builds of the lyrics:
 
 - **personal** (default): every lyrics file in the folder. The archive is named
   `foo_tangotagger-<version>-personal.fb2k-component` and the about box says it

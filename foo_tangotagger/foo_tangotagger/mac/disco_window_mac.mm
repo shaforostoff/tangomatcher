@@ -1,9 +1,6 @@
-// The results window, macOS side. The Windows counterpart is lyrics_dialog.cpp,
-// built on a dialog template and a list view control.
-//
-// What the two share is lyrics_rows.h, which settles the rows, which of them
-// start checked, what the preview says and what reaches the files - so only
-// the drawing is written twice.
+// The Match discographies window, macOS side. The Windows counterpart is
+// disco_dialog.cpp; what the two share is disco_rows.h, so only the drawing
+// is written twice. Built like lyrics_window_mac.mm.
 
 #import <Cocoa/Cocoa.h>
 
@@ -12,7 +9,7 @@
 #include <memory>
 #include <vector>
 
-#include "../lyrics_rows.h"
+#include "../disco_rows.h"
 #include "../tangotagger_ui.h"
 
 namespace
@@ -24,49 +21,61 @@ namespace
 		return s != nil ? s : @"";
 	}
 
-	NSString * const col_check    = @"check";
-	NSString * const col_title    = @"title";
-	NSString * const col_artist   = @"artist";
-	NSString * const col_song     = @"song";
-	NSString * const col_match    = @"match";
-	NSString * const col_existing = @"existing";
+	NSString * const col_check     = @"check";
+	NSString * const col_title     = @"title";
+	NSString * const col_artist    = @"artist";
+	NSString * const col_recording = @"recording";
+	NSString * const col_orchestra = @"orchestra";
+	NSString * const col_vocal     = @"vocal";
+	NSString * const col_date      = @"date";
+	NSString * const col_match     = @"match";
+
+	//! The field checkboxes, by tag.
+	bool tangotagger::tag_options::* const field_members[] = {
+		&tangotagger::tag_options::title,
+		&tangotagger::tag_options::artist,
+		&tangotagger::tag_options::album_artist,
+		&tangotagger::tag_options::date,
+		&tangotagger::tag_options::genre,
+	};
+	NSString * const field_titles[] = { @"Title", @"Artist", @"Album artist", @"Date", @"Genre" };
 }
 
 
-@interface fooTangoTaggerLyricsWindow : NSWindowController
-                                       <NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate>
-- (instancetype)initWithMatches:(std::shared_ptr<lyrics_matches>)matches;
+@interface fooTangoTaggerDiscoWindow : NSWindowController
+                                      <NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate>
+- (instancetype)initWithMatches:(std::shared_ptr<disco_matches>)matches;
 @end
 
 
-@implementation fooTangoTaggerLyricsWindow
+@implementation fooTangoTaggerDiscoWindow
 {
-	std::shared_ptr<lyrics_matches> _matches;
+	std::shared_ptr<disco_matches> _matches;
 	//! Each row's block of one track, counted from the top: the shading.
 	std::vector<std::size_t> _blocks;
-	NSTableView * _table;
-	NSTextView  * _preview;
-	NSButton    * _write;
+	NSTableView   * _table;
+	NSTextView    * _preview;
+	NSPopUpButton * _scheme;
+	NSButton      * _write;
 }
 
-//! Open windows, so that one stays alive after the function that made it has
-//! returned. Released again in windowWillClose:.
-static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
+//! Open windows, kept alive until windowWillClose:.
+static NSMutableArray<fooTangoTaggerDiscoWindow *> * g_openDiscoWindows = nil;
 
 // --- construction ----------------------------------------------------------
 
-- (instancetype)initWithMatches:(std::shared_ptr<lyrics_matches>)matches
+- (instancetype)initWithMatches:(std::shared_ptr<disco_matches>)matches
 {
 	NSWindow * window =
-		[[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 820, 600)
+		[[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 1000, 640)
 		                            styleMask:NSWindowStyleMaskTitled |
 		                                      NSWindowStyleMaskClosable |
 		                                      NSWindowStyleMaskResizable
 		                              backing:NSBackingStoreBuffered
 		                                defer:NO];
-	window.title = @"Tango Tagger - Lyrics";
-	window.releasedWhenClosed = NO;   // the array above owns it
-	window.minSize = NSMakeSize(560, 400);
+	window.title = @"Tango Tagger - Match Discographies";
+	window.releasedWhenClosed = NO;
+	window.minSize = NSMakeSize(700, 440);
 	[window center];
 
 	self = [super initWithWindow:window];
@@ -105,11 +114,13 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 
 	NSTableColumn * check = [self addColumn:col_check title:@"" width:36];
 	check.resizingMask = NSTableColumnNoResizing;
-	[self addColumn:col_title title:@"Track title" width:220];
-	[self addColumn:col_artist title:@"Artist" width:140];
-	[self addColumn:col_song title:@"Lyrics of" width:200];
-	[self addColumn:col_match title:@"Match" width:80];
-	[self addColumn:col_existing title:@"Existing lyrics" width:100];
+	[self addColumn:col_title title:@"Track title" width:170];
+	[self addColumn:col_artist title:@"Artist" width:130];
+	[self addColumn:col_recording title:@"Recording" width:170];
+	[self addColumn:col_orchestra title:@"Orchestra" width:140];
+	[self addColumn:col_vocal title:@"Singer" width:130];
+	[self addColumn:col_date title:@"Date" width:80];
+	[self addColumn:col_match title:@"Match" width:90];
 
 	NSScrollView * tableScroll = [[NSScrollView alloc] initWithFrame:NSZeroRect];
 	tableScroll.documentView = _table;
@@ -127,24 +138,48 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 	_preview.font = [NSFont systemFontOfSize:NSFont.systemFontSize];
 	_preview.textContainerInset = NSMakeSize(4, 4);
 
-	NSTextField * status = [NSTextField wrappingLabelWithString:str(lyrics_status_text(*_matches).get_ptr())];
+	NSTextField * status = [NSTextField wrappingLabelWithString:str(disco_status_text(*_matches).get_ptr())];
 	status.textColor = NSColor.secondaryLabelColor;
 	status.translatesAutoresizingMaskIntoConstraints = NO;
 
+	// The artist scheme and the fields to write.
+	const tangotagger::tag_options options = disco_tag_options();
+	_scheme = [[NSPopUpButton alloc] initWithFrame:NSZeroRect pullsDown:NO];
+	for (int s = 0; s < static_cast<int>(tangotagger::artist_scheme::count); s++)
+	{
+		const auto a = static_cast<tangotagger::artist_scheme>(s);
+		NSString * label = [NSString stringWithFormat:@"%@  —  %@", str(tangotagger::artist_scheme_name(a)),
+		                                              str(tangotagger::artist_scheme_example(a).c_str())];
+		[_scheme addItemWithTitle:label];
+	}
+	[_scheme selectItemAtIndex:static_cast<NSInteger>(options.scheme)];
+	_scheme.target = self;
+	_scheme.action = @selector(onOptions:);
+	NSMutableArray<NSView *> * optionViews = [NSMutableArray arrayWithObjects:
+		[NSTextField labelWithString:@"Artist scheme:"], _scheme, [NSTextField labelWithString:@"   Write:"], nil];
+	for (std::size_t f = 0; f < sizeof field_members / sizeof field_members[0]; f++)
+	{
+		NSButton * box = [NSButton checkboxWithTitle:field_titles[f] target:self action:@selector(onOptions:)];
+		box.tag = (NSInteger) f;
+		box.state = options.*(field_members[f]) ? NSControlStateValueOn : NSControlStateValueOff;
+		[optionViews addObject:box];
+	}
+	NSStackView * optionRow = [NSStackView stackViewWithViews:optionViews];
+	optionRow.orientation = NSUserInterfaceLayoutOrientationHorizontal;
+	optionRow.spacing = 8;
+	optionRow.translatesAutoresizingMaskIntoConstraints = NO;
+
 	NSButton * checkAll  = [NSButton buttonWithTitle:@"Check All"  target:self action:@selector(onCheckAll:)];
 	NSButton * checkNone = [NSButton buttonWithTitle:@"Check None" target:self action:@selector(onCheckNone:)];
-	NSButton * links = [NSButton checkboxWithTitle:@"Add links to translations" target:self
-	                                        action:@selector(onTranslationLinks:)];
-	links.state = translation_links_enabled() ? NSControlStateValueOn : NSControlStateValueOff;
 	NSButton * cancel    = [NSButton buttonWithTitle:@"Cancel"     target:self action:@selector(onCancel:)];
-	cancel.keyEquivalent = @"\033";   // Escape
+	cancel.keyEquivalent = @"\033";
 	_write = [NSButton buttonWithTitle:@"Write" target:self action:@selector(onWrite:)];
-	_write.keyEquivalent = @"\r";     // the default button
+	_write.keyEquivalent = @"\r";
 
 	NSView * spacer = [[NSView alloc] initWithFrame:NSZeroRect];
 	[spacer setContentHuggingPriority:NSLayoutPriorityDefaultLow
 	                   forOrientation:NSLayoutConstraintOrientationHorizontal];
-	NSStackView * buttonRow = [NSStackView stackViewWithViews:@[ checkAll, checkNone, links, spacer, cancel, _write ]];
+	NSStackView * buttonRow = [NSStackView stackViewWithViews:@[ checkAll, checkNone, spacer, cancel, _write ]];
 	buttonRow.orientation = NSUserInterfaceLayoutOrientationHorizontal;
 	buttonRow.spacing = 8;
 	buttonRow.translatesAutoresizingMaskIntoConstraints = NO;
@@ -152,13 +187,14 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 	[root addSubview:tableScroll];
 	[root addSubview:previewScroll];
 	[root addSubview:status];
+	[root addSubview:optionRow];
 	[root addSubview:buttonRow];
 
 	[NSLayoutConstraint activateConstraints:@[
 		[tableScroll.topAnchor      constraintEqualToAnchor:root.topAnchor      constant:20],
 		[tableScroll.leadingAnchor  constraintEqualToAnchor:root.leadingAnchor  constant:20],
 		[tableScroll.trailingAnchor constraintEqualToAnchor:root.trailingAnchor constant:-20],
-		[tableScroll.heightAnchor   constraintEqualToAnchor:root.heightAnchor multiplier:0.45],
+		[tableScroll.heightAnchor   constraintEqualToAnchor:root.heightAnchor multiplier:0.5],
 
 		[previewScroll.topAnchor      constraintEqualToAnchor:tableScroll.bottomAnchor constant:8],
 		[previewScroll.leadingAnchor  constraintEqualToAnchor:root.leadingAnchor  constant:20],
@@ -168,7 +204,11 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 		[status.leadingAnchor  constraintEqualToAnchor:root.leadingAnchor  constant:20],
 		[status.trailingAnchor constraintEqualToAnchor:root.trailingAnchor constant:-20],
 
-		[buttonRow.topAnchor      constraintEqualToAnchor:status.bottomAnchor constant:12],
+		[optionRow.topAnchor      constraintEqualToAnchor:status.bottomAnchor constant:12],
+		[optionRow.leadingAnchor  constraintEqualToAnchor:root.leadingAnchor  constant:20],
+		[optionRow.trailingAnchor constraintLessThanOrEqualToAnchor:root.trailingAnchor constant:-20],
+
+		[buttonRow.topAnchor      constraintEqualToAnchor:optionRow.bottomAnchor constant:12],
 		[buttonRow.leadingAnchor  constraintEqualToAnchor:root.leadingAnchor  constant:20],
 		[buttonRow.trailingAnchor constraintEqualToAnchor:root.trailingAnchor constant:-20],
 		[buttonRow.bottomAnchor   constraintEqualToAnchor:root.bottomAnchor   constant:-20],
@@ -186,22 +226,20 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 
 - (NSString *)textForRow:(NSInteger)row column:(NSString *)identifier
 {
-	const std::vector<lyrics_row> & rows = _matches->rows;
+	const std::vector<disco_row> & rows = _matches->rows;
 	if (row < 0 || (std::size_t) row >= rows.size()) return @"";
-	const lyrics_row & r = rows[(std::size_t) row];
+	const disco_row & r = rows[(std::size_t) row];
 
-	if ([identifier isEqualToString:col_title])
-	{
-		// A title's further candidates are indented under its first, so the
-		// group reads as one choice.
-		NSString * title = str(r.title.get_ptr());
-		return r.version > 1 ? [@"      " stringByAppendingString:title] : title;
-	}
-	if ([identifier isEqualToString:col_artist])   return str(r.artist.get_ptr());
-	if ([identifier isEqualToString:col_match])    return str(match_label(r).get_ptr());
+	// A track's further candidates sit under its first, without repeating it.
+	if ([identifier isEqualToString:col_title])  return r.version > 1 ? @"" : str(r.title.get_ptr());
+	if ([identifier isEqualToString:col_artist]) return r.version > 1 ? @"" : str(r.artist.get_ptr());
+	if ([identifier isEqualToString:col_match])  return str(disco_match_label(r).get_ptr());
 	if (!r.matched()) return @"";
-	if ([identifier isEqualToString:col_song])     return str(row_song(r).name.c_str());
-	if ([identifier isEqualToString:col_existing]) return str(existing_label(r.existing()));
+	const tangotagger::recording & rec = row_recording(r);
+	if ([identifier isEqualToString:col_recording]) return str(tangotagger::main_title(rec.name).c_str());
+	if ([identifier isEqualToString:col_orchestra]) return str(row_orchestra(r).c_str());
+	if ([identifier isEqualToString:col_vocal])     return str(rec.vocal.c_str());
+	if ([identifier isEqualToString:col_date])      return str(rec.date.c_str());
 	return @"";
 }
 
@@ -217,7 +255,6 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 	const bool matched = _matches->rows[(std::size_t) row].matched();
 	if ([tableColumn.identifier isEqualToString:col_check])
 	{
-		// A track nothing matched has nothing to write: no checkbox.
 		if (!matched) return nil;
 		NSButton * box = [tableView makeViewWithIdentifier:col_check owner:self];
 		if (box == nil)
@@ -263,12 +300,12 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 {
 	NSString * text = @"";
 	if (row >= 0 && (std::size_t) row < _matches->rows.size())
-		text = str(lyrics_preview_text(_matches->rows[(std::size_t) row], "\n").get_ptr());
+		text = str(disco_preview_text(_matches->rows[(std::size_t) row], "\n").get_ptr());
 	_preview.string = text;
 	[_preview scrollRangeToVisible:NSMakeRange(0, 0)];
 }
 
-// --- the checkboxes and buttons --------------------------------------------
+// --- the controls ----------------------------------------------------------
 
 - (void)reloadChecks
 {
@@ -279,31 +316,36 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 
 - (IBAction)onToggle:(NSButton *)sender
 {
-	// Checking one song of a title unchecks the others.
-	set_row_checked(_matches->rows, (std::size_t) sender.tag, sender.state == NSControlStateValueOn);
+	set_disco_row_checked(_matches->rows, (std::size_t) sender.tag, sender.state == NSControlStateValueOn);
 	[self reloadChecks];
 }
 
-//! Every track gets a song: the one already checked in its group, or else
-//! the group's first, which is the one its credits favour.
 - (IBAction)onCheckAll:(id)sender
 {
-	std::vector<lyrics_row> & rows = _matches->rows;
-	for (std::size_t i = 0; i < rows.size(); i++)
-	{
-		if (rows[i].version != 1) continue;
-		bool any = false;
-		for (std::size_t j = i; j < rows.size() && rows[j].group == rows[i].group; j++)
-			any = any || rows[j].checked;
-		if (!any) set_row_checked(rows, i, true);
-	}
+	check_all_disco_rows(_matches->rows);
 	[self reloadChecks];
 }
 
 - (IBAction)onCheckNone:(id)sender
 {
-	for (lyrics_row & r : _matches->rows) r.checked = false;
+	for (disco_row & r : _matches->rows) r.checked = false;
 	[self reloadChecks];
+}
+
+//! The scheme or a field checkbox changed: kept, and the preview follows.
+- (IBAction)onOptions:(id)sender
+{
+	tangotagger::tag_options options = disco_tag_options();
+	if (_scheme.indexOfSelectedItem >= 0)
+		options.scheme = static_cast<tangotagger::artist_scheme>(_scheme.indexOfSelectedItem);
+	if ([sender isKindOfClass:[NSButton class]])
+	{
+		NSButton * box = (NSButton *) sender;
+		if (box.tag >= 0 && (std::size_t) box.tag < sizeof field_members / sizeof field_members[0])
+			options.*(field_members[box.tag]) = box.state == NSControlStateValueOn;
+	}
+	set_disco_tag_options(options);
+	if (_table.selectedRow >= 0) [self showPreviewForRow:_table.selectedRow];
 }
 
 - (void)relabelWriteButton
@@ -318,19 +360,8 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 
 - (IBAction)onWrite:(id)sender
 {
-	write_checked_lyrics(_matches->rows);
+	write_checked_disco_tags(_matches->rows);
 	[self close];
-}
-
-//! What is written changes, and with it what the files already having it
-//! means: the Existing lyrics column and the preview follow.
-- (IBAction)onTranslationLinks:(NSButton *)sender
-{
-	set_translation_links_enabled(sender.state == NSControlStateValueOn);
-	[_table reloadData];
-	if (_table.selectedRow >= 0) [self showPreviewForRow:_table.selectedRow];
-	// The links are at the end: show the end, where the change is.
-	[_preview scrollRangeToVisible:NSMakeRange(_preview.string.length, 0)];
 }
 
 - (IBAction)onCancel:(id)sender
@@ -340,7 +371,7 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 
 - (void)windowWillClose:(NSNotification *)notification
 {
-	[g_openWindows removeObject:self];
+	[g_openDiscoWindows removeObject:self];
 }
 
 @end
@@ -348,14 +379,14 @@ static NSMutableArray<fooTangoTaggerLyricsWindow *> * g_openWindows = nil;
 
 /***** tangotagger_ui.h *****/
 
-void show_lyrics_matches(lyrics_matches && matches)
+void show_disco_matches(disco_matches && matches)
 {
-	auto shared = std::make_shared<lyrics_matches>(std::move(matches));
+	auto shared = std::make_shared<disco_matches>(std::move(matches));
 
-	if (g_openWindows == nil) g_openWindows = [NSMutableArray new];
+	if (g_openDiscoWindows == nil) g_openDiscoWindows = [NSMutableArray new];
 
-	fooTangoTaggerLyricsWindow * window = [[fooTangoTaggerLyricsWindow alloc] initWithMatches:shared];
-	[g_openWindows addObject:window];
+	fooTangoTaggerDiscoWindow * window = [[fooTangoTaggerDiscoWindow alloc] initWithMatches:shared];
+	[g_openDiscoWindows addObject:window];
 	[window showWindow:nil];
 	[window.window makeKeyAndOrderFront:nil];
 }

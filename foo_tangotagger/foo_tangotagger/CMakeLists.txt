@@ -28,12 +28,17 @@ configure_file(version.h.in "${CMAKE_CURRENT_BINARY_DIR}/version.h" @ONLY)
 # --- sources ---------------------------------------------------------------
 set(FOO_TANGOTAGGER_SOURCES
     contextmenu.cpp
+    disco_rows.cpp
+    file_info_filter_fields.cpp
     file_info_filter_lyrics.cpp
     foo_tangotagger.cpp
     lyrics_panel_content.cpp
     lyrics_rows.cpp
 
+    disco_rows.h
+    file_info_filter_fields.h
     file_info_filter_lyrics.h
+    grouped_list.h
     guid.h
     lyrics_field.h
     lyrics_panel_content.h
@@ -46,6 +51,8 @@ set(FOO_TANGOTAGGER_SOURCES
 
 if(WIN32)
     list(APPEND FOO_TANGOTAGGER_SOURCES
+        disco_dialog.cpp
+        disco_dialog.h
         lyrics_dialog.cpp
         lyrics_dialog.h
         lyrics_panel.cpp
@@ -53,6 +60,7 @@ if(WIN32)
         resource.h)
 else()
     list(APPEND FOO_TANGOTAGGER_SOURCES
+        mac/disco_window_mac.mm
         mac/lyrics_panel_mac.mm
         mac/lyrics_window_mac.mm
         mac/foobar2000-mac-class-suffix.h
@@ -60,6 +68,13 @@ else()
         # foobar2000_get_interface lives here; see cmake/fb2k_sdk.cmake for why
         # it is compiled into the component rather than linked out of the SDK.
         "${FB2K_COMPONENT_CLIENT_SOURCE}")
+endif()
+
+# Opens a results window on start-up from an environment variable; for
+# checking the windows in a test install, never for a release.
+option(FOO_TANGOTAGGER_TEST_HOOKS "Build the start-up test hooks into the component" OFF)
+if(FOO_TANGOTAGGER_TEST_HOOKS)
+    list(APPEND FOO_TANGOTAGGER_SOURCES test_hooks.cpp)
 endif()
 
 add_library(foo_tangotagger MODULE ${FOO_TANGOTAGGER_SOURCES})
