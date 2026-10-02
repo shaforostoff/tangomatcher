@@ -211,6 +211,9 @@ namespace
 			std::lock_guard<std::mutex> lock(m_lock);
 			const auto it = m_entries.find(path + "\t" + stamp(path));
 			if (it == m_entries.end()) return false;
+			// A fingerprint of an older format is measured again.
+			fingerprint check;
+			if (it->second.ok() && !decode_fingerprint(it->second.whole, check)) return false;
 			p = it->second;
 			return true;
 		}

@@ -136,7 +136,7 @@ the tags place confidently are never decoded.
 
 A fingerprint is the chroma (the pitch content) and the strongest onsets of
 the first 90 seconds of the music, measured by bpmcore from
-[foo_bpm](https://github.com/shaforostoff/foo_bpm); about 1.8 KB. Matching
+[foo_bpm](https://github.com/shaforostoff/foo_bpm); about 800 bytes compressed. Matching
 does not care about the codec, the noise, the equalisation, where the file
 starts, or the turntable speed of the transfer: the speed is read off the
 tuning offset, or searched over ±5% where the file was retuned or
@@ -151,7 +151,7 @@ onsets along a straight line, two performances do not.
 
 Measured on 2,414 TangoTunes transfers against 800 files of two other
 collections (`../fingerprint_lab`): 96% of the files whose recording has a
-fingerprint are identified, 3% come out probable, 0.4% are missed. No file
+fingerprint are identified, 4% come out probable, 0.4% are missed. No file
 was identified as a recording it is not, except where the tags it was
 checked against were wrong. What lands in the probable band wrongly is
 D'Arienzo, who re-recorded his 1940s arrangements in the 1950s with timing

@@ -208,13 +208,13 @@ namespace
 		const fingerprint ref = make_fingerprint(render(a, 1.0, 0, 10), fingerprint_excerpt_seconds);
 		check(!ref.empty() && ref.bins() == static_cast<std::size_t>(fingerprint_excerpt_seconds / 0.25),
 		      "a reference keeps the excerpt");
-		check(ref.onsets.size() > 300 && ref.onsets.size() <= 360, "about four onsets a second");
+		check(ref.onsets.size() > 220 && ref.onsets.size() <= 270, "about three onsets a second");
 		fingerprint decoded;
 		const std::string enc = encode_fingerprint(ref);
 		check(decode_fingerprint(enc, decoded) && encode_fingerprint(decoded) == enc && decoded.chroma == ref.chroma &&
 		          decoded.onsets.size() == ref.onsets.size() && decoded.tuning == ref.tuning,
 		      "fingerprint encode/decode round trip");
-		check(enc.size() < 2200, "a reference is about 2KB: " + std::to_string(enc.size()));
+		check(enc.size() < 1200, "a reference is about 1.1KB: " + std::to_string(enc.size()));
 		check(!decode_fingerprint(enc.substr(0, enc.size() - 1), decoded), "a truncated fingerprint is refused");
 
 		fingerprint_index index;

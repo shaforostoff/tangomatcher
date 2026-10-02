@@ -9,25 +9,32 @@
 
 // The layout of an encoded fingerprint, all little endian:
 //
-//     1 byte     version, 1
+//     1 byte     version, 2
 //     2 bytes    duration, in 0.1s
 //     2 bytes    music start, in 10ms
 //     1 byte     tuning, cents, signed
 //     2 bytes    bins
 //     2 bytes    onsets
-//     3 bytes    a bin: 12 pitch classes of 2 bits, class 0 in the low bits
+//     3 bytes    two bins: 12 pitch classes of 1 bit each, class 0 in the low
+//                bit; the last half filled with zeros for an odd count
 //     per onset  a varint of (time since the previous onset in 10ms) * 16 + strength
 //
-// The constants below are the ones fingerprint_lab/compact.py measured; a
-// change to any of them changes what a stored fingerprint means, or how well
-// the matching works, and should be measured there first.
+// The constants below are the ones fingerprint_lab measured (compact.py,
+// then sweep.py for the sizes); a change to any of them changes what a
+// stored fingerprint means, or how well the matching works, and should be
+// measured there first. Measured, against version 1's 2 bits a pitch class
+// and 4 onsets a second: the same 96% identified, 794 bytes a fingerprint
+// after LZMA instead of 1,250. Coarser chroma (0.5s), fewer onsets (2.5 a
+// second), coarser strengths (8 levels) or a shorter excerpt (60s) each cost
+// identifications or let D'Arienzo's re-recordings through.
 
 namespace tangotagger
 {
 	namespace
 	{
 		const double bin_seconds = 0.25;
-		const double onsets_per_second = 4.0;
+		const double onsets_per_second = 3.0;
+		const char format_version = 2;
 		const double onset_unit = 0.01;          // seconds; the onset grid
 		const double onset_sigma = 0.03;         // seconds an onset is rendered across
 
@@ -481,8 +488,12 @@ namespace tangotagger
 			double hi = 0;
 			for (double & v : m) hi = std::max(hi, v = std::max(0.0, v - lo));
 			if (hi <= 0) continue;
-			for (int k = 0; k < 12; k++)
-				out.chroma[b * 12 + k] = static_cast<std::uint8_t>(std::lround(3 * m[k] / hi));
+			// Each pitch class to four levels of the strongest, then to whether
+			// it stands above the bin's mean level: the levels as
+			// fingerprint_lab measured them, the bit as it stores them.
+			long q[12], sum = 0;
+			for (int k = 0; k < 12; k++) sum += q[k] = std::lround(3 * m[k] / hi);
+			for (int k = 0; k < 12; k++) out.chroma[b * 12 + k] = q[k] * 12 > sum ? 1 : 0;
 		}
 
 		// The strongest local maxima of the novelty.
@@ -524,7 +535,7 @@ namespace tangotagger
 	std::string encode_fingerprint(const fingerprint & f)
 	{
 		std::string s;
-		s += static_cast<char>(1);
+		s += format_version;
 		put_u16(s, clamp_u16(f.duration * 10));
 		put_u16(s, clamp_u16(f.music_start / onset_unit));
 		s += static_cast<char>(static_cast<signed char>(std::max(-127, std::min(127, f.tuning))));
@@ -532,10 +543,12 @@ namespace tangotagger
 		const std::size_t onsets = std::min<std::size_t>(f.onsets.size(), 65535);
 		put_u16(s, static_cast<unsigned>(bins));
 		put_u16(s, static_cast<unsigned>(onsets));
-		for (std::size_t b = 0; b < bins; b++)
+		for (std::size_t b = 0; b < bins; b += 2)
 		{
 			std::uint32_t word = 0;
-			for (int k = 0; k < 12; k++) word |= static_cast<std::uint32_t>(f.chroma[b * 12 + k] & 3) << (2 * k);
+			for (std::size_t j = b; j < std::min(bins, b + 2); j++)
+				for (int k = 0; k < 12; k++)
+					if (f.chroma[j * 12 + k] != 0) word |= 1u << ((j - b) * 12 + k);
 			s += static_cast<char>(word & 0xFF);
 			s += static_cast<char>((word >> 8) & 0xFF);
 			s += static_cast<char>((word >> 16) & 0xFF);
@@ -560,20 +573,22 @@ namespace tangotagger
 	bool decode_fingerprint(const std::string & s, fingerprint & out)
 	{
 		out = fingerprint();
-		if (s.size() < 10 || s[0] != 1) return false;
+		if (s.size() < 10 || s[0] != format_version) return false;
 		out.duration = get_u16(s, 1) / 10.0;
 		out.music_start = get_u16(s, 3) * onset_unit;
 		out.tuning = static_cast<signed char>(s[5]);
 		const std::size_t bins = get_u16(s, 6), onsets = get_u16(s, 8);
 		std::size_t at = 10;
-		if (s.size() < at + bins * 3) return false;
+		if (s.size() < at + (bins + 1) / 2 * 3) return false;
 		out.chroma.resize(bins * 12);
-		for (std::size_t b = 0; b < bins; b++, at += 3)
+		for (std::size_t b = 0; b < bins; b += 2, at += 3)
 		{
 			const std::uint32_t word = static_cast<unsigned char>(s[at]) |
 			                           static_cast<std::uint32_t>(static_cast<unsigned char>(s[at + 1])) << 8 |
 			                           static_cast<std::uint32_t>(static_cast<unsigned char>(s[at + 2])) << 16;
-			for (int k = 0; k < 12; k++) out.chroma[b * 12 + k] = static_cast<std::uint8_t>((word >> (2 * k)) & 3);
+			for (std::size_t j = b; j < std::min(bins, b + 2); j++)
+				for (int k = 0; k < 12; k++)
+					out.chroma[j * 12 + k] = static_cast<std::uint8_t>((word >> ((j - b) * 12 + k)) & 1);
 		}
 		std::uint32_t time = 0;
 		out.onsets.reserve(onsets);

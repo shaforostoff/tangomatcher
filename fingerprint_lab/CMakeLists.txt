@@ -40,4 +40,5 @@ target_include_directories(fp_eval PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../foo_t
 target_compile_features(fp_eval PRIVATE cxx_std_17)
 if(MSVC)
     target_compile_options(fp_eval PRIVATE /W4 /utf-8 /O2)
+    target_compile_definitions(fp_eval PRIVATE _CRT_SECURE_NO_WARNINGS)
 endif()

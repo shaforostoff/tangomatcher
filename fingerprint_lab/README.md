@@ -132,3 +132,24 @@ onset agreement >= 0.85 *and* a residual <= 25 ms:
 agree once the spelling and date problems are allowed for.
 
 800 queries against 2,414 references take 35 seconds in C++ on 16 threads.
+
+## Smaller fingerprints (2026-10-02)
+
+`sweep.py` emulates smaller formats in `fp_eval` (`FP_VARIANT`) and scores
+each on the same 800 queries; sizes are after LZMA, as the component ships
+them (format 1: 1,249 bytes).
+
+| change | identified | verdict |
+|---|---|---|
+| chroma 1 bit a pitch class (above the bin's mean) | 96.1% | free |
+| 3 onsets a second instead of 4 | 96.2% | free |
+| chroma in 0.5 s bins | 94.2% | -2 points |
+| 2.5 / 2 onsets a second | 94.9% / 94.6% | -1 / -1.5 points |
+| onset strength in 8 / 4 levels / none | 91.5% / 84.9% / 38.4% | the strength matters |
+| 60 s excerpt | 96.2% | D'Arienzo's "Don Juan" re-recording identified again |
+
+Format 2 takes the two free ones: 794 bytes after LZMA, 36% less, and
+95.8% identified, 3.8% probable, 0.4% missed, no wrong identification
+beyond the tag errors. An entropy coder would not help: with context models
+the estimated floor is 749 bytes. Byte-aligned chroma compresses to 776 but
+makes the XML 17% larger.

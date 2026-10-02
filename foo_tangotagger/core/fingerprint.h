@@ -16,7 +16,7 @@
 //    tuning offset out, so a transfer running 2% fast has the same chroma on
 //    a time axis 2% shorter - up to a whole semitone, the offset being known
 //    only modulo 100 cents. It finds the recording and the alignment;
-//  - the strongest onsets, about four a second. Two transfers of one
+//  - the strongest onsets, three a second. Two transfers of one
 //    recording have the same onsets along the whole alignment; two
 //    performances of one arrangement drift apart within a phrase, because
 //    the rubato is never the same twice. It tells the recording from its
@@ -36,7 +36,7 @@
 //
 // Measured on 2,414 TangoTunes transfers as references and 800 files of two
 // other collections and second TangoTunes transfers as queries
-// (fingerprint_lab/README.md in the repository): 96% identified, 3.3%
+// (fingerprint_lab/README.md in the repository): 96% identified, 3.8%
 // probable, 0.4% missed; of the files whose recording was not among the
 // references, none identified wrongly except where the tags were wrong.
 //
@@ -71,8 +71,8 @@ namespace tangotagger
 		double duration = 0;             //!< seconds of music, first to last audible frame
 		double music_start = 0;          //!< seconds into the file the music starts
 		int tuning = 0;                  //!< cents from A=440, -50..50
-		//! Per 0.25 second bin from music_start, 12 pitch classes of 0-3
-		//! relative to the bin's strongest; all 0 for a silent bin.
+		//! Per 0.25 second bin from music_start, 12 pitch classes: 1 where the
+		//! class stands above the bin's mean; all 0 for a silent bin.
 		std::vector<std::uint8_t> chroma;
 		std::vector<onset> onsets;
 
@@ -88,7 +88,7 @@ namespace tangotagger
 	fingerprint make_fingerprint(const audio_features & f, double excerpt_seconds);
 
 	//! The compact form stored in xml-fingerprints and the component: about
-	//! 1.8KB for a 90 second excerpt.
+	//! 1.1KB for a 90 second excerpt, about 800 bytes once LZMA has had it.
 	std::string encode_fingerprint(const fingerprint & f);
 	bool decode_fingerprint(const std::string & bytes, fingerprint & out);
 
