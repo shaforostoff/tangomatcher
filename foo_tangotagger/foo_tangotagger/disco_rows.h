@@ -43,12 +43,32 @@ struct disco_matches
 	std::size_t tracks_examined = 0;
 	std::size_t tracks_matched = 0;
 	std::size_t tracks_confident = 0;
+	std::size_t tracks_by_sound = 0;     //!< confident only because of their sound
 };
 
-//! Matches every track against the embedded discographies. Tracks in
-//! selection order, each with its candidates best first; the tracks nothing
-//! matched after them. A confident match is pre-checked.
+//! A selected track and what matching it found, before it becomes rows.
+struct disco_track
+{
+	disco_row base;                      //!< the track's own fields; no match yet
+	tangotagger::track_match match;
+	bool confident_by_tags = false;
+};
+
+//! Matches every track against the embedded discographies by its tags and
+//! file name. Once each, in selection order.
+std::vector<disco_track> match_disco_tracks(metadb_handle_list_cref tracks);
+
+//! The rows: tracks in selection order, each with its candidates best first;
+//! the tracks nothing matched after them. A confident match is pre-checked.
+disco_matches disco_rows_of(std::vector<disco_track> && tracks);
+
+//! match_disco_tracks, then disco_rows_of: by tags and file name alone.
 disco_matches find_disco_matches(metadb_handle_list_cref tracks);
+
+//! Match discographies: by tags and file name, then by sound for the tracks
+//! that leaves unsure (disco_sound.cpp), in the background; shows the window
+//! or says nothing matched.
+void match_discographies(metadb_handle_list_cref tracks);
 
 //! The recording a matched row offers.
 const tangotagger::recording & row_recording(const disco_row & row);

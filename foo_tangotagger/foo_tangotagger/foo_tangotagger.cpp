@@ -3,6 +3,9 @@
 #include "lyrics_db.h"
 #include "version.h"
 
+// The notice of the transform bpmcore was built with, as foo_rubato carries it.
+#include <foo_rubato/fft_license.h>
+
 #ifdef _WIN32
 #define FOO_TANGOTAGGER_PLATFORM \
 	"Built against the foobar2000 SDK " FOO_TANGOTAGGER_SDK_VERSION "; runs on\n" \
@@ -32,7 +35,9 @@
 	"the orchestra, singer and date wherever the tags, the file name or its\n" \
 	"folder mention them - and fixes their title, artist, album artist, date and\n" \
 	"genre, with the singer where you want it: \"Orquesta - Cantor\", \"Orquesta /\n" \
-	"Cantor\", the singer alone, a CANTOR field, or two artist values.\n"
+	"Cantor\", the singer alone, a CANTOR field, or two artist values. A track the\n" \
+	"tags cannot place is matched by its sound, against fingerprints of known\n" \
+	"transfers of the recordings.\n"
 
 #define DISCOGRAPHIES_DATA \
 	"Discographies from todotango.com, tango.info and tangoteca, and of Aníbal\n" \
@@ -88,6 +93,8 @@ DECLARE_COMPONENT_VERSION(
 	"\n"
 	"Used libraries:\n"
 	"LZMA SDK by Igor Pavlov - public domain.\n"
+	"bpmcore from foo_bpm (https://github.com/shaforostoff/foo_bpm) - MIT License.\n"
+	FOO_RUBATO_FFT_LICENSE
 );
 
 VALIDATE_COMPONENT_FILENAME("foo_tangotagger.dll");

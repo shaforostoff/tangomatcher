@@ -35,7 +35,8 @@ namespace
 				        "and choose which to write into the files.";
 			else
 				p_out = "Find the selected tracks' recordings in the orchestra discographies built into the "
-				        "component and fix their title, artist, date and genre tags.";
+				        "component - by their tags and file names, or by their sound where those are not "
+				        "enough - and fix their title, artist, date and genre tags.";
 			return true;
 		}
 
@@ -43,21 +44,7 @@ namespace
 		{
 			if (p_index == item_discographies)
 			{
-				disco_matches matches = find_disco_matches(p_data);
-				if (matches.tracks_matched == 0)
-				{
-					pfc::string_formatter msg;
-					if (matches.tracks_examined == 1)
-						msg << "The selected track was not found in the discographies.";
-					else
-						msg << "None of the " << matches.tracks_examined
-						    << " selected tracks was found in the discographies.";
-					msg << "\n\nA track is matched by its title, and its orchestra has to be named somewhere "
-					       "on it: artist, album artist, conductor, the file name or its folder.";
-					popup_message::g_show(msg, FOO_TANGOTAGGER_NAME);
-					return;
-				}
-				show_disco_matches(std::move(matches));
+				match_discographies(p_data);
 				return;
 			}
 

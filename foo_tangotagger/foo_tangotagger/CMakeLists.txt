@@ -29,6 +29,7 @@ configure_file(version.h.in "${CMAKE_CURRENT_BINARY_DIR}/version.h" @ONLY)
 set(FOO_TANGOTAGGER_SOURCES
     contextmenu.cpp
     disco_rows.cpp
+    disco_sound.cpp
     file_info_filter_fields.cpp
     file_info_filter_lyrics.cpp
     foo_tangotagger.cpp
@@ -99,7 +100,7 @@ else()
     target_include_directories(foo_tangotagger PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/mac")
 endif()
 
-target_link_libraries(foo_tangotagger PRIVATE fb2k::sdk tangotagger_core)
+target_link_libraries(foo_tangotagger PRIVATE fb2k::sdk tangotagger_core bpmcore)
 target_include_directories(foo_tangotagger PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
 
 if(WIN32)

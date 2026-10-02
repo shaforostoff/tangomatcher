@@ -107,22 +107,20 @@ void set_disco_tag_options(const tag_options & o)
 	                   (o.genre ? 16 : 0);
 }
 
-disco_matches find_disco_matches(metadb_handle_list_cref tracks)
+std::vector<disco_track> match_disco_tracks(metadb_handle_list_cref tracks)
 {
-	disco_matches result;
+	std::vector<disco_track> result;
 	const tangotagger::recording_matcher & m = matcher();
 
-	std::vector<disco_row> unmatched;
 	std::unordered_set<const metadb_handle *> seen;
 	for (t_size i = 0; i < tracks.get_count(); i++)
 	{
 		const metadb_handle_ptr & track = tracks[i];
 		if (!seen.insert(track.get_ptr()).second) continue;
-		result.tracks_examined++;
 
 		disco_row base;
 		base.track = track;
-		base.group = result.tracks_examined - 1;
+		base.group = result.size();
 
 		tangotagger::track_tags tags;
 		tags.path = track->get_path();
@@ -148,17 +146,34 @@ disco_matches find_disco_matches(metadb_handle_list_cref tracks)
 		}
 		base.title = tags.title.empty() ? pfc::string8(pfc::string_filename(track->get_path())) : pfc::string8(tags.title.c_str());
 
-		const tangotagger::track_match found = m.find(tags);
+		disco_track t;
+		t.base = std::move(base);
+		t.match = m.find(tags);
+		t.confident_by_tags = t.match.confident;
+		result.push_back(std::move(t));
+	}
+	return result;
+}
+
+disco_matches disco_rows_of(std::vector<disco_track> && tracks)
+{
+	disco_matches result;
+	std::vector<disco_row> unmatched;
+	for (disco_track & t : tracks)
+	{
+		result.tracks_examined++;
+		const tangotagger::track_match & found = t.match;
 		if (found.candidates.empty())
 		{
-			unmatched.push_back(std::move(base));
+			unmatched.push_back(std::move(t.base));
 			continue;
 		}
 		result.tracks_matched++;
 		if (found.confident) result.tracks_confident++;
+		if (found.confident && !t.confident_by_tags) result.tracks_by_sound++;
 		for (std::size_t v = 0; v < found.candidates.size(); v++)
 		{
-			disco_row row = base;
+			disco_row row = t.base;
 			row.match = found.candidates[v];
 			row.version = static_cast<int>(v + 1);
 			row.versions = static_cast<int>(found.candidates.size());
@@ -169,6 +184,11 @@ disco_matches find_disco_matches(metadb_handle_list_cref tracks)
 	}
 	for (disco_row & r : unmatched) result.rows.push_back(std::move(r));
 	return result;
+}
+
+disco_matches find_disco_matches(metadb_handle_list_cref tracks)
+{
+	return disco_rows_of(match_disco_tracks(tracks));
 }
 
 const tangotagger::recording & row_recording(const disco_row & row)
@@ -196,7 +216,9 @@ pfc::string8 disco_match_label(const disco_row & row)
 {
 	if (!row.matched()) return "no match";
 	pfc::string_formatter out;
-	if (row.confident) out << "confident";
+	if (row.confident && row.match.sound_identified) out << "by sound";
+	else if (row.match.sound > 0 && !row.match.sound_identified) out << "sound?";
+	else if (row.confident) out << "confident";
 	else if (row.match.orchestra >= 2 && row.match.title >= 8 && row.match.vocal >= 0 && row.match.date >= 0) out << "likely";
 	else out << "possible";
 	return out;
@@ -213,6 +235,10 @@ pfc::string8 disco_preview_text(const disco_row & row, const char * newline)
 		    << "A track is matched by its title, and the orchestra has to be named somewhere on it - "
 		    << "artist, album artist, conductor, the file name or its folder. The discographies cover "
 		    << tangotagger::embedded_discography().orchestras.size() << " orchestras.";
+		if (!tangotagger::embedded_discography().fingerprints.empty())
+			out << newline << newline << "Its sound was compared too, with known transfers of "
+			    << tangotagger::embedded_discography().fingerprints.size()
+			    << " of their recordings, and matched none of them.";
 		return out;
 	}
 	const tangotagger::recording & r = row_recording(row);
@@ -221,6 +247,12 @@ pfc::string8 disco_preview_text(const disco_row & row, const char * newline)
 	if (!r.genre.empty()) out << "  \xC2\xB7  " << r.genre.c_str();
 	out << newline << r.name.c_str() << newline;
 	out << "Matched on: " << tangotagger::recording_matcher::evidence_text(row.match).c_str() << "." << newline;
+	if (row.match.sound_identified)
+		out << "The track sounds like a known transfer of this recording: the same performance, "
+		    << "whatever the speed, noise or trim." << newline;
+	else if (row.match.sound > 0)
+		out << "The track probably sounds like this recording, but not surely enough: listen before "
+		    << "writing. An orchestra re-recording an arrangement can sound this close." << newline;
 	if (row.versions > 1)
 		out << "One of " << row.versions << " recordings this track could be"
 		    << (row.confident ? "; the others fit it clearly worse." : ".") << newline;
@@ -255,7 +287,9 @@ pfc::string8 disco_status_text(const disco_matches & matches)
 	pfc::string_formatter out;
 	out << matches.tracks_matched << " of " << matches.tracks_examined
 	    << (matches.tracks_examined == 1 ? " track" : " tracks") << " matched, " << matches.tracks_confident
-	    << " of them confidently; those are checked. Pick the right recording for the rest.";
+	    << " of them confidently";
+	if (matches.tracks_by_sound > 0) out << " (" << matches.tracks_by_sound << " by their sound)";
+	out << "; those are checked. Pick the right recording for the rest.";
 	return out;
 }
 

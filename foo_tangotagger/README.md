@@ -125,6 +125,44 @@ shows each field before and after. Fields already right are left alone.
 `tools/match_recordings` runs the same matching from the command line, one
 track's tags per line.
 
+### By sound
+
+A track the tags and file name do not place confidently - `02
+Track02.wav`, or two sessions of one tune with nothing on the file to tell
+them apart - is then decoded and compared by its sound with fingerprints of
+known transfers of the discographies' recordings. A progress dialog shows
+while that runs, several tracks at a time, below normal priority; tracks
+the tags place confidently are never decoded.
+
+A fingerprint is the chroma (the pitch content) and the strongest onsets of
+the first 90 seconds of the music, measured by bpmcore from
+[foo_bpm](https://github.com/shaforostoff/foo_bpm); about 1.8 KB. Matching
+does not care about the codec, the noise, the equalisation, where the file
+starts, or the turntable speed of the transfer: the speed is read off the
+tuning offset, or searched over ±5% where the file was retuned or
+time-stretched. What tells a recording from a re-recording of the same
+arrangement is the timing: two transfers of one performance keep the same
+onsets along a straight line, two performances do not.
+
+| Match | Shown as | Checked |
+|---|---|---|
+| onsets agree ≥ 0.85, along a straight line | `by sound` | yes |
+| onsets agree ≥ 0.70 | `sound?` | no: listen first |
+
+Measured on 2,414 TangoTunes transfers against 800 files of two other
+collections (`../fingerprint_lab`): 96% of the files whose recording has a
+fingerprint are identified, 3% come out probable, 0.4% are missed. No file
+was identified as a recording it is not, except where the tags it was
+checked against were wrong. What lands in the probable band wrongly is
+D'Arienzo, who re-recorded his 1940s arrangements in the 1950s with timing
+close enough to fool the onsets - hence listen first.
+
+The preview says which: "Matched on: sound 0.97" for a recording found by
+sound alone, with the tags' evidence beside it where they named it too.
+
+`tools/fingerprints` (`tango_fingerprints identify <folder>`) runs the same
+matching - tags, then sound - from the command line.
+
 ## Data
 
 The lyrics are read from `../xml-lyrics-publicdomain` at build time by
@@ -148,6 +186,23 @@ have only the tango.info file, which is used. Also left out are recordings
 listed twice, such as `Anibal Troilo (all)` against `Anibal Troilo
 1938-1950`. The result is about 12,100 recordings of 58 orchestras, 1,610
 of them from Tango Time Travel, in 110 KB. The discographies are the same in both builds.
+
+The audio fingerprints are read from `../xml-fingerprints` by the same
+tool and embedded with the recordings they belong to: one file per
+orchestra, a `<recording name vocal date fp/>` per recording, the
+fingerprint base64-encoded. They are the same in both builds.
+`tango_fingerprints build` makes them from collections of tagged files,
+best collection first:
+
+    tango_fingerprints build ..\xml-fingerprints build\fingerprint_cache.tsv C:\TangoTunes C:\Other ...
+
+Each file is matched by its tags and file name, as above; a recording
+matched confidently gets the fingerprint of one of its transfers - the
+first, in collection order, that identifies another transfer of the same
+recording, so a mislabelled file does not become a reference; or the only
+one there is. Recordings whose transfers disagree are reported and left
+out. ffmpeg and ffprobe decode and read the files; the cache keeps the
+fingerprints between runs.
 
 Tango Time Travel's licence asks for credit: the about box names them, the
 licence and the changes made, and the match window's preview names the
@@ -173,6 +228,9 @@ Two builds of the lyrics:
 
 or on macOS `scripts/build_release_macos.sh`. The foobar2000 SDK, WTL and the
 LZMA SDK are downloaded on the first configure (`scripts/get_sdk.ps1`).
+bpmcore is taken from a foo_bpm checkout beside this repository's
+(`../../foo_bpm`, or `-DFOO_BPM_DIR=...`), or fetched from GitHub when
+there is none.
 
 ## Licence
 

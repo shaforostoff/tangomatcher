@@ -77,6 +77,21 @@ namespace tangotagger
 			r.source = source.empty() ? -1 : std::atoi(source.c_str());
 			if (r.source < -1 || (r.source >= 0 && static_cast<std::uint32_t>(r.source) >= sources)) return false;
 		}
+
+		if (payload.size() < pos + 4) return false;
+		const std::uint32_t fingerprints = read_u32le(payload, pos);
+		pos += 4;
+		out.fingerprints.resize(fingerprints);
+		for (recording_fingerprint & f : out.fingerprints)
+		{
+			if (payload.size() < pos + 8) return false;
+			const std::uint32_t index = read_u32le(payload, pos), length = read_u32le(payload, pos + 4);
+			pos += 8;
+			if (index >= count || payload.size() - pos < length) return false;
+			f.recording = static_cast<int>(index);
+			f.data.assign(payload, pos, length);
+			pos += length;
+		}
 		return pos == payload.size();
 	}
 

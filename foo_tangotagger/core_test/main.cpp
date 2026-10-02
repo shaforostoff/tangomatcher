@@ -1,11 +1,17 @@
 // core_test: the embedded lyrics and discographies and the matching, without
 // a host.
 
+#include <algorithm>
+#include <array>
+#include <cmath>
+#include <cstdint>
 #include <cstdio>
 #include <string>
 #include <vector>
 
+#include "disco_fingerprint.h"
 #include "disco_match.h"
+#include "fingerprint.h"
 #include "disco_tags.h"
 #include "lyrics_db.h"
 #include "text_links.h"
@@ -81,6 +87,233 @@ namespace
 		s.file_name = name;
 		s.text = "la la la";
 		return s;
+	}
+}
+
+namespace
+{
+	// --- fingerprints ---------------------------------------------------------------
+	//
+	// A made-up piece - a melody of chords and a performance's onsets - rendered
+	// the way two transfers of it would differ: speed (and with it the tuning
+	// offset bpmcore would measure), where the file starts, noise; and as a
+	// second performance of the same arrangement, its rubato different.
+
+	//! A portable generator: the same numbers on every platform.
+	struct lcg
+	{
+		std::uint32_t s;
+		double next() { s = s * 1664525u + 1013904223u; return (s >> 8) / 16777216.0; }
+	};
+
+	struct piece
+	{
+		std::vector<std::array<int, 3>> chords;   // one every half second
+		std::vector<double> onsets;               // seconds
+		std::vector<double> strengths;
+		double length = 0;
+	};
+
+	piece make_piece(std::uint32_t seed, double length)
+	{
+		lcg r{ seed };
+		piece p;
+		p.length = length;
+		for (double t = 0; t < length; t += 0.5)
+			p.chords.push_back({ static_cast<int>(r.next() * 12), static_cast<int>(r.next() * 12),
+			                     static_cast<int>(r.next() * 12) });
+		for (double t = 0.3; t < length; t += 0.15 + r.next() * 0.45)
+		{
+			p.onsets.push_back(t);
+			p.strengths.push_back(0.3 + r.next());
+		}
+		return p;
+	}
+
+	//! A second performance: the same notes, the timing drifting by up to
+	//! `drift` seconds as rubato does.
+	piece reperform(const piece & p, std::uint32_t seed, double drift)
+	{
+		lcg r{ seed };
+		piece q = p;
+		double walk = 0;
+		for (double & t : q.onsets)
+		{
+			walk = std::max(-drift, std::min(drift, walk + (r.next() - 0.5) * drift * 0.5));
+			t += walk;
+		}
+		return q;
+	}
+
+	//! The features of `p` as a transfer `speed` times too fast whose file
+	//! starts `trim` seconds into the music (after a second of silence).
+	audio_features render(const piece & p, double speed, double trim, std::uint32_t noise_seed)
+	{
+		lcg noise{ noise_seed };
+		audio_features f;
+		f.chroma_hop = 2048.0 / 22050.0;
+		f.novelty_rate = 22050.0 / 256.0;
+		// The offset a speed shows as, folded into +/-50 cents.
+		double cents = 1200.0 * std::log2(speed);
+		cents -= 100.0 * std::round(cents / 100.0);
+		f.tuning_cents = cents;
+		const int semis = static_cast<int>(std::lround(1200.0 * std::log2(speed) / 100.0 - cents / 100.0));
+		f.silence = 0.5f;
+		const double lead = 1.0;   // silence before the music, in file seconds
+		const double file_length = lead + (p.length - trim) / speed;
+		const std::size_t frames = static_cast<std::size_t>(file_length / f.chroma_hop);
+		for (std::size_t i = 0; i < frames; i++)
+		{
+			const double t = i * f.chroma_hop;
+			const double music = (t - lead) * speed + trim;   // where in the piece
+			std::array<float, 12> c{};
+			float loud = 0;
+			if (t >= lead && music < p.length)
+			{
+				loud = 1;
+				const std::array<int, 3> & chord = p.chords[std::min(p.chords.size() - 1, static_cast<std::size_t>(music / 0.5))];
+				for (int k = 0; k < 3; k++) c[((chord[k] + semis) % 12 + 12) % 12] += 1.0f - 0.25f * k;
+				for (float & v : c) v += static_cast<float>(noise.next() * 0.15);
+			}
+			f.chroma.insert(f.chroma.end(), c.begin(), c.end());
+			f.loudness.push_back(loud);
+		}
+		f.novelty.assign(static_cast<std::size_t>(file_length * f.novelty_rate), 0.0f);
+		for (float & v : f.novelty) v = static_cast<float>(noise.next() * 0.05);
+		for (std::size_t i = 0; i < p.onsets.size(); i++)
+		{
+			if (p.onsets[i] < trim) continue;
+			const double at = (lead + (p.onsets[i] - trim) / speed) * f.novelty_rate;
+			for (int d = -2; d <= 2; d++)
+			{
+				const long j = static_cast<long>(std::lround(at)) + d;
+				if (j >= 0 && j < static_cast<long>(f.novelty.size()))
+					f.novelty[j] += static_cast<float>(p.strengths[i] * std::exp(-0.5 * d * d));
+			}
+		}
+		return f;
+	}
+
+	void fingerprint_tests(const discography & disco)
+	{
+		for (std::size_t n = 0; n < 7; n++)
+		{
+			std::string bytes;
+			for (std::size_t i = 0; i < n; i++) bytes += static_cast<char>(i * 97 + 3);
+			std::string back;
+			check(from_base64(to_base64(bytes), back) && back == bytes, "base64 round trip, " + std::to_string(n) + " bytes");
+		}
+
+		const piece a = make_piece(1, 170), b = make_piece(2, 165);
+		const fingerprint ref = make_fingerprint(render(a, 1.0, 0, 10), fingerprint_excerpt_seconds);
+		check(!ref.empty() && ref.bins() == static_cast<std::size_t>(fingerprint_excerpt_seconds / 0.25),
+		      "a reference keeps the excerpt");
+		check(ref.onsets.size() > 300 && ref.onsets.size() <= 360, "about four onsets a second");
+		fingerprint decoded;
+		const std::string enc = encode_fingerprint(ref);
+		check(decode_fingerprint(enc, decoded) && encode_fingerprint(decoded) == enc && decoded.chroma == ref.chroma &&
+		          decoded.onsets.size() == ref.onsets.size() && decoded.tuning == ref.tuning,
+		      "fingerprint encode/decode round trip");
+		check(enc.size() < 2200, "a reference is about 2KB: " + std::to_string(enc.size()));
+		check(!decode_fingerprint(enc.substr(0, enc.size() - 1), decoded), "a truncated fingerprint is refused");
+
+		fingerprint_index index;
+		index.add(100, ref);
+		index.add(200, make_fingerprint(render(b, 1.0, 0, 11), fingerprint_excerpt_seconds));
+
+		auto best = [&](const audio_features & f) { return index.identify(make_fingerprint(f, 0)); };
+		auto describe_fp = [](const std::vector<fingerprint_match> & m)
+		{
+			std::string s;
+			for (const fingerprint_match & x : m)
+				s += " [" + std::to_string(x.id) + " onset " + std::to_string(x.onset) + " wander " +
+				     std::to_string(x.wander_ms) + " speed " + std::to_string(x.speed) + "]";
+			return s;
+		};
+		{
+			const std::vector<fingerprint_match> m = best(render(a, 1.0, 0, 20));
+			check(!m.empty() && m[0].id == 100 && m[0].identified(), "the same transfer again:" + describe_fp(m));
+		}
+		{
+			// 2.5% fast, the first 4 seconds cut, other noise.
+			const std::vector<fingerprint_match> m = best(render(a, 1.025, 4, 21));
+			check(!m.empty() && m[0].id == 100 && m[0].identified() && std::fabs(m[0].speed - 1.025) < 0.005,
+			      "a faster, trimmed transfer:" + describe_fp(m));
+		}
+		{
+			// 4% slow: past the semitone wrap from the reference.
+			const std::vector<fingerprint_match> m = best(render(a, 0.96, 0, 22));
+			check(!m.empty() && m[0].id == 100 && m[0].identified() && std::fabs(m[0].speed - 0.96) < 0.005,
+			      "a slower transfer, across the semitone wrap:" + describe_fp(m));
+		}
+		{
+			const std::vector<fingerprint_match> m = best(render(b, 1.01, 2, 23));
+			check(!m.empty() && m[0].id == 200 && m[0].identified(), "the other piece:" + describe_fp(m));
+		}
+		{
+			const std::vector<fingerprint_match> m = best(render(make_piece(3, 168), 1.0, 0, 24));
+			check(m.empty() || !m[0].identified(), "a piece with no reference is not identified:" + describe_fp(m));
+		}
+		{
+			const std::vector<fingerprint_match> m = best(render(reperform(a, 5, 0.12), 1.0, 0, 25));
+			check(m.empty() || !m[0].identified(), "a second performance is not identified:" + describe_fp(m));
+		}
+
+		// Merging into a track's match: what the sound identifies goes first
+		// and is confident; probable goes first among the rest, unchecked.
+		if (disco.recordings.size() >= 3)
+		{
+			track_match tm;
+			recording_match by_tags;
+			by_tags.recording = 0;
+			by_tags.title = 10;
+			tm.candidates.push_back(by_tags);
+			fingerprint_match sure;
+			sure.id = 2;
+			sure.onset = 0.95;
+			sure.wander_ms = 5;
+			fingerprint_match maybe = sure;
+			maybe.id = 1;
+			maybe.onset = 0.75;
+
+			track_match t1 = tm;
+			add_sound(t1, { sure });
+			check(t1.confident && t1.candidates.size() == 2 && t1.candidates[0].recording == 2 &&
+			          t1.candidates[0].sound == 95 && t1.candidates[0].sound_identified,
+			      "identified by sound: first, confident");
+			check(recording_matcher::evidence_text(t1.candidates[0]) == "sound 0.95", "evidence of the sound alone");
+
+			track_match t2 = tm;
+			add_sound(t2, { maybe });
+			check(!t2.confident && t2.candidates[0].recording == 1 && !t2.candidates[0].sound_identified,
+			      "probable by sound: first, not confident");
+
+			track_match t3 = tm;
+			fingerprint_match also_sure = sure;
+			also_sure.id = 0;
+			add_sound(t3, { sure, also_sure });
+			check(!t3.confident, "two recordings identified by sound: the user's call");
+
+			track_match t4 = tm;
+			fingerprint_match wandering = sure;
+			wandering.wander_ms = 40;
+			add_sound(t4, { wandering });
+			check(!t4.confident && t4.candidates[0].sound > 0, "agreeing onsets off a straight line: probable");
+		}
+
+		// The embedded fingerprints, when this build has them.
+		if (!disco.fingerprints.empty())
+		{
+			std::size_t bad = 0;
+			for (const recording_fingerprint & f : disco.fingerprints)
+			{
+				fingerprint fp;
+				if (!decode_fingerprint(f.data, fp) || fp.empty()) bad++;
+			}
+			check(bad == 0, std::to_string(bad) + " embedded fingerprints do not decode");
+			check(embedded_fingerprints().size() == disco.fingerprints.size(), "every embedded fingerprint indexed");
+			std::printf("%zu fingerprints embedded\n", disco.fingerprints.size());
+		}
 	}
 }
 
@@ -565,6 +798,8 @@ int main()
 			album_artist = album_artist || t.field == "ALBUM ARTIST";
 		check(album_artist, "the singer scheme always names the orchestra in ALBUM ARTIST");
 	}
+
+	fingerprint_tests(disco);
 
 	std::printf("%d checks, %d failed\n", g_checks, g_failures);
 	return g_failures == 0 ? 0 : 1;

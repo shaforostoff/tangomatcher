@@ -76,6 +76,11 @@ namespace tangotagger
 		int date = 0;
 		int genre = 0;
 		int score = 0;          //!< the sum, orchestra weighted
+		//! How well the track's sound agrees with a known transfer of the
+		//! recording, in hundredths of the onset agreement (fingerprint.h);
+		//! 0 when the sound was not compared or did not agree.
+		int sound = 0;
+		bool sound_identified = false;   //!< the sound alone says this is the recording
 
 		bool title_exact() const { return title >= 10; }
 	};

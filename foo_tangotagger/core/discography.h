@@ -36,16 +36,25 @@ namespace tangotagger
 		std::string licence_url;
 	};
 
+	//! A known transfer of a recording, fingerprinted: see fingerprint.h.
+	struct recording_fingerprint
+	{
+		int recording = 0;      //!< index into discography::recordings
+		std::string data;       //!< encode_fingerprint's bytes
+	};
+
 	struct discography
 	{
 		std::vector<std::string> orchestras;   //!< "Carlos di Sarli", "Orquesta Típica Víctor"...
 		std::vector<recording> recordings;     //!< by orchestra, then title
 		std::vector<discography_source> sources;
+		//! From ../xml-fingerprints; by recording.
+		std::vector<recording_fingerprint> fingerprints;
 	};
 
 	//! The payload layout, shared with the packer:
 	//!
-	//!     4 bytes    "TTD2"
+	//!     4 bytes    "TTD3"
 	//!     4 bytes    source count, little endian
 	//!     per source seven NUL-terminated strings, in the order of
 	//!                discography_source's fields
@@ -55,7 +64,10 @@ namespace tangotagger
 	//!     per recording six NUL-terminated strings: the orchestra's index
 	//!                in decimal, name, vocal, date, genre, the source's
 	//!                index in decimal or empty
-	const char discography_magic[4] = { 'T', 'T', 'D', '2' };
+	//!     4 bytes    fingerprint count, little endian
+	//!     per fingerprint the recording's index and the data's length, 4
+	//!                bytes each, little endian, then the data
+	const char discography_magic[4] = { 'T', 'T', 'D', '3' };
 
 	//! Splits a decompressed payload into a discography. Returns false on
 	//! anything malformed.

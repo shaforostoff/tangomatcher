@@ -1,4 +1,4 @@
-// pack_discography <output .cpp> <discography dir>...
+// pack_discography <output .cpp> <discography dir>... [--fingerprints <dir>]
 //
 // Reads every *.xml in the discography directories - one <discography
 // orchestra="..."> of <track name vocal year genre .../> each - keeps the
@@ -31,6 +31,13 @@
 //    Víctor" and "Orquesta Típica Víctor (dir. Adolfo Carabelli)", which
 //    keeps the director).
 //
+// With --fingerprints, the audio fingerprints in that directory - files of
+// <recording name vocal date fp/> under <fingerprints orchestra="...">,
+// written by tools/make_fingerprints - are attached to the recordings they
+// name: the same orchestra, title, singers and date, spelling aside. One
+// naming a recording the discographies no longer have is reported and left
+// out.
+//
 // Runs at build time on the build machine. The output is only rewritten when
 // its contents change.
 
@@ -43,6 +50,7 @@
 #include "../pack_common.h"
 
 #include "discography.h"
+#include "fingerprint.h"
 #include "title_match.h"
 
 namespace fs = std::filesystem;
@@ -278,6 +286,14 @@ namespace
 		return out;
 	}
 
+	//! What a fingerprint file names a recording by, spelling aside.
+	std::string recording_key(const std::string & orchestra, const std::string & name, const std::string & vocal,
+	                          const std::string & date)
+	{
+		return tangotagger::fold_key(orchestra) + "|" + tangotagger::fold_key(name) + "|" +
+		       tangotagger::fold_key(vocal) + "|" + date;
+	}
+
 	bool same_singers(const std::string & a, const std::string & b)
 	{
 		const std::set<std::string> x = singer_surnames(a), y = singer_surnames(b);
@@ -290,9 +306,16 @@ namespace
 
 int main(int argc, char ** argv)
 {
-	if (argc < 3)
+	std::vector<std::string> dirs;
+	std::string fingerprint_dir;
+	for (int i = 2; i < argc; i++)
 	{
-		std::fprintf(stderr, "usage: pack_discography <output .cpp> <discography dir>...\n");
+		if (std::strcmp(argv[i], "--fingerprints") == 0 && i + 1 < argc) fingerprint_dir = argv[++i];
+		else dirs.push_back(argv[i]);
+	}
+	if (argc < 3 || dirs.empty())
+	{
+		std::fprintf(stderr, "usage: pack_discography <output .cpp> <discography dir>... [--fingerprints <dir>]\n");
 		return 2;
 	}
 	const fs::path output = fs::u8path(argv[1]);
@@ -304,12 +327,12 @@ int main(int argc, char ** argv)
 	std::vector<tangotagger::discography_source> sources;
 	std::vector<entry> entries;
 	int files_read = 0, files_skipped = 0;
-	for (int rank = 0; rank + 2 < argc; rank++)
+	for (int rank = 0; rank < static_cast<int>(dirs.size()); rank++)
 	{
-		const std::vector<fs::path> files = pack::xml_files(fs::u8path(argv[rank + 2]));
+		const std::vector<fs::path> files = pack::xml_files(fs::u8path(dirs[rank]));
 		if (files.empty())
 		{
-			std::fprintf(stderr, "%s: no .xml files in %s\n", tool, argv[rank + 2]);
+			std::fprintf(stderr, "%s: no .xml files in %s\n", tool, dirs[rank].c_str());
 			return 1;
 		}
 		for (const fs::path & path : files)
@@ -517,6 +540,61 @@ int main(int argc, char ** argv)
 		payload += '\0';
 	}
 
+	// --- fingerprints -----------------------------------------------------------
+	std::size_t fingerprints = 0, fingerprints_unplaced = 0;
+	{
+		std::map<std::string, std::uint32_t> position;   // recording key -> index in the payload
+		for (std::size_t p = 0; p < order.size(); p++)
+		{
+			const entry & e = kept[order[p]];
+			position.emplace(recording_key(orchestras[e.orchestra], e.fields[0], e.fields[1], e.fields[2]),
+			                 static_cast<std::uint32_t>(p));
+		}
+		std::string section;
+		if (!fingerprint_dir.empty())
+			for (const fs::path & path : pack::xml_files(fs::u8path(fingerprint_dir)))
+			{
+				std::string xml;
+				if (!pack::read_file(path, xml))
+				{
+					std::fprintf(stderr, "%s: error: %s: cannot read\n", tool, path.u8string().c_str());
+					return 1;
+				}
+				const std::size_t root = xml.find("<fingerprints");
+				if (root == std::string::npos) continue;
+				const std::string orchestra =
+					pack::attribute(xml.substr(root, xml.find('>', root) - root), "orchestra");
+				for (std::size_t pos = root;;)
+				{
+					const std::size_t t = xml.find("<recording ", pos);
+					if (t == std::string::npos) break;
+					const std::size_t end = xml.find('>', t);
+					if (end == std::string::npos) break;
+					const std::string tag = xml.substr(t, end - t);
+					pos = end;
+					std::string data;
+					if (!tangotagger::from_base64(pack::attribute(tag, "fp"), data) || data.empty()) continue;
+					const std::string name = pack::attribute(tag, "name"), vocal = pack::attribute(tag, "vocal"),
+					                  date = pack::attribute(tag, "date");
+					const auto found = position.find(recording_key(orchestra, name, vocal, date));
+					if (found == position.end())
+					{
+						if (fingerprints_unplaced++ < 10)
+							std::fprintf(stderr, "%s: %s: no recording %s / %s / %s / %s\n", tool,
+							             path.filename().u8string().c_str(), orchestra.c_str(), name.c_str(),
+							             vocal.c_str(), date.c_str());
+						continue;
+					}
+					pack::put_u32le(section, found->second);
+					pack::put_u32le(section, static_cast<std::uint32_t>(data.size()));
+					section += data;
+					fingerprints++;
+				}
+			}
+		pack::put_u32le(payload, static_cast<std::uint32_t>(fingerprints));
+		payload += section;
+	}
+
 	std::vector<unsigned char> packed;
 	if (!pack::compress(payload, packed, tool)) return 1;
 
@@ -529,8 +607,8 @@ int main(int argc, char ** argv)
 
 	std::printf("%s: %zu recordings of %zu orchestras from %d files, %zu of them from %zu credited sources "
 	            "(%d files, %d recordings a better file has and %d duplicate recordings left out), "
-	            "%zu bytes -> %zu bytes LZMA\n",
+	            "%zu fingerprints (%zu naming no recording), %zu bytes -> %zu bytes LZMA\n",
 	            tool, kept.size(), orchestras.size(), files_read, credited, sources.size(), files_skipped,
-	            known_better, duplicates, payload.size(), packed.size());
+	            known_better, duplicates, fingerprints, fingerprints_unplaced, payload.size(), packed.size());
 	return 0;
 }

@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <cctype>
+#include <cstdio>
 #include <cstdlib>
 #include <unordered_set>
 
@@ -710,6 +711,15 @@ namespace tangotagger
 	std::string recording_matcher::evidence_text(const recording_match & m)
 	{
 		std::vector<std::string> parts;
+		if (m.sound > 0)
+		{
+			char sound[48];
+			std::snprintf(sound, sizeof sound, "sound %d.%02d%s", m.sound / 100, m.sound % 100,
+			              m.sound_identified ? "" : " (probable)");
+			parts.push_back(sound);
+			// Found by its sound alone: nothing on the track named it.
+			if (m.title == 0 && m.orchestra == 0) return parts.front();
+		}
 		parts.push_back(m.title >= 9 ? "title" : m.title >= 6 ? "similar title" : "part of title");
 		if (m.orchestra >= 2) parts.push_back("orchestra");
 		else if (m.orchestra == 1) parts.push_back("orchestra?");

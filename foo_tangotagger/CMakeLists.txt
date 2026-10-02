@@ -52,6 +52,13 @@ set(TANGOTAGGER_DISCOGRAPHY_CC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-discograp
     CACHE PATH "Folder of CC BY-SA discography XML files to embed, preferred over the others")
 set(TANGOTAGGER_DISCOGRAPHY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-discographies-publicdomain"
     CACHE PATH "Folder of discography XML files to embed")
+set(TANGOTAGGER_FINGERPRINT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../xml-fingerprints"
+    CACHE PATH "Folder of audio fingerprint XML files to embed with the discographies")
+# bpmcore, from foo_bpm, measures what a fingerprint is made of. A checkout
+# beside this repository's, or fetched from GitHub when there is none.
+set(FOO_BPM_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../foo_bpm"
+    CACHE PATH "Checkout of foo_bpm, for bpmcore")
+set(FOO_BPM_GIT_TAG "main" CACHE STRING "foo_bpm revision to fetch when FOO_BPM_DIR has no checkout")
 # OFF embeds every lyrics file in the folder, for a build of your own. ON
 # embeds only files marked pd_status="public domain" - the build to publish.
 option(FOO_TANGOTAGGER_PUBLIC_DOMAIN_ONLY "Embed only lyrics marked public domain" OFF)
@@ -212,10 +219,23 @@ add_custom_command(
 # they have is left out of the others, and the component credits them.
 add_executable(pack_discography
     tools/pack_discography/main.cpp
+    core/fingerprint.cpp
     core/title_match.cpp)
 target_include_directories(pack_discography PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/core")
 target_link_libraries(pack_discography PRIVATE lzma_enc)
 set_target_properties(pack_discography PROPERTIES FOLDER "tools")
+
+# The audio fingerprints of known transfers go in with the recordings they
+# belong to; see core/fingerprint.h. Without the folder the build has none,
+# and the component matches by tags alone.
+file(GLOB TANGOTAGGER_FINGERPRINT_FILES CONFIGURE_DEPENDS "${TANGOTAGGER_FINGERPRINT_DIR}/*.xml")
+set(_fingerprint_flags "")
+if(TANGOTAGGER_FINGERPRINT_FILES)
+    set(_fingerprint_flags --fingerprints "${TANGOTAGGER_FINGERPRINT_DIR}")
+    message(STATUS "Fingerprints: ${TANGOTAGGER_FINGERPRINT_DIR}")
+else()
+    message(STATUS "Fingerprints: none (${TANGOTAGGER_FINGERPRINT_DIR} has no .xml files)")
+endif()
 
 file(GLOB TANGOTAGGER_DISCOGRAPHY_FILES CONFIGURE_DEPENDS
      "${TANGOTAGGER_DISCOGRAPHY_CC_DIR}/*.xml" "${TANGOTAGGER_DISCOGRAPHY_DIR}/*.xml")
@@ -224,20 +244,56 @@ add_custom_command(
     OUTPUT "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
     COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/generated"
     COMMAND pack_discography "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
-            "${TANGOTAGGER_DISCOGRAPHY_CC_DIR}" "${TANGOTAGGER_DISCOGRAPHY_DIR}"
+            "${TANGOTAGGER_DISCOGRAPHY_CC_DIR}" "${TANGOTAGGER_DISCOGRAPHY_DIR}" ${_fingerprint_flags}
     COMMAND "${CMAKE_COMMAND}" -E touch_nocreate "${TANGOTAGGER_DISCOGRAPHY_BLOB}"
-    DEPENDS pack_discography ${TANGOTAGGER_DISCOGRAPHY_FILES}
+    DEPENDS pack_discography ${TANGOTAGGER_DISCOGRAPHY_FILES} ${TANGOTAGGER_FINGERPRINT_FILES}
     COMMENT "Packing discographies from ${TANGOTAGGER_DISCOGRAPHY_CC_DIR} and ${TANGOTAGGER_DISCOGRAPHY_DIR}"
     VERBATIM)
 
+# --- bpmcore -----------------------------------------------------------------
+# Measures the chroma and onsets a fingerprint is made of, in the component
+# and in tools/make_fingerprints.
+if(EXISTS "${FOO_BPM_DIR}/bpmcore/bpmcore.h")
+    set(_foo_bpm_source "${FOO_BPM_DIR}")
+else()
+    include(FetchContent)
+    FetchContent_Declare(foo_bpm
+        GIT_REPOSITORY https://github.com/shaforostoff/foo_bpm.git
+        GIT_TAG "${FOO_BPM_GIT_TAG}"
+        GIT_SHALLOW TRUE)
+    FetchContent_GetProperties(foo_bpm)
+    if(NOT foo_bpm_POPULATED)
+        FetchContent_Populate(foo_bpm)
+    endif()
+    set(_foo_bpm_source "${foo_bpm_SOURCE_DIR}")
+endif()
+message(STATUS "bpmcore: ${_foo_bpm_source}")
+include("${_foo_bpm_source}/cmake/fft_backend.cmake")
+# Only the transform bpmcore links: pffft, unless BPMCORE_FFT_BACKEND=kiss.
+# (foo_bpm builds both, to check one against the other; nothing here does.)
+if(BPMCORE_FFT_BACKEND STREQUAL "kiss")
+    set(_fft_target kiss_fft)
+else()
+    set(_fft_target pffft)
+endif()
+add_subdirectory("${_foo_bpm_source}/${_fft_target}" "${CMAKE_CURRENT_BINARY_DIR}/foo_bpm/${_fft_target}")
+add_subdirectory("${_foo_bpm_source}/bpmcore" "${CMAKE_CURRENT_BINARY_DIR}/foo_bpm/bpmcore")
+foreach(_t ${_fft_target} bpmcore)
+    set_target_properties(${_t} PROPERTIES FOLDER "foo_bpm")
+endforeach()
+
 # --- core: the data and the matching, no SDK -------------------------------
 add_library(tangotagger_core STATIC
+    core/disco_fingerprint.cpp
+    core/disco_fingerprint.h
     core/disco_match.cpp
     core/disco_match.h
     core/disco_tags.cpp
     core/disco_tags.h
     core/discography.cpp
     core/discography.h
+    core/fingerprint.cpp
+    core/fingerprint.h
     core/lyrics_db.cpp
     core/lyrics_db.h
     core/payload_format.h
@@ -267,6 +323,16 @@ set_target_properties(match_titles PROPERTIES FOLDER "tools")
 add_executable(match_recordings tools/match_recordings/main.cpp)
 target_link_libraries(match_recordings PRIVATE tangotagger_core)
 set_target_properties(match_recordings PROPERTIES FOLDER "tools")
+
+# Makes ../xml-fingerprints from a collection, and runs the component's
+# matching - tags, then sound - over a folder. Needs ffmpeg and ffprobe.
+add_executable(tango_fingerprints tools/fingerprints/main.cpp)
+target_link_libraries(tango_fingerprints PRIVATE tangotagger_core bpmcore)
+set_target_properties(tango_fingerprints PROPERTIES FOLDER "tools")
+if(MSVC)
+    target_compile_options(tango_fingerprints PRIVATE /W4)
+    target_compile_definitions(tango_fingerprints PRIVATE _CRT_SECURE_NO_WARNINGS)
+endif()
 
 option(FOO_TANGOTAGGER_BUILD_TESTS "Build the verification harness" ON)
 if(FOO_TANGOTAGGER_BUILD_TESTS)
