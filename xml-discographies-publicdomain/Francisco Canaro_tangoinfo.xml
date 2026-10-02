@@ -104,7 +104,6 @@
     <track name="Amadeo" vocal="Instrumental" year="1927-03-26" genre="tango" duration="2:43"/>
     <track name="Amando en silencio" vocal="Eduardo Adrián" year="1942-04-06" genre="tango" duration="2:56"/>
     <track name="Amaneciendo" vocal="Roberto Maida" year="1937-11-08" genre="ranchera" duration="2:57"/>
-    <track name="Amante soñador" vocal="Ada Falcón" year="1930-05-21" genre="vals" duration="3:06"/>
     <track name="Amante soñador" vocal="Charlo" year="1930-05-21" genre="vals" duration="3:23"/>
     <track name="Amante soñador" vocal="Charlo" year="1930-05-30" genre="vals" duration="3:18"/>
     <track name="Amante soñador (Dream lover)" vocal="Ada Falcón" year="1930-05-21" genre="vals" duration="3:07"/>
@@ -428,7 +427,6 @@
     <track name="Chiqué" vocal="Instrumental" year="1929-11-06" genre="tango" duration="3:28"/>
     <track name="Chirimoya" vocal="Ada Falcón" year="1930-04-09" genre="tango" duration="2:51"/>
     <track name="Chirusa" vocal="Ernesto Famá" year="1940-09-30" genre="tango" duration="2:27"/>
-    <track name="Chiruza" vocal="Ernesto Famá" year="1940-09-30" genre="tango" duration="2:27"/>
     <track name="Chistando" vocal="Ada Falcón" year="1931-03-27" genre="tango" duration="2:56"/>
     <track name="Chistando" vocal="Charlo" year="1931-03-27" genre="tango" duration="3:15"/>
     <track name="Chlo-e" vocal="Charlo" year="1929-06-06" genre="fox trot" duration="3:05"/>
@@ -495,7 +493,6 @@
     <track name="Con los colores del cielo" vocal="Carlos Galán" year="1934-11-30" genre="ranchera" duration="3:14"/>
     <track name="Con poca plata" vocal="Mario Alonso" year="1953-04-10" genre="tango" duration="2:49"/>
     <track name="Con tu mirar" vocal="Charlo" year="1930-06-17" genre="vals" duration="3:09"/>
-    <track name="Condena" vocal="Roberto Maida" year="1937-11-08" genre="tango" duration="2:40"/>
     <track name="Condena (S.O.S.)" vocal="Roberto Maida" year="1937-11-08" genre="tango" duration="2:37"/>
     <track name="Confesión" vocal="Instrumental" year="1930-12-12" genre="tango" duration="2:35"/>
     <track name="Confesión" vocal="Ada Falcón" year="1931-04-07" genre="tango" duration="3:17"/>
@@ -614,8 +611,6 @@
     <track name="De mi barrio" vocal="Mario Alonso" year="1954-07-19" genre="tango" duration="3:08"/>
     <track name="De mi rancho..." vocal="Instrumental" year="1927-06-08" genre="tango" duration="2:50"/>
     <track name="De otros tiempos" vocal="Instrumental" year="1927-12-09" genre="tango" duration="2:49"/>
-    <track name="De otros tiempos (part 1)" vocal="Instrumental" year="1926-11-23" genre="tango" duration="2:56"/>
-    <track name="De otros tiempos (part 2)" vocal="Instrumental" year="1926-11-23" genre="tango" duration="2:51"/>
     <track name="De otros tiempos (primera parte)" vocal="Instrumental" year="1926-11-23" genre="potpourri" duration="2:52"/>
     <track name="De otros tiempos (segunda parte)" vocal="Instrumental" year="1926-11-23" genre="potpourri" duration="2:48"/>
     <track name="De puerta en puerta" vocal="Carlos Galán" year="1934-10-09" genre="tango" duration="2:55"/>
@@ -631,7 +626,6 @@
     <track name="Decime que sí" vocal="Charlo" year="1929-03-27" genre="tango" duration="2:52"/>
     <track name="Decime que sí" vocal="Roberto Maida" year="1935-10-09" genre="tango" duration="2:51"/>
     <track name="Decí que sí" vocal="Félix Gutiérrez" year="1932-09-29" genre="ranchera" duration="3:20"/>
-    <track name="Decí, pebeta porqué" vocal="Charlo" year="1928-10-22" genre="tango"/>
     <track name="Decí, pebeta, porqué?" vocal="Charlo" year="1928-07-04" genre="tango" duration="2:46"/>
     <track name="Decí, pebeta, porqué? (Decime, pebeta, porqué)" vocal="Charlo" year="1928-10-22" genre="tango" duration="2:37"/>
     <track name="Dejá el mundo como está" vocal="Ernesto Famá" year="1940-09-30" genre="tango" duration="2:27"/>
@@ -790,7 +784,6 @@
     <track name="El criticón" vocal="Francisco Amor" year="1940-11-04" genre="polca" duration="2:31"/>
     <track name="El cuarteador" vocal="Francisco Amor" year="1941-10-06" genre="tango" duration="2:53"/>
     <track name="El cuarto está por llegar" vocal="Ernesto Famá" year="1940-10-03" genre="tango" duration="2:29"/>
-    <track name="El cuatrero" vocal="Instrumental" year="1928-04-18" genre="tango" duration="2:42"/>
     <track name="El cuatrero (El tigre)" vocal="Instrumental" year="1928-04-18" genre="tango" duration="2:43"/>
     <track name="El cómico" vocal="Instrumental" year="1927-06-22" genre="tango" duration="2:47"/>
     <track name="El cómico" vocal="Instrumental" year="1927-06-22" genre="tango" duration="2:50"/>
@@ -799,7 +792,6 @@
     <track name="El desfile de damas (Maids on parade)" vocal="Luis Díaz" year="1930-07-11" genre="fox trot" duration="2:44"/>
     <track name="El desfile del amor" vocal="Ada Falcón" year="1930-05-28" genre="tango" duration="2:55"/>
     <track name="El desfile del amor" vocal="Charlo" year="1930-05-28" genre="fox trot" duration="3:03"/>
-    <track name="El desfile del amor" vocal="Charlo" year="1930-05-30" genre="fox trot"/>
     <track name="El desfile del amor (My love parade)" vocal="Charlo" year="1930-05-30" genre="fox trot" duration="2:41"/>
     <track name="El desfile del amor | Adiós a París" vocal="Charlo" year="1930-06-13" genre="fox trot" duration="2:37"/>
     <track name="El desfile del amor | Marcha de los granaderos" vocal="Ada Falcón" year="1930-06-17" genre="marcha" duration="2:58"/>
@@ -973,7 +965,6 @@
     <track name="En un beso... la vida...!" vocal="Ernesto Famá" year="1940-09-30" genre="tango" duration="2:28"/>
     <track name="En un boliche" vocal="Charlo" year="1928-03-28" genre="tango" duration="2:56"/>
     <track name="En un pueblito de España" vocal="Charlo" year="1928-07-12" genre="vals" duration="3:25"/>
-    <track name="En un pueblito de España" vocal="Charlo" year="1928-07-18" genre="vals"/>
     <track name="En un pueblito de España (In a little Spanish town)" vocal="Charlo" year="1928-07-18" genre="vals" duration="2:34"/>
     <track name="En un rincón de Hungría" vocal="Roberto Maida" year="1937-02-23" genre="vals" duration="3:03"/>
     <track name="En un rincón de tu corazón" vocal="Charlo" year="1930-12-12" genre="vals" duration="2:31"/>
@@ -1117,7 +1108,6 @@
     <track name="Giusepe el zapatero" vocal="Charlo" year="1930-11-26" genre="tango" duration="2:48"/>
     <track name="Gloria de guapo" vocal="Instrumental" year="1931-10-14" genre="tango" duration="2:52"/>
     <track name="Gloria nacional" vocal="Charlo" year="1931-12-31" genre="ranchera" duration="3:09"/>
-    <track name="Glorias" vocal="Instrumental" year="1927-02-24" genre="tango" duration="2:58"/>
     <track name="Glorias (Gloria)" vocal="Instrumental" year="1927-02-24" genre="tango" duration="2:54"/>
     <track name="Golondrinas" vocal="Argentino Ledesma" year="1969-10-27" genre="tango" duration="3:32"/>
     <track name="Golondrinas" vocal="Roberto Maida" year="1935-03-25" genre="tango" duration="3:05"/>
@@ -1189,13 +1179,11 @@
     <track name="Inspiración" vocal="Instrumental" year="1932-04-11" genre="tango" duration="3:51"/>
     <track name="Inspiración" vocal="Instrumental" year="1932--1951" genre="tango"/>
     <track name="Inspiración" vocal="Instrumental" year="1951-11-26" genre="tango" duration="3:31"/>
-    <track name="Intimas" vocal="Instrumental" year="1927-07-14" genre="tango" duration="3:09"/>
     <track name="Introducción" vocal="Instrumental" year="1961-12" genre="" duration="3:20"/>
     <track name="Invierno" vocal="Roberto Maida" year="1937-08-19" genre="tango" duration="3:26"/>
     <track name="Invocación al tango" vocal="Luis Scalón" year="1928-02-08" genre="tango" duration="2:50"/>
     <track name="Isabel" vocal="Charlo" year="1929-12-23" genre="fox trot" duration="3:08"/>
     <track name="Jacqueline" vocal="Charlo" year="1929-12-11" genre="tango" duration="2:59"/>
-    <track name="Jagüel" vocal="Instrumental" year="1927-06-15" genre="tango" duration="2:47"/>
     <track name="Jamás" vocal="Ada Falcón" year="1937-05-12" genre="ranchera" duration="3:20"/>
     <track name="Jamás" vocal="Roberto Maida, -choir-" year="1937-04-10" genre="ranchera" duration="3:13"/>
     <track name="Jamás podré olvidarte" vocal="Charlo" year="1931-12-17" genre="vals" duration="3:45"/>
@@ -1238,7 +1226,6 @@
     <track name="La batuta" vocal="Instrumental" year="1929-08-21" genre="tango" duration="2:56"/>
     <track name="La batuta" vocal="Instrumental" year="1929-08-21" genre="tango" duration="2:59"/>
     <track name="La bien pagá" vocal="Eduardo Adrián, -choir-" year="1942-12-29" genre="vals" duration="3:35"/>
-    <track name="La boda de la muñeca pintada" vocal="Charlo" year="1929-12-23" genre="fox trot"/>
     <track name="La boda de la muñeca pintada (The wedding of the painted doll)" vocal="Charlo" year="1929-12-23" genre="fox trot" duration="2:44"/>
     <track name="La boleada" vocal="Instrumental" year="1930-09-05" genre="vals" duration="4:59"/>
     <track name="La bordadora de San Telmo" vocal="Félix Gutiérrez" year="1932-08-25" genre="vals" duration="2:59"/>
@@ -1408,7 +1395,6 @@
     <track name="La rompedora" vocal="Instrumental" year="1941-10-06" genre="milonga" duration="2:19"/>
     <track name="La rondalla" vocal="Charlo" year="1928-11-14" genre="paso doble" duration="3:33"/>
     <track name="La rubia Mireya" vocal="Instrumental" year="1927-04-02" genre="tango" duration="2:44"/>
-    <track name="La rumbita candombé" vocal="Carlos Roldán" year="1943-07-16" genre="milonga" duration="2:40"/>
     <track name="La sevillana del barbero" vocal="Agustín Irusta, Roberto Fugazot" year="1932-05-13" genre="paso doble" duration="3:11"/>
     <track name="La señal maldita" vocal="Agustín Irusta" year="1927-09-30" genre="tango" duration="3:04"/>
     <track name="La sombra de milonguita" vocal="Instrumental" year="1927-01-19" genre="tango" duration="3:08"/>
@@ -1553,10 +1539,8 @@
     <track name="Los Ángeles" vocal="Charlo" year="1930-06-14" genre="fox trot" duration="3:40"/>
     <track name="Los ángeles" vocal="Charlo" year="1929-12-10" genre="fox trot" duration="3:30"/>
     <track name="Lucecitas de mi pueblo" vocal="Ernesto Famá" year="1933-10-17" genre="tango" duration="2:44"/>
-    <track name="Luces de milonga" vocal="Instrumental" year="1931-05-27" genre="tango" duration="2:50"/>
     <track name="Luces de milonga (Che Cipriano)" vocal="Instrumental" year="1931-05-27" genre="tango" duration="2:48"/>
     <track name="Luna de Honolulu" vocal="Charlo" year="1928-11-28" genre="vals" duration="3:19"/>
-    <track name="Luna de Honolulu" vocal="Charlo" year="1928-12-06" genre="vals"/>
     <track name="Luna de Honolulu (Honolulu moon)" vocal="Charlo" year="1928-12-06" genre="vals" duration="3:02"/>
     <track name="Luna de miel" vocal="Instrumental" year="1926" genre="shimmy"/>
     <track name="Lunes" vocal="Instrumental" year="1927-07-27" genre="tango" duration="3:12"/>
@@ -1637,7 +1621,6 @@
     <track name="Marinerito" vocal="Instrumental" year="1927-01-19" genre="tango" duration="3:00"/>
     <track name="Marinero" vocal="Instrumental" year="1929-07-24" genre="fox trot" duration="2:56"/>
     <track name="Marioneta" vocal="Charlo" year="1928-09-01" genre="tango" duration="2:52"/>
-    <track name="Mariposa" vocal="Instrumental" year="1927-12-09" genre="tango" duration="2:42"/>
     <track name="Mariposa de cabaret" vocal="Charlo" year="1928-09-01" genre="tango" duration="2:47"/>
     <track name="Mariposa nocturna" vocal="Carlos Roldán" year="1942-06-22" genre="tango" duration="2:29"/>
     <track name="Marquesita loca" vocal="Julio Silva Salinas" year="1930-12-13" genre="vals" duration="3:37"/>
@@ -1675,7 +1658,6 @@
     <track name="Mechita" vocal="Instrumental" year="1929-04-30" genre="fox trot" duration="3:04"/>
     <track name="Media noche" vocal="Carlos Galán" year="1934-10-20" genre="tango" duration="2:55"/>
     <track name="Media noche" vocal="Charlo" year="1934-10-18" genre="tango" duration="2:39"/>
-    <track name="Media noche[issued with the following title instead: &quot;bajo el beso de la luna&quot;]" vocal="Charlo" year="1928-11-21" genre="tango"/>
     <track name="Meditación" vocal="Agustín Irusta" year="1927-04-21" genre="tango" duration="3:06"/>
     <track name="Meditación maleva" vocal="Guillermo Rico" year="1956-09-17" genre="tango" duration="3:03"/>
     <track name="Melenita a la garçonne" vocal="Luis Díaz" year="1930-07-17" genre="shimmy" duration="2:57"/>
@@ -1741,7 +1723,6 @@
     <track name="Milonga brava" vocal="Roberto Maida" year="1938-06-20" genre="milonga" duration="2:38"/>
     <track name="Milonga canyengue" vocal="Instrumental" year="1930-03-05" genre="tango" duration="3:06"/>
     <track name="Milonga clásica" vocal="Instrumental" year="1940-04-18" genre="milonga" duration="2:29"/>
-    <track name="Milonga con variaciones" vocal="Instrumental" year="1927-05-13" genre="tango" duration="2:45"/>
     <track name="Milonga con variación" vocal="Instrumental" year="1927-05-13" genre="tango" duration="2:50"/>
     <track name="Milonga criolla" vocal="Roberto Maida" year="1936-10-06" genre="milonga" duration="3:05"/>
     <track name="Milonga criolla" vocal="Instrumental" year="1927-03-10" genre="tango" duration="2:35"/>
@@ -1918,7 +1899,6 @@
     <track name="Noche de luna" vocal="Ángel Ramos, Charlo" year="1931-04-17" genre="fado" duration="3:14"/>
     <track name="Noche de niebla" vocal="Mario Alonso" year="1953-03-17" genre="tango" duration="2:44"/>
     <track name="Noche de plata" vocal="Ada Falcón" year="1929-09-25" genre="vals" duration="3:39"/>
-    <track name="Noche de plata" vocal="Charlo" year="1930-10-22" genre="vals" duration="3:02"/>
     <track name="Noche de reyes" vocal="Agustín Irusta, Roberto Fugazot" year="1927-09-07" genre="tango" duration="2:57"/>
     <track name="Noche de reyes" vocal="Agustín Irusta, Roberto Fugazot" year="1927-09-29" genre="tango" duration="2:57"/>
     <track name="Noche deseada" vocal="Juan Carlos Rolón" year="1957-08-19" genre="vals" duration="3:05"/>
@@ -1957,7 +1937,6 @@
     <track name="Nunca más" vocal="Ada Falcón" year="1932-01-12" genre="tango" duration="3:20"/>
     <track name="Nunca supe lo que un rayo de luna podía hacer" vocal="Charlo" year="1929-12-11" genre="fox trot" duration="2:31"/>
     <track name="Nyla" vocal="Instrumental" year="1928-04-18" genre="tango" duration="2:42"/>
-    <track name="O que e que a Baiana tem | Que es lo que tiene la bahiana" vocal="Ernesto Famá" year="1939-09-11" genre="arreglo en tango" duration="3:02"/>
     <track name="Oh París" vocal="Instrumental" year="1924" genre="shimmy"/>
     <track name="Oh blues de mi corazón" vocal="Instrumental" year="1925" genre="fox trot"/>
     <track name="Oh mujer, mujer!" vocal="Instrumental" year="1924" genre="shimmy"/>
@@ -2053,7 +2032,6 @@
     <track name="Parque Patricios" vocal="Ernesto Famá" year="1940-10-03" genre="milonga" duration="2:34"/>
     <track name="París" vocal="Instrumental" year="1927-05-23" genre="tango" duration="2:34"/>
     <track name="París" vocal="Instrumental" year="1927-05-23" genre="tango" duration="2:37"/>
-    <track name="Pasa el amor" vocal="Charlo" year="1937-05-26" genre="canción" duration="3:04"/>
     <track name="Pasa el amor (Passa l'amore)" vocal="Charlo" year="1937-05-26" genre="canción" duration="2:59"/>
     <track name="Pasión" vocal="Charlo" year="1929-06-04" genre="tango" duration="2:50"/>
     <track name="Paso al deporte" vocal="Roberto Maida" year="1935-09-27" genre="marcha" duration="3:05"/>
@@ -2155,7 +2133,6 @@
     <track name="Por esa mujer de... carnaval" vocal="Instrumental" year="1933-03-07" genre="tango" duration="3:18"/>
     <track name="Por eso te quiero" vocal="Charlo" year="1931-04-29" genre="paso doble" duration="3:12"/>
     <track name="Por esta cruz" vocal="Charlo" year="1928-04-11" genre="tango" duration="2:51"/>
-    <track name="Por la güella" vocal="Alberto Arenas" year="1948-09-10" genre="milonga" duration="2:43"/>
     <track name="Por la güeya | Por la güella" vocal="Alberto Arenas" year="1948-09-10" genre="milonga" duration="2:43"/>
     <track name="Por la virgen de Pompeya" vocal="Charlo" year="1929-05-15" genre="tango" duration="3:04"/>
     <track name="Por las calles de la vida" vocal="Carlos Roldán" year="1942-12-29" genre="tango" duration="3:45"/>
@@ -2393,7 +2370,6 @@
     <track name="Sally" vocal="Charlo" year="1930-06-11" genre="fox trot" duration="3:01"/>
     <track name="Sally" vocal="Charlo" year="1930-06-13" genre="fox trot" duration="2:53"/>
     <track name="Sally (Si yo soñara) (If I'm dreaming)" vocal="Charlo" year="1930-05-30" genre="vals" duration="3:00"/>
-    <track name="Sally | Si yo soñara" vocal="Charlo" year="1930-05-30" genre="vals"/>
     <track name="Sally | Si yo soñara" vocal="Charlo" year="1930-06-04" genre="vals" duration="3:03"/>
     <track name="Sally | Si yo soñara" vocal="Charlo" year="1930-06-13" genre="vals"/>
     <track name="Salto mortal" vocal="Instrumental" year="1927-08-16" genre="tango" duration="3:08"/>
@@ -2595,7 +2571,6 @@
     <track name="Tango español (Españolita)" vocal="Juan Carlos Rolón" year="1957-05-12" genre="tango" duration="3:08"/>
     <track name="Tango lindo" vocal="Charlo" year="1928-03-07" genre="tango" duration="2:57"/>
     <track name="Tango milonguero" vocal="Instrumental" year="1940-04-02" genre="tango" duration="2:42"/>
-    <track name="Tanguano" vocal="Ernesto Famá" year="1941-02-28" genre="nuevo ritmo" duration="3:12"/>
     <track name="Tanguano | ¡Que te dure! Che... Cipriano" vocal="Ernesto Famá" year="1941-02-28" genre="nuevo ritmo" duration="3:09"/>
     <track name="Tangón" vocal="Ada Falcón" year="1935-08-23" genre="nueva danza" duration="3:10"/>
     <track name="Tangón" vocal="Roberto Maida" year="1935-08-21" genre="nueva danza" duration="3:34"/>
@@ -2641,8 +2616,6 @@
     <track name="Tiburcia" vocal="Charlo" year="1931-03-27" genre="maxixa" duration="3:20"/>
     <track name="Tiempo perdido" vocal="Instrumental" year="1941-01-09" genre="tango" duration="2:24"/>
     <track name="Tiempos que fueron" vocal="Instrumental" year="1927-09-19" genre="tango" duration="2:56"/>
-    <track name="Tiempos viejos" vocal="Charlo" year="1937-05-27" genre="tango" duration="3:12"/>
-    <track name="Tiempos viejos" vocal="Instrumental" year="1927-05-30" genre="tango" duration="3:05"/>
     <track name="Tiempos viejos (Te acordás hermano)" vocal="Instrumental" year="1926" genre="tango" duration="3:10"/>
     <track name="Tiempos viejos (Te acordás hermano)" vocal="Ada Falcón" year="1931-12-17" genre="tango" duration="3:00"/>
     <track name="Tiempos viejos (Te acordás hermano)" vocal="Charlo" year="1931-12-20" genre="tango" duration="3:06"/>
@@ -2667,7 +2640,6 @@
     <track name="Tocame un fox, Manolo" vocal="Charlo" year="1931-04-07" genre="fox trot" duration="3:24"/>
     <track name="Toda mi vida" vocal="Ernesto Famá" year="1941-10-06" genre="tango" duration="3:00"/>
     <track name="Toda mía" vocal="Instrumental" year="1926-11-15" genre="tango" duration="2:55"/>
-    <track name="Toda una vida" vocal="Guillermo Rico" year="1945-03-15" genre="vals" duration="2:55"/>
     <track name="Toda una vida (Me estaría contigo)" vocal="Guillermo Rico" year="1945-03-15" genre="vals" duration="2:47"/>
     <track name="Todo corazón" vocal="Instrumental" year="1924" genre="tango" duration="2:34"/>
     <track name="Todo corazón" vocal="Instrumental" year="1924" genre="tango" duration="2:41"/>

@@ -192,7 +192,6 @@
     <track name="Mariposa" vocal="Héctor Farrel" year="1940-09-10" genre="tango" duration="2:30"/>
     <track name="Mary" vocal="Instrumental" year="1926-04-12" genre="tango" duration="3:21"/>
     <track name="Maula" vocal="Instrumental" year="1927-03-21" genre="tango" composer="Adolfo Mondino" author="Víctor Soliño"/>
-    <track name="Medio día" vocal="Instrumental" year="1928-04-30" genre="tango" composer="Adolfo Mondino" author="Víctor Soliño"/>
     <track name="Mediodía" vocal="Instrumental" year="1928-04-30" genre="tango" composer="Manuel Buzón" author="Celedonio Flores" duration="2:54"/>
     <track name="Mentiras de amor" vocal="Instrumental" year="1930" genre="tango" composer="Francisco De Caro" author="Manuel Andrés Meaños"/>
     <track name="Mi churrasca" vocal="Instrumental" year="1929" genre="tango" duration="3:27"/>
@@ -210,7 +209,6 @@
     <track name="Morondanga" vocal="Instrumental" year="1926-06-16" genre="tango" duration="3:01"/>
     <track name="Mosca brava" vocal="Instrumental" year="1926-09-07" genre="tango" composer="Delmiro Pereyra" duration="3:16"/>
     <track name="Moulin rouge" vocal="Instrumental" year="1941-05-29" genre="tango" composer="Julio De Caro" duration="2:54"/>
-    <track name="Moulín rouge" vocal="Instrumental" year="1941-05-29" genre="tango" composer="Julio De Caro"/>
     <track name="Moulin rouge" vocal="Instrumental" year="1929" genre="tango" composer="Julio De Caro"/>
     <track name="Moulin rouge" vocal="Instrumental" year="1953-04-10" genre="tango" composer="Julio De Caro" duration="2:50"/>
     <track name="Muchachito grande" vocal="Luis Díaz" year="1931" genre="tango" duration="3:22"/>
@@ -282,7 +280,6 @@
     <track name="Solterona" vocal="Instrumental" year="1929" genre="tango" composer="Ángel D'Agostino, Julio Pollero" author="Leopoldo Torres Ríos" duration="2:46"/>
     <track name="Son grupos" vocal="Instrumental" year="1926-05-20" genre="tango" duration="3:05"/>
     <track name="Sorpresa de novia" vocal="Héctor Farrel, Carlos Viván" year="1943" genre="vals" composer="Carlos Marcucci" author="José Maria Suñe" duration="2:40"/>
-    <track name="Soy bailarin" vocal="Orlando Verri" year="1950-12-18" genre="tango" composer="Julio De Caro"/>
     <track name="Soy bailarín" vocal="Orlando Verri" year="1950-12-18" genre="tango" composer="Julio De Caro" duration="3:00"/>
     <track name="Sueño azul" vocal="Instrumental" year="1926-11-29" genre="tango" composer="Francisco De Caro" author="Mario Gomila"/>
     <track name="Sueño azul" vocal="Instrumental" year="1951-11-16" genre="tango" composer="Francisco De Caro" author="Mario Gomila" duration="3:03"/>
@@ -315,7 +312,6 @@
     <track name="Volverás" vocal="Instrumental" year="1925" genre="tango" composer="Osvaldo Fresedo" author="Emilio Augusto Oscar Fresedo"/>
     <track name="Yira, yira" vocal="Luis Díaz" year="1930" genre="tango" composer="Enrique Discépolo" author="Enrique Discépolo" duration="3:10"/>
     <track name="Yo me quiero suicidar" vocal="Luis Díaz" year="1930" genre="tango" duration="2:45"/>
-    <track name="Yo no se si me queres" vocal="Pedro Lauga" year="1936-03-13" genre="tango"/>
     <track name="Yo no se si me querés" vocal="Pedro Lauga" year="1936-03-13" genre="tango" duration="2:46"/>
     <track name="Zorrita maula" vocal="Instrumental" year="1930" genre="tango" composer="Agustín Magaldi, Pedro Noda" author="Francisco Brancatti"/>
     <track name="A la francesa" vocal="Instrumental" year="" genre="tango" composer="Enrique Monaco" author="Francisco Bautista Rímoli"/>
