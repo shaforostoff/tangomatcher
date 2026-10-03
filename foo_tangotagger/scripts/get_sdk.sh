@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #
 # Downloads and unpacks the build prerequisites into external/, for a macOS
-# build. The counterpart of scripts/get_sdk.ps1.
+# build - or, with -o lzma_sdk, the one deadbeef_tangotagger needs, on macOS
+# or Linux. The counterpart of scripts/get_sdk.ps1.
 #
 #     external/foobar2000_sdk/    foobar2000 SDK
 #     external/lzma_sdk/          LZMA SDK (7-Zip's LZMA codec)
@@ -14,28 +15,62 @@
 # cannot drift apart.
 #
 # bsdtar - /usr/bin/tar on every supported macOS - reads .7z, so there is no
-# 7-Zip install in this. curl and shasum are likewise stock.
+# 7-Zip install in this. curl and shasum are likewise stock. On Linux, where
+# tar is GNU tar and cannot, bsdtar (libarchive-tools) or 7-Zip (7z, 7za or
+# 7zz) unpacks it instead, and sha256sum stands in for shasum.
 #
 # Usage:
-#     scripts/get_sdk.sh [-d <destination>] [-f]
+#     scripts/get_sdk.sh [-d <destination>] [-f] [-o <dir>]...
 #
 #     -d  where to unpack. Default: external/ next to this repository.
 #     -f  re-download and re-unpack even if everything is already there.
+#     -o  fetch only this dependency, by the folder it unpacks into
+#         (foobar2000_sdk, lzma_sdk); may be repeated.
 
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 destination="$root/external"
 force=0
+only=()
 
-while getopts ':d:fh' opt; do
+while getopts ':d:fo:h' opt; do
     case "$opt" in
         d) destination="$OPTARG" ;;
         f) force=1 ;;
-        h) sed -n '2,24p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
-        *) echo "Usage: $0 [-d <destination>] [-f]" >&2; exit 2 ;;
+        o) only+=("$OPTARG") ;;
+        h) sed -n '2,28p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
+        *) echo "Usage: $0 [-d <destination>] [-f] [-o <dir>]..." >&2; exit 2 ;;
     esac
 done
+
+sha256_of() {
+    if command -v shasum >/dev/null 2>&1; then shasum -a 256 "$1" | cut -d' ' -f1
+    else sha256sum "$1" | cut -d' ' -f1
+    fi
+}
+
+# unpack <archive> <into>: tar where it reads the archive - bsdtar does, GNU
+# tar does not read .7z - and 7-Zip where it does not.
+unpack() {
+    if tar -xf "$1" -C "$2" 2>/dev/null; then return 0; fi
+    local tool
+    for tool in bsdtar 7zz 7z 7za; do
+        command -v "$tool" >/dev/null 2>&1 || continue
+        case "$tool" in
+            bsdtar) bsdtar -xf "$1" -C "$2" && return 0 ;;
+            *)      "$tool" x -y -o"$2" "$1" >/dev/null && return 0 ;;
+        esac
+    done
+    return 1
+}
+
+wanted() {
+    [[ ${#only[@]} -eq 0 ]] && return 0
+    local o
+    for o in "${only[@]}"; do [[ "$o" == "$1" ]] && return 0; done
+    return 1
+}
 
 pinned="$root/scripts/get_sdk.ps1"
 if [[ ! -f "$pinned" ]]; then
@@ -51,6 +86,7 @@ mkdir -p "$destination"
 # each [pscustomobject] and prints the fields of the one that unpacks there.
 fetch() {
     local dep_dir="$1"; shift
+    wanted "$dep_dir" || return 0
 
     local block
     block="$(awk -v want="$dep_dir" '
@@ -89,7 +125,7 @@ fetch() {
     # --- fetch -------------------------------------------------------------
     local have_archive=0
     if [[ -f "$archive" ]]; then
-        if [[ "$(shasum -a 256 "$archive" | cut -d' ' -f1)" == "$sha256" ]]; then
+        if [[ "$(sha256_of "$archive")" == "$sha256" ]]; then
             have_archive=1
             echo "Reusing $archive"
         else
@@ -108,7 +144,7 @@ fetch() {
         fi
 
         local got
-        got="$(shasum -a 256 "$archive" | cut -d' ' -f1)"
+        got="$(sha256_of "$archive")"
         if [[ "$got" != "$sha256" ]]; then
             rm -f "$archive"
             echo "error: $name: checksum mismatch." >&2
@@ -126,10 +162,11 @@ fetch() {
     mkdir -p "$tmp"
 
     echo "Unpacking into $dir"
-    if ! tar -xf "$archive" -C "$tmp"; then
+    if ! unpack "$archive" "$tmp"; then
         rm -rf "$tmp"
         echo "error: could not unpack $archive." >&2
-        echo "       /usr/bin/tar reads .7z on macOS 11 and later; on an older one, unpack it by hand." >&2
+        echo "       /usr/bin/tar reads .7z on macOS 11 and later; on Linux install bsdtar" >&2
+        echo "       (libarchive-tools) or 7-Zip (p7zip-full, 7zip), or unpack it by hand." >&2
         exit 1
     fi
 

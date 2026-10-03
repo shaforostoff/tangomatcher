@@ -31,17 +31,25 @@
 .PARAMETER Force
     Re-download and re-unpack even if everything is already there.
 
+.PARAMETER Only
+    Fetch only these dependencies, by the folder they unpack into - lzma_sdk
+    is all deadbeef_tangotagger needs.
+
 .EXAMPLE
     .\scripts\get_sdk.ps1
 
 .EXAMPLE
     .\scripts\get_sdk.ps1 -Force
+
+.EXAMPLE
+    .\scripts\get_sdk.ps1 -Only lzma_sdk
 #>
 
 [CmdletBinding()]
 param(
     [string] $Destination = '',
-    [switch] $Force
+    [switch] $Force,
+    [string[]] $Only = @()
 )
 
 $ErrorActionPreference = 'Stop'
@@ -117,6 +125,7 @@ function Expand-Any([string] $archive, [string] $into) {
 New-Item -ItemType Directory -Force $Destination | Out-Null
 
 foreach ($dep in $dependencies) {
+    if ($Only.Count -gt 0 -and $Only -notcontains $dep.Dir) { continue }
     $dir     = Join-Path $Destination $dep.Dir
     $archive = Join-Path $Destination $dep.Archive
     $stamp   = Join-Path $dir (".{0}-{1}.stamp" -f $dep.Dir, $dep.Version)

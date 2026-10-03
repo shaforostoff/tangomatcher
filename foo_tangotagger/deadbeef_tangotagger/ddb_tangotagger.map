@@ -1,0 +1,10 @@
+/* The one symbol DeaDBeeF looks up; everything else stays inside the plugin.
+ *
+ * -fvisibility=hidden is not enough on its own: the standard library's headers
+ * mark namespace std visible, so every std:: template instantiated here would
+ * otherwise be exported, and could bind to another plugin's copy of the same
+ * instance. */
+{
+    global: ddb_tangotagger_load;
+    local: *;
+};

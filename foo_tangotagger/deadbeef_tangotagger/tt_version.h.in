@@ -1,0 +1,13 @@
+#pragma once
+
+// Generated from tt_version.h.in by CMake - do not edit. The version is
+// project(VERSION) in ../CMakeLists.txt, the one foo_tangotagger is built
+// from, so the two hosts' builds of the same data carry the same number.
+
+#define TT_VERSION       "@TT_VERSION@"
+#define TT_VERSION_MAJOR @TT_VERSION_MAJOR@
+#define TT_VERSION_MINOR @TT_VERSION_MINOR@
+
+// Which lyrics this build carries: every file in the folder, or only those
+// marked public domain. The about text says which.
+#define TT_PUBLIC_DOMAIN_ONLY @TT_PUBLIC_DOMAIN_ONLY@

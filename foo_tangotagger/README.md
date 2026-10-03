@@ -222,6 +222,12 @@ Two builds of the lyrics:
 `tools/match_titles` runs the same matching from the command line
 (`title<TAB>credits` lines on stdin).
 
+## DeaDBeeF
+
+`deadbeef_tangotagger/` is the same matching, data and windows as a
+DeaDBeeF plugin, for Linux, macOS and Windows: see
+[its README](deadbeef_tangotagger/README.md).
+
 ## Building
 
     powershell -ExecutionPolicy Bypass -File scripts\build_release.ps1
