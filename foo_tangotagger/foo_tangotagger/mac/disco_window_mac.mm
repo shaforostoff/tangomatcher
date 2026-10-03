@@ -100,6 +100,21 @@ static NSMutableArray<fooTangoTaggerDiscoWindow *> * g_openDiscoWindows = nil;
 	return column;
 }
 
+//! A column as wide as the widest of the samples, label padding included
+//! (the spacing between columns lies outside it), that keeps its width
+//! when the window is resized: the free space goes to the name columns.
+- (NSTableColumn *)addColumn:(NSString *)identifier title:(NSString *)title fitting:(NSArray<NSString *> *)samples
+{
+	CGFloat width = 0;
+	for (NSString * s in [samples arrayByAddingObject:title])
+		width = MAX(width, [NSTextField labelWithString:s].fittingSize.width);
+	width = ceil(width);
+	NSTableColumn * column = [self addColumn:identifier title:title width:width];
+	column.minWidth = width;
+	column.resizingMask = NSTableColumnUserResizingMask;
+	return column;
+}
+
 - (void)buildContent
 {
 	NSView * root = self.window.contentView;
@@ -119,8 +134,13 @@ static NSMutableArray<fooTangoTaggerDiscoWindow *> * g_openDiscoWindows = nil;
 	[self addColumn:col_recording title:@"Recording" width:170];
 	[self addColumn:col_orchestra title:@"Orchestra" width:140];
 	[self addColumn:col_vocal title:@"Singer" width:130];
-	[self addColumn:col_date title:@"Date" width:80];
-	[self addColumn:col_match title:@"Match" width:90];
+	// The dates this window shows, not a made-up widest one: the system
+	// font's digits differ in width, so 8888-88-88 is far wider than 1942-07-21.
+	NSMutableArray<NSString *> * dates = [NSMutableArray array];
+	for (std::size_t i = 0; i < _matches->rows.size(); i++)
+		[dates addObject:[self textForRow:(NSInteger) i column:col_date]];
+	[self addColumn:col_date title:@"Date" fitting:dates];
+	[self addColumn:col_match title:@"Match" fitting:@[ @"confident", @"by sound", @"no match" ]];
 
 	NSScrollView * tableScroll = [[NSScrollView alloc] initWithFrame:NSZeroRect];
 	tableScroll.documentView = _table;
