@@ -116,9 +116,9 @@ namespace tangotagger
 		return embedded();
 	}
 
-	void release_embedded_fingerprint_data()
+	std::vector<recording_fingerprint> & take_embedded_fingerprint_data()
 	{
-		for (recording_fingerprint & f : embedded().fingerprints) std::string().swap(f.data);
+		return embedded().fingerprints;
 	}
 
 	bool is_instrumental(const std::string & vocal)

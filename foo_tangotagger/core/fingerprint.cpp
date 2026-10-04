@@ -220,9 +220,9 @@ namespace tangotagger
 			return num / std::sqrt(da * db);
 		}
 
-		double ref_scale(const fingerprint & f, bool by_tuning)
+		double ref_scale(int tuning, bool by_tuning)
 		{
-			return by_tuning ? std::pow(2.0, f.tuning / 1200.0) : 1.0;
+			return by_tuning ? std::pow(2.0, tuning / 1200.0) : 1.0;
 		}
 
 		struct alignment
@@ -321,7 +321,7 @@ namespace tangotagger
 		verdict fine_pass(const fingerprint & ref, const fingerprint & q, const alignment & al, bool by_tuning)
 		{
 			verdict v;
-			const double sr = ref_scale(ref, by_tuning);
+			const double sr = ref_scale(ref.tuning, by_tuning);
 			const sequence a = chroma_sequence(ref, sr, fine_hop, 0, std::numeric_limits<std::size_t>::max());
 			double best = -std::numeric_limits<double>::infinity();
 			for (int s = 0; s < fine_scales; s++)
@@ -666,10 +666,12 @@ namespace tangotagger
 
 	// ---------------------------------------------------------------- the index
 
-	void fingerprint_index::add(int id, fingerprint f)
+	fingerprint_index::reference fingerprint_index::make_reference(int id, const fingerprint & f)
 	{
 		reference r;
 		r.id = id;
+		r.duration = f.duration;
+		r.tuning = f.tuning;
 		double norm = 0;
 		for (int c = 0; c < 12; c++)
 		{
@@ -680,8 +682,31 @@ namespace tangotagger
 		}
 		norm = std::sqrt(norm);
 		for (double & p : r.profile) p = norm > 0 ? p / norm : 0;
+		return r;
+	}
+
+	void fingerprint_index::add(int id, fingerprint f)
+	{
+		reference r = make_reference(id, f);
 		r.fp = std::move(f);
 		m_refs.push_back(std::move(r));
+	}
+
+	bool fingerprint_index::add_encoded(int id, std::string bytes)
+	{
+		fingerprint f;
+		if (!decode_fingerprint(bytes, f)) return false;
+		reference r = make_reference(id, f);
+		r.encoded = std::move(bytes);
+		m_refs.push_back(std::move(r));
+		return true;
+	}
+
+	const fingerprint & fingerprint_index::reference_fp(const reference & r, fingerprint & holder)
+	{
+		if (r.encoded.empty()) return r.fp;
+		decode_fingerprint(r.encoded, holder);   // decoded once already, in add_encoded
+		return holder;
 	}
 
 	std::vector<fingerprint_match> fingerprint_index::identify(const fingerprint & query, const std::vector<int> & also,
@@ -705,7 +730,7 @@ namespace tangotagger
 		for (std::size_t i = 0; i < m_refs.size(); i++)
 		{
 			const reference & r = m_refs[i];
-			if (query.duration <= 0 || std::fabs(r.fp.duration / query.duration - 1) > duration_slack) continue;
+			if (query.duration <= 0 || std::fabs(r.duration / query.duration - 1) > duration_slack) continue;
 			double sim = -1;
 			for (int k = -1; k <= 1; k++)
 			{
@@ -756,10 +781,11 @@ namespace tangotagger
 			}
 			std::vector<alignment> al(cand.size());
 			std::vector<std::complex<float>> den(fft_size), num(fft_size);
+			fingerprint holder;
 			for (std::size_t c = 0; c < cand.size(); c++)
 			{
-				const fingerprint & ref = m_refs[cand[c]].fp;
-				coarse_pass(spectrum_of(chroma_sequence(ref, ref_scale(ref, by_tuning), coarse_hop, 0, coarse_frames)),
+				const fingerprint & ref = reference_fp(m_refs[cand[c]], holder);
+				coarse_pass(spectrum_of(chroma_sequence(ref, ref_scale(ref.tuning, by_tuning), coarse_hop, 0, coarse_frames)),
 				            readings, al[c], den, num);
 			}
 
@@ -771,7 +797,8 @@ namespace tangotagger
 			{
 				const std::size_t c = order[j];
 				if (!std::isfinite(al[c].score)) break;
-				results.push_back({ cand[c], fine_pass(m_refs[cand[c]].fp, query, al[c], by_tuning), al[c], by_tuning });
+				results.push_back({ cand[c], fine_pass(reference_fp(m_refs[cand[c]], holder), query, al[c], by_tuning),
+				                    al[c], by_tuning });
 			}
 			double top = -2;
 			for (const result & r : results)
@@ -805,7 +832,7 @@ namespace tangotagger
 			// Both were brought to one time axis, the reference by its scale and
 			// the query by the alignment's; the ratio is how much faster the
 			// query runs.
-			m.speed = r.al.scale * r.v.extra / ref_scale(ref.fp, r.by_tuning);
+			m.speed = r.al.scale * r.v.extra / ref_scale(ref.tuning, r.by_tuning);
 			m.semitones = r.al.k;
 			m.wander_ms = std::isnan(r.v.wander) ? -1 : r.v.wander;
 			out.push_back(m);

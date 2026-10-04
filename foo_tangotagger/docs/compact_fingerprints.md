@@ -1,8 +1,9 @@
 Storing the decoded fingerprints compactly
 ==========================================
 
-A proposal, not yet done. Measured on the personal macOS build, October
-2026: 6,254 embedded fingerprints.
+Option B below is done (`fingerprint_index::add_encoded`); option A is
+still a proposal. Measured on the personal macOS build, October 2026: 6,254
+embedded fingerprints.
 
 Where the memory goes
 ---------------------
@@ -82,8 +83,8 @@ Altogether about 40 MB becomes about 12 MB. The time per `identify` should
 not get worse: the chroma of a candidate is read once per reading of the
 query, from a smaller array.
 
-Option B: keep the fingerprints encoded
----------------------------------------
+Option B: keep the fingerprints encoded (done)
+----------------------------------------------
 
 The index keeps each reference's encoded bytes and decodes the candidates
 inside `identify`, after the prefilter:
@@ -106,15 +107,19 @@ struct reference
   already handles one candidate at a time). The fine pass decodes its five
   again, or keeps them.
 - `embedded_fingerprints()` moves the strings out of the discography
-  instead of copying them, so there is one copy of the bytes, not two -
-  `release_embedded_fingerprint_data()` is then not needed.
+  (`take_embedded_fingerprint_data()`) instead of copying them, so there is
+  one copy of the bytes, not two.
+- `add(id, fingerprint)` still keeps a reference decoded, for the tools and
+  tests that build an index from fingerprints that were never encoded.
 
-Memory: 6.2 MB of bytes plus about 0.6 MB for the rest, against about 40 MB
-now - 33 MB saved, against 28 MB for option A. Time: decoding takes about
-36 µs a fingerprint (the whole index decodes in 227 ms), so up to 300 more
-decodes add about 11 ms, twice when the speed search runs, to a call that
-takes 400-600 ms - 2-4% slower. Building the index on the first track gets
-faster, since only the duration and profile are decoded.
+Measured once done: the heap grows by 1.7 MB when the index is built, not
+about 35 MB - the bytes were already in memory, in the discography - and
+the process holds 26 MB resident after loading the discographies and the
+index, not 69 MB. Building the index takes 79 ms instead of 227 ms. A
+decode takes 6.4 µs, so the 300-odd candidates of an `identify` cost about
+2 ms, twice when the speed search runs, against 400-600 ms for the call:
+the time for the 24 test queries is the same within the noise. The results
+are identical, field for field, to the decoded index's.
 
 The encoded format is then a format the index reads while matching, not
 only while loading, which is a reason to keep `decode_fingerprint` fast.
@@ -131,7 +136,8 @@ Recommendation
 
 B, for the larger saving with the smaller change: the matching code reads
 the same `fingerprint` it reads now, and only `fingerprint_index` changes.
-A on its own if the 2-4% slowdown in `identify` matters more than 5 MB.
+Done. A would now save only the queries' memory - one fingerprint per track
+being listened to - and the candidate being compared: not worth it alone.
 
 Checking it
 -----------

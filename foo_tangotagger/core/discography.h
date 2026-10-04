@@ -40,8 +40,8 @@ namespace tangotagger
 	struct recording_fingerprint
 	{
 		int recording = 0;      //!< index into discography::recordings
-		//! encode_fingerprint's bytes. In embedded_discography() emptied once
-		//! embedded_fingerprints() has decoded them, which keeps them.
+		//! encode_fingerprint's bytes. In embedded_discography() empty once
+		//! embedded_fingerprints() has been built: the index keeps them.
 		std::string data;
 	};
 
@@ -79,10 +79,11 @@ namespace tangotagger
 	//! kept; safe to call from any thread.
 	const discography & embedded_discography();
 
-	//! Frees the embedded fingerprints' encoded bytes, leaving the entries:
-	//! for embedded_fingerprints(), once it has decoded them. Nothing else
-	//! reads them.
-	void release_embedded_fingerprint_data();
+	//! The embedded discography's fingerprints, for embedded_fingerprints()
+	//! to move the bytes out of, once: the entries stay, so their count does
+	//! not change, but their data is the index's from then on. Nothing else
+	//! is to call this.
+	std::vector<recording_fingerprint> & take_embedded_fingerprint_data();
 
 	//! "Instrumental" (any case) or empty.
 	bool is_instrumental(const std::string & vocal);

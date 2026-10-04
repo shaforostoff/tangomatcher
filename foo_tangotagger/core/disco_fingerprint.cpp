@@ -16,14 +16,11 @@ namespace tangotagger
 	{
 		static const fingerprint_index index = []
 		{
+			// Kept encoded - 6MB, against about 40MB decoded - and handed over
+			// rather than copied, so the discography keeps no second copy.
 			fingerprint_index result;
-			for (const recording_fingerprint & f : embedded_discography().fingerprints)
-			{
-				fingerprint fp;
-				if (decode_fingerprint(f.data, fp)) result.add(f.recording, std::move(fp));
-			}
-			// Decoded, the bytes are not needed again: 6MB.
-			release_embedded_fingerprint_data();
+			for (recording_fingerprint & f : take_embedded_fingerprint_data())
+				result.add_encoded(f.recording, std::move(f.data));
 			return result;
 		}();
 		return index;

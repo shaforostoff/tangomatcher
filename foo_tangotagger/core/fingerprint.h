@@ -131,6 +131,10 @@ namespace tangotagger
 	{
 	public:
 		void add(int id, fingerprint f);
+		//! A reference kept in encode_fingerprint's form, about a sixth of the
+		//! decoded size, and decoded only when the prefilter picks it. False,
+		//! and nothing added, if the bytes do not decode.
+		bool add_encoded(int id, std::string bytes);
 		std::size_t size() const { return m_refs.size(); }
 
 		//! The best references for `query`, best first, each a different id.
@@ -144,9 +148,16 @@ namespace tangotagger
 		struct reference
 		{
 			int id;
-			fingerprint fp;
-			double profile[12];   //!< overall chroma, unit length
+			fingerprint fp;           //!< empty when the reference is kept encoded
+			std::string encoded;      //!< encode_fingerprint's bytes, or empty
+			double duration;          //!< what the prefilter needs of it...
+			int tuning;
+			double profile[12];       //!< ...and its overall chroma, unit length
 		};
+		//! The reference's fingerprint, decoded into `holder` if it is kept
+		//! encoded.
+		static const fingerprint & reference_fp(const reference & r, fingerprint & holder);
+		static reference make_reference(int id, const fingerprint & f);
 		std::vector<reference> m_refs;
 	};
 }
