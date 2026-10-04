@@ -2,6 +2,8 @@
 
 Writes tango lyrics and discography data into your files.
 
+![Tango Tagger: the Match discographies window and the Lyrics panel](../foo_tangotagger.png)
+
 Select tracks, right-click, **Tango Tagger > Find lyrics...**.
 Each track's title is matched against the lyrics built into the component, and
 the matches are listed with checkboxes; the checked ones are written to the
