@@ -34,6 +34,16 @@ bpmcore comes from a foo_bpm checkout beside this repository
 writes `build/ddb/ddb_tangotagger.so`, with the GTK windows and the lyrics
 panel. `-DTT_DDB_GTK=OFF` builds it without them.
 
+For a release, `scripts/build_release_deadbeef_linux.sh` does the same with
+the C++ runtime linked in, runs the tests, checks that the library loads and
+exports only its entry point, splits off the debug symbols and packs
+`dist/ddb_tangotagger-<version>-linux-<arch>[-personal].zip` with the library
+under `plugins/`, as DeaDBeeF's plugin builder packs the plugins it
+distributes. It builds with this machine's toolchain, so the plugin needs a
+glibc at least as new as this machine's; the script says which at the end.
+`--public-domain` makes the build to publish, `--install` copies the library
+into `~/.local/lib/deadbeef` to try it, and `--help` lists the rest.
+
 ### macOS
 
     cmake -S deadbeef_tangotagger -B build/ddb-mac -DCMAKE_BUILD_TYPE=Release
