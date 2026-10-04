@@ -43,6 +43,17 @@ panel. `-DTT_DDB_GTK=OFF` builds it without them.
 writes `build/ddb-mac/ddb_tangotagger.dylib`, universal, ad-hoc signed, with
 the Cocoa windows; it runs on macOS 10.13 on Intel and 11 on Apple Silicon.
 
+For a release, `scripts/build_release_deadbeef_macos.sh` builds it universal,
+runs the tests, moves the debug information into a `.dSYM`, strips and signs
+the library again, checks its architectures, exports, links and that it
+loads, and makes an installer of it,
+`dist/ddb_tangotagger-<version>-macos-universal[-personal].pkg`, which puts
+the library in the folder below for the current user. `--public-domain` makes
+the build to publish; `--sign`, `--codesign` and `--notarize` sign and
+notarize the installer as deadbeef_rubato's script does; `--install` also
+copies the library straight into the plugin folder to try it. `--help` lists
+the options.
+
 ### Windows
 
 From an MSYS2 MINGW64 shell, for the GTK windows:
