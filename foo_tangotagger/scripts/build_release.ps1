@@ -176,8 +176,10 @@ foreach ($a in $Arch) {
 # already a hard dependency here.
 Write-Host "`n=== Package ===" -ForegroundColor Cyan
 # The code's MIT licence, with its note on the CC BY-SA discography data;
-# foobar2000 ignores files in the archive that are not components.
-Copy-Item (Join-Path $root 'LICENSE') (Join-Path $stage 'LICENSE.txt') -Force
+# foobar2000 ignores files in the archive that are not components, but shows
+# LICENSE.txt on install, and only CRLF line ends break lines there.
+$licence = [IO.File]::ReadAllText((Join-Path $root 'LICENSE')) -replace '\r?\n', "`r`n"
+[IO.File]::WriteAllText((Join-Path $stage 'LICENSE.txt'), $licence)
 $componentPath = Join-Path $distDir "foo_tangotagger-$version$suffix.fb2k-component"
 $symbolsPath   = Join-Path $distDir "foo_tangotagger-$version$suffix-symbols.zip"
 foreach ($p in @($componentPath, $symbolsPath)) {
