@@ -252,8 +252,6 @@ fi
 
 mkdir -p "$stage/mac"
 cp -R "$bundle" "$stage/mac/"
-# The code's MIT licence, with its note on the CC BY-SA discography data.
-cp "$root/LICENSE" "$stage/LICENSE.txt"
 
 # --- strip, then sign, and both on the staged copy --------------------------
 # Not on the build tree's own bundle. Stripping is destructive and the build
