@@ -263,20 +263,29 @@ namespace tangotagger
 			return out;
 		}
 
-		//! The best lag of every candidate for one way of reading the query.
-		void coarse_pass(const std::vector<spectrum> & refs, const sequence & query, double scale,
-		                 const std::vector<int> & rotations, std::vector<alignment> & best)
+		//! One way of reading the query: at a speed, a pitch class or more on.
+		struct query_reading
+		{
+			spectrum q;
+			double scale;
+			std::vector<int> rotations;
+		};
+
+		//! A candidate's best lag over every reading of the query. The
+		//! candidate's spectrum is made here and dropped after: a spectrum is
+		//! about 100KB, and the prefilter keeps a few hundred candidates.
+		void coarse_pass(const spectrum & a, const std::vector<query_reading> & readings, alignment & best,
+		                 std::vector<std::complex<float>> & den, std::vector<std::complex<float>> & num)
 		{
 			const fft & t = transform();
-			const spectrum q = spectrum_of(query);
-			std::vector<std::complex<float>> den(fft_size), num(fft_size);
-			for (std::size_t r = 0; r < refs.size(); r++)
+			for (const query_reading & reading : readings)
 			{
-				const spectrum & a = refs[r];
+				const spectrum & q = reading.q;
+				const double scale = reading.scale;
 				for (int i = 0; i < fft_size; i++) den[i] = std::conj(a.mask[i]) * q.mask[i];
 				t.run(den.data(), true);
 				const double need = std::max(0.5 * std::min(a.valid, q.valid), 40.0);
-				for (int k : rotations)
+				for (int k : reading.rotations)
 				{
 					std::fill(num.begin(), num.end(), std::complex<float>(0.0f));
 					for (int c = 0; c < 12; c++)
@@ -292,12 +301,12 @@ namespace tangotagger
 						const double d = den[i].real();
 						if (d < need) continue;
 						const double score = num[i].real() / std::max(d, 1.0);
-						if (score > best[r].score)
+						if (score > best.score)
 						{
-							best[r].score = score;
-							best[r].k = k;
-							best[r].scale = scale;
-							best[r].lag = lag * coarse_hop;
+							best.score = score;
+							best.k = k;
+							best.scale = scale;
+							best.lag = lag * coarse_hop;
 						}
 					}
 				}
@@ -728,18 +737,13 @@ namespace tangotagger
 		for (int mode = 0; mode < 2; mode++)
 		{
 			const bool by_tuning = mode == 0;
-			std::vector<spectrum> spectra;
-			spectra.reserve(cand.size());
-			for (std::size_t i : cand)
-				spectra.push_back(spectrum_of(chroma_sequence(m_refs[i].fp, ref_scale(m_refs[i].fp, by_tuning), coarse_hop,
-				                                              0, coarse_frames)));
-			std::vector<alignment> al(cand.size());
+			std::vector<query_reading> readings;
 			if (by_tuning)
 			{
 				for (int k = -1; k <= 1; k++)
 				{
 					const double s = std::pow(2.0, query.tuning / 1200.0) * std::pow(2.0, k / 12.0);
-					coarse_pass(spectra, chroma_sequence(query, s, coarse_hop, 0, coarse_frames), s, { k }, al);
+					readings.push_back({ spectrum_of(chroma_sequence(query, s, coarse_hop, 0, coarse_frames)), s, { k } });
 				}
 			}
 			else
@@ -747,8 +751,16 @@ namespace tangotagger
 				for (int i = 0; i <= 10; i++)
 				{
 					const double s = 0.95 + 0.01 * i;
-					coarse_pass(spectra, chroma_sequence(query, s, coarse_hop, 0, coarse_frames), s, { -1, 0, 1 }, al);
+					readings.push_back({ spectrum_of(chroma_sequence(query, s, coarse_hop, 0, coarse_frames)), s, { -1, 0, 1 } });
 				}
+			}
+			std::vector<alignment> al(cand.size());
+			std::vector<std::complex<float>> den(fft_size), num(fft_size);
+			for (std::size_t c = 0; c < cand.size(); c++)
+			{
+				const fingerprint & ref = m_refs[cand[c]].fp;
+				coarse_pass(spectrum_of(chroma_sequence(ref, ref_scale(ref, by_tuning), coarse_hop, 0, coarse_frames)),
+				            readings, al[c], den, num);
 			}
 
 			std::vector<std::size_t> order(cand.size());

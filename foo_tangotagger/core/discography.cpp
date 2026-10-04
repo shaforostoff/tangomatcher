@@ -95,17 +95,30 @@ namespace tangotagger
 		return pos == payload.size();
 	}
 
+	namespace
+	{
+		discography & embedded()
+		{
+			static discography d = []
+			{
+				discography result;
+				std::string payload;
+				if (lzma_decompress(tangotagger_discography_blob, tangotagger_discography_blob_size, payload))
+					parse_discography(payload, result);
+				return result;
+			}();
+			return d;
+		}
+	}
+
 	const discography & embedded_discography()
 	{
-		static const discography d = []
-		{
-			discography result;
-			std::string payload;
-			if (lzma_decompress(tangotagger_discography_blob, tangotagger_discography_blob_size, payload))
-				parse_discography(payload, result);
-			return result;
-		}();
-		return d;
+		return embedded();
+	}
+
+	void release_embedded_fingerprint_data()
+	{
+		for (recording_fingerprint & f : embedded().fingerprints) std::string().swap(f.data);
 	}
 
 	bool is_instrumental(const std::string & vocal)

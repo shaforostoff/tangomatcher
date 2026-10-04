@@ -22,6 +22,8 @@ namespace tangotagger
 				fingerprint fp;
 				if (decode_fingerprint(f.data, fp)) result.add(f.recording, std::move(fp));
 			}
+			// Decoded, the bytes are not needed again: 6MB.
+			release_embedded_fingerprint_data();
 			return result;
 		}();
 		return index;
