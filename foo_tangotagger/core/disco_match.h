@@ -62,7 +62,8 @@ namespace tangotagger
 
 	//! Every date written anywhere in `text`: full dates in year-month-day or
 	//! day-month-year order with any separators ("1941-10-09", "1941.10.09",
-	//! "09/10/1941", "1941–10–09"), and years 1900-2029 standing alone.
+	//! "09/10/1941", "1941–10–09"), and years 1900-2029 standing alone. A
+	//! span of years ("1938-1950") is none.
 	std::vector<date_parts> find_dates(const std::string & text);
 
 	//! How a candidate stands on each kind of evidence. Positive for, negative

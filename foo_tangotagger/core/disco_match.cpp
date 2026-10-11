@@ -277,7 +277,15 @@ namespace tangotagger
 		for (std::size_t k = 0; k < runs.size(); k++)
 		{
 			const run & r = runs[k];
-			if (r.end - r.start != 4 || r.value < 1900 || r.value > 2029) continue;
+			if (used[k] || r.end - r.start != 4 || r.value < 1900 || r.value > 2029) continue;
+			// "Anibal Troilo 1938-1950": a span of years, which dates no one
+			// recording - its two ends would count against everything between.
+			if (k + 1 < runs.size() && separator(r.end, runs[k + 1].start) && runs[k + 1].end - runs[k + 1].start == 4 &&
+			    runs[k + 1].value >= 1900 && runs[k + 1].value <= 2029)
+			{
+				used[k] = used[k + 1] = true;
+				continue;
+			}
 			// year-month-day, year-month
 			if (k + 1 < runs.size() && separator(r.end, runs[k + 1].start) && runs[k + 1].end - runs[k + 1].start <= 2 &&
 			    runs[k + 1].value >= 1 && runs[k + 1].value <= 12)

@@ -641,7 +641,8 @@ int main()
 	check(dates_in("1941\xE2\x80\x93" "02\xE2\x80\x93" "19") == "1941/2/19", "en dashes");
 	check(dates_in("09/08/1934") == "1934/8/9", "day/month/year");
 	check(dates_in("1938-06-22 \nGolden Ear+") == "1938/6/22", "date with a note");
-	check(dates_in("Todos de Rodolfo Biagi 1927-1948") == "1927/0/0 1948/0/0", "a range is two years");
+	check(dates_in("Todos de Rodolfo Biagi 1927-1948").empty(), "a range of years is no date");
+	check(dates_in("Biagi 1927-1948 / 1941") == "1941/0/0", "a year beside a range");
 	check(dates_in("Di Sarli - Rie payaso - 1940.mp3") == "1940/0/0", "year in a file name");
 	check(dates_in("BAVE 69617-1 - 39552 B, 2606, 1106").empty(), "catalogue numbers are not dates");
 	check(parse_date("1952-10").year == 1952 && parse_date("1952-10").month == 10 && parse_date("1952-10").day == 0,
@@ -698,6 +699,10 @@ int main()
 	                 "1948-06-22", true);
 	// The orchestra in the folder, the singer nowhere: by the date.
 	expect_recording(tags("Recuerdo", "", "1944", "", "X:\\Pugliese\\Recuerdo.flac"), "Instrumental", "1944-03-31", true);
+	// A span of years on the folder says nothing against what lies between.
+	expect_recording(tags("Pa' que bailen los muchachos", "Anibal Troilo - Francisco Fiorentino", "", "",
+	                      "X:\\Anibal Troilo 1938-1950\\05 Pa que bailen los muchachos.flac"),
+	                 "Francisco Fiorentino", "1942-04-16", true);
 	// Another of the orchestra's singers named: not that recording.
 	{
 		const recording * r = best_of(tags("Recuerdo", "Osvaldo Pugliese - Jorge Maciel"));
