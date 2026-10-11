@@ -41,6 +41,10 @@ struct fake_track
 	int refs = 1;         // the playlist's own
 	int writes = 0;
 	double seconds = 20;  //!< what the fake decoder produces
+	bool read_only = false;   //!< write_metadata fails
+	//! The tags in the file: what read_metadata reads back. Set by a
+	//! write_metadata that succeeds, or by save().
+	std::vector<std::pair<std::string, std::string>> file;
 
 	fake_track() : base() {}
 	fake_track(const fake_track &) = delete;
@@ -49,6 +53,8 @@ struct fake_track
 	//! Sets a field to one value, or several.
 	void set(const std::string & key, const std::string & value);
 	void set(const std::string & key, const std::vector<std::string> & values);
+	//! The file has what the track shows.
+	void save();
 };
 
 extern std::recursive_mutex pl_mutex;

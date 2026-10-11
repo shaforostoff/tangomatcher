@@ -390,6 +390,9 @@ bool commit(DB_decoder_t * dec, DB_playItem_t * track, const std::string & name)
 	if (failed)
 	{
 		TT_ERROR("could not write tags to %s.", name.c_str());
+		// apply() has already changed the track in memory: read the file back,
+		// or the playlist shows tags the file lacks and a retry finds nothing to do.
+		if (dec->read_metadata != nullptr) dec->read_metadata(track);
 		return false;
 	}
 

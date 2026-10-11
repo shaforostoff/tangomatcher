@@ -82,6 +82,12 @@ void fake_track::set(const std::string & key, const std::string & value)
 	set(key, std::vector<std::string>(1, value));
 }
 
+void fake_track::save()
+{
+	file.clear();
+	for (const auto & m : meta) file.emplace_back(m->key, m->value);
+}
+
 std::vector<std::string> values(fake_track & t, const char * key)
 {
 	std::vector<std::string> out;
@@ -173,7 +179,25 @@ int dec_read(DB_fileinfo_t * base, char * buffer, int nbytes)
 int dec_write_metadata(DB_playItem_t * it)
 {
 	std::lock_guard<std::recursive_mutex> guard(pl_mutex);
+	if (T(it)->read_only) return -1;
 	T(it)->writes++;
+	T(it)->save();
+	return 0;
+}
+
+int dec_read_metadata(DB_playItem_t * it)
+{
+	std::lock_guard<std::recursive_mutex> guard(pl_mutex);
+	fake_track & t = *T(it);
+	t.meta.clear();
+	for (const auto & f : t.file)
+	{
+		std::unique_ptr<fake_meta> m(new fake_meta());
+		m->key = f.first;
+		m->value = f.second;
+		t.meta.push_back(std::move(m));
+	}
+	relink(t);
 	return 0;
 }
 
@@ -410,6 +434,7 @@ void init()
 	fake_decoder.free = dec_free;
 	fake_decoder.read = dec_read;
 	fake_decoder.write_metadata = dec_write_metadata;
+	fake_decoder.read_metadata = dec_read_metadata;
 }
 
 }   // namespace fake

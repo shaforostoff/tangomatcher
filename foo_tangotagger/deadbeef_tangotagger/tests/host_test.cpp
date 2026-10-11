@@ -156,6 +156,25 @@ int main()
 		check(all_refs_back(playlist), "every reference given back");
 	}
 
+	// --- a write that fails, then a retry -----------------------------------
+	{
+		fake_track locked;
+		locked.set(":URI", "/music/locked.flac");
+		locked.set("title", "Yira, yira");
+		locked.save();
+		locked.read_only = true;
+		playlist = { &locked };
+
+		run(lyrics);
+		check(get(locked, "LYRICS").empty() && locked.writes == 0 && logged("could not write tags to locked.flac"),
+		      "write fails: logged, the track shows what the file has");
+		locked.read_only = false;
+		run(lyrics);
+		check(get(locked, "LYRICS") == tt::lyrics_tag_text(*yira, false) && locked.writes == 1,
+		      "retried once the file can be written: written");
+		check(all_refs_back(playlist), "every reference given back");
+	}
+
 	// --- Match discographies, no windows ------------------------------------
 	{
 		fake_track flac, mp3, unknown;
