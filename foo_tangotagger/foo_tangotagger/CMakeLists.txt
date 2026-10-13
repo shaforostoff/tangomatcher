@@ -31,14 +31,12 @@ set(FOO_TANGOTAGGER_SOURCES
     disco_rows.cpp
     disco_sound.cpp
     file_info_filter_fields.cpp
-    file_info_filter_lyrics.cpp
     foo_tangotagger.cpp
     lyrics_panel_content.cpp
     lyrics_rows.cpp
 
     disco_rows.h
     file_info_filter_fields.h
-    file_info_filter_lyrics.h
     grouped_list.h
     guid.h
     lyrics_field.h

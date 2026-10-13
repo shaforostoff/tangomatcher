@@ -2,7 +2,7 @@
 
 #include "lyrics_rows.h"
 
-#include "file_info_filter_lyrics.h"
+#include "file_info_filter_fields.h"
 #include "lyrics_db.h"
 #include "lyrics_field.h"
 
@@ -337,19 +337,19 @@ std::size_t count_checked(const std::vector<lyrics_row> & rows)
 
 void write_checked_lyrics(const std::vector<lyrics_row> & rows)
 {
-	std::vector<file_info_filter_lyrics::item> items;
+	std::vector<file_info_filter_fields::item> items;
 	metadb_handle_list tracks;
 	for (const lyrics_row & r : rows)
 	{
 		if (!r.checked) continue;
-		items.push_back({ r.track, r.field, lyrics_tag_text(row_song(r)) });
+		items.push_back({ r.track, { { r.field.get_ptr(), { lyrics_tag_text(row_song(r)).get_ptr() } } } });
 		tracks.add_item(r.track);
 	}
 	if (items.empty()) return;
 
 	metadb_io_v2::get()->update_info_async(
 		tracks,
-		fb2k::service_new<file_info_filter_lyrics>(items),
+		fb2k::service_new<file_info_filter_fields>(items),
 		core_api::get_main_window(),
 		metadb_io_v2::op_flag_background | metadb_io_v2::op_flag_delay_ui,
 		nullptr);

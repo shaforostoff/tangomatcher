@@ -2,12 +2,14 @@
 
 // Match discographies, by sound where the tags are not enough.
 //
-// Tags and file names first, for every track: that is instant and usually
-// enough. The tracks it leaves unsure are then decoded and fingerprinted -
-// several at once, below normal priority, behind foobar2000's progress
-// dialog - and compared with the fingerprints of known transfers embedded
-// with the discographies (core/fingerprint.h, core/disco_fingerprint.h). The
-// window opens when that is done, or with what there is if it is stopped.
+// Tags and file names first, for every track: about a millisecond a track,
+// and usually enough. The tracks it leaves unsure are then decoded and
+// fingerprinted - several at once, below normal priority - and compared with
+// the fingerprints of known transfers embedded with the discographies
+// (core/fingerprint.h, core/disco_fingerprint.h). Both run behind
+// foobar2000's progress dialog, off the main thread: a few thousand tracks
+// take seconds to match by their tags alone. The window opens when that is
+// done, or with what there is if it is stopped.
 
 #include "disco_rows.h"
 #include "tangotagger_ui.h"
@@ -91,16 +93,27 @@ namespace
 		return tangotagger::make_fingerprint(tangotagger::audio_features_of(std::move(f)), 0);
 	}
 
-	class sound_matching : public threaded_process_callback
+	class disco_matching : public threaded_process_callback
 	{
 	public:
-		sound_matching(std::vector<disco_track> && tracks, std::vector<std::size_t> && pending)
-			: m_tracks(std::move(tracks)), m_pending(std::move(pending)) {}
+		explicit disco_matching(metadb_handle_list_cref selection) : m_selection(selection) {}
 
 		void run(threaded_process_status & status, abort_callback & abort) override
 		{
+			m_tracks = match_disco_tracks(m_selection);
+			if (abort.is_aborting() || tangotagger::embedded_discography().fingerprints.empty()) return;
+			std::vector<std::size_t> pending;
+			for (std::size_t i = 0; i < m_tracks.size(); i++)
+				if (tangotagger::needs_sound(m_tracks[i].match)) pending.push_back(i);
+			if (pending.empty()) return;
+
+			pfc::string_formatter title;
+			title << "Listening to " << pending.size() << (pending.size() == 1 ? " track" : " tracks")
+			      << " the tags do not place...";
+			status.set_title(title);
+
 			const tangotagger::fingerprint_index & index = tangotagger::embedded_fingerprints();
-			const std::size_t total = m_pending.size();
+			const std::size_t total = pending.size();
 			std::vector<std::vector<tangotagger::fingerprint_match>> found(total);
 
 			// Two cores short of the machine, as foo_rubato does: every
@@ -119,7 +132,7 @@ namespace
 					if (abort.is_aborting()) return;
 					const std::size_t i = next.fetch_add(1);
 					if (i >= total) return;
-					disco_track & t = m_tracks[m_pending[i]];
+					disco_track & t = m_tracks[pending[i]];
 					try
 					{
 						const tangotagger::fingerprint q = listen(t.base.track, abort);
@@ -168,7 +181,7 @@ namespace
 
 			// Merged here, after every worker is done with the tracks.
 			for (std::size_t i = 0; i < total; i++)
-				if (!found[i].empty()) tangotagger::add_sound(m_tracks[m_pending[i]].match, found[i]);
+				if (!found[i].empty()) tangotagger::add_sound(m_tracks[pending[i]].match, found[i]);
 		}
 
 		void on_done(ctx_t, bool) override
@@ -178,29 +191,18 @@ namespace
 		}
 
 	private:
+		const metadb_handle_list m_selection;
 		std::vector<disco_track> m_tracks;
-		std::vector<std::size_t> m_pending;
 	};
 }
 
 void match_discographies(metadb_handle_list_cref tracks)
 {
-	std::vector<disco_track> matched = match_disco_tracks(tracks);
-	std::vector<std::size_t> pending;
-	if (!tangotagger::embedded_discography().fingerprints.empty())
-		for (std::size_t i = 0; i < matched.size(); i++)
-			if (tangotagger::needs_sound(matched[i].match)) pending.push_back(i);
-	if (pending.empty())
-	{
-		show_or_explain(std::move(matched));
-		return;
-	}
-
 	pfc::string_formatter title;
-	title << "Listening to " << pending.size() << (pending.size() == 1 ? " track" : " tracks")
-	      << " the tags do not place...";
+	title << "Matching " << tracks.get_count() << (tracks.get_count() == 1 ? " track" : " tracks")
+	      << " with the discographies...";
 	threaded_process::g_run_modeless(
-		fb2k::service_new<sound_matching>(std::move(matched), std::move(pending)),
+		fb2k::service_new<disco_matching>(tracks),
 		threaded_process::flag_show_abort | threaded_process::flag_show_delayed | threaded_process::flag_show_progress |
 			threaded_process::flag_show_minimize,
 		core_api::get_main_window(), title);
