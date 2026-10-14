@@ -5,29 +5,18 @@
 Measured on an i7-4750HQ (Haswell, 4 cores / 8 threads, 256KB L2 a core,
 6MB L3, 128MB eDRAM, DDR3-1600), Release build of MSVC 2017, x64 SSE2.
 
-### Fingerprint matching: a faster FFT
+### Fingerprint matching: where the time goes now
 
-`fingerprint_index::identify` takes about 245ms on one thread, 380ms a
-thread with the component's six workers. Building each candidate's
-spectrum is 41% of it, the coarse pass 44%, the fine pass 14%, the
-prefilter under 1%. Most of the first two is `fft::run`, a plain radix-2
-transform on `std::complex<float>` that does not vectorise. It would help
-every machine, not only slow ones.
+`fingerprint_index::identify` takes about 135ms on one thread through pffft
+(FOO_TANGOTAGGER_FINGERPRINT_PFFFT, the default), 207ms a thread with the
+component's six workers; 245ms and 380ms through core's own transform, 564ms
+and 861ms before the half spectra. Not profiled again since pffft: measure
+before choosing the next thing.
 
-pffft is already in the component - bpmcore's transform, from foo_bpm - but
-core/ does not use it: tangotagger_core is standard C++ only and does not
-link bpmcore. Linking pffft into tangotagger_core (core_test and the tools
-would need it too) gives SIMD real transforms of 1024 points, which would
-replace both the transform and the two-real-rows-in-one-complex packing in
-`two_real_spectra` / `two_real_signals`. Mind pffft's packed real layout -
-DC and Nyquist share the first complex - and its 16-byte alignment, which
-`pffft_aligned_malloc` gives. A radix-4 transform of our own is the
-alternative that keeps core/ free of dependencies.
-
-Either rounds differently from the current transform, so the results will
-not stay byte-identical: check identifications against fingerprint_lab
-(cpp_eval.py) and core_test's synthetic transfers (faster, slower, trimmed,
-across the semitone wrap, re-performed), not just a diff of the output.
+Check any change against the current results: they must stay the same on the
+embedded references and on core_test's synthetic transfers (faster, slower,
+trimmed, across the semitone wrap, re-performed); and against fingerprint_lab
+(cpp_eval.py) for anything that changes the rounding.
 
 ### Fingerprint matching: the fine pass
 
@@ -56,3 +45,19 @@ Six workers against one thread cost the same proportion before and after
 the half-spectra change, which halved the memory read; the slowdown is the
 hyper-threads and the lower turbo with more cores busy, not memory. That
 may differ on a DDR3 machine without this CPU's eDRAM.
+
+## Other
+
+### Credit pffft
+
+The component links pffft - through bpmcore since before the fingerprint
+matching used it - and pffft's FFTPACK licence asks binary distributions to
+reproduce its notice (foo_bpm's pffft/COPYING). The about box credits the
+discographies and the lyrics, not pffft.
+
+### Build: tools/fingerprints with Visual Studio 2017
+
+tools/fingerprints/main.cpp calls `std::tolower` without `<cctype>`, which
+Visual Studio 2017's headers do not bring in by themselves. And the 2025
+foobar2000 SDK uses `ERROR_NO_SUCH_DEVICE`, which Visual Studio 2017's
+Windows SDK (10.0.17763) does not have: the component wants a newer one.

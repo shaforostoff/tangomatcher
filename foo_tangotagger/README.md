@@ -237,9 +237,11 @@ DeaDBeeF plugin, for Linux, macOS and Windows: see
 or on macOS `scripts/build_release_macos.sh`. The foobar2000 SDK, WTL and the
 LZMA SDK are downloaded on the first configure (`scripts/get_sdk.ps1`; where
 Windows' tar.exe cannot read their `.7z`, an installed 7-Zip unpacks them).
-bpmcore is taken from a foo_bpm checkout beside this repository's
-(`../../foo_bpm`, or `-DFOO_BPM_DIR=...`), or fetched from GitHub when
-there is none.
+bpmcore, and pffft, the transform both it and the fingerprint matching use,
+are taken from a foo_bpm checkout beside this repository's (`../../foo_bpm`,
+or `-DFOO_BPM_DIR=...`), or fetched from GitHub when there is none.
+`-DFOO_TANGOTAGGER_FINGERPRINT_PFFFT=OFF` matches fingerprints with core's
+own transform instead - the same results, at about half the speed.
 
 ## Licence
 

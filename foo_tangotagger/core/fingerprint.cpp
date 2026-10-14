@@ -5,7 +5,13 @@
 #include <complex>
 #include <cstring>
 #include <limits>
+#include <memory>
+#include <new>
 #include <numeric>
+
+#ifdef TANGOTAGGER_FINGERPRINT_PFFFT
+#include <pffft/pffft.h>
+#endif
 
 // The layout of an encoded fingerprint, all little endian:
 //
@@ -70,7 +76,9 @@ namespace tangotagger
 
 		// ---------------------------------------------------------------- the FFT
 
-		//! Radix-2 complex transform of fft_size points.
+#ifndef TANGOTAGGER_FINGERPRINT_PFFFT
+		//! Radix-2 complex transform of fft_size points, for a build without
+		//! pffft.
 		class fft
 		{
 		public:
@@ -125,6 +133,7 @@ namespace tangotagger
 			static const fft f;
 			return f;
 		}
+#endif
 
 		// ---------------------------------------------------------------- matching
 
@@ -237,6 +246,110 @@ namespace tangotagger
 			double lag = 0;     // seconds: reference time t sits at query time t + lag
 		};
 
+		//! The candidate's best lag of one reading of the query: `den` the
+		//! overlap of the valid frames at each lag, `num` the agreement of the
+		//! chroma read `k` pitch classes on.
+		void best_lag(const float * den, const float * num, double need, int k, double scale, alignment & best)
+		{
+			for (int lag = -coarse_max_lag; lag <= coarse_max_lag; lag++)
+			{
+				const int i = lag >= 0 ? lag : fft_size + lag;
+				const double d = den[i];
+				if (d < need) continue;
+				const double score = num[i] / std::max(d, 1.0);
+				if (score > best.score)
+				{
+					best.score = score;
+					best.k = k;
+					best.scale = scale;
+					best.lag = lag * coarse_hop;
+				}
+			}
+		}
+
+#ifdef TANGOTAGGER_FINGERPRINT_PFFFT
+		//! Floats aligned as pffft wants them, in rows of fft_size.
+		class aligned_rows
+		{
+		public:
+			void reset(int rows)
+			{
+				const std::size_t n = static_cast<std::size_t>(rows) * fft_size;
+				if (n != m_size)
+				{
+					m_data.reset(static_cast<float *>(pffft_aligned_malloc(n * sizeof(float))));
+					if (!m_data) throw std::bad_alloc();
+					m_size = n;
+				}
+				std::fill(m_data.get(), m_data.get() + n, 0.0f);
+			}
+			float * row(int r) { return m_data.get() + static_cast<std::size_t>(r) * fft_size; }
+			const float * row(int r) const { return m_data.get() + static_cast<std::size_t>(r) * fft_size; }
+
+		private:
+			struct release
+			{
+				void operator()(float * p) const { pffft_aligned_free(p); }
+			};
+			std::unique_ptr<float, release> m_data;
+			std::size_t m_size = 0;
+		};
+
+		//! pffft's real transform of fft_size points; read only once made,
+		//! so one for every thread.
+		const PFFFT_Setup * real_transform()
+		{
+			static const struct holder
+			{
+				PFFFT_Setup * setup = pffft_new_setup(fft_size, PFFFT_REAL);
+				~holder() { pffft_destroy_setup(setup); }
+			} the;
+			return the.setup;
+		}
+
+		//! A sequence's 12 rows, then its valid mask as a 13th, each a real
+		//! spectrum in pffft's own order - which only pffft reads.
+		struct spectrum
+		{
+			aligned_rows rows;
+			double valid = 0;
+		};
+
+		//! What spectrum_of and coarse_pass work in, kept from one candidate
+		//! to the next instead of being allocated for each.
+		struct coarse_scratch
+		{
+			coarse_scratch()
+			{
+				signal.reset(1);
+				work.reset(1);
+			}
+			aligned_rows signal, work;
+			aligned_rows cross;   // the masks', then one a rotation
+			aligned_rows lags;    // the same, back in time
+		};
+
+		//! `reversed` reads the sequence backwards - frame j at -j, around the
+		//! transform's circle - which conjugates its spectrum: multiplied with
+		//! another, it gives their correlation rather than their convolution.
+		void spectrum_of(const sequence & s, spectrum & out, coarse_scratch & scratch, bool reversed)
+		{
+			out.rows.reset(13);
+			out.valid = 0;
+			const std::size_t n = std::min<std::size_t>(s.frames(), coarse_frames);
+			float * x = scratch.signal.row(0);
+			for (int c = 0; c < 13; c++)
+			{
+				std::fill(x, x + fft_size, 0.0f);
+				for (std::size_t j = 0; j < n; j++)
+					x[reversed ? (fft_size - j) % fft_size : j] =
+						c < 12 ? static_cast<float>(s.x[j * 12 + c]) : (s.valid[j] ? 1.0f : 0.0f);
+				pffft_transform(real_transform(), x, out.rows.row(c), scratch.work.row(0), PFFFT_FORWARD);
+			}
+			for (std::size_t j = 0; j < n; j++)
+				if (s.valid[j]) out.valid++;
+		}
+#else
 		//! Rows of real signals by their spectra. A real row's spectrum is its
 		//! own mirror image, so only bins 0..fft_size/2 are kept - half the
 		//! multiplying and half the memory of whole complex spectra - with the
@@ -296,8 +409,20 @@ namespace tangotagger
 			double valid = 0;
 		};
 
-		void spectrum_of(const sequence & s, spectrum & out, std::vector<std::complex<float>> & z)
+		//! What spectrum_of and coarse_pass work in, kept from one candidate
+		//! to the next instead of being allocated for each.
+		struct coarse_scratch
 		{
+			half_spectra cross;                    // the masks', then one a rotation
+			std::vector<std::complex<float>> z = std::vector<std::complex<float>>(fft_size);
+			std::vector<float> lags;                // the cross spectra's, back in time
+		};
+
+		//! The candidate's and the query's alike: the conjugating is in
+		//! accumulate_cross.
+		void spectrum_of(const sequence & s, spectrum & out, coarse_scratch & scratch, bool)
+		{
+			std::vector<std::complex<float>> & z = scratch.z;
 			out.rows.reset(14);
 			out.valid = 0;
 			const std::size_t n = std::min<std::size_t>(s.frames(), coarse_frames);
@@ -316,23 +441,6 @@ namespace tangotagger
 				if (s.valid[j]) out.valid++;
 		}
 
-		//! One way of reading the query: at a speed, a pitch class or more on.
-		struct query_reading
-		{
-			spectrum q;
-			double scale;
-			std::vector<int> rotations;
-		};
-
-		//! What coarse_pass needs to work in, kept from one candidate to the
-		//! next instead of being allocated for each.
-		struct coarse_scratch
-		{
-			half_spectra cross;                    // the mask's, then one a rotation
-			std::vector<std::complex<float>> z = std::vector<std::complex<float>>(fft_size);
-			std::vector<float> lags;                // the cross spectra's, back in time
-		};
-
 		//! a += conj(x) * y, over half spectra.
 		void accumulate_cross(const float * xr, const float * xi, const float * yr, const float * yi, float * ar, float * ai)
 		{
@@ -343,18 +451,46 @@ namespace tangotagger
 			}
 		}
 
-		//! A candidate's best lag over every reading of the query.
+#endif
+
+		//! One way of reading the query: at a speed, a pitch class or more on.
+		struct query_reading
+		{
+			spectrum q;
+			double scale;
+			std::vector<int> rotations;
+		};
+
+		//! A candidate's best lag over every reading of the query. The
+		//! candidate's spectrum is spectrum_of's reversed one.
 		void coarse_pass(const spectrum & a, const std::vector<query_reading> & readings, alignment & best,
 		                 coarse_scratch & s)
 		{
 			for (const query_reading & reading : readings)
 			{
-				const half_spectra & q = reading.q.rows;
-				const double scale = reading.scale;
 				const int n_rot = static_cast<int>(reading.rotations.size());
 
 				// The cross spectra: the masks', and every rotation's, each
-				// row of the candidate read once for all the rotations.
+				// row of the candidate read once for all the rotations; then
+				// back to lags.
+#ifdef TANGOTAGGER_FINGERPRINT_PFFFT
+				const PFFFT_Setup * t = real_transform();
+				const float scaling = 1.0f / fft_size;
+				const aligned_rows & q = reading.q.rows;
+				s.cross.reset(1 + n_rot);
+				s.lags.reset(1 + n_rot);
+				pffft_zconvolve_accumulate(t, a.rows.row(12), q.row(12), s.cross.row(0), scaling);
+				for (int c = 0; c < 12; c++)
+					for (int r = 0; r < n_rot; r++)
+					{
+						const int from = ((c + reading.rotations[r]) % 12 + 12) % 12;
+						pffft_zconvolve_accumulate(t, a.rows.row(c), q.row(from), s.cross.row(1 + r), scaling);
+					}
+				for (int r = 0; r < 1 + n_rot; r++)
+					pffft_transform(t, s.cross.row(r), s.lags.row(r), s.work.row(0), PFFFT_BACKWARD);
+				auto lags = [&](int r) { return s.lags.row(r); };
+#else
+				const half_spectra & q = reading.q.rows;
 				s.cross.reset(1 + n_rot);
 				s.lags.resize(static_cast<std::size_t>(1 + n_rot) * fft_size);
 				accumulate_cross(a.rows.re(12), a.rows.im(12), q.re(12), q.im(12), s.cross.re(0), s.cross.im(0));
@@ -364,8 +500,7 @@ namespace tangotagger
 						const int from = ((c + reading.rotations[r]) % 12 + 12) % 12;
 						accumulate_cross(a.rows.re(c), a.rows.im(c), q.re(from), q.im(from), s.cross.re(1 + r), s.cross.im(1 + r));
 					}
-
-				// Back to lags, two cross spectra a transform.
+				// Two cross spectra a transform.
 				for (int r = 0; r < 1 + n_rot; r += 2)
 				{
 					const bool pair = r + 1 < 1 + n_rot;
@@ -377,27 +512,12 @@ namespace tangotagger
 						if (pair) s.lags[(r + 1) * fft_size + i] = s.z[i].imag();
 					}
 				}
+				auto lags = [&](int r) { return &s.lags[static_cast<std::size_t>(r) * fft_size]; };
+#endif
 
-				const float * den = &s.lags[0];
 				const double need = std::max(0.5 * std::min(a.valid, reading.q.valid), 40.0);
 				for (int r = 0; r < n_rot; r++)
-				{
-					const float * num = &s.lags[(1 + r) * fft_size];
-					for (int lag = -coarse_max_lag; lag <= coarse_max_lag; lag++)
-					{
-						const int i = lag >= 0 ? lag : fft_size + lag;
-						const double d = den[i];
-						if (d < need) continue;
-						const double score = num[i] / std::max(d, 1.0);
-						if (score > best.score)
-						{
-							best.score = score;
-							best.k = reading.rotations[r];
-							best.scale = scale;
-							best.lag = lag * coarse_hop;
-						}
-					}
-				}
+					best_lag(lags(0), lags(1 + r), need, reading.rotations[r], reading.scale, best);
 			}
 		}
 
@@ -855,7 +975,7 @@ namespace tangotagger
 			auto read_query = [&](double s, std::vector<int> rotations)
 			{
 				readings.push_back({ spectrum(), s, std::move(rotations) });
-				spectrum_of(chroma_sequence(query, s, coarse_hop, 0, coarse_frames), readings.back().q, scratch.z);
+				spectrum_of(chroma_sequence(query, s, coarse_hop, 0, coarse_frames), readings.back().q, scratch, false);
 			};
 			if (by_tuning)
 			{
@@ -873,7 +993,7 @@ namespace tangotagger
 			{
 				const fingerprint & ref = reference_fp(m_refs[cand[c]], holder);
 				spectrum_of(chroma_sequence(ref, ref_scale(ref.tuning, by_tuning), coarse_hop, 0, coarse_frames), candidate,
-				            scratch.z);
+				            scratch, true);
 				coarse_pass(candidate, readings, al[c], scratch);
 			}
 

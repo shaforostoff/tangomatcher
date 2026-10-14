@@ -117,6 +117,7 @@ set(FOO_BPM_GIT_TAG "main" CACHE STRING "foo_bpm revision to fetch when FOO_BPM_
 # embeds only files marked pd_status="public domain" - the build to publish.
 option(FOO_TANGOTAGGER_PUBLIC_DOMAIN_ONLY "Embed only lyrics marked public domain" OFF)
 option(TT_LZMA_AUTO_DOWNLOAD "Fetch the LZMA SDK if it is not present" ON)
+option(FOO_TANGOTAGGER_FINGERPRINT_PFFFT "Match fingerprints through pffft, from foo_bpm, rather than core's own transform" ON)
 
 if(APPLE OR MSVC)
     set(_tt_gtk_default OFF)
@@ -250,12 +251,21 @@ else()
 endif()
 message(STATUS "bpmcore: ${_foo_bpm_source}")
 include("${_foo_bpm_source}/cmake/fft_backend.cmake")
+# The transforms, foo_bpm's: kiss_fft when bpmcore is built on it
+# (BPMCORE_FFT_BACKEND=kiss), and pffft for bpmcore otherwise and for the
+# fingerprint matching unless FOO_TANGOTAGGER_FINGERPRINT_PFFFT is off - the
+# one copy of pffft for both. (foo_bpm builds kiss and pffft both, to check
+# one against the other; nothing here does.)
+set(_fft_targets "")
 if(BPMCORE_FFT_BACKEND STREQUAL "kiss")
-    set(_fft_target kiss_fft)
-else()
-    set(_fft_target pffft)
+    list(APPEND _fft_targets kiss_fft)
 endif()
-add_subdirectory("${_foo_bpm_source}/${_fft_target}" "${CMAKE_CURRENT_BINARY_DIR}/foo_bpm/${_fft_target}")
+if(NOT BPMCORE_FFT_BACKEND STREQUAL "kiss" OR FOO_TANGOTAGGER_FINGERPRINT_PFFFT)
+    list(APPEND _fft_targets pffft)
+endif()
+foreach(_t ${_fft_targets})
+    add_subdirectory("${_foo_bpm_source}/${_t}" "${CMAKE_CURRENT_BINARY_DIR}/foo_bpm/${_t}")
+endforeach()
 add_subdirectory("${_foo_bpm_source}/bpmcore" "${CMAKE_CURRENT_BINARY_DIR}/foo_bpm/bpmcore")
 
 # --- core: the data and the matching ---------------------------------------
@@ -272,6 +282,13 @@ add_library(tangotagger_core STATIC
     "${TANGOTAGGER_DISCOGRAPHY_BLOB}")
 target_include_directories(tangotagger_core PUBLIC "${TT_ROOT}/core")
 target_link_libraries(tangotagger_core PUBLIC lzma_dec)
+
+# The fingerprint matching's transform: pffft, SIMD, about twice as fast in
+# identify as core's own, which a build without it keeps.
+if(FOO_TANGOTAGGER_FINGERPRINT_PFFFT)
+    target_link_libraries(tangotagger_core PRIVATE pffft)
+    target_compile_definitions(tangotagger_core PRIVATE TANGOTAGGER_FINGERPRINT_PFFFT)
+endif()
 
 find_package(Threads REQUIRED)
 

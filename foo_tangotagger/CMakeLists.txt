@@ -65,6 +65,7 @@ option(FOO_TANGOTAGGER_PUBLIC_DOMAIN_ONLY "Embed only lyrics marked public domai
 option(FB2K_SDK_AUTO_DOWNLOAD "Fetch the SDKs and WTL if they are not present" ON)
 option(FOO_TANGOTAGGER_STATIC_CRT "Link the C runtime statically (no VC redist needed)" ON)
 option(FOO_TANGOTAGGER_LTO        "Whole program optimisation in Release builds" ON)
+option(FOO_TANGOTAGGER_FINGERPRINT_PFFFT "Match fingerprints through pffft, from foo_bpm, rather than core's own transform" ON)
 set(FOO_TANGOTAGGER_WIN32_WINNT "0x0601" CACHE STRING "Minimum Windows version (0x0601 = Windows 7)")
 
 if(APPLE)
@@ -252,7 +253,8 @@ add_custom_command(
 
 # --- bpmcore -----------------------------------------------------------------
 # Measures the chroma and onsets a fingerprint is made of, in the component
-# and in tools/make_fingerprints.
+# and in tools/make_fingerprints; and brings the pffft the fingerprint
+# matching uses.
 if(EXISTS "${FOO_BPM_DIR}/bpmcore/bpmcore.h")
     set(_foo_bpm_source "${FOO_BPM_DIR}")
 else()
@@ -269,16 +271,23 @@ else()
 endif()
 message(STATUS "bpmcore: ${_foo_bpm_source}")
 include("${_foo_bpm_source}/cmake/fft_backend.cmake")
-# Only the transform bpmcore links: pffft, unless BPMCORE_FFT_BACKEND=kiss.
-# (foo_bpm builds both, to check one against the other; nothing here does.)
+# The transforms, foo_bpm's: kiss_fft when bpmcore is built on it
+# (BPMCORE_FFT_BACKEND=kiss), and pffft for bpmcore otherwise and for the
+# fingerprint matching unless FOO_TANGOTAGGER_FINGERPRINT_PFFFT is off - the
+# one copy of pffft for both. (foo_bpm builds kiss and pffft both, to check
+# one against the other; nothing here does.)
+set(_fft_targets "")
 if(BPMCORE_FFT_BACKEND STREQUAL "kiss")
-    set(_fft_target kiss_fft)
-else()
-    set(_fft_target pffft)
+    list(APPEND _fft_targets kiss_fft)
 endif()
-add_subdirectory("${_foo_bpm_source}/${_fft_target}" "${CMAKE_CURRENT_BINARY_DIR}/foo_bpm/${_fft_target}")
+if(NOT BPMCORE_FFT_BACKEND STREQUAL "kiss" OR FOO_TANGOTAGGER_FINGERPRINT_PFFFT)
+    list(APPEND _fft_targets pffft)
+endif()
+foreach(_t ${_fft_targets})
+    add_subdirectory("${_foo_bpm_source}/${_t}" "${CMAKE_CURRENT_BINARY_DIR}/foo_bpm/${_t}")
+endforeach()
 add_subdirectory("${_foo_bpm_source}/bpmcore" "${CMAKE_CURRENT_BINARY_DIR}/foo_bpm/bpmcore")
-foreach(_t ${_fft_target} bpmcore)
+foreach(_t ${_fft_targets} bpmcore)
     set_target_properties(${_t} PROPERTIES FOLDER "foo_bpm")
 endforeach()
 
@@ -310,6 +319,13 @@ if(MSVC)
     target_compile_options(tangotagger_core PRIVATE /W4)
 else()
     target_compile_options(tangotagger_core PRIVATE -Wall -Wextra)
+endif()
+
+# The fingerprint matching's transform: pffft, SIMD, about twice as fast in
+# identify as core's own, which a build without it keeps.
+if(FOO_TANGOTAGGER_FINGERPRINT_PFFFT)
+    target_link_libraries(tangotagger_core PRIVATE pffft)
+    target_compile_definitions(tangotagger_core PRIVATE TANGOTAGGER_FINGERPRINT_PFFFT)
 endif()
 
 add_subdirectory(foo_tangotagger)
