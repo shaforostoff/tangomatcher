@@ -235,7 +235,8 @@ DeaDBeeF plugin, for Linux, macOS and Windows: see
     powershell -ExecutionPolicy Bypass -File scripts\build_release.ps1
 
 or on macOS `scripts/build_release_macos.sh`. The foobar2000 SDK, WTL and the
-LZMA SDK are downloaded on the first configure (`scripts/get_sdk.ps1`).
+LZMA SDK are downloaded on the first configure (`scripts/get_sdk.ps1`; where
+Windows' tar.exe cannot read their `.7z`, an installed 7-Zip unpacks them).
 bpmcore is taken from a foo_bpm checkout beside this repository's
 (`../../foo_bpm`, or `-DFOO_BPM_DIR=...`), or fetched from GitHub when
 there is none.

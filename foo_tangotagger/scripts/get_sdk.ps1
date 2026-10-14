@@ -20,8 +20,9 @@
     <atlctrls.h> but do not ship them. ATL itself comes with Visual Studio.
 
     Nothing but Windows is needed: tar.exe (bsdtar, in Windows 10 1803 and
-    later) reads both the SDK's .7z and WTL's .zip, so no 7-Zip install is
-    involved. CMake's own downloader is deliberately not used - its TLS stack
+    later) reads both the SDK's .7z and WTL's .zip. Some builds of it cannot
+    read LZMA ("LZMA codec is unsupported"); then 7-Zip is used, if it is
+    installed. CMake's own downloader is deliberately not used - its TLS stack
     cannot complete a handshake with SourceForge on some corporate networks,
     where PowerShell, going through Windows' certificate store, can.
 
@@ -114,11 +115,22 @@ function Expand-Any([string] $archive, [string] $into) {
     if ($tarPath) {
         & $tarPath -xf $archive -C $into
         if ($LASTEXITCODE -eq 0) { return }
-        Write-Host "  tar could not read it, falling back to Expand-Archive" -ForegroundColor Yellow
+        Write-Host "  tar could not read it" -ForegroundColor Yellow
+    }
+    # 7-Zip, for a tar.exe built without LZMA: on the PATH or where its
+    # installer puts it.
+    $sevenZip = Get-Command 7z.exe -ErrorAction SilentlyContinue
+    $sevenZipPath = if ($sevenZip) { $sevenZip.Source } else { Join-Path $env:ProgramFiles '7-Zip\7z.exe' }
+    if (Test-Path $sevenZipPath) {
+        Write-Host "  unpacking with $sevenZipPath" -ForegroundColor Yellow
+        & $sevenZipPath x $archive "-o$into" -y | Out-Null
+        if ($LASTEXITCODE -eq 0) { return }
+        Write-Host "  7-Zip could not read it either" -ForegroundColor Yellow
     }
     if ([System.IO.Path]::GetExtension($archive) -ne '.zip') {
-        throw "tar.exe is needed to unpack $archive and is not available. Install Windows 10 1803 or later, or unpack it by hand."
+        throw "tar.exe (Windows 10 1803 or later) or 7-Zip is needed to unpack $archive. Install 7-Zip, or unpack it by hand."
     }
+    Write-Host "  falling back to Expand-Archive" -ForegroundColor Yellow
     Expand-Archive -Path $archive -DestinationPath $into -Force
 }
 
