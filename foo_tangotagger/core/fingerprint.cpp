@@ -77,8 +77,12 @@ namespace tangotagger
 			fft()
 			{
 				m_twiddle.resize(fft_size / 2);
+				m_inverse_twiddle.resize(fft_size / 2);
 				for (int i = 0; i < fft_size / 2; i++)
+				{
 					m_twiddle[i] = std::polar(1.0f, static_cast<float>(-2.0 * 3.14159265358979323846 * i / fft_size));
+					m_inverse_twiddle[i] = std::conj(m_twiddle[i]);
+				}
 				m_reverse.resize(fft_size);
 				int bits = 0;
 				while ((1 << bits) < fft_size) bits++;
@@ -94,14 +98,14 @@ namespace tangotagger
 			{
 				for (int i = 0; i < fft_size; i++)
 					if (i < m_reverse[i]) std::swap(x[i], x[m_reverse[i]]);
+				const std::complex<float> * twiddle = inverse ? m_inverse_twiddle.data() : m_twiddle.data();
 				for (int len = 2; len <= fft_size; len <<= 1)
 				{
 					const int step = fft_size / len;
 					for (int i = 0; i < fft_size; i += len)
 						for (int j = 0; j < len / 2; j++)
 						{
-							std::complex<float> w = m_twiddle[j * step];
-							if (inverse) w = std::conj(w);
+							const std::complex<float> w = twiddle[j * step];
 							const std::complex<float> u = x[i + j], v = x[i + j + len / 2] * w;
 							x[i + j] = u + v;
 							x[i + j + len / 2] = u - v;
@@ -112,7 +116,7 @@ namespace tangotagger
 			}
 
 		private:
-			std::vector<std::complex<float>> m_twiddle;
+			std::vector<std::complex<float>> m_twiddle, m_inverse_twiddle;
 			std::vector<int> m_reverse;
 		};
 
@@ -233,34 +237,83 @@ namespace tangotagger
 			double lag = 0;     // seconds: reference time t sits at query time t + lag
 		};
 
+		//! Rows of real signals by their spectra. A real row's spectrum is its
+		//! own mirror image, so only bins 0..fft_size/2 are kept - half the
+		//! multiplying and half the memory of whole complex spectra - with the
+		//! real and imaginary parts apart, for the loops over them to
+		//! vectorise.
+		const int half_bins = fft_size / 2 + 1;
+
+		class half_spectra
+		{
+		public:
+			void reset(int rows) { m_data.assign(static_cast<std::size_t>(rows) * 2 * half_bins, 0.0f); }
+			float * re(int r) { return &m_data[static_cast<std::size_t>(r) * 2 * half_bins]; }
+			float * im(int r) { return re(r) + half_bins; }
+			const float * re(int r) const { return &m_data[static_cast<std::size_t>(r) * 2 * half_bins]; }
+			const float * im(int r) const { return re(r) + half_bins; }
+
+		private:
+			std::vector<float> m_data;
+		};
+
+		//! The half spectra of two real rows, from one complex transform of
+		//! `z` = first + i * second.
+		void two_real_spectra(std::complex<float> * z, float * re1, float * im1, float * re2, float * im2)
+		{
+			transform().run(z, false);
+			for (int k = 0; k < half_bins; k++)
+			{
+				const std::complex<float> a = z[k], b = std::conj(z[(fft_size - k) % fft_size]);
+				const std::complex<float> s = a + b, d = a - b;
+				re1[k] = 0.5f * s.real();
+				im1[k] = 0.5f * s.imag();
+				re2[k] = 0.5f * d.imag();
+				im2[k] = -0.5f * d.real();
+			}
+		}
+
+		//! The real signals of two half spectra, by one inverse transform:
+		//! the real parts of the result are the first, the imaginary parts
+		//! the second.
+		void two_real_signals(const float * re1, const float * im1, const float * re2, const float * im2,
+		                      std::complex<float> * z)
+		{
+			for (int k = 0; k < half_bins; k++)
+			{
+				z[k] = std::complex<float>(re1[k] - im2[k], im1[k] + re2[k]);
+				if (k > 0 && k < fft_size / 2)
+					z[fft_size - k] = std::complex<float>(re1[k] + im2[k], re2[k] - im1[k]);
+			}
+			transform().run(z, true);
+		}
+
+		//! A sequence's 12 rows, then its valid mask as a 13th; the 14th is
+		//! the mask's partner in the transform, and empty.
 		struct spectrum
 		{
-			std::vector<std::complex<float>> x;   // 12 * fft_size, conjugated
-			std::vector<std::complex<float>> mask;
+			half_spectra rows;
 			double valid = 0;
 		};
 
-		spectrum spectrum_of(const sequence & s)
+		void spectrum_of(const sequence & s, spectrum & out, std::vector<std::complex<float>> & z)
 		{
-			const fft & t = transform();
-			spectrum out;
-			out.x.assign(12 * fft_size, 0.0f);
-			out.mask.assign(fft_size, 0.0f);
+			out.rows.reset(14);
+			out.valid = 0;
 			const std::size_t n = std::min<std::size_t>(s.frames(), coarse_frames);
-			for (int c = 0; c < 12; c++)
+			for (int c = 0; c < 14; c += 2)
 			{
-				std::complex<float> * row = &out.x[c * fft_size];
-				for (std::size_t j = 0; j < n; j++) row[j] = static_cast<float>(s.x[j * 12 + c]);
-				t.run(row, false);
+				std::fill(z.begin(), z.end(), std::complex<float>(0.0f));
+				for (std::size_t j = 0; j < n; j++)
+				{
+					const float first = c < 12 ? static_cast<float>(s.x[j * 12 + c]) : (s.valid[j] ? 1.0f : 0.0f);
+					const float second = c < 12 ? static_cast<float>(s.x[j * 12 + c + 1]) : 0.0f;
+					z[j] = std::complex<float>(first, second);
+				}
+				two_real_spectra(z.data(), out.rows.re(c), out.rows.im(c), out.rows.re(c + 1), out.rows.im(c + 1));
 			}
 			for (std::size_t j = 0; j < n; j++)
-				if (s.valid[j])
-				{
-					out.mask[j] = 1.0f;
-					out.valid++;
-				}
-			t.run(out.mask.data(), false);
-			return out;
+				if (s.valid[j]) out.valid++;
 		}
 
 		//! One way of reading the query: at a speed, a pitch class or more on.
@@ -271,40 +324,75 @@ namespace tangotagger
 			std::vector<int> rotations;
 		};
 
-		//! A candidate's best lag over every reading of the query. The
-		//! candidate's spectrum is made here and dropped after: a spectrum is
-		//! about 100KB, and the prefilter keeps a few hundred candidates.
-		void coarse_pass(const spectrum & a, const std::vector<query_reading> & readings, alignment & best,
-		                 std::vector<std::complex<float>> & den, std::vector<std::complex<float>> & num)
+		//! What coarse_pass needs to work in, kept from one candidate to the
+		//! next instead of being allocated for each.
+		struct coarse_scratch
 		{
-			const fft & t = transform();
+			half_spectra cross;                    // the mask's, then one a rotation
+			std::vector<std::complex<float>> z = std::vector<std::complex<float>>(fft_size);
+			std::vector<float> lags;                // the cross spectra's, back in time
+		};
+
+		//! a += conj(x) * y, over half spectra.
+		void accumulate_cross(const float * xr, const float * xi, const float * yr, const float * yi, float * ar, float * ai)
+		{
+			for (int i = 0; i < half_bins; i++)
+			{
+				ar[i] += xr[i] * yr[i] + xi[i] * yi[i];
+				ai[i] += xr[i] * yi[i] - xi[i] * yr[i];
+			}
+		}
+
+		//! A candidate's best lag over every reading of the query.
+		void coarse_pass(const spectrum & a, const std::vector<query_reading> & readings, alignment & best,
+		                 coarse_scratch & s)
+		{
 			for (const query_reading & reading : readings)
 			{
-				const spectrum & q = reading.q;
+				const half_spectra & q = reading.q.rows;
 				const double scale = reading.scale;
-				for (int i = 0; i < fft_size; i++) den[i] = std::conj(a.mask[i]) * q.mask[i];
-				t.run(den.data(), true);
-				const double need = std::max(0.5 * std::min(a.valid, q.valid), 40.0);
-				for (int k : reading.rotations)
-				{
-					std::fill(num.begin(), num.end(), std::complex<float>(0.0f));
-					for (int c = 0; c < 12; c++)
+				const int n_rot = static_cast<int>(reading.rotations.size());
+
+				// The cross spectra: the masks', and every rotation's, each
+				// row of the candidate read once for all the rotations.
+				s.cross.reset(1 + n_rot);
+				s.lags.resize(static_cast<std::size_t>(1 + n_rot) * fft_size);
+				accumulate_cross(a.rows.re(12), a.rows.im(12), q.re(12), q.im(12), s.cross.re(0), s.cross.im(0));
+				for (int c = 0; c < 12; c++)
+					for (int r = 0; r < n_rot; r++)
 					{
-						const std::complex<float> * x = &a.x[c * fft_size];
-						const std::complex<float> * y = &q.x[(((c + k) % 12 + 12) % 12) * fft_size];
-						for (int i = 0; i < fft_size; i++) num[i] += std::conj(x[i]) * y[i];
+						const int from = ((c + reading.rotations[r]) % 12 + 12) % 12;
+						accumulate_cross(a.rows.re(c), a.rows.im(c), q.re(from), q.im(from), s.cross.re(1 + r), s.cross.im(1 + r));
 					}
-					t.run(num.data(), true);
+
+				// Back to lags, two cross spectra a transform.
+				for (int r = 0; r < 1 + n_rot; r += 2)
+				{
+					const bool pair = r + 1 < 1 + n_rot;
+					two_real_signals(s.cross.re(r), s.cross.im(r), pair ? s.cross.re(r + 1) : s.cross.re(r),
+					                 pair ? s.cross.im(r + 1) : s.cross.im(r), s.z.data());
+					for (int i = 0; i < fft_size; i++)
+					{
+						s.lags[r * fft_size + i] = s.z[i].real();
+						if (pair) s.lags[(r + 1) * fft_size + i] = s.z[i].imag();
+					}
+				}
+
+				const float * den = &s.lags[0];
+				const double need = std::max(0.5 * std::min(a.valid, reading.q.valid), 40.0);
+				for (int r = 0; r < n_rot; r++)
+				{
+					const float * num = &s.lags[(1 + r) * fft_size];
 					for (int lag = -coarse_max_lag; lag <= coarse_max_lag; lag++)
 					{
 						const int i = lag >= 0 ? lag : fft_size + lag;
-						const double d = den[i].real();
+						const double d = den[i];
 						if (d < need) continue;
-						const double score = num[i].real() / std::max(d, 1.0);
+						const double score = num[i] / std::max(d, 1.0);
 						if (score > best.score)
 						{
 							best.score = score;
-							best.k = k;
+							best.k = reading.rotations[r];
 							best.scale = scale;
 							best.lag = lag * coarse_hop;
 						}
@@ -762,31 +850,31 @@ namespace tangotagger
 		for (int mode = 0; mode < 2; mode++)
 		{
 			const bool by_tuning = mode == 0;
+			coarse_scratch scratch;
 			std::vector<query_reading> readings;
+			auto read_query = [&](double s, std::vector<int> rotations)
+			{
+				readings.push_back({ spectrum(), s, std::move(rotations) });
+				spectrum_of(chroma_sequence(query, s, coarse_hop, 0, coarse_frames), readings.back().q, scratch.z);
+			};
 			if (by_tuning)
 			{
 				for (int k = -1; k <= 1; k++)
-				{
-					const double s = std::pow(2.0, query.tuning / 1200.0) * std::pow(2.0, k / 12.0);
-					readings.push_back({ spectrum_of(chroma_sequence(query, s, coarse_hop, 0, coarse_frames)), s, { k } });
-				}
+					read_query(std::pow(2.0, query.tuning / 1200.0) * std::pow(2.0, k / 12.0), { k });
 			}
 			else
 			{
-				for (int i = 0; i <= 10; i++)
-				{
-					const double s = 0.95 + 0.01 * i;
-					readings.push_back({ spectrum_of(chroma_sequence(query, s, coarse_hop, 0, coarse_frames)), s, { -1, 0, 1 } });
-				}
+				for (int i = 0; i <= 10; i++) read_query(0.95 + 0.01 * i, { -1, 0, 1 });
 			}
 			std::vector<alignment> al(cand.size());
-			std::vector<std::complex<float>> den(fft_size), num(fft_size);
 			fingerprint holder;
+			spectrum candidate;
 			for (std::size_t c = 0; c < cand.size(); c++)
 			{
 				const fingerprint & ref = reference_fp(m_refs[cand[c]], holder);
-				coarse_pass(spectrum_of(chroma_sequence(ref, ref_scale(ref.tuning, by_tuning), coarse_hop, 0, coarse_frames)),
-				            readings, al[c], den, num);
+				spectrum_of(chroma_sequence(ref, ref_scale(ref.tuning, by_tuning), coarse_hop, 0, coarse_frames), candidate,
+				            scratch.z);
+				coarse_pass(candidate, readings, al[c], scratch);
 			}
 
 			std::vector<std::size_t> order(cand.size());
