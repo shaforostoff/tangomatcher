@@ -24,5 +24,15 @@
 	<string>${MACOSX_BUNDLE_COPYRIGHT}</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${CMAKE_OSX_DEPLOYMENT_TARGET}</string>
+	<!-- Where foobar2000 looks for newer releases of this component. -->
+	<key>FB2KUpdateSource</key>
+	<dict>
+		<key>source</key>
+		<string>github</string>
+		<key>owner</key>
+		<string>shaforostoff</string>
+		<key>repo</key>
+		<string>tangomatcher</string>
+	</dict>
 </dict>
 </plist>
